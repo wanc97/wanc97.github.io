@@ -4,23 +4,126 @@
   
     
     <entry>
-      <title>信条</title>
-      <link href="2021/03/30/mo-ban/"/>
-      <url>2021/03/30/mo-ban/</url>
+      <title>数据结构与算法</title>
+      <link href="2021/03/31/shu-ju-jie-gou-yu-suan-fa/"/>
+      <url>2021/03/31/shu-ju-jie-gou-yu-suan-fa/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="基本观点"><a href="#基本观点" class="headerlink" title="基本观点"></a>基本观点</h2><ol><li><p>让编程改变世界。</p></li><li><p>广义上的算法就是解决问题的方法，这是任何领域都需要考虑的问题，但是为什么只有信息领域如此强调呢？主要因为信息领域存在大量类似的问题，一个合适的算法优化可以带来极大的效用提高，相比之下，其它领域的问题缺少同质性。</p></li><li><p>程序设计=数据结构+算法。</p></li><li><p>算法的精髓：所有可以降低问题复杂度的算法都是在寻找一种划分，使得问题熵减。</p><blockquote><p>程序设计的三种基本结构：顺序结构、分支结构、循环结构。其中循环结构不会降低复杂度，因为它是用相同的策略来应对不同问题，而分支结构通过一定的划分，可以将问题（情况）分为不同的类，而不同的类有着更加明显的规律，可以用更加针对性的策略达到效果。</p></blockquote><blockquote><p>二分：将情况分为两类，一类直接解决</p></blockquote><blockquote><p>动态规划：通过一种解决顺序，可以将许多问题分到已经解决过的问题中</p></blockquote><blockquote><p>回溯：通过判断，一类直接解决</p></blockquote></li><li><p><strong>计算机解决问题其实没有任何奇技淫巧，它唯一的解决办法就是穷举</strong>，穷举所有可能性。算法设计无非就是先思考“如何穷举”，然后再追求“如何聪明地穷举”。或者说人也是如此。</p></li></ol><h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><blockquote><ol><li>问题建模；</li><li>选择并描述算法；</li><li>证明算法是否能在所有实例上取得最优解；</li><li>分析算法效率。</li></ol></blockquote><h3 id="算法要求"><a href="#算法要求" class="headerlink" title="算法要求"></a>算法要求</h3><h4 id="基础要求"><a href="#基础要求" class="headerlink" title="基础要求"></a>基础要求</h4><blockquote><ol><li>正确性：零到多个输入，至少一个输出（广义上的输出）；</li><li>有穷性；</li><li>确定值；</li><li>可行性。</li></ol></blockquote><h4 id="重要要求"><a href="#重要要求" class="headerlink" title="重要要求"></a>重要要求</h4><blockquote><ol><li>可读性；</li><li>鲁棒性（能适应更加严苛、复杂的情况）；</li><li>时间空间复杂度低。</li></ol></blockquote><h3 id="算法境界"><a href="#算法境界" class="headerlink" title="算法境界"></a>算法境界</h3><blockquote><ol><li>没有语法错误；</li><li>对于合法输入能得到满足要求输出；</li><li>对于非法输入能够有合理应对；</li><li>对于故意刁难的输入可以得到满足要求的输出。</li></ol></blockquote><h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p><blockquote><p>基本运算应该满足：</p><ol><li>计算时间基本不变；</li><li>在对应问题中其运算数量变化是影响运算时间的最主要因素。</li></ol><p>常见如：比较、加法、乘法、置指针、交换……</p><p>常见的输入规模：数组元素多少、调度问题的任务个数、图的顶点数与边数……</p></blockquote><h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>针对指定的空间单位和输入规模，算法所需的空间量相对于输入规模的表达式。</p><blockquote><p>时间复杂度和空间复杂度都是十分重要的，但是一般算法之间的空间复杂度差别远不及时间复杂度上的差别，因此更多比较的也是时间复杂度。</p></blockquote><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul><li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p><blockquote><ul><li><p>数据逻辑结构分为：</p><ol><li>集合结构：元素间没有关系；</li><li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li><li>树形结构：一对多关系；</li><li>图形结构：多对多关系；</li></ol></li><li><p>数据物理结构：</p><ol><li>顺序存储结构：在存储介质上连续存放，与逻辑结构对应；</li><li>链式存储结构：数据元素存放在任意位置，通过指针（地址）联系；</li></ol></li></ul></blockquote></li><li><p>数据逻辑结构分为：</p><blockquote><ol><li>集合结构：元素间没有关系；</li><li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li><li>树形结构：一对多关系；</li><li>图形结构：多对多关系；</li></ol></blockquote></li></ul><p>常用数据逻辑结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>一般采用递归的方法遍历比较清晰</p><p>很多问题都可以看成树的遍历</p><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>基本思路：<strong>穷举</strong>+<strong>备忘录</strong></p><p>穷举是为了比较所有可能的情况</p><p>备忘录是通过记录重叠子问题的结果，用空间换时间，降低时间复杂度</p><p>重点是<strong>转移方程</strong>，也就是将原问题转化为更简单的子问题的转移关系，一定要正确</p><p>穷举方向可以是<strong>自顶向下</strong>的<strong>递归</strong>，也可以是<strong>自底向上</strong>的<strong>迭代</strong></p><p>一个优化角度是<strong>穷举顺序</strong>，合适的穷举顺序可以少使用备忘录，降低空间复杂度</p><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p>回溯就是一个<strong>决策树</strong>的<strong>遍历</strong>过程</p><p>基本思路：决策遍历+停止判断</p><p>动态规划一定有重叠子问题，而回溯没有。某种程度上说，动态规划的暴力求解阶段就是回溯算法。只是有的问题具有重叠子问题性质，可以用 dp table 或者备忘录优化，将递归树大幅剪枝，这就变成了动态规划。</p><p>回溯的过程也是在做DFS深度优先搜索。</p><p>通用框架：</p><pre class="line-numbers language-python"><code class="language-python">result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> 满足结束条件<span class="token punctuation">:</span>        result<span class="token punctuation">.</span>add<span class="token punctuation">(</span>路径<span class="token punctuation">)</span>        <span class="token keyword">return</span>    <span class="token keyword">for</span> 选择 <span class="token keyword">in</span> 选择列表<span class="token punctuation">:</span>        做选择        backtrack<span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span>        撤销选择<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>路径：也就是已经做出的选择。</li><li>选择列表：也就是你当前可以做的选择。</li><li>结束条件：也就是到达决策树底层，无法再做选择的条件。</li></ol><h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p>每一次二分都要保证：搜索区间减小，正确处理边界</p><p>不要用else，而是把所有情况用 else if写清楚</p><h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 相对 DFS 的最主要的区别是：<strong>BFS 找到的路径一定是最短的，但代价就是空间复杂度比 DFS 大很多</strong></p><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p><a href="http://www.csie.ntnu.edu.tw/~u91029/">演算法笔记</a></p>]]></content>
       
       
       <categories>
           
-          <category> 模板 </category>
+          <category> 计算机基础 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 模板 </tag>
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 二分 </tag>
+            
+            <tag> 动态规划 </tag>
+            
+            <tag> 回溯 </tag>
+            
+            <tag> 遍历 </tag>
+            
+            <tag> 时间复杂度 </tag>
+            
+            <tag> 空间复杂度 </tag>
+            
+            <tag> 树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>图神经网络</title>
+      <link href="2021/03/31/tu-shen-jing-wang-luo/"/>
+      <url>2021/03/31/tu-shen-jing-wang-luo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="图基本知识"><a href="#图基本知识" class="headerlink" title="图基本知识"></a>图基本知识</h2><h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><p>有向图：边有方向。</p><p>无向图：边没有方向，可以看成有向图的边成对出现。</p><h4 id="度"><a href="#度" class="headerlink" title="度"></a>度</h4><p>有向图度：</p><p>入度：指向自己的边数</p><p>出度：自己发出的边数</p><p>无向图度：连接边的数量</p><h4 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h4><p>方阵，宽度等于节点数，元素为1代表节点之间有边连接。</p><p>无向图的邻接矩阵是对称阵，有向图不一定。</p><h4 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h4><p>节点和边都是一个大图的子集。</p><h4 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h4><p>无向图中所有节点都可以连接在一起称为连通图。</p><p>图的连通子图数称为连通分量，连通图的连通分量为1。</p><h4 id="连通性"><a href="#连通性" class="headerlink" title="连通性"></a>连通性</h4><p>强连通图：有向图任意节点可以相互到达</p><p>弱连通图：有向图不是强连通图，但是作为无向图时是连通图。</p><h4 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h4><p>两个节点之间的最短距离（可能是边数，如果边不一样就是最短的边的积）</p><h4 id="图直径"><a href="#图直径" class="headerlink" title="图直径"></a>图直径</h4><p>图所有节点的最短路径的最大值</p><h2 id="节点重要性"><a href="#节点重要性" class="headerlink" title="节点重要性"></a>节点重要性</h2><h4 id="度中心性"><a href="#度中心性" class="headerlink" title="度中心性"></a>度中心性</h4><p>一个节点的度中心性为：节点度数/(n-1)</p><p>即度越高，度中心性越高。</p><h4 id="特征向量中心性"><a href="#特征向量中心性" class="headerlink" title="特征向量中心性"></a>特征向量中心性</h4><p>对邻接矩阵求特征值、特征向量，最大特征值对应的特征向量就是各个节点的特征向量中心性。</p><p>不只看边数，还可以反映连接节点的重要性。</p><h4 id="中介中心性"><a href="#中介中心性" class="headerlink" title="中介中心性"></a>中介中心性</h4><p>一个节点的中介中心性：经过自己的最短路径数/总的最短路径数</p><p>如果有的节点对最短路径可以有多种走法，则分数平均。</p><h4 id="连接中心性"><a href="#连接中心性" class="headerlink" title="连接中心性"></a>连接中心性</h4><p>一个节点的连接中心性定义为：(n-1)/该节点到其它节点的最短路径之和。</p><p>即节点越靠中心，分母越小，值越大。</p><h4 id="PageRank"><a href="#PageRank" class="headerlink" title="PageRank"></a>PageRank</h4><p>边的PageRank值为源节点的PageRank除以出度，节点的PageRank值等于入边的PageRank值之和。</p><p>交替计算直至稳定。</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> networkx <span class="token keyword">as</span> nx<span class="token comment" spellcheck="true"># 可以从其它的数据结构中导入，如pandas邻接表</span>G <span class="token operator">=</span> nx<span class="token punctuation">.</span>from_<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  nx<span class="token punctuation">.</span>degree<span class="token punctuation">(</span>G<span class="token punctuation">)</span>nx<span class="token punctuation">.</span>connected_components<span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>nx<span class="token punctuation">.</span>pagerank<span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Graph-embedding"><a href="#Graph-embedding" class="headerlink" title="Graph embedding"></a>Graph embedding</h2><p>从图总提取信息，用一个向量来表示一个节点。</p><h4 id="onehot"><a href="#onehot" class="headerlink" title="onehot"></a>onehot</h4><p>每个节点用一个长度为节点数的向量表示，加在一起就是邻接矩阵。</p><p>数据稀疏，单个节点的表示缺乏很多重要信息。</p><h4 id="DeepWalk"><a href="#DeepWalk" class="headerlink" title="DeepWalk"></a>DeepWalk</h4><p>随机游走： 对每个节点在图上进行随机游走，生成图上的序列，通过Word2vector的方式生成embedding。</p><h4 id="LINE"><a href="#LINE" class="headerlink" title="LINE"></a>LINE</h4><p>一阶相似性：相互连接的节点相似</p><p>一条边的两节点embedding內积求sigmoid作为联合概率分布，不同边的联合概率分布按边权重加权作为loss。</p><p>二阶相似性：相邻接点相似的节点相似</p><p>已知一个节点时，计算其它节点的条件概率，按边的权重加权作为loss。</p><p>将一阶和二阶embedding直接拼接得到最终的embedding。</p><h4 id="node2vector"><a href="#node2vector" class="headerlink" title="node2vector"></a>node2vector</h4><p>同质性：相近的节点相似</p><p>结构等价性：连接结构相似的节点相似</p><p>按一定概率游走，调整参数使模型倾向于学习不同信息。</p><p>设置p、q的值，控制游走的方向倾向于在附近游走还是在远处游走。  </p><h4 id="struc2vector"><a href="#struc2vector" class="headerlink" title="struc2vector"></a>struc2vector</h4><p>两个节点的相似性通过两个节点的n-hop邻居的度的相似性的判断，也就是两个节点的结构。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图 </tag>
+            
+            <tag> 神经网络 </tag>
+            
+            <tag> Embedding </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《富爸爸穷爸爸》笔记</title>
+      <link href="2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/"/>
+      <url>2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h3 id="情绪决定是否有钱"><a href="#情绪决定是否有钱" class="headerlink" title="情绪决定是否有钱"></a>情绪决定是否有钱</h3><p>不要因为情绪、非理性冲动消费</p><h3 id="在工作中学习"><a href="#在工作中学习" class="headerlink" title="在工作中学习"></a>在工作中学习</h3><p>不要只把工作当做劳做，而应该从中学习</p><h3 id="富人不为钱工作"><a href="#富人不为钱工作" class="headerlink" title="富人不为钱工作"></a>富人不为钱工作</h3><p>富人不为了获得报酬而工作，而是去努力获得可以不断带来收益的资产，把增加自己的资产放在第一位</p><h3 id="积累财富知识"><a href="#积累财富知识" class="headerlink" title="积累财富知识"></a>积累财富知识</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 理财 </tag>
+            
+            <tag> 财商 </tag>
+            
+            <tag> 资产 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信条</title>
+      <link href="2021/03/30/xin-tiao/"/>
+      <url>2021/03/30/xin-tiao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>未来在劫难逃，一切梦幻泡影，无谓不得不为。</strong></p><p><strong>滚滚长江东逝水，浪花淘尽英雄，是非成败转头空，青山依旧在，几度夕阳红。</strong></p><p><strong>人的注意力总要有个地方安放，要么专注当下，要么意识流，然后陷入某个痛苦的漩涡中。</strong></p><h2 id="我的信条"><a href="#我的信条" class="headerlink" title="我的信条"></a>我的信条</h2><blockquote><p>我们都是这个世界的旅人，重要的是<strong>旅程</strong>，而非目的地。<br>所以<strong>幸福的状态</strong>是最重要的，提升<strong>能力</strong>是保证，<strong>学习</strong>和<strong>专注</strong>是做法。</p></blockquote><blockquote><p>情绪是动物层面的生理反应，是硬件级别的奖惩机制。由着情绪做出的决定几乎都是对自己有害的。<br>人的最终控制权属于大脑皮层/主观，人的主观有百分之百的能力做一个旁观者而不去在意自己的情绪。<br>仅仅在于主观愿不愿意让自己从动物变成人。<br>所以现在的幸福和痛苦也都是自己的选择。</p></blockquote><blockquote><p>世界不存在突变，至少在宏观世界不存在。<br>任何状态之间的转变都需要在<strong>现在</strong>的基础上提供一个<strong>力</strong>，得到一个<strong>速度</strong>，并通过<strong>时间</strong>积累得到。<br>定力很重要，匀速小跑，久久为功。<br>所以不要幻想一步登天，不要排斥当下，现在的自己已经很优秀了。</p></blockquote><blockquote><p>世界是高度复杂的非线性系统，一切事情环环相扣，多因多果，没有非黑即白。<br>把握规律，理性选择，不要自怨自艾。</p></blockquote><blockquote><p>人天生对危险更加敏感。<br>人的生理快乐存在上限，但生理痛苦没有边界。<br>所以不要执着地想要达成什么，因为那样也不会快乐多少，但带来的痛苦却是无边无际。<br>抛却执念，自在无为，欲望越多，痛苦越多。</p></blockquote><blockquote><p>封闭系统的熵严格递增。<br>唯一不变的就是变化，一切都将会失去。<br>不要执着于未来和过去，活在当下。</p></blockquote><h2 id="情绪"><a href="#情绪" class="headerlink" title="情绪"></a>情绪</h2><ul><li><strong>终极方案——面对</strong></li></ul><p>情绪终究是人身体的一些激素反应而已，本质上是应该为人自身服务的，例如愤怒提升人的战斗力，恐惧提示人防范危险，孤独以及焦虑促使人思考潜在危险等等，也就是说所有的情绪都应该是对自身有好处的。然而随着进入现代社会，这些情绪的必要性越来越小，绝大多数时候自发的情绪往往带来负面的效果，这就需要对情绪做相应的调整，使之适应现在生活的需要。</p><p>理性与感性的关系就像骑象人与象，从绝对力量上来看骑象人是绝对斗不过象的。当情绪来临的时候，就像象受到了惊吓开始疯狂舞动，这个时候骑象人如果胡乱指挥只会让象更加确认危险的存在，更加激烈的疯狂。骑象人最好的做法就是静静地看着象，让象自己发泄一会，很快象就会发现它所以为的危险是原本不存在的，就会逐渐安静下来。</p><p>也就是说当情绪来临的时候要做的不是压制情绪，更不是助长情绪，而是看着它，看看情绪所在意的事到底存不存在。如果存在不好的事实就去行动解决问题，如果没有就静静等待情绪的浪潮退去。</p><ul><li><strong>心理防御机制</strong></li></ul><p>在遇到挫折、困难，出现不好的情绪、感受的时候，人都会尽己所能寻找一些方法来改善这些感觉，这些方法、策略就是心理防御机制。</p><p>按照心理成熟度的划分，心理防御机制一共可以分为四级。</p><blockquote><ol><li>自恋心理防御机制。因为早期的婴儿的心理状态，是极度自恋的，在它的世界之中只有他自己。而且它还没有形成自我界限，所以总是会否定和歪曲事实。这一级的心理防御机制通常包括否定，歪曲，外射等。</li><li>不成熟心理防御机制。这一级的机制通常是我们在青春期的时候形成的。当然在成年人中也会有，包括内射，退化，幻想等。</li><li>神经症心理防御机制。这是我们的自我进一步成熟，在我们对现实和自我有一定的了解和认知能力的时候发展出来的。通常包括潜抑、解离、转移、隔离、合理化、反向形成、抵消、补偿、仿同。</li><li>成熟的心理防御机制，这是个体的自我功能发展成熟之后才能够表现的防御机制。这些防御机制不仅是有效的、能够帮我们解决现实问题的，也是会被一般社会文化所接受的。这一级的防御机制主要包括升华，幽默，利他。</li></ol></blockquote><p>心理防御机制的效果随着级别的上升而提高，越低级的防御机制越不能解决问题，但即使是最成熟的心理防御机制也不如采用终极方案好，但成熟的心理防御机制也挺好。</p><h2 id="恐惧、没有安全感"><a href="#恐惧、没有安全感" class="headerlink" title="恐惧、没有安全感"></a>恐惧、没有安全感</h2><p>当我想逃避，不想做事，觉得没意义的时候一般是恐惧的时候，这个时候由于极度的恐惧，担心有不好的事发生，情绪会处于非常负面的状态，非常不理性。</p><p>也会在脑海中反复模拟各种场景，以争取安全、稳定。</p><p>人有追求安全感的天性，这可以为人减少危险，但世界是不确定的，没有什么是一定的，没有绝对的安全感，过于在意安全感、把安全感当做目标，会让人疲于奔命，无法享受当下，也就无法获得幸福。</p><p>解决</p><ul><li>唯一需要恐惧的就是恐惧本身，观察自己的恐惧，认识它，看看所恐惧的事情到底存不存在，到底严不严重，绝大部分时候都是小事，然后就可以等它逐渐消失；</li><li>认识到人生的不确定性，放下对于安全感的执念。</li></ul><h2 id="没有边界"><a href="#没有边界" class="headerlink" title="没有边界"></a>没有边界</h2><p>原生的环境没有尊重个体的边界，强加一些不该承受的负担，使得个体没有建立边界意识，也没有建立自尊。</p><p>危害</p><blockquote><ol><li>不会拒绝，任由别人侵犯边界，承受别人无理的要求；</li><li>习得性无助；</li><li>建立不了自尊，更得不到别人尊重；</li><li>以别人为中心，考虑别人的想法，特别心累；</li><li>迷失自我，不知道自己喜欢什么，不会自爱，不会珍惜自己，不会心疼自己，不会保护自己；</li><li>推己及人地要求别人也为自己考虑，也就是反过来侵犯别人的边界。</li></ol></blockquote><p>方法</p><p>主动意识边界的存在，为自己考虑，为自己负责，学会拒绝，只有能够拒绝才能建立尊重（他人尊重和自尊）。</p><h2 id="敏感"><a href="#敏感" class="headerlink" title="敏感"></a>敏感</h2><p>过度的自我关注，没有广阔的胸襟与格局，脑海中总是构想各种不好的、危险的场景，但事实上过往担惊受怕的经历大多是虚惊一场</p><p>表现</p><blockquote><ol><li>夸大发生的事情，归纳过度，把失败小题大做，认为一次失败，就导致了你整个人都是失败的，或者会一直失败下去；</li><li>隧道视野，只关注了极少的缺点和失败，忽略了更多的成功和优秀；</li><li>不理性的个人化，选取一种情绪就把它当成了现实，而不是把情感只当做情感。</li></ol></blockquote><p>方法</p><blockquote><ol><li>觉察自己的想法是不是超出客观事实，过度放大，跳出放大思维，仅依据客观事实来思考；</li><li>觉察这只是我的第几次失败？我是不是过度关注这1%的失败，忽略我之前99%的成功了？跳出「极小化」思维，去回想自己做过的成功的事情，然后集中精力到对这次失败的复盘上。</li><li>觉察我是不是在凭空捏造剧情？其实我什么证据都没有，这只是我自己想象出来的，压根不靠谱的结论？跳出「虚构」思维，只关注客观事实，并且要明白“这件事什么都代表不了，没什么大不了的”。</li></ol></blockquote><h2 id="格局小"><a href="#格局小" class="headerlink" title="格局小"></a>格局小</h2><p>如果把实现人生目标，比喻为种一棵树，那么解决重要问题就是关注树的重要指标，因为大问题无法一下解决，就需要拆分成许多子问题，比如对树的一片叶子进行装饰。格局小会使得人在相对次要的子问题上徘徊，而忘了原本想做的事。舍本逐末。</p><p>并不是所有问题都要被解决，应该重点关注根源问题、核心问题，随着这些问题的解决，有的次要问题会消失，有的次要问题会转化，有的次要问题还在但已经不更重要了。</p><h2 id="贪"><a href="#贪" class="headerlink" title="贪"></a>贪</h2><blockquote><ul><li>需要&amp;想要：收益高于成本的事</li><li>贪：“实际”收益不能覆盖成本的事</li></ul></blockquote><p>首先需要分清什么是需要&amp;想要、什么是贪，然后理性地、坚决地隔离贪。</p><h2 id="逃避-amp-幻想"><a href="#逃避-amp-幻想" class="headerlink" title="逃避&amp;幻想"></a>逃避&amp;幻想</h2><p>面对问题的时候应该直面现实，以解决问题为导向，而不是选择逃避，期望问题自己消失。幻想不用付出努力，通过捷径一步登天，现实和幻想的落差会滋生痛苦，摧毁行动力。</p><p>包括对困难的逃避、对可能失败的逃避。</p><p>还要直面自己的缺点、直面自己丑陋的一面，不要逃避、不要掩饰。</p><p>不仅不能逃避问题，也不能逃避幸福，想要幸福必须是在当下就获得的。</p><h2 id="权力之争"><a href="#权力之争" class="headerlink" title="权力之争"></a>权力之争</h2><p>很多时候的争论并不是在解决问题，甚至原本没有什么问题，而仅仅是为了分辨谁对谁错，同时绝大多数人都不愿意被自己以外的人指出错误，所以这种争论往往没有积极地用处，只会激化矛盾。</p><p>同时，人和人是不同的，我们连自己都很难理解，更不能很好的通过片面的观察理解他人，因此对其他人应该多一点同情和包容。</p><h2 id="追求认可"><a href="#追求认可" class="headerlink" title="追求认可"></a>追求认可</h2><p>人有追求他人认可的原始动力，但是这个需要把握一个度，适当的追求是让自己的行为符合社会规范，但绝大多数时候这种追求都是过度的，这种追求让人迷失自我，疲于奔命，无法做正确的事；也让自己过于在意自己的形象，不敢请教问题，多走很多弯路。</p><p>大概率总是会有非常多的人不认可我；别人对我的看法最终还是取决于我的实力。</p><p>所谓逆商高在很大程度上就是放下了对于认可的追求，所以即使失败，也没有失去太多，不会觉得天要塌了一样。</p><p>去意识并放下对于认可的执念，要认可，只需要自己和少数重要的且对自己善意的人的认可就足以。</p><h2 id="执念"><a href="#执念" class="headerlink" title="执念"></a>执念</h2><p>过强的执念极大地消耗注意力、精力，使得人无法把有限的精力放在真正有意义的目标上。</p><p>不要过于执着于自己的想法，当想法和现实不同的时候，现实是不会有错的，错的一定是自己考虑的不到位，需要做的就是从现实中学习。</p><p>主动地意识并放下执念。</p><h2 id="没有定力"><a href="#没有定力" class="headerlink" title="没有定力"></a>没有定力</h2><p>定力等同于：我们不受自身感受和心理的影响、而能够持续的做一件事情的能力。</p><p>越是聪明的、有天赋的人越容易没有定力，因为他们容易获得顿悟，容易获得小成就，就相对不愿意花笨功夫；就像很容易从手机、游戏获得快感、多巴胺后就很难踏实学习；但很多有价值的是就是需要持续花功夫才能做到。</p><p>主动降低对短期回报的敏感，追求长期目标。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 提升 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哲学 </tag>
+            
+            <tag> 人生 </tag>
+            
+            <tag> 情绪 </tag>
             
         </tags>
       

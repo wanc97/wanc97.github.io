@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 方寸田园">
+    <meta name="keywords" content="数据结构与算法, 方寸田园">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Hello World | 方寸田园</title>
+    <title>数据结构与算法 | 方寸田园</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -323,12 +323,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">数据结构与算法</h1>
                 </div>
             </div>
         </div>
@@ -338,10 +338,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -350,8 +444,40 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                                <span class="chip bg-color">模板</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E5%88%86/">
+                                <span class="chip bg-color">二分</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                                <span class="chip bg-color">回溯</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%81%8D%E5%8E%86/">
+                                <span class="chip bg-color">遍历</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                                <span class="chip bg-color">时间复杂度</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                                <span class="chip bg-color">空间复杂度</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%A0%91/">
+                                <span class="chip bg-color">树</span>
                             </a>
                         
                     </div>
@@ -362,8 +488,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
-                                模板
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
                             </a>
                         
                     </div>
@@ -375,7 +501,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-03-31
                 </div>
                 
 
@@ -389,14 +515,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    99
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -416,21 +542,141 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p><a target="_blank" rel="noopener" href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">闪烁之狐主题介绍</a></p>
-<p><strong>注：该文章是来自hexo的介绍文档，非作者所做</strong></p>
+                <h2 id="基本观点"><a href="#基本观点" class="headerlink" title="基本观点"></a>基本观点</h2><ol>
+<li><p>让编程改变世界。</p>
+</li>
+<li><p>广义上的算法就是解决问题的方法，这是任何领域都需要考虑的问题，但是为什么只有信息领域如此强调呢？主要因为信息领域存在大量类似的问题，一个合适的算法优化可以带来极大的效用提高，相比之下，其它领域的问题缺少同质性。</p>
+</li>
+<li><p>程序设计=数据结构+算法。</p>
+</li>
+<li><p>算法的精髓：所有可以降低问题复杂度的算法都是在寻找一种划分，使得问题熵减。</p>
+<blockquote>
+<p>程序设计的三种基本结构：顺序结构、分支结构、循环结构。其中循环结构不会降低复杂度，因为它是用相同的策略来应对不同问题，而分支结构通过一定的划分，可以将问题（情况）分为不同的类，而不同的类有着更加明显的规律，可以用更加针对性的策略达到效果。</p>
+</blockquote>
+<blockquote>
+<p>二分：将情况分为两类，一类直接解决</p>
+</blockquote>
+<blockquote>
+<p>动态规划：通过一种解决顺序，可以将许多问题分到已经解决过的问题中</p>
+</blockquote>
+<blockquote>
+<p>回溯：通过判断，一类直接解决</p>
+</blockquote>
+</li>
+<li><p><strong>计算机解决问题其实没有任何奇技淫巧，它唯一的解决办法就是穷举</strong>，穷举所有可能性。算法设计无非就是先思考“如何穷举”，然后再追求“如何聪明地穷举”。或者说人也是如此。</p>
+</li>
+</ol>
+<h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><blockquote>
+<ol>
+<li>问题建模；</li>
+<li>选择并描述算法；</li>
+<li>证明算法是否能在所有实例上取得最优解；</li>
+<li>分析算法效率。</li>
+</ol>
+</blockquote>
+<h3 id="算法要求"><a href="#算法要求" class="headerlink" title="算法要求"></a>算法要求</h3><h4 id="基础要求"><a href="#基础要求" class="headerlink" title="基础要求"></a>基础要求</h4><blockquote>
+<ol>
+<li>正确性：零到多个输入，至少一个输出（广义上的输出）；</li>
+<li>有穷性；</li>
+<li>确定值；</li>
+<li>可行性。</li>
+</ol>
+</blockquote>
+<h4 id="重要要求"><a href="#重要要求" class="headerlink" title="重要要求"></a>重要要求</h4><blockquote>
+<ol>
+<li>可读性；</li>
+<li>鲁棒性（能适应更加严苛、复杂的情况）；</li>
+<li>时间空间复杂度低。</li>
+</ol>
+</blockquote>
+<h3 id="算法境界"><a href="#算法境界" class="headerlink" title="算法境界"></a>算法境界</h3><blockquote>
+<ol>
+<li>没有语法错误；</li>
+<li>对于合法输入能得到满足要求输出；</li>
+<li>对于非法输入能够有合理应对；</li>
+<li>对于故意刁难的输入可以得到满足要求的输出。</li>
+</ol>
+</blockquote>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p>
+<blockquote>
+<p>基本运算应该满足：</p>
+<ol>
+<li>计算时间基本不变；</li>
+<li>在对应问题中其运算数量变化是影响运算时间的最主要因素。</li>
+</ol>
+<p>常见如：比较、加法、乘法、置指针、交换……</p>
+<p>常见的输入规模：数组元素多少、调度问题的任务个数、图的顶点数与边数……</p>
+</blockquote>
+<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>针对指定的空间单位和输入规模，算法所需的空间量相对于输入规模的表达式。</p>
+<blockquote>
+<p>时间复杂度和空间复杂度都是十分重要的，但是一般算法之间的空间复杂度差别远不及时间复杂度上的差别，因此更多比较的也是时间复杂度。</p>
+</blockquote>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
+<li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p>
+<blockquote>
+<ul>
+<li><p>数据逻辑结构分为：</p>
+<ol>
+<li>集合结构：元素间没有关系；</li>
+<li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li>
+<li>树形结构：一对多关系；</li>
+<li>图形结构：多对多关系；</li>
+</ol>
+</li>
+<li><p>数据物理结构：</p>
+<ol>
+<li>顺序存储结构：在存储介质上连续存放，与逻辑结构对应；</li>
+<li>链式存储结构：数据元素存放在任意位置，通过指针（地址）联系；</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>数据逻辑结构分为：</p>
+<blockquote>
+<ol>
+<li>集合结构：元素间没有关系；</li>
+<li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li>
+<li>树形结构：一对多关系；</li>
+<li>图形结构：多对多关系；</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<p>常用数据逻辑结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>一般采用递归的方法遍历比较清晰</p>
+<p>很多问题都可以看成树的遍历</p>
+<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>基本思路：<strong>穷举</strong>+<strong>备忘录</strong></p>
+<p>穷举是为了比较所有可能的情况</p>
+<p>备忘录是通过记录重叠子问题的结果，用空间换时间，降低时间复杂度</p>
+<p>重点是<strong>转移方程</strong>，也就是将原问题转化为更简单的子问题的转移关系，一定要正确</p>
+<p>穷举方向可以是<strong>自顶向下</strong>的<strong>递归</strong>，也可以是<strong>自底向上</strong>的<strong>迭代</strong></p>
+<p>一个优化角度是<strong>穷举顺序</strong>，合适的穷举顺序可以少使用备忘录，降低空间复杂度</p>
+<h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p>回溯就是一个<strong>决策树</strong>的<strong>遍历</strong>过程</p>
+<p>基本思路：决策遍历+停止判断</p>
+<p>动态规划一定有重叠子问题，而回溯没有。某种程度上说，动态规划的暴力求解阶段就是回溯算法。只是有的问题具有重叠子问题性质，可以用 dp table 或者备忘录优化，将递归树大幅剪枝，这就变成了动态规划。</p>
+<p>回溯的过程也是在做DFS深度优先搜索。</p>
+<p>通用框架：</p>
+<pre class="line-numbers language-python"><code class="language-python">result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> 满足结束条件<span class="token punctuation">:</span>
+        result<span class="token punctuation">.</span>add<span class="token punctuation">(</span>路径<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+
+    <span class="token keyword">for</span> 选择 <span class="token keyword">in</span> 选择列表<span class="token punctuation">:</span>
+        做选择
+        backtrack<span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span>
+        撤销选择
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>路径：也就是已经做出的选择。</li>
+<li>选择列表：也就是你当前可以做的选择。</li>
+<li>结束条件：也就是到达决策树底层，无法再做选择的条件。</li>
+</ol>
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p>每一次二分都要保证：搜索区间减小，正确处理边界</p>
+<p>不要用else，而是把所有情况用 else if写清楚</p>
+<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 相对 DFS 的最主要的区别是：<strong>BFS 找到的路径一定是最短的，但代价就是空间复杂度比 DFS 大很多</strong></p>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p><a target="_blank" rel="noopener" href="http://www.csie.ntnu.edu.tw/~u91029/">演算法笔记</a></p>
 
                 
             </div>
@@ -457,7 +703,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://notego.top/2021/03/30/hello-world/">http://notego.top/2021/03/30/hello-world/</a>
+                    <a href="http://notego.top/2021/03/31/shu-ju-jie-gou-yu-suan-fa/">http://notego.top/2021/03/31/shu-ju-jie-gou-yu-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -495,8 +741,40 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                                    <span class="chip bg-color">模板</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%8C%E5%88%86/">
+                                    <span class="chip bg-color">二分</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                                    <span class="chip bg-color">回溯</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%81%8D%E5%8E%86/">
+                                    <span class="chip bg-color">遍历</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                                    <span class="chip bg-color">时间复杂度</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                                    <span class="chip bg-color">空间复杂度</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A0%91/">
+                                    <span class="chip bg-color">树</span>
                                 </a>
                             
                         </div>
@@ -668,92 +946,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/30/xin-tiao/">
+                <a href="/2021/03/31/shu-ju-jie-gou-yu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="信条">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="数据结构与算法">
                         
-                        <span class="card-title">信条</span>
+                        <span class="card-title">数据结构与算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
-                        </span>
-                        <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8F%90%E5%8D%87/" class="post-category">
-                                    提升
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%93%B2%E5%AD%A6/">
-                        <span class="chip bg-color">哲学</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BA%BA%E7%94%9F/">
-                        <span class="chip bg-color">人生</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%83%85%E7%BB%AA/">
-                        <span class="chip bg-color">情绪</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/30/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
-                                    模板
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
@@ -764,8 +986,97 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                        <span class="chip bg-color">模板</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%8C%E5%88%86/">
+                        <span class="chip bg-color">二分</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">遍历</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="chip bg-color">时间复杂度</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="chip bg-color">空间复杂度</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A0%91/">
+                        <span class="chip bg-color">树</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/31/tu-shen-jing-wang-luo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="图神经网络">
+                        
+                        <span class="card-title">图神经网络</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%BE/">
+                        <span class="chip bg-color">图</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/Embedding/">
+                        <span class="chip bg-color">Embedding</span>
                     </a>
                     
                 </div>
@@ -834,6 +1145,100 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 方寸田园">
+    <meta name="keywords" content="图神经网络, 方寸田园">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Hello World | 方寸田园</title>
+    <title>图神经网络 | 方寸田园</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -323,12 +323,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">图神经网络</h1>
                 </div>
             </div>
         </div>
@@ -338,10 +338,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -350,8 +444,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                                <span class="chip bg-color">模板</span>
+                            <a href="/tags/%E5%9B%BE/">
+                                <span class="chip bg-color">图</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">神经网络</span>
+                            </a>
+                        
+                            <a href="/tags/Embedding/">
+                                <span class="chip bg-color">Embedding</span>
                             </a>
                         
                     </div>
@@ -362,8 +464,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
-                                模板
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -375,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-03-31
                 </div>
                 
 
@@ -389,14 +491,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    99
+                    873
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -416,21 +518,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p><a target="_blank" rel="noopener" href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">闪烁之狐主题介绍</a></p>
-<p><strong>注：该文章是来自hexo的介绍文档，非作者所做</strong></p>
+                <h2 id="图基本知识"><a href="#图基本知识" class="headerlink" title="图基本知识"></a>图基本知识</h2><h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><p>有向图：边有方向。</p>
+<p>无向图：边没有方向，可以看成有向图的边成对出现。</p>
+<h4 id="度"><a href="#度" class="headerlink" title="度"></a>度</h4><p>有向图度：</p>
+<p>入度：指向自己的边数</p>
+<p>出度：自己发出的边数</p>
+<p>无向图度：连接边的数量</p>
+<h4 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h4><p>方阵，宽度等于节点数，元素为1代表节点之间有边连接。</p>
+<p>无向图的邻接矩阵是对称阵，有向图不一定。</p>
+<h4 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h4><p>节点和边都是一个大图的子集。</p>
+<h4 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h4><p>无向图中所有节点都可以连接在一起称为连通图。</p>
+<p>图的连通子图数称为连通分量，连通图的连通分量为1。</p>
+<h4 id="连通性"><a href="#连通性" class="headerlink" title="连通性"></a>连通性</h4><p>强连通图：有向图任意节点可以相互到达</p>
+<p>弱连通图：有向图不是强连通图，但是作为无向图时是连通图。</p>
+<h4 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h4><p>两个节点之间的最短距离（可能是边数，如果边不一样就是最短的边的积）</p>
+<h4 id="图直径"><a href="#图直径" class="headerlink" title="图直径"></a>图直径</h4><p>图所有节点的最短路径的最大值</p>
+<h2 id="节点重要性"><a href="#节点重要性" class="headerlink" title="节点重要性"></a>节点重要性</h2><h4 id="度中心性"><a href="#度中心性" class="headerlink" title="度中心性"></a>度中心性</h4><p>一个节点的度中心性为：节点度数/(n-1)</p>
+<p>即度越高，度中心性越高。</p>
+<h4 id="特征向量中心性"><a href="#特征向量中心性" class="headerlink" title="特征向量中心性"></a>特征向量中心性</h4><p>对邻接矩阵求特征值、特征向量，最大特征值对应的特征向量就是各个节点的特征向量中心性。</p>
+<p>不只看边数，还可以反映连接节点的重要性。</p>
+<h4 id="中介中心性"><a href="#中介中心性" class="headerlink" title="中介中心性"></a>中介中心性</h4><p>一个节点的中介中心性：经过自己的最短路径数/总的最短路径数</p>
+<p>如果有的节点对最短路径可以有多种走法，则分数平均。</p>
+<h4 id="连接中心性"><a href="#连接中心性" class="headerlink" title="连接中心性"></a>连接中心性</h4><p>一个节点的连接中心性定义为：(n-1)/该节点到其它节点的最短路径之和。</p>
+<p>即节点越靠中心，分母越小，值越大。</p>
+<h4 id="PageRank"><a href="#PageRank" class="headerlink" title="PageRank"></a>PageRank</h4><p>边的PageRank值为源节点的PageRank除以出度，节点的PageRank值等于入边的PageRank值之和。</p>
+<p>交替计算直至稳定。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> networkx <span class="token keyword">as</span> nx
+
+<span class="token comment" spellcheck="true"># 可以从其它的数据结构中导入，如pandas邻接表</span>
+G <span class="token operator">=</span> nx<span class="token punctuation">.</span>from_<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+nx<span class="token punctuation">.</span>degree<span class="token punctuation">(</span>G<span class="token punctuation">)</span>
+nx<span class="token punctuation">.</span>connected_components<span class="token punctuation">(</span>G<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+nx<span class="token punctuation">.</span>pagerank<span class="token punctuation">(</span>G<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Graph-embedding"><a href="#Graph-embedding" class="headerlink" title="Graph embedding"></a>Graph embedding</h2><p>从图总提取信息，用一个向量来表示一个节点。</p>
+<h4 id="onehot"><a href="#onehot" class="headerlink" title="onehot"></a>onehot</h4><p>每个节点用一个长度为节点数的向量表示，加在一起就是邻接矩阵。</p>
+<p>数据稀疏，单个节点的表示缺乏很多重要信息。</p>
+<h4 id="DeepWalk"><a href="#DeepWalk" class="headerlink" title="DeepWalk"></a>DeepWalk</h4><p>随机游走： 对每个节点在图上进行随机游走，生成图上的序列，通过Word2vector的方式生成embedding。</p>
+<h4 id="LINE"><a href="#LINE" class="headerlink" title="LINE"></a>LINE</h4><p>一阶相似性：相互连接的节点相似</p>
+<p>一条边的两节点embedding內积求sigmoid作为联合概率分布，不同边的联合概率分布按边权重加权作为loss。</p>
+<p>二阶相似性：相邻接点相似的节点相似</p>
+<p>已知一个节点时，计算其它节点的条件概率，按边的权重加权作为loss。</p>
+<p>将一阶和二阶embedding直接拼接得到最终的embedding。</p>
+<h4 id="node2vector"><a href="#node2vector" class="headerlink" title="node2vector"></a>node2vector</h4><p>同质性：相近的节点相似</p>
+<p>结构等价性：连接结构相似的节点相似</p>
+<p>按一定概率游走，调整参数使模型倾向于学习不同信息。</p>
+<p>设置p、q的值，控制游走的方向倾向于在附近游走还是在远处游走。  </p>
+<h4 id="struc2vector"><a href="#struc2vector" class="headerlink" title="struc2vector"></a>struc2vector</h4><p>两个节点的相似性通过两个节点的n-hop邻居的度的相似性的判断，也就是两个节点的结构。</p>
 
                 
             </div>
@@ -457,7 +593,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://notego.top/2021/03/30/hello-world/">http://notego.top/2021/03/30/hello-world/</a>
+                    <a href="http://notego.top/2021/03/31/tu-shen-jing-wang-luo/">http://notego.top/2021/03/31/tu-shen-jing-wang-luo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -495,8 +631,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                                    <span class="chip bg-color">模板</span>
+                                <a href="/tags/%E5%9B%BE/">
+                                    <span class="chip bg-color">图</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">神经网络</span>
+                                </a>
+                            
+                                <a href="/tags/Embedding/">
+                                    <span class="chip bg-color">Embedding</span>
                                 </a>
                             
                         </div>
@@ -672,31 +816,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/30/xin-tiao/">
+                <a href="/2021/03/31/shu-ju-jie-gou-yu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="信条">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="数据结构与算法">
                         
-                        <span class="card-title">信条</span>
+                        <span class="card-title">数据结构与算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8F%90%E5%8D%87/" class="post-category">
-                                    提升
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
@@ -706,16 +850,40 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%93%B2%E5%AD%A6/">
-                        <span class="chip bg-color">哲学</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
-                    <a href="/tags/%E4%BA%BA%E7%94%9F/">
-                        <span class="chip bg-color">人生</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E6%83%85%E7%BB%AA/">
-                        <span class="chip bg-color">情绪</span>
+                    <a href="/tags/%E4%BA%8C%E5%88%86/">
+                        <span class="chip bg-color">二分</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">遍历</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="chip bg-color">时间复杂度</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="chip bg-color">空间复杂度</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A0%91/">
+                        <span class="chip bg-color">树</span>
                     </a>
                     
                 </div>
@@ -726,46 +894,53 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/30/hello-world/">
+                <a href="/2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="《富爸爸穷爸爸》笔记">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">《富爸爸穷爸爸》笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
-                                    模板
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    读书笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                        <span class="chip bg-color">模板</span>
+                    <a href="/tags/%E7%90%86%E8%B4%A2/">
+                        <span class="chip bg-color">理财</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%A2%E5%95%86/">
+                        <span class="chip bg-color">财商</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B5%84%E4%BA%A7/">
+                        <span class="chip bg-color">资产</span>
                     </a>
                     
                 </div>
@@ -834,6 +1009,100 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 

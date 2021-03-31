@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2021-03-31T11:20:34.336Z</updated>
+  <updated>2021-03-31T12:02:56.053Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -17,19 +17,131 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据结构与算法</title>
+    <link href="http://notego.top/2021/03/31/shu-ju-jie-gou-yu-suan-fa/"/>
+    <id>http://notego.top/2021/03/31/shu-ju-jie-gou-yu-suan-fa/</id>
+    <published>2021-03-31T12:01:26.000Z</published>
+    <updated>2021-03-31T12:02:56.053Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基本观点&quot;&gt;&lt;a href=&quot;#基本观点&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机基础" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://notego.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="二分" scheme="http://notego.top/tags/%E4%BA%8C%E5%88%86/"/>
+    
+    <category term="动态规划" scheme="http://notego.top/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="回溯" scheme="http://notego.top/tags/%E5%9B%9E%E6%BA%AF/"/>
+    
+    <category term="遍历" scheme="http://notego.top/tags/%E9%81%8D%E5%8E%86/"/>
+    
+    <category term="时间复杂度" scheme="http://notego.top/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    
+    <category term="空间复杂度" scheme="http://notego.top/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    
+    <category term="树" scheme="http://notego.top/tags/%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图神经网络</title>
+    <link href="http://notego.top/2021/03/31/tu-shen-jing-wang-luo/"/>
+    <id>http://notego.top/2021/03/31/tu-shen-jing-wang-luo/</id>
+    <published>2021-03-31T11:57:11.000Z</published>
+    <updated>2021-03-31T11:59:09.870Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;图基本知识&quot;&gt;&lt;a href=&quot;#图基本知识&quot; class=&quot;headerlink&quot; title=&quot;图基本知识&quot;&gt;&lt;/a&gt;图基本知识&lt;/h2&gt;&lt;h4 id=&quot;图&quot;&gt;&lt;a href=&quot;#图&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="图" scheme="http://notego.top/tags/%E5%9B%BE/"/>
+    
+    <category term="神经网络" scheme="http://notego.top/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Embedding" scheme="http://notego.top/tags/Embedding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《富爸爸穷爸爸》笔记</title>
+    <link href="http://notego.top/2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/"/>
+    <id>http://notego.top/2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/</id>
+    <published>2021-03-31T11:54:00.000Z</published>
+    <updated>2021-03-31T11:55:51.730Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;情绪决定是否有钱&quot;&gt;&lt;a href=&quot;#情绪决定是否有钱&quot; class=&quot;headerlink&quot; title=&quot;情绪决定是否有钱&quot;&gt;&lt;/a&gt;情绪决定是否有钱&lt;/h3&gt;&lt;p&gt;不要因为情绪、非理性冲动消费&lt;/p&gt;
+&lt;h3 id=&quot;在工作中学习&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="理财" scheme="http://notego.top/tags/%E7%90%86%E8%B4%A2/"/>
+    
+    <category term="财商" scheme="http://notego.top/tags/%E8%B4%A2%E5%95%86/"/>
+    
+    <category term="资产" scheme="http://notego.top/tags/%E8%B5%84%E4%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>信条</title>
-    <link href="http://notego.top/2021/03/30/mo-ban/"/>
-    <id>http://notego.top/2021/03/30/mo-ban/</id>
+    <link href="http://notego.top/2021/03/30/xin-tiao/"/>
+    <id>http://notego.top/2021/03/30/xin-tiao/</id>
     <published>2021-03-30T15:42:46.000Z</published>
-    <updated>2021-03-31T11:20:34.336Z</updated>
+    <updated>2021-03-31T11:49:30.957Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
+    <category term="提升" scheme="http://notego.top/categories/%E6%8F%90%E5%8D%87/"/>
     
-    <category term="模板" scheme="http://notego.top/categories/%E6%A8%A1%E6%9D%BF/"/>
     
+    <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
-    <category term="模板" scheme="http://notego.top/tags/%E6%A8%A1%E6%9D%BF/"/>
+    <category term="人生" scheme="http://notego.top/tags/%E4%BA%BA%E7%94%9F/"/>
+    
+    <category term="情绪" scheme="http://notego.top/tags/%E6%83%85%E7%BB%AA/"/>
     
   </entry>
   
