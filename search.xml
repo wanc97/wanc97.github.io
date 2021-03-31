@@ -4,6 +4,202 @@
   
     
     <entry>
+      <title>机器学习基础知识</title>
+      <link href="2021/03/31/ji-qi-xue-xi-ji-chu-zhi-shi/"/>
+      <url>2021/03/31/ji-qi-xue-xi-ji-chu-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="机器学习中不确定性有三个来源"><a href="#机器学习中不确定性有三个来源" class="headerlink" title="机器学习中不确定性有三个来源:"></a>机器学习中不确定性有三个来源:</h3><ul><li><p>模型本身固有的随机性。如：量子力学中的粒子动力学方程。</p></li><li><p>不完全的观测。即使是确定性系统，当无法观测所有驱动变量时，结果也是随机的。</p></li><li><p>不完全建模。有时必须放弃一些观测信息。如机器人建模中：虽然可以精确观察机器人周围每个对象的位置，但在预测这些对象将来的位置时，对空间进行了离散化。则位置预测将带有不确定性。</p></li><li><p>即系统本身，采集数据，模型三个方面</p></li></ul><h3 id="没有免费的午餐定理-No-Free-Lunch-Theorem-NFL-："><a href="#没有免费的午餐定理-No-Free-Lunch-Theorem-NFL-：" class="headerlink" title="没有免费的午餐定理(No Free Lunch Theorem:NFL)："></a>没有免费的午餐定理(No Free Lunch Theorem:NFL)：</h3><ul><li><p>对于一个学习算法A，如果在某些问题上它比算法B好，那么必然存在另一些问题，在那些问题中B比A更好。</p></li><li><p>因此不存在这样的算法：它在所有的问题上都取得最佳的性能。因此要谈论算法的优劣必须基于具体的学习问题。</p></li></ul><h3 id="特征空间"><a href="#特征空间" class="headerlink" title="特征空间"></a>特征空间</h3><h4 id="输入空间-："><a href="#输入空间-：" class="headerlink" title="输入空间 ："></a>输入空间 ：</h4><ul><li>所有输入的可能取值；</li></ul><h4 id="输出空间-："><a href="#输出空间-：" class="headerlink" title="输出空间 ："></a>输出空间 ：</h4><ul><li><p>所有输出的可能取值。</p></li><li><p>特征向量表示每个具体的输入， 所有特征向量构成特征空间。</p></li></ul><h4 id="特征空间-1"><a href="#特征空间-1" class="headerlink" title="特征空间"></a>特征空间</h4><ul><li><p>特征空间是指经过特征工程处理过的输入空间</p></li><li><p>特征空间的每一个维度对应一种特征。</p></li><li><p>可以将输入空间等同于特征空间，但是也可以不同。绝大多数情况下，输入空间等于特征空间。</p></li><li><p>模型是定义在特征空间上的。</p></li></ul><h3 id="机器学习的对象是："><a href="#机器学习的对象是：" class="headerlink" title="机器学习的对象是："></a>机器学习的对象是：</h3><ul><li>具有一定的统计规律的数据。</li></ul><h3 id="机器学习任务类型："><a href="#机器学习任务类型：" class="headerlink" title="机器学习任务类型："></a>机器学习任务类型：</h3><h4 id="监督学习任务："><a href="#监督学习任务：" class="headerlink" title="监督学习任务："></a>监督学习任务：</h4><ul><li><p>从已标记的训练数据来训练模型。 主要分为：分类任务、回归任务、序列标注任务。</p></li><li><p>分类和回归的区别主要在于标签是连续值还是离散值</p></li></ul><h4 id="无监督学习任务："><a href="#无监督学习任务：" class="headerlink" title="无监督学习任务："></a>无监督学习任务：</h4><ul><li>从未标记的训练数据来训练模型。主要分为：聚类任务、降维任务。</li></ul><h4 id="半监督学习任务："><a href="#半监督学习任务：" class="headerlink" title="半监督学习任务："></a>半监督学习任务：</h4><ul><li>用大量的未标记训练数据和少量的已标记数据来训练模型。</li></ul><h4 id="强化学习任务："><a href="#强化学习任务：" class="headerlink" title="强化学习任务："></a>强化学习任务：</h4><p>从系统与环境的大量交互知识中训练模型。</p><h3 id="机器学习算法类型："><a href="#机器学习算法类型：" class="headerlink" title="机器学习算法类型："></a>机器学习算法类型：</h3><h4 id="传统统计学习："><a href="#传统统计学习：" class="headerlink" title="传统统计学习："></a>传统统计学习：</h4><ul><li><p>基于数学模型的机器学习方法。包括SVM、逻辑回归、决策树等。</p></li><li><p>这一类算法基于严格的数学推理，具有可解释性强、运行速度快、可应用于小规模数据集的特点。</p></li></ul><h4 id="深度学习："><a href="#深度学习：" class="headerlink" title="深度学习："></a>深度学习：</h4><ul><li><p>基于神经网络的机器学习方法。包括前馈神经网络、卷积神经网络、递归神经网络等。</p></li><li><p>这一类算法基于神经网络，可解释性较差，强烈依赖于数据集规模。这类算法在语音、视觉、自然语言等领域非常成功。</p></li></ul><h3 id="独立同分布"><a href="#独立同分布" class="headerlink" title="独立同分布"></a>独立同分布</h3><ul><li><p>监督学习假设输入与标记遵循一个联合概率分布，训练数据和测试数据依联合概率分布进行独立同分布产生。</p></li><li><p>学习过程中，假定这个联合概率分布存在，但是具体定义未知。</p></li></ul><h3 id="概率模型或者非概率模型："><a href="#概率模型或者非概率模型：" class="headerlink" title="概率模型或者非概率模型："></a>概率模型或者非概率模型：</h3><ul><li>监督学习的模型可以为概率模型或者非概率模型：</li><li>概率模型由条件概率分布表示。</li><li>非概率模型由决策（判别）函数表示</li></ul><h3 id="机器学习三要素："><a href="#机器学习三要素：" class="headerlink" title="机器学习三要素："></a>机器学习三要素：</h3><ul><li>模型、策略、算法</li></ul><h3 id="经验风险最小化-amp-结构风险最小化-amp-奥卡姆剃刀原理"><a href="#经验风险最小化-amp-结构风险最小化-amp-奥卡姆剃刀原理" class="headerlink" title="经验风险最小化&amp;结构风险最小化&amp;奥卡姆剃刀原理"></a>经验风险最小化&amp;结构风险最小化&amp;奥卡姆剃刀原理</h3><ul><li><p><strong>经验风险</strong>最小化的目的是使模型更好地拟合数据样本；</p></li><li><p><strong>结构风险</strong>是在经验风险最小的基础上加入先验知识，使得模型往更加合理的方向优化；</p></li><li><p>结构风险最小化策略符合<strong>奥卡姆剃刀原理</strong>：能够很好地解释已知数据，且十分简单才是最好的模型。</p></li><li><p><strong>极大似然估计</strong>就是经验风险最小化的例子</p></li><li><p><strong>最大后验估计</strong>就是结构风险最小化的例子</p></li></ul><h3 id="概率-amp-似然"><a href="#概率-amp-似然" class="headerlink" title="概率&amp;似然"></a>概率&amp;似然</h3><ul><li><p>概率是描述在确定分布下某个事件发生可能性的大小；</p></li><li><p>似然是描述在发生某些事件的情况下为某个分布的概率。</p></li></ul><h3 id="P-value"><a href="#P-value" class="headerlink" title="P-value"></a>P-value</h3><ul><li>一个事件的P-value不是这个事件的概率值，而是所有概率小于等于该事件概率值得概率和（积分），即反应该事件发生的稀有程度。</li></ul><h3 id="偏差-amp-方差"><a href="#偏差-amp-方差" class="headerlink" title="偏差&amp;方差"></a>偏差&amp;方差</h3><ul><li>偏差描述模型对于特定数据（训练集）的拟合效果；</li><li>方差描述模型在不同数据（训练集与测试集）上拟合效果的差别；</li><li>欠拟合：高偏差，低方差；</li><li>过拟合：低偏差，高方差。</li></ul><h4 id="误差可以分解为偏差、方差和噪声之和："><a href="#误差可以分解为偏差、方差和噪声之和：" class="headerlink" title="误差可以分解为偏差、方差和噪声之和："></a>误差可以分解为偏差、方差和噪声之和：</h4><ul><li>偏差：度量了学习算法的期望预测与真实结果之间的偏离程度，刻画了学习算法本身的拟合能力。</li><li>方差：度量了训练集的变动所导致的学习性能的变化，刻画了数据扰动造成的影响。</li><li>噪声：度量了在当前任务上任何学习算法所能达到的期望泛化误差的下界，刻画了学习问题本身的难度。</li><li>偏差-方差分解表明：泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度共同决定的。</li><li>偏差-方差分解中，噪声也可以称作最优误差或者贝叶斯误差。如：在图像识别的问题中，人眼识别的错误率可以视作最优误差。</li></ul><h3 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h3><ul><li>过拟合的原因是：将训练样本本身的一些特点当作了所有潜在样本都具有的一般性质，这会造成泛化能力下降。</li><li>过拟合无法避免，只能缓解。因为机器学习的问题通常是NP难甚至更难的，而有效的学习算法必然是在多项式时间内运行完成。如果可以避免过拟合，这就意味着构造性的证明了P=NP 。</li></ul><h4 id="缓解过拟合"><a href="#缓解过拟合" class="headerlink" title="缓解过拟合"></a>缓解过拟合</h4><ul><li><p>正则化：限制不合适的假设空间；在不同的问题中，正则化项可以有不同的形式：</p><blockquote><ul><li>回归问题中，损失函数是平方损失，正则化项是参数向量的P范数。</li><li>贝叶斯估计中，正则化项对应于模型的先验概率。</li></ul></blockquote></li><li><p>数据集增广：通过人工规则产生虚假数据来创造更多的训练数据。</p></li><li><p>噪声注入：包括输入噪声注入、输出噪声注入、权重噪声注入。将噪声分别注入到输入/输出/权重参数中。</p></li><li><p>早停：当验证集上的误差没有进一步改善时，算法提前终止。</p></li></ul><h3 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h3><ul><li>代表模型的函数集合。这也称作模型的表示容量representational capacity。</li><li>由于额外的限制因素（比如优化算法的不完善），模型的有效容量effective capacity一般会小于模型的表示容量</li><li>通常在模型的假设空间中出最佳的函数是非常困难的优化问题，实际应用中只是挑选一个使得训练误差足够低的函数即可。</li></ul><h3 id="VC维理论"><a href="#VC维理论" class="headerlink" title="VC维理论"></a>VC维理论</h3><ul><li>训练误差与泛化误差之间差异的上界随着模型容量增长而增长，随着训练样本增多而下降 。</li><li>VC 维理论对于机器学习算法有很好的指导作用，但是它在深度学习很难应用。因为边界太宽泛，且难以确定深度学习的容量。由于深度学习模型的有效容量受限于优化算法，因此确定深度学习模型的容量特别困难。</li></ul><h3 id="泛化能力评估"><a href="#泛化能力评估" class="headerlink" title="泛化能力评估"></a>泛化能力评估</h3><ul><li>留出法：直接将数据切分为三个互斥的部分（也可以切分成两部分，此时训练集也是验证集），然后在训练集上训练模型，在验证集上选择模型，最后用测试集上的误差作为泛化误差的估计。</li><li>K折交叉验证法：数据随机划分为K个互不相交且大小相同的子集，利用K-1个子集数据训练模型，利用余下的一个子集测试模型。</li><li>留一法：假设数据集中存在N个样本，令K=N则得到了K折交叉验证的一个特例。</li><li>自助采样法：放回采样，随机森林选用此策略，会改变数据分布。</li></ul><h3 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h3><h4 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h4><table><thead><tr><th>真实/预测</th><th>正类</th><th>反类</th></tr></thead><tbody><tr><td>正类</td><td>TP</td><td>FN</td></tr><tr><td>反类</td><td>FP</td><td>TN</td></tr></tbody></table><ul><li><p>查准率(precision)：$P=\frac{TP}{TP+FP}$</p></li><li><p>查全率(recall):$P=\frac{TP}{TP+FN}$</p></li><li><p>查准率和查全率都是越大越好；但是对于已有模型，这两个值是一对负相关的；他们的大小由区分正反类的阈值确定，阈值设得越高时模型越倾向于预测为反类，此时recall下降，precision上升，反之亦然。</p></li></ul><h4 id="P-R曲线"><a href="#P-R曲线" class="headerlink" title="P-R曲线"></a>P-R曲线</h4><p>调整阈值可以得到不同的precision-recall对，进而得到P-R曲线。</p><ul><li><p>P-R曲线从左上角(0,1) 到右下角(1,0) 。</p></li><li><p>开始时第一个样本（最可能为正例的）预测为正例，其它样本都预测为负类。此时：查准率很高，几乎为1；查全率很低，几乎为0，大量的正例没有找到；</p></li><li><p>结束时所有的样本都预测为正类。此时：查全率很高，正例全部找到了，查全率为1；查准率很低，大量的负类被预测为正类。</p></li></ul><h4 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h4><ul><li><p>正确报警率（真正例率）：$TPR=\frac{TP}{TP+FN}$</p></li><li><p>误警率（假正例率）：$FPR=\frac{FP}{FP+TN}$ </p></li><li><p>ROC曲线从左下角(0,0) 到右上角(1,1) 。</p></li><li><p>开始时第一个样本（最可能为正例的）预测为正例，其它样本都预测为负类。此时：真正例率很低，几乎为0，因为大量的正例未预测到；假正例率很低，几乎为0，因为此时预测为正类的样本很少，所以几乎没有错认的正例；</p></li><li><p>结束时所有的样本都预测为正类。此时：真正例率很高，几乎为1，因为所有样本都预测为正类；假正例率很高，几乎为1，因为所有的负样本都被错认为正类。</p></li><li><p>对角线对应于随机猜想模型。点(0,1)对应于理想模型；通常ROC曲线越靠近点(0,1)越好。</p></li></ul><p>P-R曲线和ROC曲线上的每一个点都对应了一个阈值的选择，该点就是在该阈值下的(查准率，查全率) /(真正例率，假正例率) 。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 监督学习 </tag>
+            
+            <tag> 无监督学习 </tag>
+            
+            <tag> 特征 </tag>
+            
+            <tag> 过拟合 </tag>
+            
+            <tag> 模型 </tag>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 概率 </tag>
+            
+            <tag> 泛化 </tag>
+            
+            <tag> 偏差 </tag>
+            
+            <tag> 方差 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Word2vector</title>
+      <link href="2021/03/31/word2vector/"/>
+      <url>2021/03/31/word2vector/</url>
+      
+        <content type="html"><![CDATA[<h3 id="one-hot-编码"><a href="#one-hot-编码" class="headerlink" title="one-hot 编码"></a>one-hot 编码</h3><p>缺点：</p><ul><li>占空间</li><li>相互独立，无法计算相似度</li></ul><h3 id="skip-gram"><a href="#skip-gram" class="headerlink" title="skip-gram"></a>skip-gram</h3><p>跳字模型，</p><p>在给定中心词时，计算窗口内背景词的联合条件概率，朴素假设：背景词条件独立，最大化这个概率。</p><p>每个词有两组向量，分别是作为中心词和作为背景词时的表示。</p><h3 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h3><p>连续词袋模型，</p><p>在已知背景词时，计算中心词的条件概率，背景词的向量求和与中心词向量求內积</p><h3 id="负采样"><a href="#负采样" class="headerlink" title="负采样"></a>负采样</h3><p>前面计算概率需要计算中心词或背景词与所有词的概率，计算开销大，负采样是从非背景词中选择一部分进行计算。</p><h3 id="层序softmax"><a href="#层序softmax" class="headerlink" title="层序softmax"></a>层序softmax</h3><p>通过二叉树来组合生成条件概率，避免了分母概率的计算。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 词向量 </tag>
+            
+            <tag> Embedding </tag>
+            
+            <tag> skip-gram </tag>
+            
+            <tag> one-hot </tag>
+            
+            <tag> CBOW </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQL</title>
+      <link href="2021/03/31/sql/"/>
+      <url>2021/03/31/sql/</url>
+      
+        <content type="html"><![CDATA[<p>SQL（Structured Query Language 结构化查询语言）是数据库操作的标准</p><h3 id="SQL-amp-NoSQL"><a href="#SQL-amp-NoSQL" class="headerlink" title="SQL&amp;NoSQL"></a>SQL&amp;NoSQL</h3><p>关系型数据库SQL以表格形式存储数据</p><p>非关系型数据库NoSQL形式广泛</p><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>若干个二维表</p><h4 id="二维表"><a href="#二维表" class="headerlink" title="二维表"></a>二维表</h4><p>字段+记录</p><p>字段定义表的形式，每一条记录是其中的一条数据</p><p>一个字段的数据类型要保持一致</p><h4 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h4><p>一个表中，将不同记录区分开的字段成为主键</p><p>有时候由多个字段一起来区分记录，成为联合主键</p><h4 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h4><p>通过另一个表的主键联合两张表的字段成为外键</p><p>所以外键一定是某个表的主键</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> 主键 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python</title>
+      <link href="2021/03/31/python/"/>
+      <url>2021/03/31/python/</url>
+      
+        <content type="html"><![CDATA[<h3 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h3><p>列表list是Python中的一个强大的数据结构，本质上是一个可以动态调整大小的ArrayList,list存储数据是在一个数组中存储元素的地址，地址实际指向的元素可以是很多种形式：数字、布尔、字符串、元祖、链表。</p><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><blockquote><ol><li>用中括号[]包裹元素直接生成，元素使用逗号分隔；</li><li>用list()方法，将其它数据结构（字符串、元组、range函数等）转化成列表；</li><li>列表生成式/列表解析式/列表推导式，生成列表。</li></ol></blockquote><h4 id="扩充"><a href="#扩充" class="headerlink" title="扩充"></a>扩充</h4><blockquote><ol><li>append()在尾部添加元素；</li><li>insert(k,value)在指定位置添加元素；</li><li>+和list_1.extend(list_2)将两个链表拼接成一个新列表。</li></ol></blockquote><h4 id="删除-amp-销毁"><a href="#删除-amp-销毁" class="headerlink" title="删除&amp;销毁"></a>删除&amp;销毁</h4><blockquote><ol><li>del list[m]；</li><li>remove(value)删除第一个匹配项;</li><li>pop(m)删除指定位置元素；</li><li>clear()清空；</li><li>del list销毁。</li></ol></blockquote><h4 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h4><blockquote><ul><li>[i:i+n:m]：从第i位开始至i+n位，不包括i+n位，每隔m位取一个。</li><li>默认值[0 : -1 : -1]。</li><li>值都可以大于列表长度，取不到就是空列表，不会越界报错。</li><li>从0开始索引，左闭右开区间使得切片很优雅。</li></ul></blockquote><h4 id="其它操作"><a href="#其它操作" class="headerlink" title="其它操作"></a>其它操作</h4><blockquote><ol><li><p>len(list)获取元素个数。</p></li><li><p>count()统计指定元素个数。</p></li><li><p>max(list)统计元素最大值（要求元素类型相同才可比较，数值类型、字符串等直接比较，其它类型比较id）</p><pre class="line-numbers language-python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>max<span class="token punctuation">(</span>a<span class="token punctuation">)</span>out<span class="token punctuation">:</span><span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'dvs'</span><span class="token punctuation">,</span><span class="token string">'vsvd'</span><span class="token punctuation">,</span><span class="token string">'be'</span><span class="token punctuation">,</span><span class="token string">'dfbeab'</span><span class="token punctuation">]</span>max<span class="token punctuation">(</span>a<span class="token punctuation">)</span>out<span class="token punctuation">:</span><span class="token string">'vsvd'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li><li><p>min(list)与max类似，比较正好相反。</p></li><li><p>index()获取指定元素索引（第一个匹配项）</p></li><li><p>reverse()翻转列表</p></li><li><p>copy()浅拷贝</p></li><li><p>深拷贝</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> copycopy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>sort()原地排序</p></li><li><p>sorted(list)生成新列表</p></li></ol></blockquote><h4 id="列表生成式-amp-生产器表达式"><a href="#列表生成式-amp-生产器表达式" class="headerlink" title="列表生成式&amp;生产器表达式"></a>列表生成式&amp;生产器表达式</h4><pre class="line-numbers language-python"><code class="language-python">l<span class="token operator">=</span><span class="token punctuation">[</span>x<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 列表生成式，4以内整数的2倍数</span>g<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">*</span>2forxinrange<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 生成器表达式</span>type<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;type 'list'></span>type<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;type 'generator'></span><span class="token keyword">print</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：[0,2,4,6,8]</span><span class="token keyword">print</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;generator object at 0x000002173F0EBC50></span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 0</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 2</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 4</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 6</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 8</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># Traceback (most recent call last): ....StopIteration</span><span class="token keyword">for</span> x <span class="token keyword">in</span> g<span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：0 2 4 6 8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>有时候不需要同时使用所有数据的时候，使用生成器表达式会更节省空间，当然也有其它方式来替代。</p><h4 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 计算斐波那契数列的生成器</span><span class="token keyword">def</span> <span class="token function">fibon</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>    a<span class="token operator">=</span>b<span class="token operator">=</span><span class="token number">1</span>    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">yield</span> a <span class="token comment" spellcheck="true"># 使用yield</span>        a<span class="token punctuation">,</span>b<span class="token operator">=</span>b<span class="token punctuation">,</span>a<span class="token operator">+</span>bg<span class="token operator">=</span>fibon<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 1</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 1</span>next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><ul><li>JSON 的全称是  JavaScript Object Notation，是一种轻量级的数据交换格式。最初，JSON 只是JavaScript 的子集，但由于其简单易用而迅速走红。</li><li>现今大部分编程语言都支持对 JSON 的解析与生成，而近些年异军突起的 NoSQL 数据库也多参照 JSON来设计数据存储格式，例如 Mongodb 的BSON（Binary JSON）。</li><li>JSON 有以下六种数据类型：number、boolean、string、null、array、object。前三种很好理解，第四个 null 对应 Python 的 None，最后两种，对应 Python 的列表和字典。</li></ul><pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>  <span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>  <span class="token string">"age"</span><span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">,</span>  <span class="token string">"gender"</span><span class="token punctuation">:</span>true<span class="token punctuation">,</span>  <span class="token string">"grade"</span><span class="token punctuation">:</span>null<span class="token punctuation">,</span>  <span class="token string">"skills"</span><span class="token punctuation">:</span><span class="token punctuation">[</span>  <span class="token string">"JavaScript"</span><span class="token punctuation">,</span>  <span class="token string">"Java"</span><span class="token punctuation">,</span>  <span class="token string">"Python"</span>  <span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>json.dumps() 把 Python 对象序列化；</li><li>json.dump() 先序列化，然后将内容存入文件</li></ol><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> jsond<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'8'</span><span class="token punctuation">,</span>score<span class="token operator">=</span><span class="token number">88</span><span class="token punctuation">)</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#'&amp;#123;"name": "Tom", "age": "8", "score": 88&amp;#125;'</span><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.json'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>d<span class="token punctuation">,</span>f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>json.loads() 从内存中读取内容解析；</li><li>json.load() 从文件中读取内容解析</li></ol><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> jsond<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'8'</span><span class="token punctuation">,</span>score<span class="token operator">=</span><span class="token number">88</span><span class="token punctuation">)</span>tom_json<span class="token operator">=</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>d<span class="token punctuation">)</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>tom_json<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#&amp;#123;'age':'8','name':'Tom','score':88&amp;#125;</span><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.json'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#&amp;#123;'name':'Tom','age':'8','score':88&amp;#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> JSON </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git</title>
+      <link href="2021/03/31/git/"/>
+      <url>2021/03/31/git/</url>
+      
+        <content type="html"><![CDATA[<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>git init   初始化仓库</p><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>git status  查看状态</p><p>git log   查看日志      –oneline   用一行显示一个版本    –graph  用线显示出分支</p><p>git diff   查看工作区文件内容相对版本库修改       –cached  查看暂存区文件内容相对版本库修改</p><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>git add {file}   添加文件到暂存区</p><p>git reset {file}   从暂存区拉回到工作区</p><p>git commit {file_name} -m “message”  提交更改</p><p>git commit -am “message”  添加所有修改并提交</p><h3 id="时光穿越"><a href="#时光穿越" class="headerlink" title="时光穿越"></a>时光穿越</h3><p>git checkout  {commit号}  切换HEAD指针位置，可以切到之前的commit位置，用于临时切回去查看</p><p>git reset –hard  {commit号}  直接切换分支指针位置，用于版本回退</p><p>git reset –hard   HEAD^^   一个^代表HEAD指针往前退一个位置</p><p>git tag  {标签号}    给commit（版本）打上标签，可以替代版本号</p><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>git branch  查看分支</p><p>git branch {分支名}   创建分支</p><p>git checkout  {分支名}    切换分支</p><p>git merge {分支名}     将别的分支合并过来，直接合并两个分支</p><p>git merge  –no-ff   -m  “message”  {分支名}     把别的分支的更改加过来，别的分支还在</p><h3 id="远程"><a href="#远程" class="headerlink" title="远程"></a>远程</h3><p>git remote     各种远程查看</p><p>git push   {远程库名}  {本地分支名}</p><p>git push origin {本地branch}</p><p>git push origin {本地branch:远程branch}</p><h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>git官网</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+            <tag> 版本管理 </tag>
+            
+            <tag> code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>推荐系统</title>
+      <link href="2021/03/31/tui-jian-xi-tong/"/>
+      <url>2021/03/31/tui-jian-xi-tong/</url>
+      
+        <content type="html"><![CDATA[<h3 id="为什么需要推荐"><a href="#为什么需要推荐" class="headerlink" title="为什么需要推荐"></a>为什么需要推荐</h3><ul><li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li><li>目标不明确：用户很多时候没有明确的需求。</li></ul><h3 id="推荐的方式"><a href="#推荐的方式" class="headerlink" title="推荐的方式"></a>推荐的方式</h3><ul><li>社会化推荐：朋友；</li><li>基于内容：利用规则；</li><li>协同过滤：数据、机器学习；</li><li>混合推荐：使用多种策略，优势互补，实际中多为混合。</li></ul><h3 id="推荐系统应用场景"><a href="#推荐系统应用场景" class="headerlink" title="推荐系统应用场景"></a>推荐系统应用场景</h3><ul><li>电商：亚马逊、淘宝等；</li><li>视频：YouTube、Netflix等；</li><li>短视频：抖音、快手；</li><li>音乐：Pandora、网易云等；</li><li>社交：Facebook、Twitter；</li><li>阅读：今日头条；</li><li>生活：美团；</li><li>广告：Almost all。</li></ul><h3 id="推荐系统评价"><a href="#推荐系统评价" class="headerlink" title="推荐系统评价"></a>推荐系统评价</h3><h4 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h4><p>离线实验、用户调查、在线实验依次递进。</p><ul><li>离线实验：收集数据、制作数据集、实验与评价</li></ul><blockquote><ul><li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li><li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li></ul></blockquote><ul><li>用户调查：在上线测试前选定一部分用户进行验证测试</li></ul><blockquote><ul><li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li><li>优点：得到很多离线测试无法得到的指标</li><li>缺点：成本高，效果越好需要越多用户</li></ul></blockquote><ul><li>在线实验：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</li></ul><blockquote><ul><li>优点：获得推荐算法的实际指标</li><li>缺点：周期长，设计较为复杂</li></ul></blockquote><h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</p><h5 id="用户满意度"><a href="#用户满意度" class="headerlink" title="用户满意度"></a>用户满意度</h5><p>点击率、用户停留时间、转化率、用户评价等等，只能通过用户调查、在线测试获得。</p><h5 id="预测准确率"><a href="#预测准确率" class="headerlink" title="预测准确率"></a>预测准确率</h5><p>离线评价指标，绝大多数的论文都会围绕这个指标。</p><ul><li>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</li><li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</li></ul><p>$$<br>\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}<br>$$</p><p>$$<br>\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}<br>$$</p><p>归一化折损累计增益NDCG</p><h5 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h5><p>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</p><p>$$<br>\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}<br>$$</p><p>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</p><p>$$<br>H=-\sum_{i=1}^{n} p(i) \log p(i)<br>$$</p><p>p(i)是物品i的流行程度</p><p>$$<br>G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)<br>$$</p><h5 id="多样性"><a href="#多样性" class="headerlink" title="多样性"></a>多样性</h5><p>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</p><p>$$<br>\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}<br>$$</p><h5 id="新颖性"><a href="#新颖性" class="headerlink" title="新颖性"></a>新颖性</h5><p>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</p><p>一些观点将新颖性定义为不流行程度</p><h5 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h5><p>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p><h5 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h5><p>相同的产品，推荐方式的不同用户的反应会截然不同，例如以广告的方式呈现时用户容易反感，而告诉用户他的号朋友也在用时就更容易接受。</p><h5 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h5><ul><li>许多商品如新闻、微博具有时间限制；</li><li>新商品的冷启动</li></ul><h5 id="鲁棒性"><a href="#鲁棒性" class="headerlink" title="鲁棒性"></a>鲁棒性</h5><p>具有抵挡共计，反作弊的能力</p><h5 id="商业效果"><a href="#商业效果" class="headerlink" title="商业效果"></a>商业效果</h5><p>如广告的投放量</p><h2 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h2><p>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p><h3 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h3><h4 id="显示反馈"><a href="#显示反馈" class="headerlink" title="显示反馈"></a>显示反馈</h4><p>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等<br>信息密度大但量小</p><h4 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h4><p>不能明确用户喜好的行为，包括：浏览记录等<br>信息密度小但量大</p><h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><table><thead><tr><th align="center">角度</th><th align="center">显示反馈</th><th align="center">隐式反馈</th></tr></thead><tbody><tr><td align="center">用户兴趣</td><td align="center">明确</td><td align="center">不明确</td></tr><tr><td align="center">数据量</td><td align="center">较少</td><td align="center">庞大</td></tr><tr><td align="center">存储</td><td align="center">数据库</td><td align="center">分布式文件系统</td></tr><tr><td align="center">实时性</td><td align="center">实时</td><td align="center">有延迟</td></tr><tr><td align="center">正负反馈</td><td align="center">都有</td><td align="center">只有正反馈</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 推荐系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 推荐 </tag>
+            
+            <tag> 显式反馈 </tag>
+            
+            <tag> 隐式反馈 </tag>
+            
+            <tag> 协同过滤 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构与算法</title>
       <link href="2021/03/31/shu-ju-jie-gou-yu-suan-fa/"/>
       <url>2021/03/31/shu-ju-jie-gou-yu-suan-fa/</url>
@@ -61,11 +257,11 @@
       
         <tags>
             
+            <tag> Embedding </tag>
+            
             <tag> 图 </tag>
             
             <tag> 神经网络 </tag>
-            
-            <tag> Embedding </tag>
             
         </tags>
       
