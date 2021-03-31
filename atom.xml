@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2021-03-31T09:14:39.153Z</updated>
+  <updated>2021-03-31T11:20:34.336Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>模板</title>
+    <title>信条</title>
     <link href="http://notego.top/2021/03/30/mo-ban/"/>
     <id>http://notego.top/2021/03/30/mo-ban/</id>
     <published>2021-03-30T15:42:46.000Z</published>
-    <updated>2021-03-31T09:14:39.153Z</updated>
+    <updated>2021-03-31T11:20:34.336Z</updated>
     
     
     
@@ -37,8 +37,8 @@
     <title>Hello World</title>
     <link href="http://notego.top/2021/03/30/hello-world/"/>
     <id>http://notego.top/2021/03/30/hello-world/</id>
-    <published>2021-03-30T13:10:27.507Z</published>
-    <updated>2021-03-30T13:10:27.507Z</updated>
+    <published>2021-03-30T13:42:46.000Z</published>
+    <updated>2021-03-31T11:22:14.039Z</updated>
     
     
       
@@ -51,6 +51,10 @@
     
     
     
+    <category term="模板" scheme="http://notego.top/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="http://notego.top/tags/%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
