@@ -320,6 +320,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -818,82 +831,35 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/31/zhuang-zi-bi-ji/">
+                <a href="/2021/04/01/unicorn/">
                     <div class="card-image">
                         
+                        <img src="https://ae05.alicdn.com/kf/H4ea2ff35cf8c4bfdb9b2147949b284e7S.png" class="responsive-img" alt="Unicorn">
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="《庄子》笔记">
-                        
-                        <span class="card-title">《庄子》笔记</span>
+                        <span class="card-title">Unicorn</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            一些独一无二
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    读书笔记
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            万川
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%93%B2%E5%AD%A6/">
-                        <span class="chip bg-color">哲学</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%81%93%E5%AE%B6/">
-                        <span class="chip bg-color">道家</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
-                        <span class="chip bg-color">天人合一</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%80%8D%E9%81%A5/">
-                        <span class="chip bg-color">逍遥</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%85%BB%E7%94%9F/">
-                        <span class="chip bg-color">养生</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BE%A9%E8%AF%81/">
-                        <span class="chip bg-color">辩证</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%97%A0%E5%BE%85/">
-                        <span class="chip bg-color">无待</span>
-                    </a>
-                    
                 </div>
                 
             </div>
