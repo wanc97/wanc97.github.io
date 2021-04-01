@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2021-04-01T12:24:01.837Z</updated>
+  <updated>2021-04-01T12:27:41.341Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -21,11 +21,17 @@
     <link href="http://notego.top/2021/04/01/unicorn/"/>
     <id>http://notego.top/2021/04/01/unicorn/</id>
     <published>2021-04-01T12:20:40.000Z</published>
-    <updated>2021-04-01T12:24:01.837Z</updated>
+    <updated>2021-04-01T12:27:41.341Z</updated>
     
     
     
     
+    <category term="悄悄话" scheme="http://notego.top/categories/%E6%82%84%E6%82%84%E8%AF%9D/"/>
+    
+    
+    <category term="爱情" scheme="http://notego.top/tags/%E7%88%B1%E6%83%85/"/>
+    
+    <category term="相思" scheme="http://notego.top/tags/%E7%9B%B8%E6%80%9D/"/>
     
   </entry>
   
