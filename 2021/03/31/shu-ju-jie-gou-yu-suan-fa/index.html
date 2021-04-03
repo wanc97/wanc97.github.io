@@ -457,6 +457,10 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E6%A0%91/">
+                                <span class="chip bg-color">树</span>
+                            </a>
+                        
                             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                                 <span class="chip bg-color">数据结构</span>
                             </a>
@@ -489,10 +493,6 @@
                                 <span class="chip bg-color">空间复杂度</span>
                             </a>
                         
-                            <a href="/tags/%E6%A0%91/">
-                                <span class="chip bg-color">树</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -521,21 +521,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-04-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -624,6 +624,12 @@
 <blockquote>
 <p>时间复杂度和空间复杂度都是十分重要的，但是一般算法之间的空间复杂度差别远不及时间复杂度上的差别，因此更多比较的也是时间复杂度。</p>
 </blockquote>
+<h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>对于递推关系：<br>$$<br>T(n)=aT(n/b)+f(n),a\geq1,b&gt;1<br>$$<br>n为问题规模，a为子问题个数，$n/b$为子问题规模，$f(n)$为递归以外的计算工作。</p>
+<p>$log _{b}(a)$与$f(n)$直接影响复杂度</p>
+<h4 id="情况一"><a href="#情况一" class="headerlink" title="情况一"></a>情况一</h4><p>当$f(n)&lt;O(n^{log _{b}(a)})$(多项式地小于)时：$O(n^{log _{b}(a)})$主导复杂度，$T(n)=O(n^{log _{b}(a)})$</p>
+<h4 id="情况二"><a href="#情况二" class="headerlink" title="情况二"></a>情况二</h4><p>当$f(n)&gt;O(n^{log _{b}(a)})$(多项式地大于)时：$O(f(n))$主导复杂度，$T(n)=O(f(n))$</p>
+<h4 id="情况三"><a href="#情况三" class="headerlink" title="情况三"></a>情况三</h4><p>当$f(n)=O(n^{log _{b}(a)}log^\epsilon n)$（差距不足多项式）时，共同影响复杂度，$T(n)=O(n^{log _{b}(a)}log^{\epsilon+1}n))$</p>
+<p>注：部分复杂度符号使用粗略</p>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
 <li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p>
 <blockquote>
@@ -754,6 +760,10 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E6%A0%91/">
+                                    <span class="chip bg-color">树</span>
+                                </a>
+                            
                                 <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                                     <span class="chip bg-color">数据结构</span>
                                 </a>
@@ -784,10 +794,6 @@
                             
                                 <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
                                     <span class="chip bg-color">空间复杂度</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A0%91/">
-                                    <span class="chip bg-color">树</span>
                                 </a>
                             
                         </div>
@@ -1360,7 +1366,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">14.3k</span>&nbsp;字
+                class="white-color">22k</span>&nbsp;字
             
             
             
