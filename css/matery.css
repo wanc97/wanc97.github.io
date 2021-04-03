@@ -596,12 +596,12 @@ header .go-back i {
 @-webkit-keyframes rainbow {
 
     0%,
-    100% {
+    /* 100% {
         background: rgba(26, 200, 206, 0.75);
         background: linear-gradient(45deg, rgba(26, 200, 206, 0.75) 0%, rgba(26, 200, 206, 0.65) 100%);
         background: -moz-linear-gradient(135deg, rgba(26, 200, 206, 0.75) 0%, rgba(26, 200, 206, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(26, 200, 206, 0.75) 0%, rgba(26, 200, 206, 0.65) 100%);
-    }
+    } */
 
     /* 16% {
         background: rgba(132, 13, 121, 0.75);
@@ -642,12 +642,12 @@ header .go-back i {
 @keyframes rainbow {
 
     0%,
-    100% {
+    /* 100% {
         background: rgba(26, 200, 206, 0.75);
         background: linear-gradient(45deg, rgba(26, 200, 206, 0.75) 0%, rgba(26, 200, 206, 0.65) 100%);
         background: -moz-linear-gradient(135deg, rgba(26, 200, 206, 0.75) 0%, rgba(26, 200, 206, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(26, 200, 206, 0.75) 0%, rgba(26, 200, 206, 0.65) 100%);
-    }
+    } */
     /* 100% {
         background: rgba(156, 39, 176, 0.75);
         background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
