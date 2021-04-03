@@ -419,8 +419,6 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 概率 </tag>
             
             <tag> 监督学习 </tag>
@@ -432,6 +430,8 @@
             <tag> 过拟合 </tag>
             
             <tag> 模型 </tag>
+            
+            <tag> 算法 </tag>
             
             <tag> 机器学习 </tag>
             
@@ -617,9 +617,9 @@
             
             <tag> 树 </tag>
             
-            <tag> 数据结构 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 二分 </tag>
             
