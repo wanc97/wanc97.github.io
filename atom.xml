@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2021-04-04T13:11:31.168Z</updated>
+  <updated>2021-04-08T03:16:00.425Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字符串</title>
+    <link href="http://notego.top/2021/04/08/zi-fu-chuan/"/>
+    <id>http://notego.top/2021/04/08/zi-fu-chuan/</id>
+    <published>2021-04-08T02:08:17.000Z</published>
+    <updated>2021-04-08T03:16:00.425Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;字符串常见题型&quot;&gt;&lt;a href=&quot;#字符串常见题型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://notego.top/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="字符串" scheme="http://notego.top/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    <category term="数组" scheme="http://notego.top/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>一些佛学知识</title>
@@ -48,7 +75,7 @@
     <link href="http://notego.top/2021/04/03/ji-ben-pai-xu-suan-fa/"/>
     <id>http://notego.top/2021/04/03/ji-ben-pai-xu-suan-fa/</id>
     <published>2021-04-03T09:59:31.000Z</published>
-    <updated>2021-04-04T15:12:16.628Z</updated>
+    <updated>2021-04-08T02:18:24.345Z</updated>
     
     
       
@@ -620,36 +647,6 @@
     <category term="Python" scheme="http://notego.top/tags/Python/"/>
     
     <category term="JSON" scheme="http://notego.top/tags/JSON/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git</title>
-    <link href="http://notego.top/2021/03/31/git/"/>
-    <id>http://notego.top/2021/03/31/git/</id>
-    <published>2021-03-31T12:15:28.000Z</published>
-    <updated>2021-04-04T13:11:41.327Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h3&gt;&lt;p&gt;git init   初始化仓库&lt;/p&gt;
-&lt;h3 id=&quot;查询&quot;&gt;&lt;a href=&quot;#查询&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机技术" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="Git" scheme="http://notego.top/tags/Git/"/>
-    
-    <category term="版本管理" scheme="http://notego.top/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
-    
-    <category term="code" scheme="http://notego.top/tags/code/"/>
     
   </entry>
   
