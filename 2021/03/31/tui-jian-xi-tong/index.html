@@ -473,6 +473,10 @@
                                 <span class="chip bg-color">协同过滤</span>
                             </a>
                         
+                            <a href="/tags/%E5%8F%AC%E5%9B%9E/">
+                                <span class="chip bg-color">召回</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -501,21 +505,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-04
+                    2021-04-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -612,10 +616,10 @@
 </ul>
 <h5 id="鲁棒性"><a href="#鲁棒性" class="headerlink" title="鲁棒性"></a>鲁棒性</h5><p>具有抵挡共计，反作弊的能力</p>
 <h5 id="商业效果"><a href="#商业效果" class="headerlink" title="商业效果"></a>商业效果</h5><p>如广告的投放量</p>
-<h2 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h2><p>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p>
-<h3 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h3><h4 id="显示反馈"><a href="#显示反馈" class="headerlink" title="显示反馈"></a>显示反馈</h4><p>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等<br>信息密度大但量小</p>
-<h4 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h4><p>不能明确用户喜好的行为，包括：浏览记录等<br>信息密度小但量大</p>
-<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><table>
+<h3 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h3><p>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p>
+<h3 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h3><h5 id="显示反馈"><a href="#显示反馈" class="headerlink" title="显示反馈"></a>显示反馈</h5><p>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等<br>信息密度大但量小</p>
+<h5 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h5><p>不能明确用户喜好的行为，包括：浏览记录等<br>信息密度小但量大</p>
+<h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><table>
 <thead>
 <tr>
 <th align="center">角度</th>
@@ -649,6 +653,21 @@
 <td align="center">只有正反馈</td>
 </tr>
 </tbody></table>
+<h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><p>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。<br>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</p>
+<h4 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h4><p>只使用项目侧特征</p>
+<blockquote>
+<ul>
+<li>热门召回</li>
+<li>高复购</li>
+<li>高潜力</li>
+<li>。。。</li>
+</ul>
+</blockquote>
+<h4 id="有个性化"><a href="#有个性化" class="headerlink" title="有个性化"></a>有个性化</h4><p>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p>
+<h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><p>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。<br>召回要求快，所使用到的模型不能太复杂。<br>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</p>
+<h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p>
+<h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
+<p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
 
                 
             </div>
@@ -727,6 +746,10 @@
                             
                                 <a href="/tags/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/">
                                     <span class="chip bg-color">协同过滤</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8F%AC%E5%9B%9E/">
+                                    <span class="chip bg-color">召回</span>
                                 </a>
                             
                         </div>
@@ -1326,7 +1349,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">28.5k</span>&nbsp;字
+                class="white-color">29.1k</span>&nbsp;字
             
             
             
