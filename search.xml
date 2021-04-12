@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Python常用库</title>
+      <link href="2021/04/11/python-chang-yong-ku/"/>
+      <url>2021/04/11/python-chang-yong-ku/</url>
+      
+        <content type="html"><![CDATA[<h3 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h3><ul><li><p><code>Numpy</code>基于<code>c</code>语言实现，因此十分高效，<code>pandas</code>又基于<code>numpy</code>，提供更加丰富的功能。</p></li><li><p>生成<code>ndarray</code>数据的三种主要方式：</p><blockquote><ul><li>通过<code>Python</code>内置<code>list</code>转化：<code>np.array(list)</code> ，可以用<code>dtype</code>设置默认数据类型;</li><li>直接用<code>numpy</code>生成：<code>np.arange(m), np.zeros(), np.ones(), np.random.rand*(), np.empty(), np.eye(), np.linspace()</code>；</li><li>通过文件导入：如<code>np.loadtxt(&#39;cdscacc.csv&#39;,)</code>，可以选择分隔符、使用那些行列等。</li></ul></blockquote></li><li><p><code>Ndarray</code>是数组，所以无论多少维都用一个中括号<code>[start:end:step]</code>完成索引、切片，而list可以层层嵌套，因此多层索引需要多个中括号。</p></li><li><p>调用方法有两种途径，<code>np.fun(self)，self.fun()</code>。</p></li><li><p>常用基本方法：<code>(arg)min，(arg)max，(cum)sum, diff</code>差分, <code>nonzero</code>输出非零位置索引, <code>median，mean，variance，sort, reshape</code>。</p></li><li><p><code>np.sort()</code>生成新的排序后数组，<code>self.sort()</code>是在原数组基础上操作, <code>reshape</code>等也是。</p></li><li><p>数学运算：<code>np.sin(),cos(),tan(),……</code></p></li><li><p><code>np.linspace(start,end,number)</code>用于生成等间隔序列。</p></li><li><p><code>ndarray</code>常用属性：</p><blockquote><ul><li><code>ndim</code>：维度；</li><li><code>shape</code>：形状；</li><li><code>size</code>：元素数量；</li><li><code>dtype</code>:元素类型，可以用<code>self.astype()</code>来设置元素类型；</li></ul></blockquote></li><li><p><code>ndarray</code>的一个强大的筛选功能是直接比较并返回同样大小并有<code>true/false</code>组成的数组，如：<code>np.array(list)&gt;4</code>,还可以矩阵与矩阵比较，只要符合广播机制要求，可以形状不一样。<code>np.any(), np.all()</code>, 可以用于判断返回的<code>bool</code>数组是否有<code>True</code>或全都是<code>True</code>。</p></li><li><p><code>ndarray</code>直接相乘是元素乘，<code>np.matmul()</code>是矩阵乘, <code>np.dot()</code>可以适应多种乘法。</p></li><li><p><code>np.transpose(), self.T</code>转置。</p></li><li><p><code>np.clip()</code>截尾，<code>self.flatten()</code>铺平。</p></li><li><p><code>np.concatenate((a,b,….,n),axis=)</code>指定维度合并， <code>np.split()</code>分割。</p></li><li><p><code>Python</code>中大量使用指针，因此许多操作都只是复制指针值，并没有真正的拷贝数据，这样容易出现一个地方修改了，其它地方也跟着变的情况，因此如果需要修改值同时又要保留以前内容的话可以尝试深度拷贝，如<code>self.copy()</code>。基本上任何一个对数据修改后返回的运算都是创建了新值。</p></li><li><p><code>np.unique()</code>可以找出一个数组中的元素，可以看成去掉重复。</p></li></ul><h3 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h3><ul><li>如果把<code>numpy</code>看成是加强版的列表<code>list</code>，<code>pandas</code>就像是加强版的字典<code>dict</code>，为数据加上了许多标签。</li></ul><pre class="line-numbers language-Python"><code class="language-Python">pd.Series([23,43,24,np.nan,42,42])0    23.01    43.02    24.03     NaN4    42.05    42.0dtype: float64； <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-Python"><code class="language-Python">pd.date_range('2020-05-02',periods=4)DatetimeIndex(['2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05'], dtype='datetime64[ns]', freq='D')；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><pre class="line-numbers language-Python"><code class="language-Python">pd.DataFrame(np.random.randint(0,100,(23,3)),index=np.arange(10,33),columns=['d','f','w'])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li><p><code>pandas</code>的操作方法大都是生成新的对象并返回。</p></li><li><p><code>DataFrame</code>中的<code>index</code>指示数组（字典）的行索引，<code>columns</code>代表列索引，不指定则使用默认自然数，也可以指定。</p></li><li><p>如果用字典生成<code>DataFrame</code>，默认字典的<code>key</code>对应<code>columns</code>。</p></li><li><p><code>DataFrame</code>常用属性：</p><blockquote><ul><li><code>dtypes</code>:每一列的属性；</li><li><code>index</code>：<code>DataFrame</code>的<code>index</code>；</li><li><code>columns</code>：<code>DataFrame</code>的<code>columns</code>；</li><li><code>values</code>：用矩阵形式输出内容；</li><li><code>T</code>：转置；</li></ul></blockquote></li><li><p><code>DataFrame</code>常用方法：</p><blockquote><ul><li><code>describe()</code>：获取每一列的计数、均值、标准差等等信息；</li><li><code>sort_index()</code>：可以按照<code>index</code>或<code>columns</code>排序；</li><li><code>sort_values(by=)</code>：选定某一特征排序。</li></ul></blockquote></li><li><p><code>DataFrame</code>常见索引方式：</p><blockquote><ul><li><code>df[‘columns’]</code>,  <code>df. columns</code>进行列选择；</li><li><code>df[m:n]</code>按行索引；</li><li><code>df.loc[m:n ,[‘columns’,’’]]</code>:按标签进行选择，需要同时考虑行和列；</li><li><code>df.iloc[:,:]</code>:按位置进行索引，不连续的时候可以用[‘’,’’,…,’’]代替:。</li></ul></blockquote></li><li><p><code>df[df[]&gt;&lt;==data]</code>等方式筛选。</p></li><li><p><code>df.dropna()</code>可以设置以多种方式来去掉有缺失值的行或列。</p></li><li><p><code>df.fillna()</code>可以用于填入缺失值。</p></li><li><p><code>df.isnull()</code>返回各个位置是否为空。</p></li><li><p>通常用<code>read_*()</code>和<code>to_*()</code>来读写文件。</p></li><li><p><code>pd.concat([a,b,…,c],axis=,ignore_index=)</code>可以用于连接多个<code>DataFrame</code>：</p><blockquote><ul><li><code>axis</code>：指定连接维度；</li><li><code>ignore_index</code>：是否忽略原行索引；</li><li><code>join</code>：用于指定索引不同时的处理方式，<code>inner</code>：取交，<code>outer</code>：并；</li></ul></blockquote></li><li><p>也可以用<code>append</code>来实现<code>concat</code>的功能。</p></li><li><p><code>pd.merge(left,right)</code>也可以用于合并：</p><blockquote><ul><li><code>how: str = &#39;inner&#39;</code>,指定合并的方式</li><li><code>on=None</code>,指定用哪个公共的列（关键字）合并</li><li><code>left_on=None</code>,分别指定<code>on</code></li><li><code>right_on=None</code>,分别指定<code>on</code></li><li><code>left_index: bool = False</code>,是否考虑左边的<code>index</code></li><li><code>right_index: bool = False</code>,是否考虑右边的<code>index</code></li><li><code>suffixes=(&#39;_x&#39;, &#39;_y&#39;)</code>,如果连接的两个有相同的<code>key</code>，为了避免重复可以用这个加上后缀；</li><li><code>indicator: bool = False</code>,增加一列说明数据来源，左右都；</li></ul></blockquote></li><li><p>可以配合<code>matplotlib</code>进行显示，并直接使用自带的<code>plot</code>等方法。</p></li><li><p>选中某一列使用<code>self.value_counts()</code>可以查看该列的分布数量。</p></li><li><p><code>df.melt()</code>是<code>df.pivot()</code>逆转操作函数,将列名转换为列数据(columns name → column values)，重构DataFrame.如果说 df.pivot() 将长数据集转换成宽数据集，df.melt() 则是将宽数据集变成长数据集。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> numpy </tag>
+            
+            <tag> pandas </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统</title>
       <link href="2021/04/09/cao-zuo-xi-tong/"/>
       <url>2021/04/09/cao-zuo-xi-tong/</url>
@@ -51,19 +80,19 @@
       
         <tags>
             
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
+            
             <tag> 老子 </tag>
             
             <tag> 无为 </tag>
-            
-            <tag> 道 </tag>
             
             <tag> 德 </tag>
             
             <tag> 无 </tag>
             
             <tag> 上善若水 </tag>
-            
-            <tag> 自然 </tag>
             
             <tag> 善 </tag>
             
@@ -535,13 +564,13 @@
       
         <tags>
             
-            <tag> 道 </tag>
-            
-            <tag> 自然 </tag>
-            
             <tag> 哲学 </tag>
             
             <tag> 道家 </tag>
+            
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
             
             <tag> 天人合一 </tag>
             
@@ -584,10 +613,6 @@
             
             <tag> 算法 </tag>
             
-            <tag> 概率 </tag>
-            
-            <tag> 深度学习 </tag>
-            
             <tag> 监督学习 </tag>
             
             <tag> 无监督学习 </tag>
@@ -599,6 +624,10 @@
             <tag> 模型 </tag>
             
             <tag> 机器学习 </tag>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 概率 </tag>
             
             <tag> 泛化 </tag>
             
@@ -735,7 +764,7 @@
       <link href="2021/03/31/tui-jian-xi-tong/"/>
       <url>2021/03/31/tui-jian-xi-tong/</url>
       
-        <content type="html"><![CDATA[<h3 id="为什么需要推荐"><a href="#为什么需要推荐" class="headerlink" title="为什么需要推荐"></a>为什么需要推荐</h3><ul><li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li><li>目标不明确：用户很多时候没有明确的需求。</li></ul><h3 id="推荐的方式"><a href="#推荐的方式" class="headerlink" title="推荐的方式"></a>推荐的方式</h3><ul><li>社会化推荐：朋友；</li><li>基于内容：利用规则；</li><li>协同过滤：数据、机器学习；</li><li>混合推荐：使用多种策略，优势互补，实际中多为混合。</li></ul><h3 id="推荐系统应用场景"><a href="#推荐系统应用场景" class="headerlink" title="推荐系统应用场景"></a>推荐系统应用场景</h3><ul><li>电商：亚马逊、淘宝等；</li><li>视频：YouTube、Netflix等；</li><li>短视频：抖音、快手；</li><li>音乐：Pandora、网易云等；</li><li>社交：Facebook、Twitter；</li><li>阅读：今日头条；</li><li>生活：美团；</li><li>广告：Almost all。</li></ul><h3 id="推荐系统评价"><a href="#推荐系统评价" class="headerlink" title="推荐系统评价"></a>推荐系统评价</h3><h4 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h4><p>离线实验、用户调查、在线实验依次递进。</p><ul><li>离线实验：收集数据、制作数据集、实验与评价</li></ul><blockquote><ul><li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li><li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li></ul></blockquote><ul><li>用户调查：在上线测试前选定一部分用户进行验证测试</li></ul><blockquote><ul><li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li><li>优点：得到很多离线测试无法得到的指标</li><li>缺点：成本高，效果越好需要越多用户</li></ul></blockquote><ul><li>在线实验：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</li></ul><blockquote><ul><li>优点：获得推荐算法的实际指标</li><li>缺点：周期长，设计较为复杂</li></ul></blockquote><h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</p><h5 id="用户满意度"><a href="#用户满意度" class="headerlink" title="用户满意度"></a>用户满意度</h5><p>点击率、用户停留时间、转化率、用户评价等等，只能通过用户调查、在线测试获得。</p><h5 id="预测准确率"><a href="#预测准确率" class="headerlink" title="预测准确率"></a>预测准确率</h5><p>离线评价指标，绝大多数的论文都会围绕这个指标。</p><ul><li>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</li><li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</li></ul><p>$$<br>\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}<br>$$</p><p>$$<br>\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}<br>$$</p><p>归一化折损累计增益NDCG</p><h5 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h5><p>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</p><p>$$<br>\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}<br>$$</p><p>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</p><p>$$<br>H=-\sum_{i=1}^{n} p(i) \log p(i)<br>$$</p><p>p(i)是物品i的流行程度</p><p>$$<br>G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)<br>$$</p><h5 id="多样性"><a href="#多样性" class="headerlink" title="多样性"></a>多样性</h5><p>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</p><p>$$<br>\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}<br>$$</p><h5 id="新颖性"><a href="#新颖性" class="headerlink" title="新颖性"></a>新颖性</h5><p>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</p><p>一些观点将新颖性定义为不流行程度</p><h5 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h5><p>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p><h5 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h5><p>相同的产品，推荐方式的不同用户的反应会截然不同，例如以广告的方式呈现时用户容易反感，而告诉用户他的号朋友也在用时就更容易接受。</p><h5 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h5><ul><li>许多商品如新闻、微博具有时间限制；</li><li>新商品的冷启动</li></ul><h5 id="鲁棒性"><a href="#鲁棒性" class="headerlink" title="鲁棒性"></a>鲁棒性</h5><p>具有抵挡共计，反作弊的能力</p><h5 id="商业效果"><a href="#商业效果" class="headerlink" title="商业效果"></a>商业效果</h5><p>如广告的投放量</p><h3 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h3><p>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p><h3 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h3><h5 id="显示反馈"><a href="#显示反馈" class="headerlink" title="显示反馈"></a>显示反馈</h5><p>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等<br>信息密度大但量小</p><h5 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h5><p>不能明确用户喜好的行为，包括：浏览记录等<br>信息密度小但量大</p><h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><table><thead><tr><th align="center">角度</th><th align="center">显示反馈</th><th align="center">隐式反馈</th></tr></thead><tbody><tr><td align="center">用户兴趣</td><td align="center">明确</td><td align="center">不明确</td></tr><tr><td align="center">数据量</td><td align="center">较少</td><td align="center">庞大</td></tr><tr><td align="center">存储</td><td align="center">数据库</td><td align="center">分布式文件系统</td></tr><tr><td align="center">实时性</td><td align="center">实时</td><td align="center">有延迟</td></tr><tr><td align="center">正负反馈</td><td align="center">都有</td><td align="center">只有正反馈</td></tr></tbody></table><h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><p>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。<br>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</p><h4 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h4><p>只使用项目侧特征</p><blockquote><ul><li>热门召回</li><li>高复购</li><li>高潜力</li><li>。。。</li></ul></blockquote><h4 id="有个性化"><a href="#有个性化" class="headerlink" title="有个性化"></a>有个性化</h4><p>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p><h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><p>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。<br>召回要求快，所使用到的模型不能太复杂。<br>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</p><h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p><h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p><p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="为什么需要推荐"><a href="#为什么需要推荐" class="headerlink" title="为什么需要推荐"></a>为什么需要推荐</h3><ul><li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li><li>目标不明确：用户很多时候没有明确的需求。</li></ul><h3 id="推荐的方式"><a href="#推荐的方式" class="headerlink" title="推荐的方式"></a>推荐的方式</h3><ul><li>社会化推荐：朋友；</li><li>基于内容：利用规则；</li><li>协同过滤：数据、机器学习；</li><li>混合推荐：使用多种策略，优势互补，实际中多为混合。</li></ul><h3 id="推荐系统应用场景"><a href="#推荐系统应用场景" class="headerlink" title="推荐系统应用场景"></a>推荐系统应用场景</h3><ul><li>电商：亚马逊、淘宝等；</li><li>视频：YouTube、Netflix等；</li><li>短视频：抖音、快手；</li><li>音乐：Pandora、网易云等；</li><li>社交：Facebook、Twitter；</li><li>阅读：今日头条；</li><li>生活：美团；</li><li>广告：Almost all。</li></ul><h3 id="推荐系统评价"><a href="#推荐系统评价" class="headerlink" title="推荐系统评价"></a>推荐系统评价</h3><h4 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h4><p>离线实验、用户调查、在线实验依次递进。</p><ul><li>离线实验：收集数据、制作数据集、实验与评价</li></ul><blockquote><ul><li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li><li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li></ul></blockquote><ul><li>用户调查：在上线测试前选定一部分用户进行验证测试</li></ul><blockquote><ul><li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li><li>优点：得到很多离线测试无法得到的指标</li><li>缺点：成本高，效果越好需要越多用户</li></ul></blockquote><ul><li>在线实验：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</li></ul><blockquote><ul><li>优点：获得推荐算法的实际指标</li><li>缺点：周期长，设计较为复杂</li></ul></blockquote><h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</p><h5 id="用户满意度"><a href="#用户满意度" class="headerlink" title="用户满意度"></a>用户满意度</h5><p>点击率、用户停留时间、转化率、用户评价等等，只能通过用户调查、在线测试获得。</p><h5 id="预测准确率"><a href="#预测准确率" class="headerlink" title="预测准确率"></a>预测准确率</h5><p>离线评价指标，绝大多数的论文都会围绕这个指标。</p><ul><li>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</li><li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</li></ul><p>$$<br>\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}<br>$$</p><p>$$<br>\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}<br>$$</p><p>归一化折损累计增益NDCG</p><h5 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h5><p>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</p><p>$$<br>\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}<br>$$</p><p>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</p><p>$$<br>H=-\sum_{i=1}^{n} p(i) \log p(i)<br>$$</p><p>p(i)是物品i的流行程度</p><p>$$<br>G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)<br>$$</p><h5 id="多样性"><a href="#多样性" class="headerlink" title="多样性"></a>多样性</h5><p>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</p><p>$$<br>\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}<br>$$</p><h5 id="新颖性"><a href="#新颖性" class="headerlink" title="新颖性"></a>新颖性</h5><p>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</p><p>一些观点将新颖性定义为不流行程度</p><h5 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h5><p>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p><h5 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h5><p>相同的产品，推荐方式的不同用户的反应会截然不同，例如以广告的方式呈现时用户容易反感，而告诉用户他的号朋友也在用时就更容易接受。</p><h5 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h5><ul><li>许多商品如新闻、微博具有时间限制；</li><li>新商品的冷启动</li></ul><h5 id="鲁棒性"><a href="#鲁棒性" class="headerlink" title="鲁棒性"></a>鲁棒性</h5><p>具有抵挡共计，反作弊的能力</p><h5 id="商业效果"><a href="#商业效果" class="headerlink" title="商业效果"></a>商业效果</h5><p>如广告的投放量</p><h3 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h3><p>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p><h3 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h3><h5 id="显示反馈"><a href="#显示反馈" class="headerlink" title="显示反馈"></a>显示反馈</h5><p>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等<br>信息密度大但量小</p><h5 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h5><p>不能明确用户喜好的行为，包括：浏览记录等<br>信息密度小但量大</p><h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><table><thead><tr><th align="center">角度</th><th align="center">显示反馈</th><th align="center">隐式反馈</th></tr></thead><tbody><tr><td align="center">用户兴趣</td><td align="center">明确</td><td align="center">不明确</td></tr><tr><td align="center">数据量</td><td align="center">较少</td><td align="center">庞大</td></tr><tr><td align="center">存储</td><td align="center">数据库</td><td align="center">分布式文件系统</td></tr><tr><td align="center">实时性</td><td align="center">实时</td><td align="center">有延迟</td></tr><tr><td align="center">正负反馈</td><td align="center">都有</td><td align="center">只有正反馈</td></tr></tbody></table><h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><p>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。<br>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</p><h4 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h4><p>只使用项目侧特征</p><blockquote><ul><li>热门召回</li><li>高复购</li><li>高潜力</li><li>。。。</li></ul></blockquote><h4 id="有个性化"><a href="#有个性化" class="headerlink" title="有个性化"></a>有个性化</h4><p>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p><h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><p>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。<br>召回要求快，所使用到的模型不能太复杂。<br>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</p><h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p><h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p><p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p><h5 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h5><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>]]></content>
       
       
       <categories>

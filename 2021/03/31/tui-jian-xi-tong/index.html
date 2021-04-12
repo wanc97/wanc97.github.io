@@ -505,14 +505,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-10
+                    2021-04-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
@@ -668,6 +668,7 @@
 <h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p>
 <h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
 <p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
+<h5 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h5><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>
 
                 
             </div>
@@ -1349,7 +1350,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">29.1k</span>&nbsp;字
+                class="white-color">30.4k</span>&nbsp;字
             
             
             

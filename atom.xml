@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2021-04-09T15:32:43.179Z</updated>
+  <updated>2021-04-12T02:25:04.708Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python常用库</title>
+    <link href="http://notego.top/2021/04/11/python-chang-yong-ku/"/>
+    <id>http://notego.top/2021/04/11/python-chang-yong-ku/</id>
+    <published>2021-04-11T03:36:50.000Z</published>
+    <updated>2021-04-12T02:25:04.708Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;numpy&quot;&gt;&lt;a href=&quot;#numpy&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://notego.top/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="Python" scheme="http://notego.top/tags/Python/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
+    
+    <category term="pandas" scheme="http://notego.top/tags/pandas/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统</title>
@@ -60,19 +89,19 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
+    
     <category term="老子" scheme="http://notego.top/tags/%E8%80%81%E5%AD%90/"/>
     
     <category term="无为" scheme="http://notego.top/tags/%E6%97%A0%E4%B8%BA/"/>
-    
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
     
     <category term="德" scheme="http://notego.top/tags/%E5%BE%B7/"/>
     
     <category term="无" scheme="http://notego.top/tags/%E6%97%A0/"/>
     
     <category term="上善若水" scheme="http://notego.top/tags/%E4%B8%8A%E5%96%84%E8%8B%A5%E6%B0%B4/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
     
     <category term="善" scheme="http://notego.top/tags/%E5%96%84/"/>
     
@@ -549,13 +578,13 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
     <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
     <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
+    
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
     
     <category term="天人合一" scheme="http://notego.top/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/"/>
     
@@ -598,10 +627,6 @@
     
     <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="概率" scheme="http://notego.top/tags/%E6%A6%82%E7%8E%87/"/>
-    
-    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="监督学习" scheme="http://notego.top/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="无监督学习" scheme="http://notego.top/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
@@ -614,44 +639,15 @@
     
     <category term="机器学习" scheme="http://notego.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
+    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="概率" scheme="http://notego.top/tags/%E6%A6%82%E7%8E%87/"/>
+    
     <category term="泛化" scheme="http://notego.top/tags/%E6%B3%9B%E5%8C%96/"/>
     
     <category term="偏差" scheme="http://notego.top/tags/%E5%81%8F%E5%B7%AE/"/>
     
     <category term="方差" scheme="http://notego.top/tags/%E6%96%B9%E5%B7%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Word2vector</title>
-    <link href="http://notego.top/2021/03/31/word2vector/"/>
-    <id>http://notego.top/2021/03/31/word2vector/</id>
-    <published>2021-03-31T12:21:34.000Z</published>
-    <updated>2021-04-04T13:12:10.434Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;one-hot-编码&quot;&gt;&lt;a href=&quot;#one-hot-编码&quot; class=&quot;headerlink&quot; title=&quot;one-hot 编码&quot;&gt;&lt;/a&gt;one-hot</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="词向量" scheme="http://notego.top/tags/%E8%AF%8D%E5%90%91%E9%87%8F/"/>
-    
-    <category term="Embedding" scheme="http://notego.top/tags/Embedding/"/>
-    
-    <category term="skip-gram" scheme="http://notego.top/tags/skip-gram/"/>
-    
-    <category term="one-hot" scheme="http://notego.top/tags/one-hot/"/>
-    
-    <category term="CBOW" scheme="http://notego.top/tags/CBOW/"/>
     
   </entry>
   
