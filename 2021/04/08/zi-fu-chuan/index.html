@@ -493,14 +493,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-08
+                    2021-04-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    604
+                    864
                 </div>
                 
 
@@ -527,7 +527,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="字符串常见题型"><a href="#字符串常见题型" class="headerlink" title="字符串常见题型"></a>字符串常见题型</h3><ul>
+                <h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p>KMP算法相对于单纯的滑动比较，主要改进在于发现最长公共前后缀在冲突时的作用，进而通过动态规划的方式避免重复劳动，降低复杂度。</p>
+<ul>
+<li>在比较冲突的时候，已经比较配对的部分中匹配串与模式串是相同的，因此接下来的滑动相当于是已匹配部分自己与自己比较，即寻找最长公共前后缀。</li>
+<li>最长公共前后缀与模式串的字符位置对应，因此记录最长公共前后缀信息的数组就是next数组，也是动态规划中的Menory。</li>
+<li>计算next数组的过程就是动态规划的过程，当连续匹配时next数组可以依次写出，当出现不匹配时直接调用以计算出的部分即可。</li>
+<li>所以KMP算法是一种动态规划的实现，以空间换时间，用next数组记录运算信息，避免重复子问题。</li>
+</ul>
+<h3 id="字符串常见题型"><a href="#字符串常见题型" class="headerlink" title="字符串常见题型"></a>字符串常见题型</h3><ul>
 <li>规则判断：是否是回文、是否符合整数、能否转化为数值、能否转化为算式；</li>
 <li>字符计数：哈希表、固定长度数组（字符数量有限）、滑动窗、无重复最长子串；</li>
 <li>动态规划：最长公共（回文）子串（子序列）；</li>
@@ -1202,7 +1209,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.5k</span>&nbsp;字
+                class="white-color">31.7k</span>&nbsp;字
             
             
             
