@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>微服务</title>
+      <link href="2021/04/17/wei-fu-wu/"/>
+      <url>2021/04/17/wei-fu-wu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="微服务特点"><a href="#微服务特点" class="headerlink" title="微服务特点"></a>微服务特点</h3><blockquote><ul><li>一组小的服务</li><li>独立的进程</li><li>轻量级通信</li><li>基于业务能力</li><li><strong>独立部署</strong></li><li>无集中式管理 </li></ul></blockquote><blockquote><ul><li>松耦合</li><li>服务向架构</li><li>内容独立</li></ul></blockquote><h3 id="微服务利弊"><a href="#微服务利弊" class="headerlink" title="微服务利弊"></a>微服务利弊</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><ul><li>强模块化边界：清晰的边界</li><li>可独立部署</li><li>技术多样性：可以用不同语言开发</li></ul><h4 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h4><ul><li>分布式复杂性</li><li>最终一致性：不同服务对相同数据进行操作时需要注意一致性</li><li>运维复杂性</li><li>测试复杂性</li></ul><h3 id="康威法则"><a href="#康威法则" class="headerlink" title="康威法则"></a>康威法则</h3><p>设计系统的架构受制于产生这些设计的组织的沟通结构。<br>随着组织扩大，沟通成本越来越大，会降低开发效率，微服务的思路可以应对这种情况。</p><p>随着问题负责性增加，单块服务的效率下降更快，而微服务下降较慢，这是微服务的优势；<br>同时使用微服务有着额外开支（固定成本等）；<br>所以对于小系统更适合单块服务，而高复杂性的系统适合微服务。</p><h3 id="中台"><a href="#中台" class="headerlink" title="中台"></a>中台</h3><p>服务分层，每一层向上提供支撑；<br>从低到高包括技术中台、业务中台、业务前台</p><p><strong>技术中台</strong>包括<strong>运维层</strong>（IaaS：提供计算、存储、网络、监控等基础设施）和<strong>平台层</strong>（PaaS：服务框架、资源调度等；大数据/AI平台），运维层向平台层提供支撑。</p><p>微服务可以简单分为基础服务和聚合服务，其中基础服务是实现比较底层、公共、核心的功能，聚合服务则主要调用基础服务，向外提供适配服务。</p><h3 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h3><ul><li>消费者通过域名向LB获取生产者服务，要穿透LB效率偏低，LB集中，危险性上升；</li><li>LB集成到消费者中，效率有提升，但每个消费者都建立客户端代价提升；</li><li>每个主机用一个LB，折中方案。</li></ul><h3 id="API网关"><a href="#API网关" class="headerlink" title="API网关"></a>API网关</h3><p>对外屏蔽细节、将外部请求转化为具体微服务请求<br>限定流量<br>日志监控</p><h3 id="微服务通信方式"><a href="#微服务通信方式" class="headerlink" title="微服务通信方式"></a>微服务通信方式</h3><table><thead><tr><th align="center"></th><th align="center">RPC</th><th align="center">REST</th></tr></thead><tbody><tr><td align="center">耦合性</td><td align="center">强耦合（服务端与客服端消息格式匹配）</td><td align="center">松耦合</td></tr><tr><td align="center">消息协议</td><td align="center">二进制：thrift、protobuf</td><td align="center">文本：xml、json</td></tr><tr><td align="center">通信协议</td><td align="center">TCP</td><td align="center">HTTP/HTTP2</td></tr><tr><td align="center">性能</td><td align="center">高</td><td align="center">相对差一些</td></tr><tr><td align="center">借口契约IDL</td><td align="center">thrift、protobuf等的IDL</td><td align="center">swagger</td></tr><tr><td align="center">客户端</td><td align="center">强类型客户端，一般自动生成，支持多语言</td><td align="center">一般HTTP客户端</td></tr><tr><td align="center">案例</td><td align="center">dubbo、thrft</td><td align="center">spring MVC</td></tr><tr><td align="center">开发者友好</td><td align="center">客户端使用方便，但二进制不便于调试</td><td align="center">文本消息可读，浏览器调试</td></tr><tr><td align="center">对外开放</td><td align="center">对外转换成REST/文本协议</td><td align="center">可以直接对外开放</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微服务 </tag>
+            
+            <tag> 模块化 </tag>
+            
+            <tag> 独立部署 </tag>
+            
+            <tag> 松耦合 </tag>
+            
+            <tag> 康威法则 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>队列、栈</title>
       <link href="2021/04/14/dui-lie-zhan/"/>
       <url>2021/04/14/dui-lie-zhan/</url>
@@ -107,19 +140,19 @@
       
         <tags>
             
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
+            
             <tag> 老子 </tag>
             
             <tag> 无为 </tag>
-            
-            <tag> 道 </tag>
             
             <tag> 德 </tag>
             
             <tag> 无 </tag>
             
             <tag> 上善若水 </tag>
-            
-            <tag> 自然 </tag>
             
             <tag> 善 </tag>
             
@@ -591,13 +624,13 @@
       
         <tags>
             
-            <tag> 道 </tag>
-            
-            <tag> 自然 </tag>
-            
             <tag> 哲学 </tag>
             
             <tag> 道家 </tag>
+            
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
             
             <tag> 天人合一 </tag>
             
@@ -685,9 +718,9 @@
       
         <tags>
             
-            <tag> 词向量 </tag>
-            
             <tag> Embedding </tag>
+            
+            <tag> 词向量 </tag>
             
             <tag> skip-gram </tag>
             
@@ -836,11 +869,11 @@
       
         <tags>
             
+            <tag> 树 </tag>
+            
             <tag> 二分 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 树 </tag>
             
             <tag> 数据结构 </tag>
             
@@ -877,11 +910,11 @@
       
         <tags>
             
-            <tag> Embedding </tag>
-            
             <tag> 图 </tag>
             
             <tag> 神经网络 </tag>
+            
+            <tag> Embedding </tag>
             
         </tags>
       
