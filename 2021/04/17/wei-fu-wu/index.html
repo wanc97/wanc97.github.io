@@ -15,17 +15,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', '');
-</script>
-
 
     <title>微服务 | 方寸田园</title>
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -512,7 +501,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    686
+                    804
                 </div>
                 
 
@@ -572,6 +561,16 @@
 <h3 id="中台"><a href="#中台" class="headerlink" title="中台"></a>中台</h3><p>服务分层，每一层向上提供支撑；<br>从低到高包括技术中台、业务中台、业务前台</p>
 <p><strong>技术中台</strong>包括<strong>运维层</strong>（IaaS：提供计算、存储、网络、监控等基础设施）和<strong>平台层</strong>（PaaS：服务框架、资源调度等；大数据/AI平台），运维层向平台层提供支撑。</p>
 <p>微服务可以简单分为基础服务和聚合服务，其中基础服务是实现比较底层、公共、核心的功能，聚合服务则主要调用基础服务，向外提供适配服务。</p>
+<h3 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h3><ul>
+<li>服务注册、发现</li>
+<li>服务负载均衡、路由</li>
+<li>日志</li>
+<li>监控：调用量、延迟等</li>
+<li>限流熔断</li>
+<li>安全控制</li>
+<li>统一异常处理</li>
+<li>文档</li>
+</ul>
 <h3 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h3><ul>
 <li>消费者通过域名向LB获取生产者服务，要穿透LB效率偏低，LB集中，危险性上升；</li>
 <li>LB集成到消费者中，效率有提升，但每个消费者都建立客户端代价提升；</li>
@@ -632,6 +631,13 @@
 <td align="center">可以直接对外开放</td>
 </tr>
 </tbody></table>
+<h3 id="微服务监控体系"><a href="#微服务监控体系" class="headerlink" title="微服务监控体系"></a>微服务监控体系</h3><ul>
+<li>用户体验监控：使用性能、地区等信息</li>
+<li>业务监控：核心指标</li>
+<li>应用层监控：URL、服务的可用率、响应时间</li>
+<li>系统层监控：cpu、内存、硬盘等</li>
+<li>基础设施监控：网络流量、丢包、错报、连接数</li>
+</ul>
 
                 
             </div>
@@ -1228,60 +1234,6 @@
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: blue;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="6688673461"
-                   fixed='true'
-                   autoplay='false'
-                   theme='blue'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='3'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -1295,7 +1247,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.4k</span>&nbsp;字
+                class="white-color">32.5k</span>&nbsp;字
             
             
             
@@ -1527,16 +1479,6 @@ $(function () {
 
     <!-- Baidu Analytics -->
 
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
     <!-- Baidu Push -->
 
 <script>
@@ -1569,13 +1511,7 @@ $(function () {
     
 
     
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
-    
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
@@ -1583,8 +1519,6 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-    
-    <script type="text/javascript" src="/libs/others/snow.js"></script>
     
 
 </body>
