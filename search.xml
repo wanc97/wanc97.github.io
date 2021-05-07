@@ -140,19 +140,19 @@
       
         <tags>
             
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
+            
             <tag> 老子 </tag>
             
             <tag> 无为 </tag>
-            
-            <tag> 道 </tag>
             
             <tag> 德 </tag>
             
             <tag> 无 </tag>
             
             <tag> 上善若水 </tag>
-            
-            <tag> 自然 </tag>
             
             <tag> 善 </tag>
             
@@ -624,13 +624,13 @@
       
         <tags>
             
-            <tag> 道 </tag>
-            
-            <tag> 自然 </tag>
-            
             <tag> 哲学 </tag>
             
             <tag> 道家 </tag>
+            
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
             
             <tag> 天人合一 </tag>
             
@@ -673,21 +673,21 @@
             
             <tag> 算法 </tag>
             
+            <tag> 深度学习 </tag>
+            
+            <tag> 特征 </tag>
+            
             <tag> 概率 </tag>
             
             <tag> 监督学习 </tag>
             
             <tag> 无监督学习 </tag>
             
-            <tag> 特征 </tag>
-            
             <tag> 过拟合 </tag>
             
             <tag> 模型 </tag>
             
             <tag> 机器学习 </tag>
-            
-            <tag> 深度学习 </tag>
             
             <tag> 泛化 </tag>
             
