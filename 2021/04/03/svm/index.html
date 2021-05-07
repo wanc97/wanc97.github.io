@@ -482,21 +482,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-04
+                    2021-05-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    503
+                    649
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -516,7 +516,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="特征空间维度"><a href="#特征空间维度" class="headerlink" title="特征空间维度"></a>特征空间维度</h2><ul>
+                <ul>
+<li>SVM支持向量机抛开概率视角，化繁为简，从几何的角度来看待问题。</li>
+<li>机器学习最终是看泛化误差而不是训练误差，最大化间隔就是从几何角度尝试最大化泛化误差。</li>
+<li>支持向量机的误差包括两个部分：一个是分界面的不置信度，几何间隔越小越不置信；另一个是训练误差，越多的点被误分类训练误差越大。硬间隔只包含前者。</li>
+<li>SVM通过对偶问题来求解最优边界。</li>
+</ul>
+<p><strong>特征空间维度</strong></p>
+<ul>
 <li><p>因为核技巧隐藏了映射的细节，只知道内积运算，所以特征空间是希尔伯特空间，维度是无限的。</p>
 </li>
 <li><p>但是仅从决策函数看，也可以说特征空间的维度是有限的且等于训练样本的数量，每一个支持样本对应一个维度，决策时计算出测试点在各个维度上的得分累加进行分类。</p>
@@ -526,21 +533,25 @@
 <li><p>另外希尔伯特空间本身就是去掉维度的概念，所以也可以说是没有维度。</p>
 </li>
 </ul>
-<h2 id="理论上SVM的目标函数可以使用梯度下降法来训练。但存在三个问题："><a href="#理论上SVM的目标函数可以使用梯度下降法来训练。但存在三个问题：" class="headerlink" title="理论上SVM的目标函数可以使用梯度下降法来训练。但存在三个问题："></a>理论上SVM的目标函数可以使用梯度下降法来训练。但存在三个问题：</h2><ul>
+<p><strong>理论上SVM的目标函数可以使用梯度下降法来训练。但存在三个问题：</strong></p>
+<ul>
 <li>合页损失函数部分不可导。这可以通过sub-gradient descent 来解决。</li>
 <li>收敛速度非常慢。</li>
 <li>无法得出支持向量和非支持向量的区别。</li>
 </ul>
-<h2 id="常用核函数："><a href="#常用核函数：" class="headerlink" title="常用核函数："></a>常用核函数：</h2><ul>
+<p><strong>常用核函数：</strong></p>
+<ul>
 <li>多项式核函数；</li>
 <li>高斯核函数；</li>
 </ul>
-<h2 id="支持向量机的优点："><a href="#支持向量机的优点：" class="headerlink" title="支持向量机的优点："></a>支持向量机的优点：</h2><ul>
+<p><strong>支持向量机的优点：</strong></p>
+<ul>
 <li>有严格的数学理论支持，可解释性强。</li>
 <li>能找出对任务至关重要的关键样本（即：支持向量）。</li>
 <li>采用核技巧之后，可以处理非线性分类/回归任务。</li>
 </ul>
-<h2 id="支持向量机的缺点："><a href="#支持向量机的缺点：" class="headerlink" title="支持向量机的缺点："></a>支持向量机的缺点：</h2><ul>
+<p><strong>支持向量机的缺点：</strong></p>
+<ul>
 <li>训练时间长。</li>
 <li>当采用核技巧时，如果需要存储核矩阵，则空间复杂度为平方。</li>
 <li>模型预测时，预测时间与支持向量的个数成正比。当支持向量的数量较大时，预测计算复杂度较高。</li>
@@ -1153,7 +1164,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33k</span>&nbsp;字
+                class="white-color">33.1k</span>&nbsp;字
             
             
             
