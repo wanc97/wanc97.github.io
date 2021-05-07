@@ -446,16 +446,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E6%A0%91/">
+                                <span class="chip bg-color">树</span>
+                            </a>
+                        
                             <a href="/tags/%E4%BA%8C%E5%88%86/">
                                 <span class="chip bg-color">二分</span>
                             </a>
                         
                             <a href="/tags/%E7%AE%97%E6%B3%95/">
                                 <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A0%91/">
-                                <span class="chip bg-color">树</span>
                             </a>
                         
                             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
@@ -618,7 +618,7 @@
 <p><code>logb(a)</code>与<code>f(n)</code>直接影响复杂度</p>
 <h4 id="情况一"><a href="#情况一" class="headerlink" title="情况一"></a>情况一</h4><p>当<code>f(n)&lt;O(n^&#123;logb(a)&#125;)</code>(多项式地小于)时：<code>O(n^&#123;logb(a)&#125;)</code>主导复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;)</code></p>
 <h4 id="情况二"><a href="#情况二" class="headerlink" title="情况二"></a>情况二</h4><p>当<code>f(n)&gt;O(n^&#123;logb(a)&#125;)</code>(多项式地大于)时：<code>O(f(n))</code>主导复杂度，<code>T(n)=O(f(n))</code></p>
-<h4 id="情况三"><a href="#情况三" class="headerlink" title="情况三"></a>情况三</h4><p>当<code>f(n)=O(n^&#123;logb(a)&#125;logk(n))</code>（差距不足多项式）时，共同影响复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;logk+1(n))</code></p>
+<h4 id="情况三"><a href="#情况三" class="headerlink" title="情况三"></a>情况三</h4><p>当<code>f(n)=O(n^&#123;logb(a)&#125;log^&#123;k&#125;(n))</code>（差距不足多项式）时，共同影响复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;log^&#123;k+1&#125;(n))</code></p>
 <p>注：部分复杂度符号使用粗略</p>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
 <li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p>
@@ -656,19 +656,21 @@
 <ul>
 <li>数组和链表的优缺点比较互补，所以很适合组合在一起，优势互补，得到各方面时间复杂度都低的数据结构，例如：哈希表、哈希表+链表等。</li>
 </ul>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>完全二叉树适合数组存储</p>
-<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>一般采用递归的方法遍历比较清晰</p>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>完全二叉树适合数组存储<br><strong>遍历</strong></p>
+<p>一般采用递归的方法遍历比较清晰</p>
 <p>很多问题都可以看成树的遍历</p>
 <h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><ul>
 <li>完全二叉树（适合数组存储）；</li>
 <li>每个节点的值大于等于（小于等于）子树的值。</li>
 </ul>
 <p>堆删除元素是弹出堆顶元素，将末尾元素放到堆顶，然后从上往下堆化；堆插入元素是将待插入元素放置在堆末尾，然后从下往上堆化。</p>
-<h4 id="堆排序VS快速排序"><a href="#堆排序VS快速排序" class="headerlink" title="堆排序VS快速排序"></a>堆排序VS快速排序</h4><ul>
+<p><strong>堆排序VS快速排序</strong></p>
+<ul>
 <li>快排顺序遍历，对cache更加友好，堆排序随机访问，对cache不友好；</li>
 <li>堆排序会打乱原有顺序，增加逆序度，因此实际中的交换次数可能更多。</li>
 </ul>
-<h4 id="堆的应用"><a href="#堆的应用" class="headerlink" title="堆的应用"></a>堆的应用</h4><ul>
+<p><strong>堆的应用</strong></p>
+<ul>
 <li>求最值，排序；</li>
 <li>合并多个有序序列；</li>
 <li>高性能定时器，获取需要执行的任务，不需要反复轮询；</li>
@@ -770,16 +772,16 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E6%A0%91/">
+                                    <span class="chip bg-color">树</span>
+                                </a>
+                            
                                 <a href="/tags/%E4%BA%8C%E5%88%86/">
                                     <span class="chip bg-color">二分</span>
                                 </a>
                             
                                 <a href="/tags/%E7%AE%97%E6%B3%95/">
                                     <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A0%91/">
-                                    <span class="chip bg-color">树</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
