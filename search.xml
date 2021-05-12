@@ -681,8 +681,6 @@
             
             <tag> 算法 </tag>
             
-            <tag> 概率 </tag>
-            
             <tag> 监督学习 </tag>
             
             <tag> 无监督学习 </tag>
@@ -696,6 +694,8 @@
             <tag> 机器学习 </tag>
             
             <tag> 深度学习 </tag>
+            
+            <tag> 概率 </tag>
             
             <tag> 泛化 </tag>
             
