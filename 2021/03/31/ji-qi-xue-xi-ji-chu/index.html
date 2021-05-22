@@ -446,12 +446,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
                             <a href="/tags/%E6%A6%82%E7%8E%87/">
                                 <span class="chip bg-color">概率</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                             <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
@@ -522,21 +522,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-16
+                    2021-05-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -759,7 +759,31 @@
 <h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>监督学习</strong>是在有明确的标签的数据上进行的，属于<strong>预测</strong>模型。其中分类问题输出离散的类别标签，回归问题输出连续的回归值。<br>而<strong>无监督学习</strong>使用没有标签的数据，数据<strong>描述</strong>模型，揭示数据内在规律。其中包括聚类、降维。</p>
 <h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><p>通过一些方式将数据划分为多个簇（类），让簇内的数据尽量相似，簇间的数据尽量不相似。</p>
 <h4 id="相似度量"><a href="#相似度量" class="headerlink" title="相似度量"></a>相似度量</h4><p>很大程度上决定了聚类效果。</p>
+<p><strong>距离基本要求</strong>：非负性、对称性、三角不等式。</p>
+<p><strong>p范数</strong>：</p>
+<ul>
+<li>0范数（非0数）、1范数（曼哈顿距离）、2范数（欧氏距离）、无穷范数（最大值）。</li>
+<li>p值越大时，绝对值大的维度起到的作用越大，反之亦然。</li>
+<li>各个维度独立计算。</li>
+</ul>
+<p><strong>马氏距离</strong>：广义距离<br>各个维度不再独立计算，而考虑到它们之间的联系，通过数据的协方差矩阵来联系。<br>也可以不使用协方差矩阵，而通过学习得到联系矩阵。</p>
 <h4 id="原型聚类"><a href="#原型聚类" class="headerlink" title="原型聚类"></a>原型聚类</h4><p>对数据分布有一个先验的假设，然后去计算出分布的参数，如K-means、混合高斯分布。求解参数的过程常常是使用EM期望最大的思想，交替寻优得到。</p>
+<p><strong>K-means</strong></p>
+<blockquote>
+<ul>
+<li>选取K个样本作为K个簇初始中心，根据距离远近将其他样本<strong>硬</strong>划分到各个簇中；</li>
+<li>根据簇中的样本计算的中心/重心作为新的簇中心；</li>
+<li>循环执行前两步，至簇中心稳定，常用手肘法判断。</li>
+</ul>
+</blockquote>
+<p><strong>混合高斯分布</strong><br>是K-means更加一般的情况，每个样本不是硬的属于每个簇，而是以一定概率属于各个簇；每个簇有均值、方差、权重。</p>
+<blockquote>
+<ul>
+<li>初始化K个簇的均值、方差、权重，计算每个样本有多大比重/概率属于各个簇；</li>
+<li>根据样本的归属，重新计算各个簇的均值、方差、权重，</li>
+<li>循环执行前两步，至取值稳定。</li>
+</ul>
+</blockquote>
 <h4 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h4><h4 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h4><h4 id="分布聚类"><a href="#分布聚类" class="headerlink" title="分布聚类"></a>分布聚类</h4>
                 
             </div>
@@ -824,12 +848,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%A6%82%E7%8E%87/">
                                     <span class="chip bg-color">概率</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                                 <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
@@ -1131,20 +1155,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -1427,7 +1451,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.3k</span>&nbsp;字
+                class="white-color">33.6k</span>&nbsp;字
             
             
             
