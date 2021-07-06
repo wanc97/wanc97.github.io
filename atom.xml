@@ -246,15 +246,15 @@
     <category term="算法" scheme="http://notego.top/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="排序" scheme="http://notego.top/tags/%E6%8E%92%E5%BA%8F/"/>
+    <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
     
     <category term="二分" scheme="http://notego.top/tags/%E4%BA%8C%E5%88%86/"/>
+    
+    <category term="排序" scheme="http://notego.top/tags/%E6%8E%92%E5%BA%8F/"/>
     
     <category term="归并" scheme="http://notego.top/tags/%E5%BD%92%E5%B9%B6/"/>
     
     <category term="快速排序" scheme="http://notego.top/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    
-    <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
