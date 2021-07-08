@@ -522,14 +522,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-22
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.4k
                 </div>
                 
 
@@ -703,7 +703,8 @@
 </ul>
 <p><strong>性能度量</strong></p>
 <ul>
-<li><p>混淆矩阵</p>
+<li>混淆矩阵</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -723,7 +724,7 @@
 <td>TN</td>
 </tr>
 </tbody></table>
-</li>
+<ul>
 <li><p>查准率(precision)：$P=\frac{TP}{TP+FP}$</p>
 </li>
 <li><p>查全率(recall):$P=\frac{TP}{TP+FN}$</p>
@@ -784,7 +785,27 @@
 <li>循环执行前两步，至取值稳定。</li>
 </ul>
 </blockquote>
-<h4 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h4><h4 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h4><h4 id="分布聚类"><a href="#分布聚类" class="headerlink" title="分布聚类"></a>分布聚类</h4>
+<h4 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h4><h4 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h4><h4 id="分布聚类"><a href="#分布聚类" class="headerlink" title="分布聚类"></a>分布聚类</h4><h3 id="分布学习-数据生成"><a href="#分布学习-数据生成" class="headerlink" title="分布学习-数据生成"></a>分布学习-数据生成</h3><p>常见的方式包括VAE和GAN，这两种方式，这两种方式的异同可以从许多角度来看.</p>
+<table>
+<thead>
+<tr>
+<th>角度</th>
+<th>VAE</th>
+<th>GAN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>train stage</td>
+<td>one stage</td>
+<td>two stage</td>
+</tr>
+<tr>
+<td>distribution</td>
+<td>对正例样本进行泛化，得到分布，正则化系数越大，泛化程度越高</td>
+<td>TN</td>
+</tr>
+</tbody></table>
+
                 
             </div>
             <hr/>
@@ -1451,7 +1472,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.4k</span>&nbsp;字
+                class="white-color">33.6k</span>&nbsp;字
             
             
             

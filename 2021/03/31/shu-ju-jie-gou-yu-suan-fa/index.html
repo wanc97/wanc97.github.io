@@ -450,16 +450,16 @@
                                 <span class="chip bg-color">树</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                <span class="chip bg-color">数据结构</span>
+                            <a href="/tags/%E4%BA%8C%E5%88%86/">
+                                <span class="chip bg-color">二分</span>
                             </a>
                         
                             <a href="/tags/%E7%AE%97%E6%B3%95/">
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/tags/%E4%BA%8C%E5%88%86/">
-                                <span class="chip bg-color">二分</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                             <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
@@ -510,21 +510,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-03
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -621,7 +621,8 @@
 <h4 id="情况二"><a href="#情况二" class="headerlink" title="情况二"></a>情况二</h4><p>当<code>f(n)&gt;O(n^&#123;logb(a)&#125;)</code>(多项式地大于)时：<code>O(f(n))</code>主导复杂度，<code>T(n)=O(f(n))</code></p>
 <h4 id="情况三"><a href="#情况三" class="headerlink" title="情况三"></a>情况三</h4><p>当<code>f(n)=O(n^&#123;logb(a)&#125;log^&#123;k&#125;(n))</code>（差距不足多项式）时，共同影响复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;log^&#123;k+1&#125;(n))</code></p>
 <p>注：部分复杂度符号使用粗略</p>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>结构</strong></p>
+<ul>
 <li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p>
 <blockquote>
 <ul>
@@ -642,20 +643,20 @@
 </ul>
 </blockquote>
 </li>
-<li><p>数据逻辑结构分为：</p>
-<blockquote>
-<ol>
-<li>集合结构：元素间没有关系；</li>
-<li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li>
-<li>树形结构：一对多关系；</li>
-<li>图形结构：多对多关系；</li>
-</ol>
-</blockquote>
-</li>
 </ul>
 <p>常用数据逻辑结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p>
+<p><strong>基本数据结构：数组&amp;链表</strong></p>
 <ul>
-<li>数组和链表的优缺点比较互补，所以很适合组合在一起，优势互补，得到各方面时间复杂度都低的数据结构，例如：哈希表、哈希表+链表等。</li>
+<li>数组的优势在于改查，<code>O(1)</code>的时间实现访问、读写；</li>
+<li>链表的优势在于增删，<code>O(1)</code>的时间实现插入和删除节点；</li>
+<li>数组和链表的优缺点比较互补，所以很适合组合在一起，优势互补，得到各方面时间复杂度都低的数据结构，例如：哈希表、哈希表+链表等，想要实现更好的数据结构，一个思路就是组合不同数据结构的优势。</li>
+</ul>
+<p><strong>数据结构操作：增删改查=遍历+操作</strong></p>
+<ul>
+<li>数据结构分为（广义）<strong>线性</strong>和<strong>非线性</strong>；</li>
+<li>操作的核心在遍历，遍历分为<strong>迭代</strong>和<strong>递归</strong>；</li>
+<li>一般线性结构用迭代，非线性结构用递归；</li>
+<li>递归本质上是通过堆栈实现，所以递归可以通过堆栈+迭代实现，这样可读性和实现难度往往不如迭代，但有时候问题较为清晰时可以改成迭代以降低空间消耗。</li>
 </ul>
 <h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>完全二叉树适合数组存储<br><strong>遍历</strong></p>
 <p>一般采用递归的方法遍历比较清晰</p>
@@ -789,16 +790,16 @@
                                     <span class="chip bg-color">树</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                    <span class="chip bg-color">数据结构</span>
+                                <a href="/tags/%E4%BA%8C%E5%88%86/">
+                                    <span class="chip bg-color">二分</span>
                                 </a>
                             
                                 <a href="/tags/%E7%AE%97%E6%B3%95/">
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/tags/%E4%BA%8C%E5%88%86/">
-                                    <span class="chip bg-color">二分</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                                 <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
@@ -1348,7 +1349,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.4k</span>&nbsp;字
+                class="white-color">33.6k</span>&nbsp;字
             
             
             
