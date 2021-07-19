@@ -450,16 +450,24 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
+                            <a href="/tags/%E6%A6%82%E7%8E%87/">
+                                <span class="chip bg-color">概率</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%89%B9%E5%BE%81/">
+                                <span class="chip bg-color">特征</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
                             <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">监督学习</span>
                             </a>
                         
                             <a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">无监督学习</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%89%B9%E5%BE%81/">
-                                <span class="chip bg-color">特征</span>
                             </a>
                         
                             <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
@@ -472,14 +480,6 @@
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">机器学习</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">深度学习</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A6%82%E7%8E%87/">
-                                <span class="chip bg-color">概率</span>
                             </a>
                         
                             <a href="/tags/%E6%B3%9B%E5%8C%96/">
@@ -529,14 +529,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    4.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 
@@ -776,7 +776,13 @@
 <li>随着数据集的增大，一方面是数据提供的信息更多了，有利于提升泛化性能；另一方面是使得优化曲面更加平滑，降低优化难度。直观理解一个样本对于优化平面带来的是一个冲击，样本多了之后可以相互平滑，从数学上看，代价函数是多个样本的loss的平均，样本数越多时代价函数曲面更平滑，更有利于优化，但少一点的样本数可以加快收敛速度和提供随机性。</li>
 <li>现在深度模型的参数量越来越大，但并不是参数越多越好，应该和数据量、场景相匹配，尽量用更少的参数达到相同的效果以增加模型的泛化能力。</li>
 </ul>
-<p><strong>卷积神经网络</strong><br>在MLP的基础上增加了两个先验：局部性连接 &amp; 参数共享。<br>这两个先验假设使得卷积网络相对于MLP的参数量大减，泛化能力更加强，可以更好地学习到图像数据中的重要模式（主要指像素之间的变化关系、组合关系，所以非常适合计算视觉领域，当然也可以用在同样具有类似重要特征组合方式的领域）。</p>
+<p><strong>卷积神经网络</strong></p>
+<ul>
+<li>在MLP的基础上增加了两个先验：局部性连接 &amp; 参数共享。</li>
+<li>这两个先验假设使得卷积网络相对于MLP的参数量大减，泛化能力更加强，可以更好地学习到图像数据中的重要模式（主要指像素之间的变化关系、组合关系，所以非常适合计算视觉领域，当然也可以用在同样具有类似重要特征组合方式的领域）。</li>
+<li>卷积和互相关都是由函数到函数的算子，其中卷积包括反转和求和两个过程，互相关只有求和；所以卷积神经网络是披着卷积外衣的互相关网络。</li>
+</ul>
+<blockquote>
 <ul>
 <li>卷积层：提取数据组合特征；</li>
 <li>池化层：降低数据量；</li>
@@ -790,6 +796,21 @@
 <li>BN：应对数据分布漂移，避免数据整体进入饱和区，进而缓解梯度消失和梯度爆炸的问题；</li>
 <li>残差连接：利于梯度回流，缓解梯度消失；降低特征学习难度；</li>
 </ul>
+</blockquote>
+<p><strong>循环神经网络</strong></p>
+<ul>
+<li>RNN在MLP的基础上加上（不同时刻/序列点）参数共享的先验。</li>
+<li>RNN在前向传播和反向传播的时候都有矩阵乘幂，序列略长就必然崩溃，实用性非常低，主要是思想重要。</li>
+<li>LSTM在RNN上加入门控逻辑（遗忘、输入、输出），选择性遗忘和更新信息，可以应用在序列不太长的情况；</li>
+<li>GRU整合门数量（更新、复位）并进一步减少参数量（不区分cell和h），优化结构。</li>
+<li>attention机制可以解决长时间依赖的问题。</li>
+</ul>
+<blockquote>
+<ul>
+<li>循环神经网络中sigmoid的0～1区间用于模拟门的开闭；tanh用于信息激活函数，线性区间大于sigmoid，同时防止relu可能带来的信息爆炸；</li>
+<li>编码-解码架构可以应对seq2seq问题中输入输出序列长度不一致的情况；</li>
+</ul>
+</blockquote>
 <h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>监督学习</strong>是在有明确的标签的数据上进行的，属于<strong>预测</strong>模型。其中分类问题输出离散的类别标签，回归问题输出连续的回归值。<br>而<strong>无监督学习</strong>使用没有标签的数据，数据<strong>描述</strong>模型，揭示数据内在规律。其中包括聚类、降维。</p>
 <h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><p>通过一些方式将数据划分为多个簇（类），让簇内的数据尽量相似，簇间的数据尽量不相似。</p>
 <h4 id="相似度量"><a href="#相似度量" class="headerlink" title="相似度量"></a>相似度量</h4><p>很大程度上决定了聚类效果。</p>
@@ -943,16 +964,24 @@
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
+                                <a href="/tags/%E6%A6%82%E7%8E%87/">
+                                    <span class="chip bg-color">概率</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%89%B9%E5%BE%81/">
+                                    <span class="chip bg-color">特征</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">监督学习</span>
                                 </a>
                             
                                 <a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">无监督学习</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%89%B9%E5%BE%81/">
-                                    <span class="chip bg-color">特征</span>
                                 </a>
                             
                                 <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
@@ -965,14 +994,6 @@
                             
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">机器学习</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">深度学习</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A6%82%E7%8E%87/">
-                                    <span class="chip bg-color">概率</span>
                                 </a>
                             
                                 <a href="/tags/%E6%B3%9B%E5%8C%96/">
@@ -1549,7 +1570,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.3k</span>&nbsp;字
+                class="white-color">35.7k</span>&nbsp;字
             
             
             
