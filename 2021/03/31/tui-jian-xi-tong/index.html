@@ -680,7 +680,7 @@
 <h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
 <p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
 <h5 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h5><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>
-<h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><p>基本思路还是把各种能够获取的信息利用起来。</p>
+<h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><p>基本思路还是把各种能够获取的信息利用起来，最常见的是使用side information，以及通过各种非模型的策略。</p>
 <h4 id="side-information"><a href="#side-information" class="headerlink" title="side information"></a>side information</h4><ul>
 <li>利用<strong>属性特征</strong>，即ID特征以外，具有<strong>泛化能力</strong>的特征的embedding对冷启动项进行初始化。<ul>
 <li>DropoutNet：通过Dropout机制，促进模型充分学习各种特征，而不是专注在ID特征，以更好的实现冷启动。<ul>
@@ -691,7 +691,7 @@
 <li>Warm Up Cold-start Advertisements: Improving CTR Predictions via Learning to Learn ID Embeddings. SIGIR2019.<img src='/medias/image/推荐系统-MetaEmbedding.jpg' width="100%"></li>
 </ul>
 </li>
-<li>Meta Warm Up Framework：考虑到冷启动商品与非冷启动商品的分布不同（交互用户/项），加入对应的结构，使得学到的分布更加准确。<ul>
+<li>Meta Warm Up Framework：考虑到冷启动商品与非冷启动商品的分布不同（有无/多少交互的用户/项），加入对应的结构，使得学到的分布更加准确。<ul>
 <li>Learning to Warm Up Cold Item Embeddings for Cold-start Recommendation with Meta Scaling and Shifting Networks. SIGIR2021.<img src='/medias/image/推荐系统-Meta Warm Up Framework (MWUF).jpg' width="100%"></li>
 </ul>
 </li>
@@ -1350,7 +1350,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.2k</span>&nbsp;字
+                class="white-color">36.4k</span>&nbsp;字
             
             
             
