@@ -497,14 +497,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -518,6 +518,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -568,15 +571,13 @@
 <li><p>count()统计指定元素个数。</p>
 </li>
 <li><p>max(list)统计元素最大值（要求元素类型相同才可比较，数值类型、字符串等直接比较，其它类型比较id）</p>
-<pre class="line-numbers language-python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
-max<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-out<span class="token punctuation">:</span><span class="token number">6</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'dvs'</span><span class="token punctuation">,</span><span class="token string">'vsvd'</span><span class="token punctuation">,</span><span class="token string">'be'</span><span class="token punctuation">,</span><span class="token string">'dfbeab'</span><span class="token punctuation">]</span>
-max<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-out<span class="token punctuation">:</span><span class="token string">'vsvd'</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a&#x3D;[2,4,5,6]
+max(a)
+out:6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a&#x3D;[&#39;dvs&#39;,&#39;vsvd&#39;,&#39;be&#39;,&#39;dfbeab&#39;]
+max(a)
+out:&#39;vsvd&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>min(list)与max类似，比较正好相反。</p>
 </li>
 <li><p>index()获取指定元素索引（第一个匹配项）</p>
@@ -586,10 +587,8 @@ out<span class="token punctuation">:</span><span class="token string">'vsvd'</sp
 <li><p>copy()浅拷贝</p>
 </li>
 <li><p>深拷贝</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> copy
-copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>list<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import copy
+copy.deepcopy(list)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>sort()原地排序</p>
 </li>
 <li><p>sorted(list)生成新列表</p>
@@ -597,78 +596,77 @@ copy<span class="token punctuation">.</span>deepcopy<span class="token punctuati
 </ol>
 </blockquote>
 <p><strong>列表生成式&amp;生产器表达式</strong></p>
-<pre class="line-numbers language-python"><code class="language-python">l<span class="token operator">=</span><span class="token punctuation">[</span>x<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 列表生成式，4以内整数的2倍数</span>
-g<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 生成器表达式</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">l&#x3D;[x*2 for x in range(5)] # 列表生成式，4以内整数的2倍数
+g&#x3D;(x*2 for x in range(5))# 生成器表达式
 
-type<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;type 'list'></span>
-type<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;type 'generator'></span>
+type(l)# 结果：&lt;type &#39;list&#39;&gt;
+type(g)# 结果：&lt;type &#39;generator&#39;&gt;
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：[0,2,4,6,8]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;generator object at 0x000002173F0EBC50></span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 0</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 2</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 4</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 6</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 8</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># Traceback (most recent call last): ....StopIteration</span>
-<span class="token keyword">for</span> x <span class="token keyword">in</span> g<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：0 2 4 6 8</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+print(l)# 结果：[0,2,4,6,8]
+print(g)# 结果：&lt;generator object at 0x000002173F0EBC50&gt;
+next(g)# 0
+next(g)# 2
+next(g)# 4
+next(g)# 6
+next(g)# 8
+next(g)# Traceback (most recent call last): ....StopIteration
+for x in g:
+    print(x,end&#x3D;&#39; &#39;)# 结果：0 2 4 6 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>有时候不需要同时使用所有数据的时候，使用生成器表达式会更节省空间，当然也有其它方式来替代。</p>
 <p><strong>yield</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 计算斐波那契数列的生成器</span>
-<span class="token keyword">def</span> <span class="token function">fibon</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a<span class="token operator">=</span>b<span class="token operator">=</span><span class="token number">1</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">yield</span> a <span class="token comment" spellcheck="true"># 使用yield</span>
-        a<span class="token punctuation">,</span>b<span class="token operator">=</span>b<span class="token punctuation">,</span>a<span class="token operator">+</span>b
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 计算斐波那契数列的生成器
+def fibon(n):
+    a&#x3D;b&#x3D;1
+    for i in range(n):
+        yield a # 使用yield
+        a,b&#x3D;b,a+b
 
-g<span class="token operator">=</span>fibon<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 1</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 1</span>
-next<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 2</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+g&#x3D;fibon(1000000)
+next(g)# 1
+next(g)# 1
+next(g)# 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h3><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><ul>
 <li>JSON 的全称是  JavaScript Object Notation，是一种轻量级的数据交换格式。最初，JSON 只是JavaScript 的子集，但由于其简单易用而迅速走红。</li>
 <li>现今大部分编程语言都支持对 JSON 的解析与生成，而近些年异军突起的 NoSQL 数据库也多参照 JSON来设计数据存储格式，例如 Mongodb 的BSON（Binary JSON）。</li>
 <li>JSON 有以下六种数据类型：number、boolean、string、null、array、object。前三种很好理解，第四个 null 对应 Python 的 None，最后两种，对应 Python 的列表和字典。</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token punctuation">{</span>
-  <span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>
-  <span class="token string">"age"</span><span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">,</span>
-  <span class="token string">"gender"</span><span class="token punctuation">:</span>true<span class="token punctuation">,</span>
-  <span class="token string">"grade"</span><span class="token punctuation">:</span>null<span class="token punctuation">,</span>
-  <span class="token string">"skills"</span><span class="token punctuation">:</span><span class="token punctuation">[</span>
-  <span class="token string">"JavaScript"</span><span class="token punctuation">,</span>
-  <span class="token string">"Java"</span><span class="token punctuation">,</span>
-  <span class="token string">"Python"</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&#123;
+  &quot;name&quot;:&quot;小明&quot;,
+  &quot;age&quot;:14,
+  &quot;gender&quot;:true,
+  &quot;grade&quot;:null,
+  &quot;skills&quot;:[
+  &quot;JavaScript&quot;,
+  &quot;Java&quot;,
+  &quot;Python&quot;
+  ]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ol>
 <li>json.dumps() 把 Python 对象序列化；</li>
 <li>json.dump() 先序列化，然后将内容存入文件</li>
 </ol>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
-d<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'8'</span><span class="token punctuation">,</span>score<span class="token operator">=</span><span class="token number">88</span><span class="token punctuation">)</span>
-json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>d<span class="token punctuation">)</span> 
-<span class="token comment" spellcheck="true">#'{"name": "Tom", "age": "8", "score": 88}'</span>
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.json'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>d<span class="token punctuation">,</span>f<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import json
+d&#x3D;dict(name&#x3D;&#39;Tom&#39;,age&#x3D;&#39;8&#39;,score&#x3D;88)
+json.dumps(d) 
+#&#39;&#123;&quot;name&quot;: &quot;Tom&quot;, &quot;age&quot;: &quot;8&quot;, &quot;score&quot;: 88&#125;&#39;
+with open(&#39;test.json&#39;,&#39;w&#39;) as f:
+    json.dump(d,f)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ol>
 <li>json.loads() 从内存中读取内容解析；</li>
 <li>json.load() 从文件中读取内容解析</li>
 </ol>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
-d<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'8'</span><span class="token punctuation">,</span>score<span class="token operator">=</span><span class="token number">88</span><span class="token punctuation">)</span>
-tom_json<span class="token operator">=</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>d<span class="token punctuation">)</span>
-json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>tom_json<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#{'age':'8','name':'Tom','score':88}</span>
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.json'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#{'name':'Tom','age':'8','score':88}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import json
+d&#x3D;dict(name&#x3D;&#39;Tom&#39;,age&#x3D;&#39;8&#39;,score&#x3D;88)
+tom_json&#x3D;json.dumps(d)
+json.loads(tom_json)
+#&#123;&#39;age&#39;:&#39;8&#39;,&#39;name&#39;:&#39;Tom&#39;,&#39;score&#39;:88&#125;
+with open(&#39;test.json&#39;,&#39;r&#39;) as f:
+    print(json.load(f))
+#&#123;&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:&#39;8&#39;,&#39;score&#39;:88&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h4><ul>
 <li><p><code>Numpy</code>基于<code>c</code>语言实现，因此十分高效，<code>pandas</code>又基于<code>numpy</code>，提供更加丰富的功能。</p>
 </li>
@@ -721,20 +719,20 @@ json<span class="token punctuation">.</span>loads<span class="token punctuation"
 <h4 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h4><ul>
 <li>如果把<code>numpy</code>看成是加强版的列表<code>list</code>，<code>pandas</code>就像是加强版的字典<code>dict</code>，为数据加上了许多标签。</li>
 </ul>
-<pre class="line-numbers language-Python"><code class="language-Python">pd.Series([23,43,24,np.nan,42,42])
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">pd.Series([23,43,24,np.nan,42,42])
 0    23.0
 1    43.0
 2    24.0
 3     NaN
 4    42.0
 5    42.0
-dtype: float64； 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-Python"><code class="language-Python">pd.date_range('2020-05-02',periods=4)
-DatetimeIndex(['2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05'], dtype='datetime64[ns]', freq='D')；
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-Python"><code class="language-Python">pd.DataFrame(np.random.randint(0,100,(23,3)),index=np.arange(10,33),columns=['d','f','w'])
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+dtype: float64； <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">pd.date_range(&#39;2020-05-02&#39;,periods&#x3D;4)
+DatetimeIndex([&#39;2020-05-02&#39;, &#39;2020-05-03&#39;, &#39;2020-05-04&#39;, &#39;2020-05-05&#39;], dtype&#x3D;&#39;datetime64[ns]&#39;, freq&#x3D;&#39;D&#39;)；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">pd.DataFrame(np.random.randint(0,100,(23,3)),index&#x3D;np.arange(10,33),columns&#x3D;[&#39;d&#39;,&#39;f&#39;,&#39;w&#39;])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <ul>
 <li><p><code>pandas</code>的操作方法大都是生成新的对象并返回。</p>
 </li>
@@ -1426,7 +1424,7 @@ DatetimeIndex(['2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05'], dtype='d
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.7k</span>&nbsp;字
+                class="white-color">36.9k</span>&nbsp;字
             
             
             

@@ -493,7 +493,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    944
+                    945
                 </div>
                 
 
@@ -514,6 +514,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -545,16 +548,16 @@
 <p>即节点越靠中心，分母越小，值越大。</p>
 <h4 id="PageRank"><a href="#PageRank" class="headerlink" title="PageRank"></a>PageRank</h4><p>边的PageRank值为源节点的PageRank除以出度，节点的PageRank值等于入边的PageRank值之和。</p>
 <p>交替计算直至稳定。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> networkx <span class="token keyword">as</span> nx
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import networkx as nx
 
-<span class="token comment" spellcheck="true"># 可以从其它的数据结构中导入，如pandas邻接表</span>
-G <span class="token operator">=</span> nx<span class="token punctuation">.</span>from_<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
-nx<span class="token punctuation">.</span>degree<span class="token punctuation">(</span>G<span class="token punctuation">)</span>
-nx<span class="token punctuation">.</span>connected_components<span class="token punctuation">(</span>G<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-nx<span class="token punctuation">.</span>pagerank<span class="token punctuation">(</span>G<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 可以从其它的数据结构中导入，如pandas邻接表
+G &#x3D; nx.from_..()  
+nx.degree(G)
+nx.connected_components(G)
+......
+nx.pagerank(G)
+......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="Graph-embedding"><a href="#Graph-embedding" class="headerlink" title="Graph embedding"></a>Graph embedding</h2><p>从图总提取信息，用一个向量来表示一个节点。</p>
 <h4 id="onehot"><a href="#onehot" class="headerlink" title="onehot"></a>onehot</h4><p>每个节点用一个长度为节点数的向量表示，加在一起就是邻接矩阵。</p>
 <p>数据稀疏，单个节点的表示缺乏很多重要信息。</p>
@@ -1181,7 +1184,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.7k</span>&nbsp;字
+                class="white-color">36.9k</span>&nbsp;字
             
             
             

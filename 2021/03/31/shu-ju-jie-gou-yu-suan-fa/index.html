@@ -539,6 +539,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -690,17 +693,17 @@
 <p>动态规划一定有重叠子问题，而回溯没有。某种程度上说，动态规划的暴力求解阶段就是回溯算法。只是有的问题具有重叠子问题性质，可以用 dp table 或者备忘录优化，将递归树大幅剪枝，这就变成了动态规划。</p>
 <p>回溯的过程也是在做DFS深度优先搜索。</p>
 <p>通用框架：</p>
-<pre class="line-numbers language-python"><code class="language-python">result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> 满足结束条件<span class="token punctuation">:</span>
-        result<span class="token punctuation">.</span>add<span class="token punctuation">(</span>路径<span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">result &#x3D; []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.add(路径)
+        return
 
-    <span class="token keyword">for</span> 选择 <span class="token keyword">in</span> 选择列表<span class="token punctuation">:</span>
+    for 选择 in 选择列表:
         做选择
-        backtrack<span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span>
-        撤销选择
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        backtrack(路径, 选择列表)
+        撤销选择<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ol>
 <li>路径：也就是已经做出的选择。</li>
 <li>选择列表：也就是你当前可以做的选择。</li>
@@ -1349,7 +1352,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.7k</span>&nbsp;字
+                class="white-color">36.9k</span>&nbsp;字
             
             
             
