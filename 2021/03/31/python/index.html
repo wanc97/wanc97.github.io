@@ -490,7 +490,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-17
+                    2021-07-21
                 </div>
                 
 
@@ -555,7 +555,7 @@
 <blockquote>
 <ul>
 <li>[i:i+n:m]：从第i位开始至i+n位，不包括i+n位，每隔m位取一个。</li>
-<li>默认值[0 : -1 : -1]。</li>
+<li>默认值[0: -1: 1]。</li>
 <li>值都可以大于列表长度，取不到就是空列表，不会越界报错。</li>
 <li>从0开始索引，左闭右开区间使得切片很优雅。</li>
 </ul>
@@ -598,7 +598,7 @@ copy<span class="token punctuation">.</span>deepcopy<span class="token punctuati
 </blockquote>
 <p><strong>列表生成式&amp;生产器表达式</strong></p>
 <pre class="line-numbers language-python"><code class="language-python">l<span class="token operator">=</span><span class="token punctuation">[</span>x<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 列表生成式，4以内整数的2倍数</span>
-g<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">*</span>2forxinrange<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 生成器表达式</span>
+g<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 生成器表达式</span>
 
 type<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;type 'list'></span>
 type<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 结果：&lt;type 'generator'></span>
@@ -633,7 +633,7 @@ next<span class="token punctuation">(</span>g<span class="token punctuation">)</
 <li>现今大部分编程语言都支持对 JSON 的解析与生成，而近些年异军突起的 NoSQL 数据库也多参照 JSON来设计数据存储格式，例如 Mongodb 的BSON（Binary JSON）。</li>
 <li>JSON 有以下六种数据类型：number、boolean、string、null、array、object。前三种很好理解，第四个 null 对应 Python 的 None，最后两种，对应 Python 的列表和字典。</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token punctuation">{</span>
   <span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>
   <span class="token string">"age"</span><span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">,</span>
   <span class="token string">"gender"</span><span class="token punctuation">:</span>true<span class="token punctuation">,</span>
@@ -643,7 +643,7 @@ next<span class="token punctuation">(</span>g<span class="token punctuation">)</
   <span class="token string">"Java"</span><span class="token punctuation">,</span>
   <span class="token string">"Python"</span>
   <span class="token punctuation">]</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
 <li>json.dumps() 把 Python 对象序列化；</li>
@@ -652,7 +652,7 @@ next<span class="token punctuation">(</span>g<span class="token punctuation">)</
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
 d<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'8'</span><span class="token punctuation">,</span>score<span class="token operator">=</span><span class="token number">88</span><span class="token punctuation">)</span>
 json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>d<span class="token punctuation">)</span> 
-<span class="token comment" spellcheck="true">#'&amp;#123;"name": "Tom", "age": "8", "score": 88&amp;#125;'</span>
+<span class="token comment" spellcheck="true">#'{"name": "Tom", "age": "8", "score": 88}'</span>
 <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.json'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>d<span class="token punctuation">,</span>f<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -664,10 +664,10 @@ json<span class="token punctuation">.</span>dumps<span class="token punctuation"
 d<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'8'</span><span class="token punctuation">,</span>score<span class="token operator">=</span><span class="token number">88</span><span class="token punctuation">)</span>
 tom_json<span class="token operator">=</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>d<span class="token punctuation">)</span>
 json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>tom_json<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#&amp;#123;'age':'8','name':'Tom','score':88&amp;#125;</span>
+<span class="token comment" spellcheck="true">#{'age':'8','name':'Tom','score':88}</span>
 <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.json'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#&amp;#123;'name':'Tom','age':'8','score':88&amp;#125;</span>
+<span class="token comment" spellcheck="true">#{'name':'Tom','age':'8','score':88}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h4><ul>
 <li><p><code>Numpy</code>基于<code>c</code>语言实现，因此十分高效，<code>pandas</code>又基于<code>numpy</code>，提供更加丰富的功能。</p>
@@ -822,6 +822,10 @@ DatetimeIndex(['2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05'], dtype='d
 <li><code>heapq.heapreplace(&#39;list&#39;, item)</code>:先pop，再push。</li>
 <li><code>heapq.nlargest(n, iterable, key=None)</code>:取前n大。</li>
 <li><code>heapq.nsmallest(n, iterable, key=None)</code>:取前n小。</li>
+</ul>
+<h4 id="bisect"><a href="#bisect" class="headerlink" title="bisect"></a>bisect</h4><ul>
+<li><code>bisect.bisect_left(&#39;list&#39;,x)</code>：在升序<code>list</code>中插入一个<code>x</code>，使得列表仍然有序，返回插入位置，如果有列表中有<code>x</code>，则插入位置在原<code>x</code>左侧，即原<code>x</code>的位置。</li>
+<li><code>bisect.bisect_right(&#39;list&#39;,x)</code>：同上，如果有列表中有<code>x</code>，则插入位置在原<code>x</code>右侧，即原<code>x</code>的位置+1。</li>
 </ul>
 
                 
@@ -1397,6 +1401,13 @@ DatetimeIndex(['2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05'], dtype='d
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
