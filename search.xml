@@ -204,15 +204,15 @@
       
         <tags>
             
-            <tag> 算法 </tag>
+            <tag> 排序 </tag>
             
             <tag> 二分 </tag>
-            
-            <tag> 排序 </tag>
             
             <tag> 归并 </tag>
             
             <tag> 快速排序 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -800,11 +800,11 @@
             
             <tag> 树 </tag>
             
-            <tag> 数据结构 </tag>
+            <tag> 二分 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 二分 </tag>
+            <tag> 数据结构 </tag>
             
             <tag> 动态规划 </tag>
             
