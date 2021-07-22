@@ -450,12 +450,12 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/tags/%E7%89%B9%E5%BE%81/">
-                                <span class="chip bg-color">特征</span>
-                            </a>
-                        
                             <a href="/tags/%E6%A6%82%E7%8E%87/">
                                 <span class="chip bg-color">概率</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%89%B9%E5%BE%81/">
+                                <span class="chip bg-color">特征</span>
                             </a>
                         
                             <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
@@ -522,21 +522,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-07-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.3k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -559,12 +559,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="机器学习基本知识"><a href="#机器学习基本知识" class="headerlink" title="机器学习基本知识"></a>机器学习基本知识</h2><p><strong>机器学习中不确定性有三个来源</strong>:</p>
+                <h2 id="机器学习基本知识"><a href="#机器学习基本知识" class="headerlink" title="机器学习基本知识"></a>机器学习基本知识</h2><p><strong>机器学习</strong>：</p>
 <ul>
-<li>模型本身固有的随机性。如：量子力学中的粒子动力学方程。</li>
-<li>不完全的观测。即使是确定性系统，当无法观测所有驱动变量时，结果也是随机的。</li>
-<li>不完全建模。有时必须放弃一些观测信息。如机器人建模中：虽然可以精确观察机器人周围每个对象的位置，但在预测这些对象将来的位置时，对空间进行了离散化。则位置预测将带有不确定性。</li>
-<li>即系统本身，采集数据，模型三个方面</li>
+<li>对象：具有一定的统计规律的数据。</li>
+<li>过程：找出数据中有泛化能力的模式/规律，以应用在新的场景下。</li>
 </ul>
 <p><strong>没有免费的午餐定理</strong>：</p>
 <ul>
@@ -580,15 +578,11 @@
 <li><p>特征空间：<br>特征空间是指经过特征工程处理过的输入空间<br>特征空间的每一个维度对应一种特征。<br>可以将输入空间等同于特征空间，但是也可以不同。绝大多数情况下，输入空间等于特征空间。<br>模型是定义在特征空间上的。</p>
 </li>
 </ul>
-<p><strong>机器学习的对象是</strong>：</p>
-<ul>
-<li>具有一定的统计规律的数据。</li>
-</ul>
 <p><strong>机器学习任务类型</strong>：</p>
 <ul>
-<li><p>监督学习任务：<br>从已标记的训练数据来训练模型。 主要分为：分类任务、回归任务、序列标注任务。<br>分类和回归的区别主要在于标签是连续值还是离散值</p>
+<li><p><strong>监督学习</strong>是在有明确的标签的数据上进行的，属于<strong>预测</strong>模型。其中分类问题输出离散的类别标签，回归问题输出连续的回归值。</p>
 </li>
-<li><p>无监督学习任务：<br>从未标记的训练数据来训练模型。主要分为：聚类任务、降维任务。</p>
+<li><p>而<strong>无监督学习</strong>使用没有标签的数据，数据<strong>描述</strong>模型，揭示数据内在规律。其中包括聚类、降维。</p>
 </li>
 <li><p>半监督学习任务：<br>用大量的未标记训练数据和少量的已标记数据来训练模型。</p>
 </li>
@@ -609,6 +603,11 @@
 <li>监督学习假设输入与标记遵循一个联合概率分布，训练数据和测试数据依联合概率分布进行独立同分布产生。</li>
 <li>学习过程中，假定这个联合概率分布存在，但是具体参数未知。</li>
 </ul>
+<p><strong>生成模型&amp;判别模型</strong><br>区别在于有没有显式计算分布。</p>
+<ul>
+<li>判别模型是得到判别边界，判断样本为不同类别的概率，不显式计算分布，隐式学习到分布信息；</li>
+<li>生成模型是显式计算样本数据与类别的分布信息，判别时计算样本为哪一类的概率更大。<img src='/medias/image/机器学习-生成判别.jpeg' width="80%"></li>
+</ul>
 <p><strong>概率模型&amp;非概率模型</strong>：</p>
 <ul>
 <li>监督学习的模型可以为概率模型或者非概率模型：</li>
@@ -621,23 +620,20 @@
 </ul>
 <p><strong>经验风险最小化&amp;结构风险最小化&amp;奥卡姆剃刀原理</strong></p>
 <ul>
-<li><p><strong>经验风险</strong>最小化的目的是使模型更好地拟合数据样本；</p>
-</li>
-<li><p><strong>结构风险</strong>是在经验风险最小的基础上加入先验知识，使得模型往更加合理的方向优化；</p>
-</li>
-<li><p>结构风险最小化策略符合<strong>奥卡姆剃刀原理</strong>：能够很好地解释已知数据，且十分简单才是最好的模型。</p>
-</li>
-<li><p><strong>极大似然估计</strong>就是经验风险最小化的例子</p>
-</li>
-<li><p><strong>最大后验估计</strong>就是结构风险最小化的例子</p>
-</li>
+<li>机器学习的目标是 <strong>期望风险</strong>最小化，也就是让模型拟合真实分布；</li>
+<li>但真实分布无法完全得到，只能获得分布的一些数据，<strong>经验风险</strong>最小化的目的是使模型更好地拟合数据样本；</li>
+<li>有限的采样数据与真实分布之间存在gap，<strong>结构风险</strong>是在经验风险最小的基础上加入先验知识，使得模型往更加合理的方向优化；</li>
+<li>结构风险最小化策略符合<strong>奥卡姆剃刀原理</strong>：能够很好地解释已知数据，且十分简单才是最好的模型。</li>
+</ul>
+<p><strong>参数估计</strong></p>
+<ul>
+<li><strong>极大似然估计</strong>就是经验风险最小化的例子</li>
+<li><strong>最大后验估计</strong>就是结构风险最小化的例子</li>
 </ul>
 <p><strong>概率&amp;似然</strong></p>
 <ul>
-<li><p>概率是描述在确定分布下某个事件发生可能性的大小；</p>
-</li>
-<li><p>似然是描述在发生某些事件的情况下为某个分布的概率。</p>
-</li>
+<li>概率是描述在确定分布下某个事件发生可能性的大小；</li>
+<li>似然是描述在发生某些事件的情况下为某个分布的概率。</li>
 </ul>
 <p><strong>P-value</strong></p>
 <ul>
@@ -679,6 +675,13 @@
 </li>
 <li><p>早停：当验证集上的误差没有进一步改善时，算法提前终止。</p>
 </li>
+</ul>
+<p><strong>机器学习中不确定性有三个来源</strong>:</p>
+<ul>
+<li>模型本身固有的随机性。如：量子力学中的粒子动力学方程。</li>
+<li>不完全的观测。即使是确定性系统，当无法观测所有驱动变量时，结果也是随机的。</li>
+<li>不完全建模。有时必须放弃一些观测信息。如机器人建模中：虽然可以精确观察机器人周围每个对象的位置，但在预测这些对象将来的位置时，对空间进行了离散化。则位置预测将带有不确定性。</li>
+<li>即系统本身，采集数据，模型三个方面</li>
 </ul>
 <p><strong>假设空间</strong></p>
 <ul>
@@ -821,9 +824,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>监督学习</strong>是在有明确的标签的数据上进行的，属于<strong>预测</strong>模型。其中分类问题输出离散的类别标签，回归问题输出连续的回归值。<br>而<strong>无监督学习</strong>使用没有标签的数据，数据<strong>描述</strong>模型，揭示数据内在规律。其中包括聚类、降维。</p>
-<h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><p>通过一些方式将数据划分为多个簇（类），让簇内的数据尽量相似，簇间的数据尽量不相似。</p>
-<h4 id="相似度量"><a href="#相似度量" class="headerlink" title="相似度量"></a>相似度量</h4><p>很大程度上决定了聚类效果。</p>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>通过一些方式将数据划分为多个簇（类），让簇内的数据尽量相似，簇间的数据尽量不相似。</p>
+<h3 id="相似度量"><a href="#相似度量" class="headerlink" title="相似度量"></a>相似度量</h3><p>很大程度上决定了聚类效果。</p>
 <p><strong>距离基本要求</strong>：非负性、对称性、三角不等式。</p>
 <p><strong>p范数</strong>：</p>
 <ul>
@@ -832,7 +834,7 @@
 <li>各个维度独立计算。</li>
 </ul>
 <p><strong>马氏距离</strong>：广义距离<br>各个维度不再独立计算，而考虑到它们之间的联系，通过数据的协方差矩阵来联系。<br>也可以不使用协方差矩阵，而通过学习得到联系矩阵。</p>
-<h4 id="原型聚类"><a href="#原型聚类" class="headerlink" title="原型聚类"></a>原型聚类</h4><p>对数据分布有一个先验的假设，然后去计算出分布的参数，如K-means、混合高斯分布。求解参数的过程常常是使用EM期望最大的思想，交替寻优得到。</p>
+<h3 id="原型聚类"><a href="#原型聚类" class="headerlink" title="原型聚类"></a>原型聚类</h3><p>对数据分布有一个先验的假设，然后去计算出分布的参数，如K-means、混合高斯分布。求解参数的过程常常是使用EM期望最大的思想，交替寻优得到。</p>
 <p><strong>K-means</strong></p>
 <blockquote>
 <ul>
@@ -849,7 +851,12 @@
 <li>循环执行前两步，至取值稳定。</li>
 </ul>
 </blockquote>
-<h4 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h4><h4 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h4><h4 id="分布聚类"><a href="#分布聚类" class="headerlink" title="分布聚类"></a>分布聚类</h4><h3 id="分布学习-数据生成"><a href="#分布学习-数据生成" class="headerlink" title="分布学习-数据生成"></a>分布学习-数据生成</h3><p>常见的方式包括VAE和GAN，这两种方式，这两种方式的异同可以从许多角度来看.</p>
+<h3 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h3><h3 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h3><h3 id="分布聚类"><a href="#分布聚类" class="headerlink" title="分布聚类"></a>分布聚类</h3><h2 id="生成模型"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型</h2><h3 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h3><p>EM算法可以看成极大似然估计在数据有缺失时的推广：</p>
+<ul>
+<li>数据属性完整的时候知道完整的数据信息，直接估计分布的参数，即求极大似然；</li>
+<li>缺失数据信息的时候，需要交替寻优，即交替求极大似然和极大概率。</li>
+</ul>
+<h3 id="分布学习-数据生成"><a href="#分布学习-数据生成" class="headerlink" title="分布学习-数据生成"></a>分布学习-数据生成</h3><p>常见的方式包括VAE和GAN，这两种方式，这两种方式的异同可以从许多角度来看.</p>
 <table>
 <thead>
 <tr>
@@ -904,8 +911,21 @@
 <td>整体控制，容易跑偏，图片更清晰</td>
 </tr>
 </tbody></table>
-<p><strong>注：</strong><br>泛函：函数到数值数值的映射，如：KL散度<br>算子：函数到函数的映射，如：梯度</p>
+<p><strong>注：</strong><br>泛函：函数到数值的映射，如：KL散度<br>算子：函数到函数的映射，如：梯度</p>
 <p>变分：对泛函求极值</p>
+<h2 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h2><ul>
+<li>各种降维都是在原空间中找一些重要的方向，使得数据在这些方向上的信息能够尽量代表整体信息；</li>
+<li>寻找重要方向的过程往往都涉及矩阵的特征值分解，不同降维方法使用的矩阵不同，因此得到的方向不同。</li>
+</ul>
+<h3 id="PCA降维"><a href="#PCA降维" class="headerlink" title="PCA降维"></a>PCA降维</h3><ul>
+<li>寻找数据方差最大的几个方向保留下来；</li>
+<li>使用到的是数据的协方差矩阵。<br>核心优化目标：$J(w)=w^T S w$</li>
+</ul>
+<h3 id="有监督降维"><a href="#有监督降维" class="headerlink" title="有监督降维"></a>有监督降维</h3><p><strong>LDA</strong></p>
+<ul>
+<li>在知道数据类别的时候进行降维，目标是使得类间方差尽量大，类内方差尽量小；</li>
+<li>使用到的是类间协方差矩阵和类内协房车矩阵。<br>核心优化目标：$J(w)=\frac{w^T S_b w}{w^T S_w w}$</li>
+</ul>
 
                 
             </div>
@@ -974,12 +994,12 @@
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/tags/%E7%89%B9%E5%BE%81/">
-                                    <span class="chip bg-color">特征</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%A6%82%E7%8E%87/">
                                     <span class="chip bg-color">概率</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%89%B9%E5%BE%81/">
+                                    <span class="chip bg-color">特征</span>
                                 </a>
                             
                                 <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
@@ -1277,20 +1297,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -1580,7 +1600,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.9k</span>&nbsp;字
+                class="white-color">37.3k</span>&nbsp;字
             
             
             
