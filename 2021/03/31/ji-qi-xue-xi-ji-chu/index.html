@@ -529,14 +529,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.7k
+                    6.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    22 分
                 </div>
                 
 
@@ -926,6 +926,33 @@
 <li>在知道数据类别的时候进行降维，目标是使得类间方差尽量大，类内方差尽量小；</li>
 <li>使用到的是类间协方差矩阵和类内协方差矩阵。<br>核心优化目标：$J(w)=\frac{w^T S_b w}{w^T S_w w}$</li>
 </ul>
+<h2 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h2><p>集成学习与深度学习有异曲同工之妙，如：bagging类似于广度网络（dropout机制），boosting类似于深度残差网络，同时每一层都直连到输出。</p>
+<p><strong>boosting</strong><br>相比深度学习，集成学习boosting的训练过程类似于逐层预训练，在优化上的困难要小得多，因此数据集适合集成学习时，集成学习比深度学习更有优势。同时集成学习的参数量往往要小得多，充分利用了参数的能力，且参数相互制衡，因此往往不容易过拟合。当然boosting不容易过拟合的一个重要保障是要用一些简单的模型作为基模型。</p>
+<p><strong>bagging</strong><br>bagging可以抑制过拟合、降低方差，提高模型稳定性，因此适合使用偏差小、方差大的模型作为子模型。</p>
+<p><strong>Adaboost</strong><br>Adaboost（Adaptive Boosting）集成分类中，错误率越高的分类器，占最终分类器的比重越小，同时对于样本权重的调整越小，反之亦然。<br>Adaboost每一步都是计算前向分步算法的最优解：<br>$(\beta_m, \gamma_m)=argmin_{\beta,\gamma}\sum^N_{i=1} L(y_i,f_{m-1}(x_i)+\beta B(x_i|\gamma))$</p>
+<h3 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h3><ul>
+<li>bagging+决策树；</li>
+<li>每一颗决策树随机选取样本和随机选取特征组合。</li>
+</ul>
+<h2 id="经典机器学习算法"><a href="#经典机器学习算法" class="headerlink" title="经典机器学习算法"></a>经典机器学习算法</h2><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p><strong>信息熵</strong>是用来衡量信息不确定性的指标:</p>
+<ul>
+<li><p>对于分布$p(y)$， 信息熵为$H(y)=-\sum_y p(y)\log{p(y)}$</p>
+</li>
+<li><p>在具体数据集$D$上，经验分布熵为$H(D)=-\sum^{K}_{k=1}\frac{N_k}{N}\log{\frac{N_k}{N}}$</p>
+</li>
+<li><p>也可以用基尼系数$1-\sum_y{p(y)}^2$</p>
+</li>
+</ul>
+<p><strong>条件熵</strong>：加入条件（如某个数据的特征），当条件取值不同时，数据子集有不同的信息熵，其期望就是条件熵。</p>
+<ul>
+<li><p>$H(y|A)=\sum_A p(A)H(y|A)=-\sum_A[p(A)\sum_{y_A} p(y_A)\log{p(y_A)}]$</p>
+</li>
+<li><p>经验条件熵：$H(D|A)=-\sum_A[\frac{N_A}{N}\sum^{K_A}_{k=1}\frac{N_k}{N_A}\log{\frac{N_k}{N_A}}]$</p>
+</li>
+</ul>
+<p><strong>信息增益</strong>:<br>通过加入特征使得数据分布更加确定，即该特征为分布带来了信息增益：$g(D,A)=H(D)-H(D|A)$</p>
+<p><strong>信息增益比</strong>:<br>直接使用信息增益会倾向于使用取值较多的特征，如ID特征，信息增益比是在信息增益的基础上用特征取值的信息熵来标准化：$g_r(D,A)=\frac{g(D,A)}{H_A(D)}=\frac{H(D)-H(D|A)}{H_A(D)}$</p>
+<p>回归树<strong>标准方差</strong>：<br>前面的指标运用于分类问题中的信息不确定度计算，在回归问题中可以使用方差来表示不确定性，对应的有方差、条件方差、方差增益。</p>
 
                 
             </div>
@@ -1600,7 +1627,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">37.3k</span>&nbsp;字
+                class="white-color">38k</span>&nbsp;字
             
             
             
