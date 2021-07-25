@@ -622,8 +622,6 @@
     
     <category term="特征" scheme="http://notego.top/tags/%E7%89%B9%E5%BE%81/"/>
     
-    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="监督学习" scheme="http://notego.top/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="无监督学习" scheme="http://notego.top/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
@@ -633,6 +631,8 @@
     <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="机器学习" scheme="http://notego.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="泛化" scheme="http://notego.top/tags/%E6%B3%9B%E5%8C%96/"/>
     
