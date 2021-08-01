@@ -522,7 +522,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-28
+                    2021-07-29
                 </div>
                 
 
@@ -861,7 +861,7 @@
 </ul>
 <p><strong>激活函数</strong></p>
 <ul>
-<li>一般解释sigmoid函数在深度学习上的劣势通常是从梯度消失的角度来解释，也可以尝试另一个角度：sigmoid函数就不是为深度学习而生的，它原本就是在浅层模型（逻辑斯蒂回归）中将数值从无穷区间映射到0<del>1之间的工具。现在这一工作基本由softmax替代，所以替代sigmoid函数的不是relu，而是softmax。另外softmax本身就是对sigmoid的扩展。Tanh几乎在所有场合都优于sigmoid函数，除非要求输出0</del>1，否则需要考虑sigmoid的时候完全可以用tanh取代。</li>
+<li>一般解释sigmoid函数在深度学习上的劣势通常是从梯度消失的角度来解释，也可以尝试另一个角度：sigmoid函数就不是为深度学习而生的，它原本就是在浅层模型（逻辑斯蒂回归）中将数值从无穷区间映射到0-1之间的工具。现在这一工作基本由softmax替代，所以替代sigmoid函数的不是relu，而是softmax。另外softmax本身就是对sigmoid的扩展。Tanh几乎在所有场合都优于sigmoid函数，除非要求输出0-1，否则需要考虑sigmoid的时候完全可以用tanh取代。</li>
 <li>Relu函数虽然有一半的输出处于0导数，但却并不是说会有一半的神经元处于未激活的状态，因为对于不同的样本可能函数输入会很不相同，有的样本输入大于0，有的样本输入小于0，这样就不能算未激活。</li>
 <li>每一个神经元都是一个特征学习器，因此怎样的激活函数更好也可以从这个角度展开分析。所以前馈网络的隐单元更适合relu，而tanh（sigmoid）用在需要限制输出的地方，如循环神经网络中防止梯度爆炸。</li>
 </ul>
@@ -1457,20 +1457,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -1760,7 +1760,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">41.1k</span>&nbsp;字
+                class="white-color">41.8k</span>&nbsp;字
             
             
             
