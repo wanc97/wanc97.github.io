@@ -446,20 +446,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%8C%E5%88%86/">
-                                <span class="chip bg-color">二分</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
                             <a href="/tags/%E6%A0%91/">
                                 <span class="chip bg-color">树</span>
                             </a>
                         
                             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                                 <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E5%88%86/">
+                                <span class="chip bg-color">二分</span>
                             </a>
                         
                             <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
@@ -510,21 +510,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-09
+                    2021-08-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    13 分
                 </div>
                 
 
@@ -712,7 +712,33 @@ def backtrack(路径, 选择列表):
 <h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p>每一次二分都要保证：搜索区间减小，正确处理边界</p>
 <p>不要用else，而是把所有情况用 else if写清楚</p>
 <h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 相对 DFS 的最主要的区别是：<strong>BFS 找到的路径一定是最短的，但代价就是空间复杂度比 DFS 大很多</strong></p>
-<h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><h3 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h3><p>BF、RK、BM、KMP、Trie树、AC自动机<br><strong>BF</strong><br>时间复杂度很高O(m*n)，但也很常用，因为：</p>
+<h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h3><p><strong>时间复杂度</strong></p>
+<ul>
+<li>时间复杂度为$O(n^2)$的排序算法有：冒泡排序、选择排序、插入排序<blockquote>
+<p>这些排序算法是很直观的做法，但效率都比较低，随着元素数量增加，计算代价迅速增加，有优化的空间。例如这些算法在执行的时候，原数组会开始变得有序，这种有序就可以加以利用，进而降低复杂度，也就有了$O(nlog(n))$的算法。进一步如果待排序元素的种类/个数是有限的，还可以利用桶进一步降低复杂度。</p>
+</blockquote>
+</li>
+<li>时间复杂度为$O(nlog(n))$的排序算法有：快速排序、归并排序、堆排序、希尔排序</li>
+<li>时间复杂度为$O(n+k)$的排序算法有：计数排序、基数排序</li>
+</ul>
+<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>自然界中，在重力作用下密度小的物体有向上运动的趋势，而密度大的物体有向下运动的趋势，也就是自然存在依密度排列的趋势。<br>冒泡排序的思路就是这么朴素，让元素按大小自然沉浮。<br>对于长度为$n$的数组，循环$n-1$次，每次都让剩下元素中最大的元素沉下去（当然可以让最小的浮上来）。</p>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>同样对于长度为n的数组，循环$n-1$次，每次遍历剩下元素，把最大（最小）地元素提取出来。<br>与冒泡排序类似，不同的是冒泡每次比较发现逆序都会交换元素，而选择排序会记录当前的最大值的位置。</p>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>对于长度为$n$的数组，循环$n-1$次，每次从剩下元素取第一个往有序部分<strong>线性</strong>插入。<br>选择排序是在取的时候得到有序，而插入排序是在放的时候得到有序。<br>在数组是由链表构成时，如果插入的时候不是线性插入，而是二分插入，可以将复杂度降到$O(nlog(n))$</p>
+<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>利用二分和分治的思想，大约循环$log(n)$层，每次将原数组划分成两个无序部分，但是其中一个部分都大于另一个部分。<br>可以看成是一种特殊的冒泡排序，所有元素跟相同的元素比较，使得每次比较一遍可以让所有元素都<strong>沉</strong>或<strong>浮</strong>。<br>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))~O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。</p>
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p>利用分治的思想，将问题划分为更小的子问题，$问题数量的增长+额外代价 &lt; 问题复杂度的减小$时就可以降低复杂度。<br>这里随着分治的进行，问题数量指数增加，问题复杂度指数减小，但是问题复杂度减小地更快。<br>空间复杂度$O(n)$</p>
+<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>利用最大/小堆，每次弹出最大/小值，可以看成是一种优化的选择排序。<br>建立堆的过程复杂度为$O(n)$：不同结点需要比较的次数不一样，但平均不超过2。</p>
+<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>当原数组是非常有序时，插入排序的复杂度极低，可以接近$O(n)$。<br>希尔排序是一种改良的插入排序，先通过较大的步长尽可能减少逆序，降低插入的代价。<br>复杂度与步长选择有关，当原数组较为有序时可以考虑小一些的步长；当步长不合适时复杂度会增加至$O(n^2)$。<br>当数据量过大时，希尔排序容易低效，更适合数据量小的时候。</p>
+<h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><p>当排序数组的元素取值为有限值时，可以根据可能的取值构建桶，将元素按值放入桶中，对桶中的元素计数，得到元素的顺序，是一种在特殊情况下以空间换时间的方式。</p>
+<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><p>在元素取值为有限位时，从低位到高位，每次对其中一位进行排序。<br>两种桶排序的空间复杂度跟桶的数量有关。</p>
+<h4 id="常见题目"><a href="#常见题目" class="headerlink" title="常见题目"></a>常见题目</h4><p><strong>基本有序数组排序</strong><br>基本有序数组：每个元素跟最终有序位置距离不超过k。<br>在这种特殊情况下，能够将一些排序算法的时间复杂度再降一降.<br>插入排序$O(n*k)$：每个元素最多比较$k$次。<br>改进堆排序$O(nlog(k))$：每次只需要取前$k$个元素建立堆，不过可能要使用额外空间建堆，不能像原来一样在原地操作。</p>
+<p><strong>判断是否有重复元素</strong><br>空间复杂度$O(n)$：哈希表。<br>空间复杂度$O(1)$：非递归堆排序</p>
+<p><strong>两个有序数组合并</strong><br>链表就直接按序比较<br>如果是数组，其中一个数组后面有多余空间时，则从空的位置开始放。</p>
+<p><strong>荷兰国旗问题</strong><br>将只包含0,1,2三种数的无序数组排有序</p>
+<p>用三个指针，两个指向0和2，一个遍历，将0和2往两边甩，类似于快排。</p>
+<p><strong>行列有序二维数组</strong><br>右上开始，至左下，$O(n+m)$</p>
+<p><strong>需要排序最短子数组</strong><br>从左向右、从右往左遍历，记录边界（小于最大数的右边界，大于最小数的左边界）</p>
+<p><strong>无序数组排序后的最大差值</strong><br>通过$n$个桶，平均划分区间，将元素放入这些桶中，按序遍历查找。</p>
+<h3 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h3><p>BF、RK、BM、KMP、Trie树、AC自动机<br><strong>BF</strong><br>时间复杂度很高O(m*n)，但也很常用，因为：</p>
 <ul>
 <li>大多数时候主串和匹配串的长度都不大；</li>
 <li>大多数时候会较早遇到不匹配的情况然后停止；</li>
@@ -789,20 +815,20 @@ def backtrack(路径, 选择列表):
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%8C%E5%88%86/">
-                                    <span class="chip bg-color">二分</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%A0%91/">
                                     <span class="chip bg-color">树</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                                     <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%8C%E5%88%86/">
+                                    <span class="chip bg-color">二分</span>
                                 </a>
                             
                                 <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
@@ -1352,7 +1378,7 @@ def backtrack(路径, 选择列表):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42k</span>&nbsp;字
+                class="white-color">42.6k</span>&nbsp;字
             
             
             
