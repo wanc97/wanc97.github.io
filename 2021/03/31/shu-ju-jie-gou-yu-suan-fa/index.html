@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -510,21 +510,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-02
+                    2021-08-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    5.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    17 分
                 </div>
                 
 
@@ -579,7 +579,8 @@
 <li>分析算法效率。</li>
 </ol>
 </blockquote>
-<h3 id="算法要求"><a href="#算法要求" class="headerlink" title="算法要求"></a>算法要求</h3><h4 id="基础要求"><a href="#基础要求" class="headerlink" title="基础要求"></a>基础要求</h4><blockquote>
+<h3 id="算法要求"><a href="#算法要求" class="headerlink" title="算法要求"></a>算法要求</h3><p><strong>基础要求</strong></p>
+<blockquote>
 <ol>
 <li>正确性：零到多个输入，至少一个输出（广义上的输出）；</li>
 <li>有穷性；</li>
@@ -587,14 +588,16 @@
 <li>可行性。</li>
 </ol>
 </blockquote>
-<h4 id="重要要求"><a href="#重要要求" class="headerlink" title="重要要求"></a>重要要求</h4><blockquote>
+<p><strong>重要要求</strong></p>
+<blockquote>
 <ol>
 <li>可读性；</li>
 <li>鲁棒性（能适应更加严苛、复杂的情况）；</li>
 <li>时间空间复杂度低。</li>
 </ol>
 </blockquote>
-<h3 id="算法境界"><a href="#算法境界" class="headerlink" title="算法境界"></a>算法境界</h3><blockquote>
+<p><strong>算法境界</strong></p>
+<blockquote>
 <ol>
 <li>没有语法错误；</li>
 <li>对于合法输入能得到满足要求输出；</li>
@@ -602,7 +605,8 @@
 <li>对于故意刁难的输入可以得到满足要求的输出。</li>
 </ol>
 </blockquote>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p><strong>时间复杂度</strong></p>
+<p>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p>
 <blockquote>
 <p>基本运算应该满足：</p>
 <ol>
@@ -612,17 +616,25 @@
 <p>常见如：比较、加法、乘法、置指针、交换……</p>
 <p>常见的输入规模：数组元素多少、调度问题的任务个数、图的顶点数与边数……</p>
 </blockquote>
-<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>针对指定的空间单位和输入规模，算法所需的空间量相对于输入规模的表达式。</p>
+<ul>
+<li>复杂度中带$O(log^n)$的往往会用到二分或者类似二分的操作（树、堆）</li>
+<li>复杂度中带$O(mn)$的往往需要for循环或动态规划计算</li>
+<li>指数复杂度的场景往往输入规模极小，个位数量级</li>
+</ul>
+<p><strong>空间复杂度</strong></p>
+<p>针对指定的空间单位和输入规模，算法所需的空间量相对于输入规模的表达式。</p>
 <blockquote>
 <p>时间复杂度和空间复杂度都是十分重要的，但是一般算法之间的空间复杂度差别远不及时间复杂度上的差别，因此更多比较的也是时间复杂度。</p>
 </blockquote>
 <h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>对于递推关系：<br><code>T(n)=aT(n/b)+f(n),a&gt;=1,b&gt;1</code></p>
-<p>$a$</p>
 <p><code>n</code>为问题规模，<code>a</code>为子问题个数，<code>n/b</code>为子问题规模，<code>f(n)</code>为递归以外的计算工作。</p>
 <p><code>logb(a)</code>与<code>f(n)</code>直接影响复杂度</p>
-<h4 id="情况一"><a href="#情况一" class="headerlink" title="情况一"></a>情况一</h4><p>当<code>f(n)&lt;O(n^&#123;logb(a)&#125;)</code>(多项式地小于)时：<code>O(n^&#123;logb(a)&#125;)</code>主导复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;)</code></p>
-<h4 id="情况二"><a href="#情况二" class="headerlink" title="情况二"></a>情况二</h4><p>当<code>f(n)&gt;O(n^&#123;logb(a)&#125;)</code>(多项式地大于)时：<code>O(f(n))</code>主导复杂度，<code>T(n)=O(f(n))</code></p>
-<h4 id="情况三"><a href="#情况三" class="headerlink" title="情况三"></a>情况三</h4><p>当<code>f(n)=O(n^&#123;logb(a)&#125;log^&#123;k&#125;(n))</code>（差距不足多项式）时，共同影响复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;log^&#123;k+1&#125;(n))</code></p>
+<p><strong>情况一</strong></p>
+<p>当<code>f(n)&lt;O(n^&#123;logb(a)&#125;)</code>(多项式地小于)时：<code>O(n^&#123;logb(a)&#125;)</code>主导复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;)</code></p>
+<p><strong>情况二</strong></p>
+<p>当<code>f(n)&gt;O(n^&#123;logb(a)&#125;)</code>(多项式地大于)时：<code>O(f(n))</code>主导复杂度，<code>T(n)=O(f(n))</code></p>
+<p><strong>情况三</strong></p>
+<p>当<code>f(n)=O(n^&#123;logb(a)&#125;log^&#123;k&#125;(n))</code>（差距不足多项式）时，共同影响复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;log^&#123;k+1&#125;(n))</code></p>
 <p>注：部分复杂度符号使用粗略</p>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>结构</strong></p>
 <ul>
@@ -661,6 +673,39 @@
 <li>一般线性结构用迭代，非线性结构用递归；</li>
 <li>递归本质上是通过堆栈实现，所以递归可以通过堆栈+迭代实现，这样可读性和实现难度往往不如迭代，但有时候问题较为清晰时可以改成迭代以降低空间消耗。</li>
 </ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>特殊数组</strong></p>
+<ul>
+<li>前缀和数组：等于原数组的积分，适用于平凡使用数组一段区间大小的情况；</li>
+<li>差分数组：等于数组的差分，适用于数组频繁对一段区间的值进行共同操作的情况；</li>
+</ul>
+<p><strong>常见题目</strong></p>
+<ul>
+<li>删除数组重复元素、删除数组指定元素、移动指定元素：双指针，快指针寻找元素，慢指针指示位置；</li>
+<li>数组和为 k 的子数组：<ul>
+<li>左右指针滑窗：$O(n)$时间复杂度，遍历一次即可；</li>
+<li>前缀和数组：空间复杂度更高；</li>
+</ul>
+</li>
+</ul>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><ul>
+<li>反转链表：<ul>
+<li>迭代和递归都可以，迭代不需要额外空间，递归写起来简洁；</li>
+<li>迭代：从前往后遍历，存储几个必要节点，交换指向；</li>
+<li>递归：子函数实现递归，返回下一个节点反转后的头节点和尾节点；</li>
+</ul>
+</li>
+<li>k个一组反转链表：边界判断 + 反转k个节点链表；<ul>
+<li>迭代：从前往后遍历，有k个节点则调用子函数部分反转；</li>
+<li>递归：有k个子节点则调用子函数反转前面，调用自身处理后面，再整合；</li>
+</ul>
+</li>
+<li>反转部分链表：<ul>
+<li>迭代：遍历至指定位置，执行指定数量反转；</li>
+<li>递归：传参数加入带反转的位置信息，以判断操作；</li>
+</ul>
+</li>
+<li>删除链表重复元素：有序链表直接遍历，无序用哈希表；</li>
+</ul>
 <h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>完全二叉树适合数组存储<br><strong>遍历</strong></p>
 <p>一般采用递归的方法遍历比较清晰</p>
 <p>很多问题都可以看成树的遍历</p>
@@ -688,11 +733,15 @@
 <p>重点是<strong>转移方程</strong>，也就是将原问题转化为更简单的子问题的转移关系，一定要正确</p>
 <p>穷举方向可以是<strong>自顶向下</strong>的<strong>递归</strong>，也可以是<strong>自底向上</strong>的<strong>迭代</strong></p>
 <p>一个优化角度是<strong>穷举顺序</strong>，合适的穷举顺序可以少使用备忘录，降低空间复杂度</p>
-<h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p>回溯就是一个<strong>决策树</strong>的<strong>DFS遍历</strong>过程</p>
-<p>基本思路：决策遍历+停止判断</p>
-<p>动态规划一定有重叠子问题，而回溯没有。某种程度上说，动态规划的暴力求解阶段就是回溯算法。只是有的问题具有重叠子问题性质，可以用 dp table 或者备忘录优化，将递归树大幅剪枝，这就变成了动态规划。</p>
-<p>回溯的过程也是在做DFS深度优先搜索。</p>
-<p>通用框架：</p>
+<h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p><strong>基本思想</strong></p>
+<ul>
+<li>回溯就是一个<strong>决策树</strong>的<strong>DFS深度优先搜索</strong>过程；</li>
+<li>基本思路：决策遍历+停止判断；</li>
+<li>做决策的过程就是向子节点递归的过程，回退的时候需要撤销选择回到原来的状态，或者说回到对应节点的状态；</li>
+<li>动态规划一定有重叠子问题，而回溯没有。某种程度上说，动态规划的暴力求解阶段就是回溯算法。只是有的问题具有重叠子问题性质，可以用 dp table 或者备忘录优化，将递归树大幅剪枝，这就变成了动态规划。</li>
+<li>有时候适当调整选择顺序可以降低最坏复杂度。</li>
+</ul>
+<p><strong>通用框架</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">result &#x3D; []
 def backtrack(路径, 选择列表):
     if 满足结束条件:
@@ -709,8 +758,48 @@ def backtrack(路径, 选择列表):
 <li>选择列表：也就是你当前可以做的选择。</li>
 <li>结束条件：也就是到达决策树底层，无法再做选择的条件。</li>
 </ol>
-<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p>每一次二分都要保证：搜索区间减小，正确处理边界</p>
-<p>不要用else，而是把所有情况用 else if写清楚</p>
+<p><strong>常见题目</strong></p>
+<ul>
+<li>n皇后：每行一个皇后，所以选择列表就是每一行的皇后的列数，选择的时候判断是否冲突；</li>
+<li>全排列：每一步从剩下的选择中选择；</li>
+<li>m个元素平分成k个元素和相同的子集：决策深度为元素数m，每个元素有k种选择，每个集合的最终总和是确定的，用于判断是否合适；<ul>
+<li>可以先对元素进行排序，优先选择较大的元素，更容易出发停止条件，以减小计算量。</li>
+<li>也可以从桶的角度，先选择桶，再选择元素放不放，各个桶之间的状态相对独立一些，可以把最坏复杂度从$O(k^m)$降到$O(k*2^k)$。</li>
+</ul>
+</li>
+<li>求子集：每一个元素加或不加是选择，没有中间的剪枝，所以也可以不用模版直接迭代；</li>
+<li>求组合：按顺序依次取，每一个元素加或不加是选择，当元素数量达到指定数量时停止；</li>
+<li>求排列：不按顺序取，每一个元素加或不加是选择，当元素数量达到指定数量时停止；</li>
+<li>括号组合：每次加一种（左右，大小）括号进去，判断是否不合法；<ul>
+<li>如果是只有一种括号可以直接用数字记录括号数量是否合法，或者迭代生成；</li>
+<li>如果有多种括号，需要用栈来判断是否合法；</li>
+</ul>
+</li>
+</ul>
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>双指针可分为快慢指针、左右指针、滑窗等。</p>
+<p><strong>快慢指针</strong></p>
+<ul>
+<li>判断链表是否有环：慢指针一次走一步，快指针一次走两步，如果相交则有环，快指针走到头则无环；</li>
+<li>找链表换的起始点：找到环后，一个指针从起点开始，一个从相遇点开始，各一次走一步，在环的起始点相遇；</li>
+<li>两个链表是否相交：两个指针分别从两个链表开始走，到头则换到另一个链表开始，如果中间指向同一节点则相交；</li>
+<li>找链表中点：慢指针一次走一步，快指针一次走两步，快指针到头时，慢指针为中点；</li>
+<li>找倒数第k个节点：快指针先走k个节点，快指针到头时，去慢指针；</li>
+<li>删除数组重复元素、删除数组指定元素、移动指定元素：快指针寻找元素，慢指针指示位置；</li>
+</ul>
+<p><strong>左右指针</strong></p>
+<ul>
+<li>二分查找：两个指针控制搜索区间，每次区间减半；<ul>
+<li>每一次二分都要保证：搜索区间减小，正确处理边界</li>
+<li>不要用else，而是把所有情况用 else if写清楚</li>
+</ul>
+</li>
+<li>有序数组两数之和：左右边界开始往中间找；</li>
+<li>反转数组；</li>
+</ul>
+<p><strong>滑动窗口</strong><br>通过一定规则，判断是让前指针走还是后指针走，在遍历的过程中记录答案；</p>
+<ul>
+<li>数组和为k的子数组：$O(n)$时间复杂度，遍历一次即可；</li>
+</ul>
 <h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 相对 DFS 的最主要的区别是：<strong>BFS 找到的路径一定是最短的，但代价就是空间复杂度比 DFS 大很多</strong></p>
 <h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h3><p><strong>时间复杂度</strong></p>
 <ul>
@@ -724,7 +813,7 @@ def backtrack(路径, 选择列表):
 <h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>自然界中，在重力作用下密度小的物体有向上运动的趋势，而密度大的物体有向下运动的趋势，也就是自然存在依密度排列的趋势。<br>冒泡排序的思路就是这么朴素，让元素按大小自然沉浮。<br>对于长度为$n$的数组，循环$n-1$次，每次都让剩下元素中最大的元素沉下去（当然可以让最小的浮上来）。</p>
 <h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>同样对于长度为n的数组，循环$n-1$次，每次遍历剩下元素，把最大（最小）地元素提取出来。<br>与冒泡排序类似，不同的是冒泡每次比较发现逆序都会交换元素，而选择排序会记录当前的最大值的位置。</p>
 <h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>对于长度为$n$的数组，循环$n-1$次，每次从剩下元素取第一个往有序部分<strong>线性</strong>插入。<br>选择排序是在取的时候得到有序，而插入排序是在放的时候得到有序。<br>在数组是由链表构成时，如果插入的时候不是线性插入，而是二分插入，可以将复杂度降到$O(nlog(n))$</p>
-<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>利用二分和分治的思想，大约循环$log(n)$层，每次将原数组划分成两个无序部分，但是其中一个部分都大于另一个部分。<br>可以看成是一种特殊的冒泡排序，所有元素跟相同的元素比较，使得每次比较一遍可以让所有元素都<strong>沉</strong>或<strong>浮</strong>。<br>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))~O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。</p>
+<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>利用二分和分治的思想，大约循环$log(n)$层，每次将原数组划分成两个无序部分，但是其中一个部分都大于另一个部分。<br>可以看成是一种特殊的冒泡排序，所有元素跟相同的元素比较，使得每次比较一遍可以让所有元素都<strong>沉</strong>或<strong>浮</strong>。<br>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))-O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。</p>
 <h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p>利用分治的思想，将问题划分为更小的子问题，$问题数量的增长+额外代价 &lt; 问题复杂度的减小$时就可以降低复杂度。<br>这里随着分治的进行，问题数量指数增加，问题复杂度指数减小，但是问题复杂度减小地更快。<br>空间复杂度$O(n)$</p>
 <h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>利用最大/小堆，每次弹出最大/小值，可以看成是一种优化的选择排序。<br>建立堆的过程复杂度为$O(n)$：不同结点需要比较的次数不一样，但平均不超过2。</p>
 <h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>当原数组是非常有序时，插入排序的复杂度极低，可以接近$O(n)$。<br>希尔排序是一种改良的插入排序，先通过较大的步长尽可能减少逆序，降低插入的代价。<br>复杂度与步长选择有关，当原数组较为有序时可以考虑小一些的步长；当步长不合适时复杂度会增加至$O(n^2)$。<br>当数据量过大时，希尔排序容易低效，更适合数据量小的时候。</p>
@@ -1378,7 +1467,7 @@ def backtrack(路径, 选择列表):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.6k</span>&nbsp;字
+                class="white-color">43.8k</span>&nbsp;字
             
             
             
