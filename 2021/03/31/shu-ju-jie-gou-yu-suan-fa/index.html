@@ -517,14 +517,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    18 分
                 </div>
                 
 
@@ -839,6 +839,14 @@ def backtrack(路径, 选择列表):
 <li>没有散列冲突的哈希算法可能会整形溢出，可以允许有一定的冲突，平衡空间与时间</li>
 </ul>
 <p><strong>BM</strong><br>实验统计，BM的性能是著名的KMP算法的3到4倍</p>
+<h3 id="m数和"><a href="#m数和" class="headerlink" title="m数和"></a>m数和</h3><ul>
+<li>排序+左右指针：<ul>
+<li>m=2：排序，左右指针从两边向中间移动，复杂度$O(nlog^n)$；</li>
+<li>m&gt;2：排序，从第一个数的取值开始循环，每一层循环m降低一，最后调用两数之和，左右指针从两边向中间移动，复杂度$O(n^{m-1})$；</li>
+</ul>
+</li>
+<li>哈希+遍历比较：哈希计算并记录m//2数之和的可能性，然后遍历并记录，最坏的时间复杂度$O(n^{m//2+1})$，实际可能更低；</li>
+</ul>
 <h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p><a target="_blank" rel="noopener" href="http://www.csie.ntnu.edu.tw/~u91029/">演算法笔记</a></p>
 
                 
@@ -1467,7 +1475,7 @@ def backtrack(路径, 选择列表):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.8k</span>&nbsp;字
+                class="white-color">44k</span>&nbsp;字
             
             
             
