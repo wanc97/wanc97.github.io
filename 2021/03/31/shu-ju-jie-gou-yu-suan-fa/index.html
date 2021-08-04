@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -516,7 +516,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    6.3k
                 </div>
                 
 
@@ -667,7 +667,7 @@
 </ul>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>特殊数组</strong></p>
 <ul>
-<li>前缀和数组：等于原数组的积分，适用于平凡使用数组一段区间大小的情况；</li>
+<li>前缀和数组：等于原数组的积分，适用于频繁使用数组一段区间大小的情况；</li>
 <li>差分数组：等于数组的差分，适用于数组频繁对一段区间的值进行共同操作的情况；</li>
 </ul>
 <p><strong>常见题目</strong></p>
@@ -801,7 +801,7 @@ def backtrack(路径, 选择列表):
 
 <ol>
 <li>路径：也就是已经做出的选择。</li>
-<li>选择列表：也就是你当前可以做的选择。</li>
+<li>选择列表：也就是当前可以做的选择。</li>
 <li>结束条件：也就是到达决策树底层，无法再做选择的条件。</li>
 </ol>
 <p><strong>常见题目</strong></p>
@@ -850,6 +850,11 @@ def backtrack(路径, 选择列表):
 <li>无重复最长子串：字典或集合记录；</li>
 </ul>
 <h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 相对 DFS 的最主要的区别是：<strong>BFS 找到的路径一定是最短的，但代价就是空间复杂度比 DFS 大很多</strong></p>
+<p><strong>经典问题</strong></p>
+<ul>
+<li>最短路径：图上最短路径适合BFS搜索，数组上的最短路径适合用动态规划的方式。</li>
+<li>找解决方案：变相求最短路径，通过几种可选的策略BFS搜索，直到找到解决方案。</li>
+</ul>
 <h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h3><p><strong>时间复杂度</strong></p>
 <ul>
 <li>时间复杂度为$O(n^2)$的排序算法有：冒泡排序、选择排序、插入排序<blockquote>
