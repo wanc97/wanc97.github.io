@@ -1,6 +1,7 @@
 // 代码块一键复制
+
 $(function () {
-    var $copyIcon = $('<i class="fa fa-files-o code_copy" title="复制代码" aria-hidden="true"></i>')
+    var $copyIcon = $('<i class="fas fa-copy code_copy" title="复制代码" aria-hidden="true"></i>')
     var $notice = $('<div class="codecopy_notice"></div>')
     $('.code-area').prepend($copyIcon)
     $('.code-area').prepend($notice)
@@ -43,7 +44,7 @@ $(function () {
         }
     }
     // 复制
-    $('.code-area .fa-files-o').on('click', function () {
+    $('.code-area .fa-copy').on('click', function () {
         var selection = window.getSelection()
         var range = document.createRange()
         range.selectNodeContents($(this).siblings('pre').find('code')[0])
