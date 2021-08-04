@@ -108,6 +108,7 @@ pre {
     border-radius: 0.35rem;
     tab-size: 4;
 }
+
 .code-area::after {
     content: " ";
     position: absolute;
@@ -121,6 +122,7 @@ pre {
     -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
     box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
 }
+
 code {
     padding: 1px 5px;
     top: 13px !important;
@@ -130,6 +132,7 @@ code {
     background-color: #f8f8f8;
     border-radius: 2px;
 }
+
 .code_copy {
     position: absolute;
     top: 0.7rem;
@@ -138,6 +141,7 @@ code {
     filter: invert(50%);
     cursor: pointer;
 }
+
 .codecopy_notice {
     position: absolute;
     top: 0.7rem;
@@ -146,6 +150,7 @@ code {
     filter: invert(50%);
     opacity: 0;
 }
+
 .code_lang {
     position: absolute;
     top: 1.2rem;
