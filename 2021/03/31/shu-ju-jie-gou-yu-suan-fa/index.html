@@ -510,21 +510,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.5k
+                    5.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    20 分
                 </div>
                 
 
@@ -722,6 +722,7 @@ def traverse(root):
 <ul>
 <li>反转二叉树、二叉树展开为链表、求二叉树高度</li>
 <li>通过列表、前中后序遍历重构二叉树</li>
+<li>寻找重复子树：后续遍历+序列化+哈希</li>
 </ul>
 <h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><ul>
 <li>完全二叉树（适合数组存储）；</li>
@@ -741,12 +742,39 @@ def traverse(root):
 <li>求topk大元素，只需要建一个大小为k的小根堆，每次新来元素同堆顶元素比较，如果大于堆顶元素就替换，否则不操作；</li>
 <li>动态求中位数，一个大顶堆存小元素和一个小顶堆存大元素，保持两个堆元素数量平衡，即可快速，动态得到中位数。</li>
 </ul>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>基本思路：<strong>穷举</strong>+<strong>备忘录</strong></p>
-<p>穷举是为了比较所有可能的情况</p>
-<p>备忘录是通过记录重叠子问题的结果，用空间换时间，降低时间复杂度</p>
-<p>重点是<strong>转移方程</strong>，也就是将原问题转化为更简单的子问题的转移关系，一定要正确</p>
-<p>穷举方向可以是<strong>自顶向下</strong>的<strong>递归</strong>，也可以是<strong>自底向上</strong>的<strong>迭代</strong></p>
-<p>一个优化角度是<strong>穷举顺序</strong>，合适的穷举顺序可以少使用备忘录，降低空间复杂度</p>
+<h3 id="组合结构"><a href="#组合结构" class="headerlink" title="组合结构"></a>组合结构</h3><p><strong>经典题目</strong></p>
+<ul>
+<li>LRU：缓存满时删除最旧的，快速查找需要用到哈希，时间排序用到（双向）链表；</li>
+<li>LFU：缓存满时删除访问频率最低的中最旧的，快速查找、记录每个缓存的访问次数、每个访问次数对应的缓存以及对应顺序的LRU需要用到3/4个哈希，每一个访问次数内用双向链表记录顺序；</li>
+</ul>
+<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p><strong>基本思想</strong></p>
+<ul>
+<li>基本思路：<strong>穷举</strong>+<strong>备忘录</strong><ul>
+<li>穷举是为了比较所有可能的情况，每一个问题可以由一系列小问题的答案组合而成，一般是$max(dp[小1],dp[小2],…)$。</li>
+<li>备忘录是通过记录子问题的结果，避免重复计算，用空间换时间，降低时间复杂度</li>
+</ul>
+</li>
+<li>重点是穷举过程的<strong>转移方程</strong>，也就是将原问题转化为更简单的子问题的转移关系，一定要正确<ul>
+<li>正确得到穷举的转移方程需要明确问题的变量（自由度），最后的问题就变成了多维（自由度）数组的元素填充问题。</li>
+</ul>
+</li>
+<li>穷举方向可以是<strong>自顶向下</strong>的<strong>递归</strong>，也可以是<strong>自底向上</strong>的<strong>迭代</strong></li>
+<li>一个优化角度是<strong>穷举顺序</strong>，合适的穷举顺序可以少使用备忘录，降低空间复杂度</li>
+</ul>
+<p><strong>通用框架</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 自底向上
+dp &#x3D; ...
+for 状态1 in 状态1取值:
+    for 状态2 in 状态2取值:
+        for ...:
+            dp[状态1][状态2][...] &#x3D; 择优(选择1,选择2,...)
+# 自顶向下
+memory &#x3D; ...
+def dp(状态1,状态2,...):
+    if 状态1,状态2,... not in memory:
+        memory[状态1][状态2][...] &#x3D; 择优(dp(选择1),dp(选择2),dp(...))
+    return memory[状态1][状态2][...]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p><strong>基本思想</strong></p>
 <ul>
 <li>回溯就是一个<strong>决策树</strong>的<strong>DFS深度优先搜索</strong>过程；</li>
@@ -1352,7 +1380,7 @@ def backtrack(路径, 选择列表):
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFunction.js"></script>
 
 <!-- 代码语言 -->
 
@@ -1367,6 +1395,13 @@ def backtrack(路径, 选择列表):
 <!-- 代码块收缩 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
 
 
     </div>
@@ -1492,7 +1527,7 @@ def backtrack(路径, 选择列表):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.2k</span>&nbsp;字
+                class="white-color">44.5k</span>&nbsp;字
             
             
             
