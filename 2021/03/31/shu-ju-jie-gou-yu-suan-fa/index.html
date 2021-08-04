@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -516,14 +516,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.3k
+                    6.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    22 分
                 </div>
                 
 
@@ -915,10 +915,10 @@ def backtrack(路径, 选择列表):
 <p><strong>两个有序数组合并</strong><br>链表就直接按序比较<br>如果是数组，其中一个数组后面有多余空间时，则从空的位置开始放。</p>
 <p><strong>荷兰国旗问题</strong><br>将只包含0,1,2三种数的无序数组排有序</p>
 <p>用三个指针，两个指向0和2，一个遍历，将0和2往两边甩，类似于快排。</p>
-<p><strong>行列有序二维数组</strong><br>右上开始，至左下，$O(n+m)$</p>
-<p><strong>需要排序最短子数组</strong><br>从左向右、从右往左遍历，记录边界（小于最大数的右边界，大于最小数的左边界）</p>
+<p><strong>行列有序二维数组查找</strong><br>右上开始，至左下，$O(n+m)$</p>
+<p><strong>需要排序最短子数组</strong><br>从左向右、从右往左遍历，记录边界（小于最大数的右边界，大于最小数的左边界），也就是找到两边不用排序的部分，留下中间存在逆序的部分。</p>
 <p><strong>无序数组排序后的最大差值</strong><br>通过$n$个桶，平均划分区间，将元素放入这些桶中，按序遍历查找。</p>
-<h3 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h3><p>BF、RK、BM、KMP、Trie树、AC自动机<br><strong>BF</strong><br>时间复杂度很高O(m*n)，但也很常用，因为：</p>
+<h3 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h3><p>BF、RK、BM、KMP、Trie树、AC自动机<br><strong>BF</strong><br>时间复杂度很高$O(m*n)$，但也很常用，因为：</p>
 <ul>
 <li>大多数时候主串和匹配串的长度都不大；</li>
 <li>大多数时候会较早遇到不匹配的情况然后停止；</li>
@@ -926,13 +926,13 @@ def backtrack(路径, 选择列表):
 </ul>
 <p><strong>RK</strong></p>
 <ul>
-<li>通过设计合适的哈希算法，将复杂度降低到O(n)；</li>
+<li>通过设计合适的哈希算法，将复杂度降低到$O(n)$；</li>
 <li>没有散列冲突的哈希算法可能会整形溢出，可以允许有一定的冲突，平衡空间与时间</li>
 </ul>
 <p><strong>BM</strong><br>实验统计，BM的性能是著名的KMP算法的3到4倍</p>
-<h3 id="m数和"><a href="#m数和" class="headerlink" title="m数和"></a>m数和</h3><ul>
+<h3 id="m数之和"><a href="#m数之和" class="headerlink" title="m数之和"></a>m数之和</h3><ul>
 <li>排序+左右指针：<ul>
-<li>m=2：排序，左右指针从两边向中间移动，复杂度$O(nlog^n)$；</li>
+<li>m=2：排序，左右指针从两边向中间移动，复杂度$O(nlog(n))$；</li>
 <li>m&gt;2：排序，从第一个数的取值开始循环，每一层循环m降低一，最后调用两数之和，左右指针从两边向中间移动，复杂度$O(n^{m-1})$；</li>
 </ul>
 </li>
