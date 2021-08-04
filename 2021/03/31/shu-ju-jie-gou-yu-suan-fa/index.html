@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+</head>
 
 
 
@@ -894,10 +894,22 @@ def backtrack(路径, 选择列表):
 </li>
 <li>也可以看成后序遍历，子节点完成前后两部分的排序，根节点完成合并。</li>
 </ul>
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>利用最大/小堆，每次弹出最大/小值，可以看成是一种优化的选择排序。<br>建立堆的过程复杂度为$O(n)$：不同结点需要比较的次数不一样，但平均不超过2。</p>
-<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>当原数组是非常有序时，插入排序的复杂度极低，可以接近$O(n)$。<br>希尔排序是一种改良的插入排序，先通过较大的步长尽可能减少逆序，降低插入的代价。<br>复杂度与步长选择有关，当原数组较为有序时可以考虑小一些的步长；当步长不合适时复杂度会增加至$O(n^2)$。<br>当数据量过大时，希尔排序容易低效，更适合数据量小的时候。</p>
-<h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><p>当排序数组的元素取值为有限值时，可以根据可能的取值构建桶，将元素按值放入桶中，对桶中的元素计数，得到元素的顺序，是一种在特殊情况下以空间换时间的方式。</p>
-<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><p>在元素取值为有限位时，从低位到高位，每次对其中一位进行排序。<br>两种桶排序的空间复杂度跟桶的数量有关。</p>
+<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><ul>
+<li>利用最大/小堆，每次弹出最大/小值，可以看成是一种优化的选择排序。</li>
+<li>建立堆的过程复杂度为$O(n)$：不同结点需要比较的次数不一样，但平均不超过2。</li>
+</ul>
+<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><ul>
+<li>当原数组是非常有序时，插入排序的复杂度极低，可以接近$O(n)$。希尔排序是一种改良的插入排序，先通过较大的步长尽可能减少逆序，降低插入的代价。</li>
+<li>复杂度与步长选择有关，当原数组较为有序时可以考虑小一些的步长；当步长不合适时复杂度会增加至$O(n^2)$。</li>
+<li>当数据量过大时，希尔排序容易低效，更适合数据量小的时候。</li>
+</ul>
+<h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><ul>
+<li>当排序数组的元素取值为有限值时，可以根据可能的取值构建桶，将元素按值放入桶中，对桶中的元素计数，得到元素的顺序，是一种在特殊情况下以空间换时间的方式。</li>
+</ul>
+<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><ul>
+<li>在元素取值为有限位时，从低位到高位，每次对其中一位进行排序。</li>
+<li>两种桶排序的空间复杂度跟桶的数量有关。</li>
+</ul>
 <h4 id="常见题目"><a href="#常见题目" class="headerlink" title="常见题目"></a>常见题目</h4><p><strong>基本有序数组排序</strong><br>基本有序数组：每个元素跟最终有序位置距离不超过k。<br>在这种特殊情况下，能够将一些排序算法的时间复杂度再降一降.<br>插入排序$O(n*k)$：每个元素最多比较$k$次。<br>改进堆排序$O(nlog(k))$：每次只需要取前$k$个元素建立堆，不过可能要使用额外空间建堆，不能像原来一样在原地操作。</p>
 <p><strong>判断是否有重复元素</strong><br>空间复杂度$O(n)$：哈希表。<br>空间复杂度$O(1)$：非递归堆排序</p>
 <p><strong>两个有序数组合并</strong><br>链表就直接按序比较<br>如果是数组，其中一个数组后面有多余空间时，则从空的位置开始放。</p>
