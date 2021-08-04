@@ -619,15 +619,14 @@
 <blockquote>
 <p>时间复杂度和空间复杂度都是十分重要的，但是一般算法之间的空间复杂度差别远不及时间复杂度上的差别，因此更多比较的也是时间复杂度。</p>
 </blockquote>
-<h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>对于递推关系：<br><code>T(n)=aT(n/b)+f(n),a&gt;=1,b&gt;1</code></p>
-<p><code>n</code>为问题规模，<code>a</code>为子问题个数，<code>n/b</code>为子问题规模，<code>f(n)</code>为递归以外的计算工作。</p>
-<p><code>logb(a)</code>与<code>f(n)</code>直接影响复杂度</p>
+<h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>对于递推关系： $T(n)=aT(\frac{n}{b})+f(n),a&gt;=1,b&gt;1$<br>$n$为问题规模，$a$为子问题个数，$\frac{n}{b}$为子问题规模，$f(n)$为递归以外的计算工作。</p>
+<p>$log_ba$与$f(n)$直接影响复杂度</p>
 <p><strong>情况一</strong></p>
-<p>当<code>f(n)&lt;O(n^&#123;logb(a)&#125;)</code>(多项式地小于)时：<code>O(n^&#123;logb(a)&#125;)</code>主导复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;)</code></p>
+<p>当$O(f(n)) &lt; O(n^{log_ba})$ (多项式地小于)时：$O(n^{log_ba})$主导复杂度，$T(n)=O(n^{logb(a)})$</p>
 <p><strong>情况二</strong></p>
-<p>当<code>f(n)&gt;O(n^&#123;logb(a)&#125;)</code>(多项式地大于)时：<code>O(f(n))</code>主导复杂度，<code>T(n)=O(f(n))</code></p>
+<p>当$O(f(n)) &gt; O(n^{log_ba})$ (多项式地大于)时：$f(n)$主导复杂度，$T(n)=O(f(n))$</p>
 <p><strong>情况三</strong></p>
-<p>当<code>f(n)=O(n^&#123;logb(a)&#125;log^&#123;k&#125;(n))</code>（差距不足多项式）时，共同影响复杂度，<code>T(n)=O(n^&#123;logb(a)&#125;log^&#123;k+1&#125;(n))</code></p>
+<p>当$O(f(n)) = O(n^{log_ba}log^{k}n)$（差距不足多项式）时，共同影响复杂度，$T(n)=O(n^{log_ba}log^{k+1}n)$</p>
 <p>注：部分复杂度符号使用粗略</p>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>结构</strong></p>
 <ul>
@@ -655,8 +654,8 @@
 <p>常用数据逻辑结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p>
 <p><strong>基本数据结构：数组&amp;链表</strong></p>
 <ul>
-<li>数组的优势在于改查，<code>O(1)</code>的时间实现访问、读写；</li>
-<li>链表的优势在于增删，<code>O(1)</code>的时间实现插入和删除节点；</li>
+<li>数组的优势在于改查，$O(1)$的时间实现访问、读写；</li>
+<li>链表的优势在于增删，$O(1)$的时间实现插入和删除节点；</li>
 <li>数组和链表的优缺点比较互补，所以很适合组合在一起，优势互补，得到各方面时间复杂度都低的数据结构，例如：哈希表、哈希表+链表等，想要实现更好的数据结构，一个思路就是组合不同数据结构的优势。</li>
 </ul>
 <p><strong>数据结构操作：增删改查=遍历+操作</strong></p>
