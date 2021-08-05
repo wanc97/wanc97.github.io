@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -521,7 +521,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-04
+                    2021-08-05
                 </div>
                 
 
@@ -573,6 +573,7 @@
 <ul>
 <li>更加一般、更加普遍的规律、特征；如PCA分解时，对应奇异值/方差越大的分量是越普遍的分量，也越具有泛化性。</li>
 <li>越具有泛化能力的信息越具有普适性，也越是机器学习和人学习的重点。</li>
+<li>泛化特征与所研究问题有关，如不同的分类问题中，同一个特征的重要程度不一样。</li>
 </ul>
 <p><strong>模式识别</strong></p>
 <ul>
@@ -611,7 +612,7 @@
 <ul>
 <li><p>传统统计学习：<br>基于数学模型的机器学习方法。包括SVM、逻辑回归、决策树等。<br>这一类算法基于严格的数学推理，具有可解释性强、运行速度快、可应用于小规模数据集的特点。</p>
 </li>
-<li><p>深度学习：<br>基于神经网络的机器学习方法。包括前馈神经网络、卷积神经网络、递归神经网络等。<br>这一类算法基于神经网络，可解释性较差，强烈依赖于数据集规模。这类算法在语音、视觉、自然语言等领域非常成功。</p>
+<li><p>深度学习：<br>基于神经网络的机器学习方法。包括前馈神经网络、卷积神经网络、循环神经网络等。<br>这一类算法基于神经网络，可解释性较差，强烈依赖于数据集规模。这类算法在语音、视觉、自然语言等领域非常成功。</p>
 </li>
 <li><p>集成学习：<br>将多种机器学习方法结合使用的策略，包括：bagging、boosting、stacking等。<br>一些常见的使用形式：随机森林（决策树+bagging）、adaboost、梯度提升树等。</p>
 </li>
@@ -642,7 +643,7 @@
 </ul>
 <p><strong>经验风险最小化&amp;结构风险最小化&amp;奥卡姆剃刀原理</strong></p>
 <ul>
-<li>机器学习的目标是 <strong>期望风险</strong>最小化，也就是让模型拟合真实分布；</li>
+<li>机器学习的目标是<strong>期望风险</strong>最小化，也就是让模型拟合真实分布；</li>
 <li>但真实分布无法完全得到，只能获得分布的一些数据，<strong>经验风险</strong>最小化的目的是使模型更好地拟合数据样本；</li>
 <li>有限的采样数据与真实分布之间存在gap，<strong>结构风险</strong>是在经验风险最小的基础上加入先验知识，使得模型往更加合理的方向优化；</li>
 <li>结构风险最小化策略符合<strong>奥卡姆剃刀原理</strong>：能够很好地解释已知数据，且十分简单（符合先验）才是最好的模型。</li>
@@ -710,7 +711,7 @@
 <ul>
 <li>代表模型的函数集合。这也称作模型的表示容量representational capacity。</li>
 <li>由于额外的限制因素（比如优化算法的限制），模型的有效容量effective capacity一般会小于模型的表示容量。</li>
-<li>通常在模型的假设空间中出最佳的函数是非常困难的优化问题，实际应用中只是挑选一个使得训练误差足够低的函数即可。</li>
+<li>通常在模型的假设空间中找出最佳的函数是非常困难的优化问题，实际应用中只是挑选一个使得训练误差足够低的函数即可。</li>
 </ul>
 <p><strong>VC维理论</strong></p>
 <ul>
@@ -1759,7 +1760,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.1k</span>&nbsp;字
+                class="white-color">45.2k</span>&nbsp;字
             
             
             
