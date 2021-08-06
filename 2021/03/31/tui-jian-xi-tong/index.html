@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-08-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -572,8 +572,9 @@
 </ul>
 </blockquote>
 </li>
+<li><p><strong>对比</strong></p>
+</li>
 </ul>
-<p><strong>对比</strong></p>
 <table>
 <thead>
 <tr>
@@ -682,6 +683,39 @@
 <h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
 <p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
 <h5 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h5><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><h4 id="ctr预估"><a href="#ctr预估" class="headerlink" title="ctr预估"></a>ctr预估</h4><p><strong>发展脉络</strong></p>
+<ul>
+<li>记忆：<ul>
+<li>LR：一层网络/线性模型，能学到各个特征对于结果的贡献值，但不能学习到特征之间的交叉信息，想要得到交叉关系只能将特征组合成交叉特征。<ul>
+<li>能力有限，只能学到线性关系，能力上限明显，依赖人工组合特征，但是主要特征和重要组合特征已经可以满足很多需求了，因此简单实用。</li>
+<li>作为baseline模型，进一步优化需要人工组合特征，不适合进一步发展，能力较弱，难以平衡泛化性和模型容量。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Embedding：细化特征，从单个数据转化为一系列隐式特征，提高特征的表达能力；<ul>
+<li>矩阵分解：将用户和项目表示为Embedding隐向量。</li>
+<li>LR➕Embedding可以看成式学习多个LR然后集成，集成的时候LR的参数设为一致，不一致的部分就是Embedding。</li>
+<li>向量化召回：通过Embedding隐式的计算相似。</li>
+</ul>
+</li>
+<li>特征交叉：增加特征表达能力<ul>
+<li>LR：一阶特征或手动组合特征；</li>
+<li>FM：自动学习二阶特征；</li>
+<li>DNN：高阶交叉</li>
+<li>wide&amp;deep：LR低阶记忆+高阶交叉</li>
+</ul>
+</li>
+<li>Field &amp; Pooling：<ul>
+<li>Field：推荐领域的特征往往非常高维、稀疏，所有特征的Embedding如果都直接输入到模型中，参数量将难以承受，且泛化性较差；如果将同一类特征的Embedding进行整合，成为一个Embedding，这样可以大大降低参数量，这样得到的Embedding的信息更加有代表性，也更加具有泛化性。</li>
+<li>Pooling：将同一个Field中的Embedding进行整合的过程，包括mean/max、加权等等。<ul>
+<li>YoutubeNet：mean pooling；</li>
+<li>DIN：对用户交互序列进行attention加权pooling</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><p>基本思路还是把各种能够获取的信息利用起来，最常见的是使用side information，以及通过各种非模型的策略。</p>
 <h4 id="side-information"><a href="#side-information" class="headerlink" title="side information"></a>side information</h4><ul>
 <li>利用<strong>属性特征</strong>，即ID特征以外，具有<strong>泛化能力</strong>的特征的embedding对冷启动项进行初始化。<ul>
@@ -1352,7 +1386,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.2k</span>&nbsp;字
+                class="white-color">45.7k</span>&nbsp;字
             
             
             
