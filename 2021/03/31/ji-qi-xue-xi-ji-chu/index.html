@@ -445,10 +445,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A6%82%E7%8E%87/">
-                                <span class="chip bg-color">概率</span>
-                            </a>
-                        
                             <a href="/tags/%E7%89%B9%E5%BE%81/">
                                 <span class="chip bg-color">特征</span>
                             </a>
@@ -479,6 +475,10 @@
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%A6%82%E7%8E%87/">
+                                <span class="chip bg-color">概率</span>
                             </a>
                         
                             <a href="/tags/%E6%B3%9B%E5%8C%96/">
@@ -521,21 +521,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-06
+                    2021-08-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.6k
+                    10.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    33 分
+                    35 分
                 </div>
                 
 
@@ -650,8 +650,8 @@
 </ul>
 <p><strong>参数估计</strong></p>
 <ul>
-<li><strong>极大似然估计</strong>就是经验风险最小化的例子</li>
-<li><strong>最大后验估计</strong>就是结构风险最小化的例子</li>
+<li><strong>极大似然估计</strong>就是经验风险最小化的例子，拟合样本，使得在样本固定时，参数的似然值极大；</li>
+<li><strong>最大后验估计</strong>就是结构风险最小化的例子，考虑到不同参数的先验概率不一样，用参数的先验概率乘以似然值得到后验概率，并最大化后验概率。</li>
 </ul>
 <p><strong>概率&amp;似然</strong></p>
 <ul>
@@ -1063,6 +1063,32 @@
 <li>朴素贝叶斯的基础是贝叶斯定理，即通过贝叶斯定理计算样本为各个类别的后验概率；</li>
 <li>朴素贝叶斯朴素在特征条件独立假设，通过该假设，极大地降低参数量（将参数量从指数级降为线性级）。</li>
 </ul>
+<p><strong>全概率公式</strong></p>
+<ul>
+<li>一个事件的概率可以分为在一个划分下不同事件的概率与该在该事件下的条件概率乘积的和。</li>
+</ul>
+<p><strong>贝叶斯公式</strong></p>
+<ul>
+<li>角度一：条件概率+全概率公式</li>
+<li>角度二：用先验概率和具体事件表出后验概率</li>
+</ul>
+<p><strong>朴素贝叶斯分类器</strong></p>
+<ul>
+<li>利用贝叶斯定理来实现分类任务，先验得知道各类（输出）的概率以及在各类下事件（输入）的概率，就可以得到在发生事件（输入）时，各类（输出）的概率。</li>
+<li>由于数据样本的数量与特征维度往往不匹配，参数量指数级，无法有效得到各类下事件（输入）的概率，因此朴素贝叶斯对条件概率做了特征独立性假设。</li>
+<li>这意味着在分类确定的条件下，用于分类的特征是条件独立的。</li>
+<li>该假设使得朴素贝叶斯法变得简单，参数量由指数级变为线性级，但是可能牺牲一定的分类准确率。</li>
+<li>准确率牺牲的程度依赖实际特征的关联程度。</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>性能相当好，它速度快，可以避免维度灾难。</li>
+<li>支持大规模数据的并行学习，且天然的支持增量学习。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>无法给出分类概率（条件概率的特征独立性假设强，所以得到的概率不能太当真）</li>
+</ul>
 <h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p>树的每一个根节点通过一个特征对样本进行区分，叶节点的数据归为一类或一个输出值。</p>
 <p><strong>信息熵</strong>是用来衡量信息不确定性的指标:</p>
 <ul>
@@ -1080,9 +1106,21 @@
 <li><p>经验条件熵：$H(D|A)=-\sum_A[\frac{N_A}{N}\sum^{K_A}_{k=1}\frac{N_k}{N_A}\log{\frac{N_k}{N_A}}]$</p>
 </li>
 </ul>
-<p><strong>信息增益</strong>:<br>通过加入特征使得数据分布更加确定，即该特征为分布带来了信息增益：$g(D,A)=H(D)-H(D|A)$</p>
-<p><strong>信息增益比</strong>:<br>直接使用信息增益会倾向于使用取值较多的特征，如ID特征，信息增益比是在信息增益的基础上用特征取值的信息熵来标准化：$g_r(D,A)=\frac{g(D,A)}{H_A(D)}=\frac{H(D)-H(D|A)}{H_A(D)}$</p>
+<p><strong>信息增益</strong>:</p>
+<ul>
+<li>通过加入特征使得数据分布更加确定，即该特征为分布带来了信息增益：$g(D,A)=H(D)-H(D|A)$；</li>
+<li>ID3使用信息增益作为特征选择策略。</li>
+</ul>
+<p><strong>信息增益比</strong>:</p>
+<ul>
+<li>直接使用信息增益会倾向于使用取值较多的特征，如ID特征，信息增益比是在信息增益的基础上用特征取值的信息熵来标准化：$g_r(D,A)=\frac{g(D,A)}{H_A(D)}=\frac{H(D)-H(D|A)}{H_A(D)}$；</li>
+<li>C4.5使用信息增益作为特征选择策略。</li>
+</ul>
 <p>回归树<strong>标准方差</strong>：<br>前面的指标运用于分类问题中的信息不确定度计算，在回归问题中可以使用方差来表示不确定性，对应的有方差、条件方差、方差增益。</p>
+<p><strong>决策树&amp;贝叶斯定理&amp;朴素贝叶斯分类器</strong></p>
+<ul>
+<li>决策树的判定方式也可以解释为是用贝叶斯定理（后验概率），与朴素贝叶斯分类器的条件概率特征独立性假设不同的是，决策树依据最优特征选择，使用部分特征来计算后验概率。</li>
+</ul>
 <h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><p><strong>SVM vs KNN</strong></p>
 <ul>
 <li>SVM可以看成特殊的KNN，最后预测都是计算待测样本到一些点的距离然后判断类别；不同的是KNN是懒惰的学习，或没有学习，因此预测的时候要从所有的样本计算最近的样本加以判别，而SVM在训练的过程中就找出了支持向量，因此判决过程更简单。</li>
@@ -1152,10 +1190,6 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A6%82%E7%8E%87/">
-                                    <span class="chip bg-color">概率</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%89%B9%E5%BE%81/">
                                     <span class="chip bg-color">特征</span>
                                 </a>
@@ -1186,6 +1220,10 @@
                             
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A6%82%E7%8E%87/">
+                                    <span class="chip bg-color">概率</span>
                                 </a>
                             
                                 <a href="/tags/%E6%B3%9B%E5%8C%96/">
@@ -1762,7 +1800,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46k</span>&nbsp;字
+                class="white-color">45.9k</span>&nbsp;字
             
             
             
