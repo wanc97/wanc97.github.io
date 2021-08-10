@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -535,7 +535,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    38 分
+                    39 分
                 </div>
                 
 
@@ -749,9 +749,13 @@
 </tr>
 </tbody></table>
 <ul>
-<li><p>查准率(precision)：$P=\frac{TP}{TP+FP}$</p>
+<li><p>查准率(precision)：$P=\frac{TP}{TP+FP}$，预测的正例的有多大比例是正例；</p>
 </li>
-<li><p>查全率(recall):$P=\frac{TP}{TP+FN}$</p>
+<li><p>查全率(recall):$R=\frac{TP}{TP+FN}$，正例有多大比例被预测出来；</p>
+</li>
+<li><p>$F_1$分数：$F_1=2*\frac{P * R}{P+R}$，对查准率和查全率进行一个调和；</p>
+</li>
+<li><p>$F_\beta$分数：$F_\beta=(1+\beta^2)\frac{P * R}{\beta^2*P+R}$，可以调整查准率和查全率的权重，$\beta$越大时，查全率权重越大。</p>
 </li>
 <li><p>查准率和查全率都是越大越好；但是对于已有模型，这两个值是一对负相关的；他们的大小由区分正反类的阈值确定，阈值设得越高时模型越倾向于预测为反类，此时recall下降，precision上升，反之亦然。</p>
 </li>
@@ -1850,7 +1854,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.9k</span>&nbsp;字
+                class="white-color">46k</span>&nbsp;字
             
             
             
