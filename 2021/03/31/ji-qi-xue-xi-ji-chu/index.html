@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -521,21 +521,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-09
+                    2021-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.2k
+                    11.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    39 分
+                    40 分
                 </div>
                 
 
@@ -601,7 +601,7 @@
 <ul>
 <li><p><strong>监督学习</strong>是在有明确的标签的数据上进行的，属于<strong>预测</strong>模型。其中分类问题输出离散的类别标签，回归问题输出连续的回归值。</p>
 </li>
-<li><p>而<strong>无监督学习</strong>使用没有标签的数据，数据<strong>描述</strong>模型，揭示数据内在规律。其中包括聚类、降维。</p>
+<li><p>而<strong>无监督学习</strong>使用没有标签的数据，属于<strong>描述</strong>模型，揭示数据内在规律。其中包括聚类、降维。</p>
 </li>
 <li><p>半监督学习任务：<br>用大量的未标记训练数据和少量的已标记数据来训练模型。</p>
 </li>
@@ -650,8 +650,14 @@
 </ul>
 <p><strong>参数估计</strong></p>
 <ul>
-<li><strong>极大似然估计</strong>就是经验风险最小化的例子，拟合样本，使得在样本固定时，参数的似然值极大；</li>
-<li><strong>最大后验估计</strong>就是结构风险最小化的例子，考虑到不同参数的先验概率不一样，用参数的先验概率乘以似然值得到后验概率，并最大化后验概率。</li>
+<li><strong>极大似然估计</strong>就是经验风险最小化的例子，拟合样本，使得在样本固定时，参数的似然值极大；<ul>
+<li>神经网络优化时，分类问题采用交叉熵损失，因为假设分类问题的类别服从伯努力分布；回归问题采用均方损失函数，因为假设回归问题的输出服从高斯分布。</li>
+</ul>
+</li>
+<li><strong>最大后验估计</strong>就是结构风险最小化的例子，考虑到不同参数的先验概率不一样，用参数的先验概率乘以似然值得到后验概率，并最大化后验概率。<ul>
+<li>L1、L2正则化先验的假设参数值应该不大。</li>
+</ul>
+</li>
 </ul>
 <p><strong>概率&amp;似然</strong></p>
 <ul>
@@ -1050,7 +1056,30 @@
 <li>可以限制叶节点最少样本数量，降低过拟合；</li>
 <li>Adaboost在训练结束前都可以保证训练误差下降，梯度提升树则不一定。</li>
 </ul>
-<h2 id="经典机器学习算法"><a href="#经典机器学习算法" class="headerlink" title="经典机器学习算法"></a>经典机器学习算法</h2><h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><ul>
+<h2 id="经典机器学习算法"><a href="#经典机器学习算法" class="headerlink" title="经典机器学习算法"></a>经典机器学习算法</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h3><p>通过在全局中找到待测样本最近的K个训练样本来得到待测样本的类别或预测值</p>
+<ul>
+<li>严格来说不算机器学习，因为没有学习的过程，而是记忆所有训练样本，没有得到泛化信息；</li>
+<li>预测时的复杂度高</li>
+</ul>
+<p><strong>KD树</strong><br>在原始KNN的基础上加入了学习过程</p>
+<ul>
+<li>训练：通过垂直于坐标轴的超平面不断对训练样本进行二分的划分，得到一颗KD决策树；</li>
+<li>测试：将待测样本的值在KD树上进行比较，逐步找到最近邻的样本；<ul>
+<li>平均计算复杂度为$O(log(N))$，大部分时候只需要较少的比较就可以得到最近邻；</li>
+<li>当训练样本分布较糟糕时，需要遍历几乎所有节点。</li>
+</ul>
+</li>
+</ul>
+<p><strong>压缩KNN</strong><br>从训练样本中找出对于分类/决策比较重要的样本，类似SVM中的支持向量</p>
+<ul>
+<li>训练：<ul>
+<li>选择一个样本放入样本集；</li>
+<li>循环所有样本，如果分类正确则不取，分类错误则放入样本集，直到所有样本都分类正确。</li>
+</ul>
+</li>
+<li>测试：使用训练得到的样本集进行测试，而非所有样本。</li>
+</ul>
+<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><ul>
 <li>线性一方面是输入特征与其它参数的数学组合方式，另一方面是它所提供的决策边界（回归线）是线性的。</li>
 <li>优势是：简单、解释性强、可以通过一些策略（kernel、层叠）简单转化为非线性模型。</li>
 </ul>
@@ -1551,20 +1580,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -1854,7 +1883,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46k</span>&nbsp;字
+                class="white-color">48.2k</span>&nbsp;字
             
             
             

@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-09
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.6k
+                    7.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    26 分
+                    27 分
                 </div>
                 
 
@@ -564,91 +564,76 @@
 </ul>
 </li>
 </ul>
-<h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><blockquote>
-<ol>
+<h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><ol>
 <li>问题建模；</li>
 <li>选择并描述算法；</li>
 <li>证明算法是否能在所有实例上取得最优解；</li>
 <li>分析算法效率。</li>
 </ol>
-</blockquote>
 <h3 id="算法要求"><a href="#算法要求" class="headerlink" title="算法要求"></a>算法要求</h3><p><strong>基础要求</strong></p>
-<blockquote>
-<ol>
+<ul>
 <li>正确性：零到多个输入，至少一个输出（广义上的输出）；</li>
 <li>有穷性；</li>
 <li>确定值；</li>
 <li>可行性。</li>
-</ol>
-</blockquote>
+</ul>
 <p><strong>重要要求</strong></p>
-<blockquote>
-<ol>
+<ul>
 <li>可读性；</li>
 <li>鲁棒性（能适应更加严苛、复杂的情况）；</li>
 <li>时间空间复杂度低。</li>
-</ol>
-</blockquote>
-<p><strong>算法境界</strong></p>
-<blockquote>
+</ul>
+<p><strong>算法层次</strong></p>
 <ol>
 <li>没有语法错误；</li>
 <li>对于合法输入能得到满足要求输出；</li>
 <li>对于非法输入能够有合理应对；</li>
 <li>对于故意刁难的输入可以得到满足要求的输出。</li>
 </ol>
-</blockquote>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p><strong>时间复杂度</strong></p>
-<p>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p>
-<blockquote>
-<p>基本运算应该满足：</p>
-<ol>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p><strong>时间复杂度</strong><br>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p>
+<ul>
+<li><p>基本运算应该满足：</p>
+<ul>
 <li>计算时间基本不变；</li>
 <li>在对应问题中其运算数量变化是影响运算时间的最主要因素。</li>
-</ol>
-<p>常见如：比较、加法、乘法、置指针、交换……</p>
-<p>常见的输入规模：数组元素多少、调度问题的任务个数、图的顶点数与边数……</p>
-</blockquote>
-<ul>
-<li>复杂度中带$O(log^n)$的往往会用到二分或者类似二分的操作（树、堆）</li>
-<li>复杂度中带$O(mn)$的往往需要for循环或动态规划计算</li>
-<li>指数复杂度的场景往往输入规模极小，个位数量级</li>
+<li>常见如：比较、加法、乘法、置指针、交换……</li>
+<li>常见的输入规模：数组元素多少、调度问题的任务个数、图的顶点数与边数……</li>
 </ul>
-<p><strong>空间复杂度</strong></p>
-<p>针对指定的空间单位和输入规模，算法所需的空间量相对于输入规模的表达式。</p>
+</li>
+<li><p>复杂度中带$O(log^n)$的往往会用到二分或者类似二分的操作（树、堆）</p>
+</li>
+<li><p>复杂度中带$O(mn)$的往往需要for循环或动态规划计算</p>
+</li>
+<li><p>指数复杂度的场景往往输入规模极小，个位数量级</p>
+</li>
+</ul>
+<p><strong>空间复杂度</strong><br>针对指定的空间单位和输入规模，算法所需的空间量相对于输入规模的表达式。</p>
 <blockquote>
 <p>时间复杂度和空间复杂度都是十分重要的，但是一般算法之间的空间复杂度差别远不及时间复杂度上的差别，因此更多比较的也是时间复杂度。</p>
 </blockquote>
 <h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>对于递推关系： $T(n)=aT(\frac{n}{b})+f(n),a&gt;=1,b&gt;1$<br>$n$为问题规模，$a$为子问题个数，$\frac{n}{b}$为子问题规模，$f(n)$为递归以外的计算工作。</p>
 <p>$log_ba$与$f(n)$直接影响复杂度</p>
-<p><strong>情况一</strong></p>
-<p>当$O(f(n)) &lt; O(n^{log_ba})$ (多项式地小于)时：$O(n^{log_ba})$主导复杂度，$T(n)=O(n^{logb(a)})$</p>
-<p><strong>情况二</strong></p>
-<p>当$O(f(n)) &gt; O(n^{log_ba})$ (多项式地大于)时：$f(n)$主导复杂度，$T(n)=O(f(n))$</p>
-<p><strong>情况三</strong></p>
-<p>当$O(f(n)) = O(n^{log_ba}log^{k}n)$（差距不足多项式）时，共同影响复杂度，$T(n)=O(n^{log_ba}log^{k+1}n)$</p>
+<p><strong>情况一</strong><br>当$O(f(n)) &lt; O(n^{log_ba})$ (多项式地小于)时：$O(n^{log_ba})$主导复杂度，$T(n)=O(n^{logb(a)})$</p>
+<p><strong>情况二</strong><br>当$O(f(n)) &gt; O(n^{log_ba})$ (多项式地大于)时：$f(n)$主导复杂度，$T(n)=O(f(n))$</p>
+<p><strong>情况三</strong><br>当$O(f(n)) = O(n^{log_ba}log^{k}n)$（差距不足多项式）时，共同影响复杂度，$T(n)=O(n^{log_ba}log^{k+1}n)$</p>
 <p>注：部分复杂度符号使用粗略</p>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>结构</strong></p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>逻辑结构和物理结构</strong></p>
 <ul>
 <li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p>
-<blockquote>
-<ul>
+</li>
 <li><p>数据逻辑结构分为：</p>
-<ol>
+<ul>
 <li>集合结构：元素间没有关系；</li>
 <li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li>
 <li>树形结构：一对多关系；</li>
 <li>图形结构：多对多关系；</li>
-</ol>
+</ul>
 </li>
 <li><p>数据物理结构：</p>
-<ol>
+<ul>
 <li>顺序存储结构：在存储介质上连续存放，与逻辑结构对应；</li>
 <li>链式存储结构：数据元素存放在任意位置，通过指针（地址）联系；</li>
-</ol>
-</li>
 </ul>
-</blockquote>
 </li>
 </ul>
 <p>常用数据逻辑结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p>
@@ -679,7 +664,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><strong>常见题型</strong></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串可以看成数组，区别在于当它以字符串形式出现时，不适合直接操作单个字符；但当以字符数组出现时可以，与数组几乎完全一致。<br><strong>常见题型</strong></p>
 <ul>
 <li>规则判断：是否是回文、是否符合整数、能否转化为数值、能否转化为算式；</li>
 <li>字符计数：哈希表、固定长度数组（字符数量有限）、滑动窗、无重复最长子串；</li>
@@ -765,7 +750,11 @@
 <ul>
 <li>设计一个能够在<code>O(1)</code>时间复杂度返回最小元素的栈：可以设计一个额外记录最小值的栈，记录当前位置的最小值，额外空间复杂度<code>O(n)</code>；只在弹入值小于等于当前最小值时压入记录最小值的栈；</li>
 <li>用两个栈实现队列：两个先进后出就可以得到先进先出，一个栈接收数据，一个栈倒出数据，但是从第一个往第二个倒的时候第二个栈必须是空的，且一次倒完。</li>
-<li>用递归函数实现栈的逆序：一个递归函数实现删除/弹出栈底元素，第二个递归函数调用第一个递归函数递归删除到最后后逆序压入，时间复杂度高；</li>
+<li>栈的逆序：<ul>
+<li>用递归函数实现：一个递归函数实现删除/弹出栈底元素，第二个递归函数调用第一个递归函数递归删除到最后后逆序压入，时间复杂度高；</li>
+<li>用队列实现：依次弹出栈元素，放入队列，从队列中取出压入栈；队列先进先出，而栈后进先出的特性带来了逆序。</li>
+</ul>
+</li>
 <li>用一个额外的栈实现栈中元素排序：原理就是让元素倒来倒去，让元素有序。</li>
 <li>数组取划窗最大值：双端队列，存放元素下标，压入的时候比较，去掉不符合的，同时从一端获得最大元素的下标。</li>
 </ul>
@@ -881,7 +870,7 @@ def backtrack(路径, 选择列表):
 <li>全排列：每一步从剩下的选择中选择；</li>
 <li>m个元素平分成k个元素和相同的子集：决策深度为元素数m，每个元素有k种选择，每个集合的最终总和是确定的，用于判断是否合适；<ul>
 <li>可以先对元素进行排序，优先选择较大的元素，更容易出发停止条件，以减小计算量。</li>
-<li>也可以从桶的角度，先选择桶，再选择元素放不放，各个桶之间的状态相对独立一些，可以把最坏复杂度从$O(k^m)$降到$O(k*2^k)$。</li>
+<li>也可以从桶的角度，先选择桶，再选择元素放不放，各个桶之间的状态相对独立一些，可以把最坏复杂度从$O(k^m)$降到$O(k*2^m)$。</li>
 </ul>
 </li>
 <li>求子集：每一个元素加或不加是选择，没有中间的剪枝，所以也可以不用模版直接迭代；</li>
@@ -955,7 +944,28 @@ def backtrack(路径, 选择列表):
 <li>利用二分和分治的思想，大约循环$log(n)$层，每次将原数组划分成两个无序部分，但是其中一个部分都大于另一个部分。</li>
 <li>可以看成是一种特殊的冒泡排序，所有元素跟相同的元素比较，使得每次比较一遍可以让所有元素都<strong>沉</strong>或<strong>浮</strong>。</li>
 <li>还可以看成是一种前序遍历，根节点完成划分，两个子节点完成子数组的排序；</li>
-<li>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))-O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。</li>
+<li>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))-O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。<pre class="line-numbers language-python" data-language="python"><code class="language-python">def partition(arr, low, high):
+    i, j &#x3D; low, low 
+    pivot &#x3D; arr[high] # 取最后一个元素当做pivot
+    while j &lt; high:
+        # 当前元素小于或等于 pivot
+        if arr[j] &lt; pivot:
+            arr[i], arr[j] &#x3D; arr[j], arr[i]
+            i +&#x3D; 1 #pivot位置前进1步
+        j +&#x3D; 1
+    arr[i], arr[high] &#x3D; arr[high], arr[i] #将pivot放到正确的位置并返回位置索引i
+    return i
+# 快速排序函数
+def quick_sort(arr, low, high):
+    if low &lt; high:
+        pi &#x3D; partition(arr, low, high)
+        quick_sort(arr, low, pi - 1)
+        quick_sort(arr, pi + 1, high)
+ 
+arr &#x3D; [1,10,2,7, 8, 9,1, 5]
+# arr &#x3D; [1,1,1,1,1]
+quick_sort(arr, 0, len(arr)-1)
+print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><ul>
 <li>利用分治的思想，将问题划分为更小的子问题，$问题数量的增长+额外代价 &lt; 问题复杂度的减小$时就可以降低复杂度。<ul>
@@ -1645,7 +1655,7 @@ def backtrack(路径, 选择列表):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46k</span>&nbsp;字
+                class="white-color">48.2k</span>&nbsp;字
             
             
             

@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-08
+                    2021-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    4.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    15 分
                 </div>
                 
 
@@ -535,6 +535,14 @@
 <li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li>
 <li>目标不明确：用户很多时候没有明确的需求。</li>
 </ul>
+<p><strong>推荐系统要解决</strong></p>
+<ul>
+<li>在数百毫秒内提供推荐结果<ul>
+<li>尽量离线完成各种计算，线上只保留非常少的步骤</li>
+<li>采用召回、粗排、精排、重排等多层架构，保障速度和准确性</li>
+</ul>
+</li>
+</ul>
 <p><strong>推荐的方式</strong></p>
 <ul>
 <li>社会化推荐：朋友；</li>
@@ -556,24 +564,25 @@
 <p><strong>协同过滤</strong><br>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p>
 <p><strong>用户行为数据</strong></p>
 <ul>
-<li><p><strong>显式反馈</strong></p>
+<li><strong>显式反馈</strong></li>
+</ul>
 <blockquote>
 <ul>
 <li>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等</li>
 <li>信息密度大但量小</li>
 </ul>
 </blockquote>
-</li>
-<li><p><strong>隐式反馈</strong></p>
+<ul>
+<li><strong>隐式反馈</strong></li>
+</ul>
 <blockquote>
 <ul>
 <li>不能明确用户喜好的行为，包括：浏览记录等</li>
 <li>信息密度小但量大</li>
 </ul>
 </blockquote>
-</li>
-<li><p><strong>对比</strong></p>
-</li>
+<ul>
+<li><strong>对比</strong></li>
 </ul>
 <table>
 <thead>
@@ -645,17 +654,23 @@
 <li>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</li>
 <li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</li>
 </ul>
-<p>$$<br>\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}<br>$$</p>
-<p>$$<br>\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}<br>$$</p>
+<p>$$<br>\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}</p>
+<p>$$</p>
+<p>$$<br>\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}</p>
+<p>$$</p>
 <p>归一化折损累计增益NDCG</p>
 <p><strong>覆盖率</strong><br>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</p>
-<p>$$<br>\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}<br>$$</p>
+<p>$$<br>\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}</p>
+<p>$$</p>
 <p>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</p>
-<p>$$<br>H=-\sum_{i=1}^{n} p(i) \log p(i)<br>$$</p>
+<p>$$<br>H=-\sum_{i=1}^{n} p(i) \log p(i)</p>
+<p>$$</p>
 <p>p(i)是物品i的流行程度</p>
-<p>$$<br>G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)<br>$$</p>
+<p>$$<br>G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)</p>
+<p>$$</p>
 <p><strong>多样性</strong><br>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</p>
-<p>$$<br>\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}<br>$$</p>
+<p>$$<br>\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}</p>
+<p>$$</p>
 <p><strong>新颖性</strong><br>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</p>
 <p>一些观点将新颖性定义为不流行程度</p>
 <p><strong>惊喜度</strong><br>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p>
@@ -667,10 +682,100 @@
 </ul>
 <p><strong>鲁棒性</strong><br>具有抵挡攻击，反作弊的能力</p>
 <p><strong>商业效果</strong><br>如广告的投放量</p>
+<h3 id="经典推荐算法"><a href="#经典推荐算法" class="headerlink" title="经典推荐算法"></a>经典推荐算法</h3><h4 id="基于流行度"><a href="#基于流行度" class="headerlink" title="基于流行度"></a>基于流行度</h4><ul>
+<li>非个性化；</li>
+<li>在没有其它信息的时候兜底，可以类比一个信号的均值分量；</li>
+</ul>
+<p><strong>流行度策略</strong></p>
+<ul>
+<li>绝对热度</li>
+<li>比例=绝对热度/展示量：抵消展示量的偏差</li>
+</ul>
+<p><strong>先验流行度</strong></p>
+<p>当项目没有曝光或曝光量较小时，无法计算绝对热度和比例，可以通过加入先验信息来得到一个流行度。</p>
+<ul>
+<li>贝叶斯估计：根据全局或所属类别特征，得到先验的曝光量和点击量，在此基础上进行累加，得到平滑的流行度。</li>
+<li>时间段转化：如果流行度是针对一段时间的，可以将上一段时间的曝光量和点击量乘以一个时间折扣系数作为这一时间段的先验。</li>
+</ul>
+<h4 id="基于协同过滤"><a href="#基于协同过滤" class="headerlink" title="基于协同过滤"></a>基于协同过滤</h4><ul>
+<li>协同+过滤：相似+信息共用+过滤信息</li>
+<li>缓解单个用户/项目信息不足</li>
+</ul>
+<p><strong>基于相似用户的协同过滤</strong></p>
+<p>计算相似用户+用相似用户对于物品的评分组合得到目标用户对于物品的评分</p>
+<p>组合方式</p>
+<ul>
+<li>平均</li>
+<li>按相似用户相似度加权平均</li>
+<li>减去相似用户的打分偏置后加权平均</li>
+</ul>
+<p><strong>基于相似物品的协同过滤</strong></p>
+<p>物品与用户有着对等的关系，因此也可以从物品的角度进行协同过滤</p>
+<p>找到用户的偏好物品+计算物品的相似物品</p>
+<h4 id="基于内容信息"><a href="#基于内容信息" class="headerlink" title="基于内容信息"></a>基于内容信息</h4><ul>
+<li>把推荐系统当做监督学习任务来看待，输入用户和物品各种特征，预测点击量、购买率等信息。</li>
+<li>核心就是认为需要预测的变量（评分、点击率等等）是所有显式变量的一个回归结果。</li>
+<li>最基础的模型是逻辑斯蒂回归（LR）</li>
+</ul>
+<h4 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h4><p><strong>隐变量</strong></p>
+<ul>
+<li>“隐藏的变量”或者叫“隐藏的参数”</li>
+<li>如混合高斯分布中，一个样本可能来自不同的高斯分布，在每一个高斯分布上有一个权重；样本在各个分布上的权重就是隐变量。</li>
+</ul>
+<p><strong>矩阵分解</strong></p>
+<ul>
+<li>将$m<em>n$的用户项目交互矩阵分解为$m</em>k$和$k*n$的两个低秩矩阵的乘积；</li>
+<li>每一个长度为$k$的低维向量用来代表一个用户或项目，其中有$k$个隐变量；</li>
+<li>每一个隐变量指示一个隐含的分布/特征，虽然不能直接说出这些隐变量的含义，但是可以通过隐变量预测用户和项目的可能交互概率。</li>
+</ul>
+<p>矩阵分解的流行起源于10年前的Netflix大赛，当时各类矩阵分解模型都在实际数据中起到了很好的效果。</p>
+<p><strong>分解方式</strong></p>
+<ul>
+<li>最小二乘法+梯度下降</li>
+<li>其它各种数学方法，SVD分解，概率矩阵分解。。。</li>
+</ul>
+<p><strong>加入特征信息</strong></p>
+<p>经典的矩阵分解有冷启动的问题；没有利用各种其它特征信息。</p>
+<p>加入特征信息的方式是将隐向量写成各种特征信息的组合，这样在学习的过程中不仅可以学到隐向量，还可以得到各个特征的表示，解决冷启动，还可以对隐向量表示起到一定的正则化效果。</p>
+<h4 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h4><ul>
+<li>基于内容+矩阵分解思想</li>
+<li>主体是基于内容的做法，输入特征，得到预测值</li>
+<li>在LR的基础上增加二阶交叉特征，用矩阵分解的方式得到交叉特征的权重，降低参数量，提升泛化性</li>
+</ul>
+<h4 id="张量分解（TF）"><a href="#张量分解（TF）" class="headerlink" title="张量分解（TF）"></a>张量分解（TF）</h4><ul>
+<li>张量分解是矩阵分解的推广，矩阵分解运用在用户和项目两个角度，而张量可以拓展到更高的角度，如用户、项目、上下文。</li>
+<li>张量分解的方法：<ul>
+<li><strong>CP分解</strong>：把$m<em>n</em>r$的用户项目上下文矩阵分解为$m<em>k$和$n</em>k$和$r*k$低秩矩阵，小矩阵可以相乘直接还原出原矩阵；</li>
+<li><strong>高阶奇异值</strong>分解：把$m<em>n</em>r$的用户项目上下文矩阵分解为$m<em>a$和$n</em>b$和$r*c$低秩矩阵，小矩阵不能直接还原出原矩阵，但是自由度更高;</li>
+</ul>
+</li>
+<li>张量分解的稀疏性问题更加严重</li>
+<li>矩阵分解和张量分解都可以用神经网络代替后面的內积运算/还原过程，得到能力更强的现代推荐算法。</li>
+</ul>
+<h4 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h4><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
 <h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><ul>
 <li>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。</li>
 <li>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</li>
 <li>召回与排序都是推荐算法，但是召回面对的是海量的待选，因此从算法上降低复杂度并从工程上简化线上流程。</li>
+</ul>
+<h4 id="向量化召回"><a href="#向量化召回" class="headerlink" title="向量化召回"></a>向量化召回</h4><ul>
+<li>通过用户的向量到库中寻找最近/相似的项目</li>
+<li>本质上是一个KNN问题</li>
+<li>工程上会通过一些方式来加速</li>
+</ul>
+<h5 id="faiss"><a href="#faiss" class="headerlink" title="faiss"></a>faiss</h5><p>由Facebook开发，为稠密向量提供高效相似度搜索和聚类的框架。</p>
+<ul>
+<li>提供多种检索方法</li>
+<li>速度快</li>
+<li>可存在内存和磁盘中</li>
+<li>C++实现，提供Python封装调用。</li>
+<li>大部分算法支持GPU实现</li>
+</ul>
+<p><strong>加速搜索</strong></p>
+<ul>
+<li>通过K-means建立聚类中心</li>
+<li>将聚类信息写入倒排中，</li>
+<li>搜索时先查询聚类中心，再查询最近的相似向量</li>
 </ul>
 <h4 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h4><p>只使用项目侧特征</p>
 <blockquote>
@@ -1397,7 +1502,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46k</span>&nbsp;字
+                class="white-color">48.2k</span>&nbsp;字
             
             
             

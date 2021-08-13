@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -493,14 +493,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-04
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    408
                 </div>
                 
 
@@ -535,6 +535,7 @@
 <li>占空间</li>
 <li>相互独立，无法计算相似度</li>
 </ul>
+<h3 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h3><p>学习上下文信息，表示学习，不仅仅可以用于文本，还可以拓展到各种学习上下文信息的场景中。</p>
 <h3 id="skip-gram"><a href="#skip-gram" class="headerlink" title="skip-gram"></a>skip-gram</h3><p>跳字模型，</p>
 <p>在给定中心词时，计算窗口内背景词的联合条件概率，朴素假设：背景词条件独立，最大化这个概率。</p>
 <p>每个词有两组向量，分别是作为中心词和作为背景词时的表示。</p>
@@ -542,6 +543,19 @@
 <p>在已知背景词时，计算中心词的条件概率，背景词的向量求和与中心词向量求內积</p>
 <h3 id="负采样"><a href="#负采样" class="headerlink" title="负采样"></a>负采样</h3><p>前面计算概率需要计算中心词或背景词与所有词的概率，计算开销大，负采样是从非背景词中选择一部分进行计算。</p>
 <h3 id="层序softmax"><a href="#层序softmax" class="headerlink" title="层序softmax"></a>层序softmax</h3><p>通过二叉树来组合生成条件概率，避免了分母概率的计算。</p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>任何有上下文关系的离散数据都可以用Word2vec学习表示</p>
+<h4 id="学习段落-文章表示"><a href="#学习段落-文章表示" class="headerlink" title="学习段落/文章表示"></a>学习段落/文章表示</h4><p>让一部分隐向量随段落/文章变化，这部分就可以表示段落文章</p>
+<ul>
+<li>Distributed representations of sentences and documents</li>
+</ul>
+<h4 id="网络Embedding"><a href="#网络Embedding" class="headerlink" title="网络Embedding"></a>网络Embedding</h4><p>将网络中的节点类比文本中的词，学习节点的表示</p>
+<ul>
+<li>LINE: Large-scale Information Network Embedding</li>
+</ul>
+<h4 id="关键词-网页"><a href="#关键词-网页" class="headerlink" title="关键词/网页"></a>关键词/网页</h4><p>在查询关键词和用户点击的网页之间建立上下文关系，使得Word2Vec模型可以学习到查询关键词以及网页的隐含向量。</p>
+<ul>
+<li>Context and Content-aware Embeddings for Query Rewriting in Sponsored Search</li>
+</ul>
 
                 
             </div>
@@ -1174,7 +1188,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46k</span>&nbsp;字
+                class="white-color">48.2k</span>&nbsp;字
             
             
             
