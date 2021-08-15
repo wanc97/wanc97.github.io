@@ -493,14 +493,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-12
+                    2021-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    4.3k
                 </div>
                 
 
@@ -652,25 +652,11 @@
 <p><strong>预测准确率</strong><br>离线评价指标，绝大多数的论文都会围绕这个指标。</p>
 <ul>
 <li>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</li>
-<li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</li>
+<li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾<br>$\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}$<br>$\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}$</li>
 </ul>
-<p>$$<br>\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}</p>
-<p>$$</p>
-<p>$$<br>\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}</p>
-<p>$$</p>
 <p>归一化折损累计增益NDCG</p>
-<p><strong>覆盖率</strong><br>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</p>
-<p>$$<br>\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}</p>
-<p>$$</p>
-<p>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</p>
-<p>$$<br>H=-\sum_{i=1}^{n} p(i) \log p(i)</p>
-<p>$$</p>
-<p>p(i)是物品i的流行程度</p>
-<p>$$<br>G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)</p>
-<p>$$</p>
-<p><strong>多样性</strong><br>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</p>
-<p>$$<br>\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}</p>
-<p>$$</p>
+<p><strong>覆盖率</strong><br>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。<br>$\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}$<br>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量<br>$H=-\sum_{i=1}^{n} p(i) \log p(i)$<br>p(i)是物品i的流行程度<br>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)$</p>
+<p><strong>多样性</strong><br>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。<br>$\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}$</p>
 <p><strong>新颖性</strong><br>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</p>
 <p>一些观点将新颖性定义为不流行程度</p>
 <p><strong>惊喜度</strong><br>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p>
@@ -724,7 +710,7 @@
 </ul>
 <p><strong>矩阵分解</strong></p>
 <ul>
-<li>将$m<em>n$的用户项目交互矩阵分解为$m</em>k$和$k*n$的两个低秩矩阵的乘积；</li>
+<li>将$m * n$的用户项目交互矩阵分解为$m * k$和$k * n$的两个低秩矩阵的乘积；</li>
 <li>每一个长度为$k$的低维向量用来代表一个用户或项目，其中有$k$个隐变量；</li>
 <li>每一个隐变量指示一个隐含的分布/特征，虽然不能直接说出这些隐变量的含义，但是可以通过隐变量预测用户和项目的可能交互概率。</li>
 </ul>
@@ -745,12 +731,12 @@
 <h4 id="张量分解（TF）"><a href="#张量分解（TF）" class="headerlink" title="张量分解（TF）"></a>张量分解（TF）</h4><ul>
 <li>张量分解是矩阵分解的推广，矩阵分解运用在用户和项目两个角度，而张量可以拓展到更高的角度，如用户、项目、上下文。</li>
 <li>张量分解的方法：<ul>
-<li><strong>CP分解</strong>：把$m<em>n</em>r$的用户项目上下文矩阵分解为$m<em>k$和$n</em>k$和$r*k$低秩矩阵，小矩阵可以相乘直接还原出原矩阵；</li>
-<li><strong>高阶奇异值</strong>分解：把$m<em>n</em>r$的用户项目上下文矩阵分解为$m<em>a$和$n</em>b$和$r*c$低秩矩阵，小矩阵不能直接还原出原矩阵，但是自由度更高;</li>
+<li><strong>CP分解</strong>：把$m * n * r$的用户项目上下文矩阵分解为$m * k$和$n * k$和$r * k$低秩矩阵，小矩阵可以相乘直接还原出原矩阵；</li>
+<li><strong>高阶奇异值</strong>分解：把$m * n * r$的用户项目上下文矩阵分解为$m * a$和$n * b$和$r * c$低秩矩阵，小矩阵不能直接还原出原矩阵，但是自由度更高;</li>
 </ul>
 </li>
 <li>张量分解的稀疏性问题更加严重</li>
-<li>矩阵分解和张量分解都可以用神经网络代替后面的內积运算/还原过程，得到能力更强的现代推荐算法。</li>
+<li>矩阵分解和张量分解都可以用神经网络代替后面的内积运算/还原过程，得到能力更强的现代推荐算法。</li>
 </ul>
 <h4 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h4><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
 <h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><ul>
