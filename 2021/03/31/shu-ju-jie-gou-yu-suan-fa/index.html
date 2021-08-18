@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-08-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.8k
+                    8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    27 分
+                    28 分
                 </div>
                 
 
@@ -1027,6 +1027,20 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 </li>
 <li>哈希+遍历比较：哈希计算并记录m//2数之和的可能性，然后遍历并记录，最坏的时间复杂度$O(n^{m//2+1})$，实际可能更低；</li>
 </ul>
+<h3 id="查并集"><a href="#查并集" class="headerlink" title="查并集"></a>查并集</h3><p><strong>问题</strong><br>有$n$个节点，节点之间有$m$对关系，找到节点直接的圈子</p>
+<p><strong>暴力解法</strong><br>将一个有关系发节点放到一个集合中，若存在两个集合，则对集合进行合并。</p>
+<p><strong>高效解法</strong></p>
+<ul>
+<li>对于新的关系，寻找两个节点是否有公共祖先，没有则合并，将一个祖先的祖先设置为另一个祖先，找祖先的代码：<pre class="line-numbers language-python" data-language="python"><code class="language-python">def find(x):
+    if nums[x] !&#x3D; x:
+        nums[x] &#x3D; find(nums[x])
+    return nums[x]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>合并的时候将简单的树合并到复杂的树上，以尽量控制树的深度。<pre class="line-numbers language-python" data-language="python"><code class="language-python">def merge(x,y):
+    if rank[x] &lt; rank[y]:
+        x, y &#x3D; y, x
+    rank[x] &#x3D; rank[x] + rank[y]
+    nums[y] &#x3D; x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 <h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p><a target="_blank" rel="noopener" href="http://www.csie.ntnu.edu.tw/~u91029/">演算法笔记</a></p>
 
                 
@@ -1453,16 +1467,16 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Embedding/">
+                        <span class="chip bg-color">Embedding</span>
+                    </a>
+                    
                     <a href="/tags/%E5%9B%BE/">
                         <span class="chip bg-color">图</span>
                     </a>
                     
                     <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
                         <span class="chip bg-color">神经网络</span>
-                    </a>
-                    
-                    <a href="/tags/Embedding/">
-                        <span class="chip bg-color">Embedding</span>
                     </a>
                     
                 </div>
@@ -1655,7 +1669,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.1k</span>&nbsp;字
+                class="white-color">51.3k</span>&nbsp;字
             
             
             

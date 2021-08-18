@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-15
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 
@@ -533,7 +533,9 @@
                 <h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><p><strong>为什么需要推荐</strong></p>
 <ul>
 <li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li>
+<li>马太效应：头部效应明显，强者愈强；</li>
 <li>目标不明确：用户很多时候没有明确的需求。</li>
+<li>社会的发展趋势是建立越来越多的连接；推荐系统就是通过已有连接预测可能与人建立的连接。</li>
 </ul>
 <p><strong>推荐系统要解决</strong></p>
 <ul>
@@ -739,6 +741,21 @@
 <li>矩阵分解和张量分解都可以用神经网络代替后面的内积运算/还原过程，得到能力更强的现代推荐算法。</li>
 </ul>
 <h4 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h4><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
+<h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="曝光过滤"><a href="#曝光过滤" class="headerlink" title="曝光过滤"></a>曝光过滤</h4><p><strong>过滤类型</strong></p>
+<ul>
+<li>历史曝光</li>
+<li>历史曝光类似</li>
+<li>同一产品不同位置重复</li>
+</ul>
+<p><strong>过滤位置</strong></p>
+<ul>
+<li>召回：<ul>
+<li>如果使用es框架，可以在召回前做，将用户曝光序列或曝光相似序列作为not query；</li>
+<li>如果使用redis等kv存储结构，不支持查询时，过滤时则在召回后过滤。</li>
+</ul>
+</li>
+<li>重排：在计算资源足够的情况下，可以在重排阶段，对相似度高的项目进行过滤</li>
+</ul>
 <h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><ul>
 <li>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。</li>
 <li>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</li>
@@ -762,6 +779,14 @@
 <li>通过K-means建立聚类中心</li>
 <li>将聚类信息写入倒排中，</li>
 <li>搜索时先查询聚类中心，再查询最近的相似向量</li>
+</ul>
+<h5 id="KDtree"><a href="#KDtree" class="headerlink" title="KDtree"></a>KDtree</h5><p>将数据循环在各个维度上二分到超矩形中</p>
+<h5 id="Balltree"><a href="#Balltree" class="headerlink" title="Balltree"></a>Balltree</h5><p>将数据划分到超球中</p>
+<h5 id="Annoy"><a href="#Annoy" class="headerlink" title="Annoy"></a>Annoy</h5><p>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
+<h5 id="NSW"><a href="#NSW" class="headerlink" title="NSW"></a>NSW</h5><ul>
+<li>Navigable Small World graphs：基于图，从任意节点开始，计算自己与近邻节点到目标点的距离，更新为最近的点，依次进行至找到最近的节点。</li>
+<li>经典思路复杂度较高，可以通过依次随机插入的方式构图，来得到节点连接的高速公路，降低计算量</li>
+<li>HNSW加入了跳表结构做了进一步优化，每一个点都有50%概率进入上一层的有序链表。这样可以保证表层是“高速通道”，底层是精细查找，计算时从上往下依次查找。</li>
 </ul>
 <h4 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h4><p>只使用项目侧特征</p>
 <blockquote>
@@ -1488,7 +1513,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.1k</span>&nbsp;字
+                class="white-color">51.3k</span>&nbsp;字
             
             
             
