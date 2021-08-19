@@ -835,13 +835,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/31/word2vector/">
+                <a href="/2021/03/31/ji-qi-xue-xi-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Word2vector">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="机器学习基础">
                         
-                        <span class="card-title">Word2vector</span>
+                        <span class="card-title">机器学习基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -869,24 +869,52 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/">
-                        <span class="chip bg-color">词向量</span>
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
-                    <a href="/tags/Embedding/">
-                        <span class="chip bg-color">Embedding</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/skip-gram/">
-                        <span class="chip bg-color">skip-gram</span>
+                    <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">监督学习</span>
                     </a>
                     
-                    <a href="/tags/one-hot/">
-                        <span class="chip bg-color">one-hot</span>
+                    <a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">无监督学习</span>
                     </a>
                     
-                    <a href="/tags/CBOW/">
-                        <span class="chip bg-color">CBOW</span>
+                    <a href="/tags/%E7%89%B9%E5%BE%81/">
+                        <span class="chip bg-color">特征</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
+                        <span class="chip bg-color">过拟合</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">模型</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A6%82%E7%8E%87/">
+                        <span class="chip bg-color">概率</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B3%9B%E5%8C%96/">
+                        <span class="chip bg-color">泛化</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%81%8F%E5%B7%AE/">
+                        <span class="chip bg-color">偏差</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%96%B9%E5%B7%AE/">
+                        <span class="chip bg-color">方差</span>
                     </a>
                     
                 </div>
@@ -1043,7 +1071,7 @@
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1055,7 +1083,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
