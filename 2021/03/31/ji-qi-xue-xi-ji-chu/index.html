@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -521,14 +521,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    19.2k
+                    19.3k
                 </div>
                 
 
@@ -925,6 +925,8 @@
 </tr>
 </tbody></table>
 <ul>
+<li><p>准确率 (accuracy)：$A=\frac{TP+TN}{TP+TN+FP+FN}$，正确预测样本的占比；</p>
+</li>
 <li><p>查准率(precision)：$P=\frac{TP}{TP+FP}$，预测的正例的有多大比例是正例；</p>
 </li>
 <li><p>查全率(recall):$R=\frac{TP}{TP+FN}$，正例有多大比例被预测出来；</p>
@@ -1012,6 +1014,7 @@
 </ul>
 <h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><p><strong>激活函数</strong></p>
 <ul>
+<li>对输入做非线性变换，如果神经网络中没有非线性变换，则最终退化为简单线性变换（矩阵运算）；</li>
 <li>一般解释sigmoid函数在深度学习上的劣势通常是从梯度消失的角度来解释，也可以尝试另一个角度：sigmoid函数就不是为深度学习而生的，它原本就是在浅层模型（逻辑斯蒂回归）中将数值从无穷区间映射到0-1之间的工具。现在这一工作基本由softmax替代，所以替代sigmoid函数的不是relu，而是softmax。另外softmax本身就是对sigmoid的扩展。Tanh几乎在所有场合都优于sigmoid函数，除非要求输出0-1，否则需要考虑sigmoid的时候完全可以用tanh取代。</li>
 <li>Relu函数虽然有一半的输出处于0导数，但却并不是说会有一半的神经元处于未激活的状态，因为对于不同的样本可能函数输入会很不相同，有的样本输入大于0，有的样本输入小于0，这样就不能算未激活。</li>
 <li>每一个神经元都是一个特征学习器，因此怎样的激活函数更好也可以从这个角度展开分析。所以前馈网络的隐单元更适合relu，而tanh（sigmoid）用在需要限制输出的地方，如循环神经网络中防止梯度爆炸。</li>
@@ -1167,7 +1170,7 @@
 </ul>
 <p><strong>稀疏表示和字典学习</strong></p>
 <ul>
-<li>对样本$\vec{\mathbf{x}}<em>{i}$通过交替寻优的方式学习字典$\mathbf{B}$和稀疏表示$\vec{\alpha}</em>{i}$，优化目标为：<br>$\min <em>{\vec{\alpha}</em>{i}}||\overrightarrow{\mathbf{x}}<em>{i}-\mathbf{B} \vec{\alpha}</em>{i}||<em>{2}^{2}+\lambda \sum</em>{i=1}^{N}|| \vec{\alpha}<em>{i}||</em>{1}$</li>
+<li>对样本 $\vec{\mathbf{x}}<em>{i}$, 通过交替寻优的方式学习字典 $\mathbf{B}$ 和稀疏表示$\vec{\alpha}</em>{i}$，优化目标为：$\min_{\vec{\alpha}<em>{i}}||\vec{\mathbf{x}}</em>{i}-\mathbf{B}\vec{\alpha}<em>{i}||</em>{2}^{2}+\lambda\sum_{i=1}^{N}||\vec{\alpha}<em>{i}||</em>{1}$</li>
 </ul>
 <h3 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>将二分类模型用于多分类问题：</p>
 <ul>
@@ -2038,20 +2041,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -2333,7 +2336,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">57.3k</span>&nbsp;字
+                class="white-color">58.6k</span>&nbsp;字
             
             
             
