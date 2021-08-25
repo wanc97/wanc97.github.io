@@ -509,14 +509,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-24
+                    2021-08-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.4k
+                    10.5k
                 </div>
                 
 
@@ -772,6 +772,11 @@
 <li>先进先出，常用于顺序处理问题的场合，如：广度优先搜索。</li>
 <li>双端队列可以利用双链表来实现，在队列的两端都用$O(1)$的时间进行查询、增加、删除。常用于长度动态变化的窗口或区间。</li>
 <li>循环队列的一个好处是可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。</li>
+</ul>
+<p><strong>单调栈</strong></p>
+<ul>
+<li>递减子数组数目；</li>
+<li>滑窗最大值；</li>
 </ul>
 <p><strong>常见题目</strong></p>
 <ul>
@@ -1061,6 +1066,11 @@ def backtrack(路径, 选择列表):
 <li>如果有多种括号，需要用栈来判断是否合法；</li>
 </ul>
 </li>
+<li>有向无环图求所有可能路径：<ul>
+<li>DFS回溯：</li>
+<li>BFS：</li>
+</ul>
+</li>
 </ul>
 <h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>双指针可分为快慢指针、左右指针、滑窗等。</p>
 <p><strong>快慢指针</strong></p>
@@ -1087,12 +1097,16 @@ def backtrack(路径, 选择列表):
 <li>数组和为k的子数组：$O(n)$时间复杂度，遍历一次即可；</li>
 <li>最小覆盖子串：前指针往前走，找到覆盖子串，然后后指针往前走，找最小的覆盖子串；</li>
 <li>字符串排列/异位词子串：前指针往前走，找到排列子串，遇到不在子串的字符或者超过的字符就移动后指针，缩减窗口；</li>
-<li>无重复最长子串：字典或集合记录；</li>
+<li>无重复最长子串：字典或集合记录位置，遍历判断是否需要更新起始位置；</li>
 </ul>
 <h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 相对 DFS 的最主要的区别是：<strong>BFS 找到的路径一定是最短的，但代价就是空间复杂度比 DFS 大很多</strong></p>
 <p><strong>经典问题</strong></p>
 <ul>
-<li>最短路径：图上最短路径适合BFS搜索，数组上的最短路径适合用动态规划的方式。</li>
+<li>最短路径：<ul>
+<li>图上最短路径适合BFS搜索，</li>
+<li>数组上的最短路径适合用动态规划的方式；但是如果数组上加入了许多约束，如蛇梯棋，也适合BFS</li>
+</ul>
+</li>
 <li>找解决方案：变相求最短路径，通过几种可选的策略BFS搜索，直到找到解决方案。</li>
 </ul>
 <h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h3><p><strong>时间复杂度</strong></p>
@@ -1179,6 +1193,14 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p><strong>行列有序二维数组查找</strong><br>右上开始，至左下，$O(n+m)$</p>
 <p><strong>需要排序最短子数组</strong><br>从左向右、从右往左遍历，记录边界（小于最大数的右边界，大于最小数的左边界），也就是找到两边不用排序的部分，留下中间存在逆序的部分。</p>
 <p><strong>无序数组排序后的最大差值</strong><br>通过$n$个桶，平均划分区间，将元素放入这些桶中，按序遍历查找。</p>
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><ul>
+<li>定义：对有向无环图的节点进行排序，使得排序结果符合边方向</li>
+<li>流程：<ul>
+<li>将入度为0的节点选择出来，并去掉对应的出边；</li>
+<li>反复循环至取出所有节点。</li>
+</ul>
+</li>
+</ul>
 <h3 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h3><p>BF、RK、BM、KMP、Trie树、AC自动机<br><strong>BF</strong><br>时间复杂度很高$O(m*n)$，但也很常用，因为：</p>
 <ul>
 <li>大多数时候主串和匹配串的长度都不大；</li>
@@ -1853,7 +1875,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.8k</span>&nbsp;字
+                class="white-color">59.5k</span>&nbsp;字
             
             
             

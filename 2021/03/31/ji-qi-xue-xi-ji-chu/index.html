@@ -528,7 +528,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    19.3k
+                    19.4k
                 </div>
                 
 
@@ -1611,7 +1611,12 @@
 <li>KNN的模型复杂度和K成反比，K越小越复杂，K越大时平均程度越明显，即正则化力度越大。</li>
 <li>KNN中距离度量的选择是一个问题，连续数据常见的欧氏距离、曼哈顿距离、马氏距离等。</li>
 </ul>
-<h2 id="深度学习算法"><a href="#深度学习算法" class="headerlink" title="深度学习算法"></a>深度学习算法</h2><h3 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h3><h4 id="Word2vector"><a href="#Word2vector" class="headerlink" title="Word2vector"></a>Word2vector</h4><p><strong>one-hot编码缺点</strong></p>
+<h2 id="深度学习算法"><a href="#深度学习算法" class="headerlink" title="深度学习算法"></a>深度学习算法</h2><h3 id="文本处理方法"><a href="#文本处理方法" class="headerlink" title="文本处理方法"></a>文本处理方法</h3><h4 id="TF—IDF"><a href="#TF—IDF" class="headerlink" title="TF—IDF"></a>TF—IDF</h4><ul>
+<li>TF（Term Frequency）：在文章中反复出现的词重要；统计各个词的词频；</li>
+<li>IDF（Inverse Document Frequency）：在各个文章中都出现的词不重要，统计一个词在多少文章中出现n，总共的文章数N；$IDF=log\frac{N}{n+1}$，为词的逆文档权重；</li>
+<li>将词的TF与IDF相乘得到词的TF—IDF权重</li>
+</ul>
+<h3 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h3><h4 id="Word2vector"><a href="#Word2vector" class="headerlink" title="Word2vector"></a>Word2vector</h4><p><strong>one-hot编码缺点</strong></p>
 <ul>
 <li>占空间</li>
 <li>相互独立，无法计算相似度</li>
@@ -2337,7 +2342,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.8k</span>&nbsp;字
+                class="white-color">59.5k</span>&nbsp;字
             
             
             
