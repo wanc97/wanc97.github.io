@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-25
+                    2021-08-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.5k
+                    10.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    37 分
                 </div>
                 
 
@@ -563,6 +563,7 @@
 <li>追求聪明的穷举就是通过加入先验知识，对各种情况特殊处理，降低计算成本。</li>
 </ul>
 </li>
+<li>实际的问题千千万万，我们不能记住所有具体的解决方案；但每个问题都可以抽象、分解为一些基本典型问题，只需要掌握这些基本问题的应对策略，就可以应对无穷的由基本问题组合而成的问题；这些基本问题也就是机器学习中的泛化特征。</li>
 </ul>
 <h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><ol>
 <li>问题建模；</li>
@@ -711,6 +712,7 @@
 </ul>
 </li>
 <li>最长无重复子串：双指针遍历记录目前最长无重复子串，哈希表记录遍历元素最大位置，根据遍历元素位置调整指针。</li>
+<li>字符串解析：可以用栈或更加方便地用递归；字符串括号等里面是独立的单元，可以调用递归；</li>
 </ul>
 <h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><ul>
 <li>反转链表：<ul>
@@ -952,8 +954,13 @@ def traverse(root):
 </ul>
 </li>
 <li>区间覆盖：n个区间，选出一部分区间，满足两两不相交，最多能选出多少个区间呢：<ul>
-<li>按照区间右边界排序，先选择结束早的区间；</li>
+<li>优化的是最大化区间数量，按照区间右边界排序，先选择结束早的区间；</li>
 <li>任务调度、排课问题等；</li>
+</ul>
+</li>
+<li>区间覆盖：n个区间，组成新的序列，满足两两不相交，最少需要多少个序列才能满足呢：<ul>
+<li>优化的是最小序列数量，每一个区间最终都要被选择，则选择的过程就是要让区间尽量紧凑；</li>
+<li>按照左边界排序，每次尽量找最先开始的；</li>
 </ul>
 </li>
 </ul>
@@ -1875,7 +1882,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59.5k</span>&nbsp;字
+                class="white-color">59.6k</span>&nbsp;字
             
             
             
