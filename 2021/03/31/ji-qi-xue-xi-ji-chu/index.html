@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -521,21 +521,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-24
+                    2021-08-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    19.4k
+                    21k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    67 分
+                    73 分
                 </div>
                 
 
@@ -1050,32 +1050,128 @@
 </li>
 <li>牛顿法要应用在非凸优化时需要正则化使得海森矩阵正定，这只适合负特征值绝对值较小时，另外海森矩阵的边长等于参数量，所以在参数量极大的深度学习应用中，牛顿法的巨大计算和存储代价也是致命缺点。</li>
 </ul>
-<p><strong>batch梯度下降</strong></p>
-<ul>
-<li>样本中的信息存在冗余，大量样本都对梯度做出了非常相似的贡献，使用更多样本来估计梯度的方法的收益是低于线性的；</li>
-<li>batch随机梯度下降中，只要没有重复使用样本，它就是真实泛化误差梯度的无偏估计；</li>
-<li>计算开销更小；</li>
-<li>提供一定随机性，有利于跨过局部极值</li>
-</ul>
-<p><strong>学习率</strong></p>
+<h3 id="训练技巧"><a href="#训练技巧" class="headerlink" title="训练技巧"></a>训练技巧</h3><p>模型是非线性的，也无法直接求解出最优解，所以大的方向是通过梯度下降，贪心地逼近更好的解；各种策略都是服务于这个贪心的过程。<br><strong>学习率</strong></p>
 <ul>
 <li>基于梯度的优化算法中，每个参数都有一个最佳的学习率范围，但实际中不可能给每个参数都设置一个学习率超参数，而一个学习率又无法满足所有的参数。这个时候就有了很多的优化角度：<ul>
-<li>对数据做归一化操作、加批次归一化层以改善参数的一致性；</li>
+<li>对数据做归一化缩放操作、加批次归一化层以改善参数的一致性；</li>
 <li>自适应调整学习率；</li>
 <li>动量法自适应调整梯度（动量）等。</li>
 </ul>
 </li>
 <li>第k步的学习率记做$ϵ_k$ ，则保证SGD收敛的一个充分条件是：$\sum_k ϵ_k=\infty$, $\sum_k ϵ_k^2&lt;\infty$</li>
 <li>在随机梯度下降中，学习率固定，因此随着梯度大小变化，参数更新量可能为任意数。而RMSProp动量法通过自适应的方式将参数更新量从无穷区间映射到了大约$[-ϵ,ϵ]$（定性得到的大约区间，不一定）。</li>
+<li>设置合理的学习率；</li>
+<li>周期性得让学习率随轮次减小以适应新的优化情况：<ul>
+<li>指数衰减：$\mu=\mu_0e^{-k}$</li>
+<li>反比衰减：$\mu=\frac{\mu_0}{1+k}$</li>
 </ul>
-<h3 id="归一化层"><a href="#归一化层" class="headerlink" title="归一化层"></a>归一化层</h3><ul>
-<li>理解BN层的一个角度：<ul>
+</li>
+<li>判断学习率大小，随着轮次，损失函数：<ul>
+<li>下降缓慢：学习率太小，梯度下降慢；</li>
+<li>下降适中、平稳：学习率合适；</li>
+<li>下降快但很快停止下降：学习率偏大，梯度更新震荡，无法进一步下降；</li>
+<li>上升：学习率过大，梯度更新发散；</li>
+</ul>
+</li>
+</ul>
+<p><strong>早停</strong></p>
+<ul>
+<li>随着训练的进行，模型基本学习了数据中的有效信息，开始拟合数据中的噪声，此时应该及时停止训练，降低过拟合；</li>
+<li>随着训练的进行，泛化/测试误差先下降，后上升，在谷底时即是早停的最好时机；</li>
+</ul>
+<p><strong>随机/批次梯度下降</strong></p>
+<ul>
+<li>样本中的信息存在冗余，大量样本都对梯度做出了非常相似的贡献，使用更多样本来估计梯度的方法的收益是低于线性的；</li>
+<li>batch随机梯度下降中，只要没有重复使用样本，它就是真实泛化误差梯度的无偏估计；</li>
+<li>计算开销更小；</li>
+<li>shuffle和小批次提供一定随机性，有利于跨过局部极值<ul>
+<li>iteration：更新一次梯度</li>
+<li>epoch：所有样本用一遍</li>
+</ul>
+</li>
+</ul>
+<p><strong>特征scaling</strong></p>
+<ul>
+<li>对每一个特征，将数据减去该特征的均值并除以标准差，改善不同参数的一致性，使得超曲面更加均匀一些。</li>
+</ul>
+<p><strong>动量Momentum</strong></p>
+<ul>
+<li>动量更新参数而不是直接用梯度，动量与上一次的动量和现在的梯度相关，或者说现在和以前的梯度共同决定；</li>
+<li>通过这种方式可以调和不同参数的更新值，方向相同的梯度会变大以加快更新速度，方向反复变化的梯度会变小以降低震荡；</li>
+</ul>
+<p><strong>权重衰减/weight decay</strong></p>
+<ul>
+<li>一种正则化方式，通过加入先验知识，避免参数值处于不合理的区间：<ul>
+<li>L2正则化：先验假设参数取值服从均值为0的高斯分布，越大的参数被打压得越多；</li>
+<li>L1正则化：先验假设参数取值服从均值为0的指数分布，大小参数一起打压，可以带来参数稀疏性；</li>
+</ul>
+</li>
+</ul>
+<p><strong>Dropout</strong></p>
+<ul>
+<li>做法：训练时，在Dropout层按一定概率随机将一部分神经元置0，未置0的神经元值除以保留的概率；</li>
+<li>原理类似：bagging+参数共享；</li>
+<li>未置0神经元的处理是为了使数据无偏；</li>
+</ul>
+<p><strong>权值初始化</strong></p>
+<ul>
+<li>权重初始化应该尽量保证前向传播和反向传播过程中的值得分布不发生变化，分布中的均值大都为0，而方差应该尽量不变，否则深层网络的连乘会导致梯度消失或爆炸，以及饱和等问题。</li>
+<li>初始化到0无法学到任何东西，因为导致大量参数的同质，应该采用随机初始化。</li>
+<li>Xavier的初始化可以保证线性全连接层传递后的方差不变，但是这样对relu这样的激活函数不好，因为relu有一半的是没有值，所以方差应该大一些；</li>
+</ul>
+<p><strong>局部正则化/Local Response Normalize</strong></p>
+<ul>
+<li>$b_i=\frac{a_i}{k+\beta\sum_ia_i}$；</li>
+<li>引入竞争，更可解释，同时稳定数据分布，类似Batch Norm等标准化层效果。</li>
+</ul>
+<p><strong>残差连接</strong></p>
+<ul>
+<li>利于梯度回流，缓解梯度消失；</li>
+<li>降低特征学习难度；</li>
+</ul>
+<p><strong>数据增广</strong></p>
+<ul>
+<li>可以看成增加模型的等变性，也可以看成抑制数据中的噪声；</li>
+<li>图像的数据增广方式包括基本的旋转平移等外，还可以通过风格增广；</li>
+</ul>
+<p><strong>门结构</strong></p>
+<ul>
+<li>有助于底层信息直通</li>
+</ul>
+<h3 id="标准化层"><a href="#标准化层" class="headerlink" title="标准化层"></a>标准化层</h3><p><strong>Batch Norm</strong></p>
+<ul>
+<li><p>Batch Norm：在对一个通道内，对一批次数据的每个特征，减均值除标准差，同时再加入一对可学习的均值方差参数。</p>
+<ul>
+<li>如果不是卷积网络，Batch Norm也可以是对于单个神经元的;</li>
+<li>训练过程使用的减均值除方差是通过一批的训练数据得到，测试的是通过训练过程的指数滑动平均得到;</li>
+<li>通过Batch Norm，深度模型更好地收敛训练，即使对于比较大的学习率也有较好的效果;</li>
+<li>Batch Norm有效的原因：一说可以防止数据分布的变化（内部协方差偏移）；另一说模型的优化曲面发生变化，变得更加平滑，非凸性减弱，使得训练变得容易，即利普希茨系数严格降低；</li>
+<li>在batch size较大的时候，Batch分布与整体分布类似，Batch Norm的效果往往好于Other Norm；同时Batch Norm高度依赖于mini batch 的大小。它要求每个mini-batch 都比较大，因此不适合batch size 较小的场景，如：在线学习（batch size=1 ）；</li>
+<li>不适合RNN网络，因为不同样本的sequence的长度不同，因此RNN的深度是不固定的。同一个batch中的多个样本会产生不同深度的RNN，因此很难对同一层的样本进行归一化；</li>
+</ul>
+</li>
+<li><p>理解Batch Norm层的一个角度：</p>
+<ul>
 <li>原来的网络就像一大段代码叠在一起，可读性差（层与层之间相互依赖，难以训练）；</li>
-<li>加上BN层之后就像把以前的代码分割成了一个个子程序，依此调用，程序之间有清晰的接口，因此阅读和调试都更加容易；</li>
+<li>加上Batch Norm层之后就像把以前的代码分割成了一个个子程序，依此调用，程序之间有清晰的接口，因此阅读和调试都更加容易；</li>
 <li>这就像是一种解耦操作，让各个层专注自己的任务（特征学习）。</li>
 <li>同时也是在改善参数的一致性。</li>
 </ul>
 </li>
+<li><p>在激活函数之前、还是之后进行Batch Norm都可，尚有争论，在激活函数之前进行的更常见；</p>
+</li>
+<li><p>Batch Norm层前的全连接层一般不需要带偏差项，因为偏差项会被吸走，卷积层可以带。</p>
+</li>
+</ul>
+<p><strong>Layer Norm</strong></p>
+<ul>
+<li>因为BN是在批次维度进行，所以叫批次标准化，还可以在其他维度进行，得到不同种类的标准化。</li>
+<li>Layer Norm不依赖于batch size，适合在线学习，也适合于RNN网络。</li>
+</ul>
+<p><strong>Instance Norm</strong></p>
+<ul>
+<li>对于GAN、风格迁移这类任务上，Instance Norm效果要优于BN，因为每张图片自己的风格比较独立，不应该与batch中其它图片产生太大联系。</li>
+<li>Instance Norm也不依赖于batch size，适合在线学习，也适合于RNN网络。</li>
 </ul>
 <h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><ul>
 <li>在MLP的基础上增加了两个先验：局部性连接 &amp; 参数共享。</li>
@@ -1095,7 +1191,10 @@
 <li>多尺度卷积核：学习不同尺度特征；</li>
 <li>空洞卷积：多尺度+减少参数量；</li>
 <li>BN：应对数据分布漂移，避免数据整体进入饱和区，进而缓解梯度消失和梯度爆炸的问题；</li>
-<li>残差连接：利于梯度回流，缓解梯度消失；降低特征学习难度；</li>
+<li>不变性：$f(T(x))=f(x)$，池化层带来一定不变性；</li>
+<li>等变性：$f(T(x))=T(f(x))$，卷积层参数共享带来一定的平移等变性，等变性可以看成是对数据噪声的一种抑制，如图片分类中无论物体在图片的中央还是边缘，都应该得到一样的结果，这种位置信息就是和分类无关的噪声；</li>
+<li>全局平均池化：提供平移不变性，丢失很多细节</li>
+<li>分支训练：网络分叉，如GoogLeNet，可以将梯度信息更好的传递到底层，防止梯度消失。</li>
 </ul>
 </blockquote>
 <h3 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h3><ul>
@@ -2342,7 +2441,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59.6k</span>&nbsp;字
+                class="white-color">61.7k</span>&nbsp;字
             
             
             
