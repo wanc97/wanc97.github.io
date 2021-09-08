@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-31
+                    2021-09-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -841,6 +841,75 @@ DatetimeIndex([&#39;2020-05-02&#39;, &#39;2020-05-03&#39;, &#39;2020-05-04&#39;,
 <li><code>bisect.bisect_left(&#39;list&#39;,x)</code>：在升序<code>list</code>中插入一个<code>x</code>，使得列表仍然有序，返回插入位置，如果有列表中有<code>x</code>，则插入位置在原<code>x</code>左侧，即原<code>x</code>的位置。</li>
 <li><code>bisect.bisect_right(&#39;list&#39;,x)</code>：同上，如果有列表中有<code>x</code>，则插入位置在原<code>x</code>右侧，即原<code>x</code>的位置+1。</li>
 </ul>
+<h3 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h3><h4 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h4><p><strong>view &amp; reshape</strong></p>
+<ul>
+<li>view：只改视图/索引方式，不会增加数据副本，如果遇到不连续的情况就报错；</li>
+<li>reshape：改视图/索引方式，必要时增加数据副本，如果数据连续只改视图/索引方式，如果遇到不连续就新增数据副本；</li>
+<li>转置会带来数据存储不连续；</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">x &#x3D; torch.tensor([1,2,3,4,5,6])  # 原数据连续存储
+tensor([1, 2, 3, 4, 5, 6])
+
+y &#x3D; x.view(3, 2)  # 改变视图
+tensor([[1, 2],
+        [3, 4],
+        [5, 6]])
+
+y &#x3D; y.view(2, 3)  # 改变视图
+tensor([[1, 2, 3],
+        [4, 5, 6]])
+
+y &#x3D; y.t()       # 转置后不再连续
+tensor([[1, 4],
+        [2, 5],
+        [3, 6]])
+
+y.view(2,3)     # 无法改变，报错
+
+z&#x3D;y.reshape(2,3)   # 改变视图，增加副本
+tensor([[1, 4, 2],
+        [5, 3, 6]])
+z[0,0] &#x3D; 0          # 新副本不影响原数据
+x
+tensor([1, 2, 3, 4, 5, 6])
+
+y[0,0] &#x3D; 0           # view不增加副本，影响原数据
+x
+tensor([0, 2, 3, 4, 5, 6])
+
+d &#x3D; x.reshape(2,3)      # 改变视图，不增加副本
+tensor([[0, 2, 3],
+        [4, 5, 6]])
+d[0,1] &#x3D; 0           # 影响原数据
+x
+tensor([0, 0, 3, 4, 5, 6])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>广播</strong></p>
+<ul>
+<li>形状不同的tensor操作可能会触发广播机制，以满足运算要求</li>
+</ul>
+<p><strong>Tensor和NumPy相互转换</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 共享内存的方法，快速
+torch.from_numpy() 
+.numpy()
+
+# 不共享内存的方法，需要拷贝数据
+torch.tensor()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>CPU和GPU相互转换</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 改变位置的同时指定数据类型
+.to(&quot;cpu&quot;, torch.double)
+.to(&quot;cuda&quot;, torch.float)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="自动求梯度"><a href="#自动求梯度" class="headerlink" title="自动求梯度"></a>自动求梯度</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"># 从该位置开始反向传播
+.backward()
+# 配置tensor是否需要追踪梯度
+.requires_grad
+# 梯度保存位置
+.grad
+# 该部分操作不追踪
+with torch.no_grad()：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1440,7 +1509,7 @@ DatetimeIndex([&#39;2020-05-02&#39;, &#39;2020-05-03&#39;, &#39;2020-05-04&#39;,
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">61.6k</span>&nbsp;字
+                class="white-color">62k</span>&nbsp;字
             
             
             
