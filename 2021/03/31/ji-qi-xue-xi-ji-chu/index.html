@@ -445,10 +445,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">深度学习</span>
-                            </a>
-                        
                             <a href="/tags/%E7%AE%97%E6%B3%95/">
                                 <span class="chip bg-color">算法</span>
                             </a>
@@ -475,6 +471,10 @@
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
                             </a>
                         
                             <a href="/tags/%E6%A6%82%E7%8E%87/">
@@ -521,21 +521,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-03
+                    2021-09-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    20.9k
+                    22.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    73 分
+                    78 分
                 </div>
                 
 
@@ -1193,8 +1193,75 @@
 <li>循环神经网络中sigmoid的0～1区间用于模拟门的开闭；tanh用于信息激活函数，线性区间大于sigmoid，同时防止relu可能带来的信息爆炸；</li>
 <li>编码-解码架构可以应对seq2seq问题中输入输出序列长度不一致的情况；</li>
 </ul>
-<h3 id="图神经网络"><a href="#图神经网络" class="headerlink" title="图神经网络"></a>图神经网络</h3><ul>
-<li>图的拉普拉斯矩阵：$L=D-A$，其中$A$为图的邻接矩阵，$D$为图的度矩阵（对角）；对拉普拉斯矩阵进行特征值分解可以得到一系列特征值和对应的特征向量。</li>
+<h3 id="图神经网络"><a href="#图神经网络" class="headerlink" title="图神经网络"></a>图神经网络</h3><p><strong>图</strong></p>
+<ul>
+<li>图的组成：顶点，边</li>
+<li>有向图：边有方向。</li>
+<li>无向图：边没有方向，可以看成有向图的边成对出现。</li>
+<li>带权图：边有权重。</li>
+</ul>
+<p><strong>度</strong></p>
+<ul>
+<li>有向图度：<ul>
+<li>入度：指向自己的边数</li>
+<li>出度：自己发出的边数</li>
+</ul>
+</li>
+<li>无向图度：连接边的数量</li>
+</ul>
+<p><strong>邻接矩阵&amp;临接表</strong></p>
+<ul>
+<li>邻接矩阵是方阵，宽度等于节点数，元素为1代表节点之间有边连接，邻接矩阵浪费空间；每一行相当于一个节点的onehot编码</li>
+<li>无向图的邻接矩阵是对称阵，有向图不一定。</li>
+<li>邻接表节省空间但效率低，cache不友好，可以将其中的链表换成更加高效的数据结构，如跳表、红黑树。</li>
+</ul>
+<p><strong>子图</strong><br>节点和边都是一个大图的子集。</p>
+<p><strong>连通性</strong></p>
+<ul>
+<li>连通图：无向图中所有节点都可以连接在一起。</li>
+<li>连通分量：连通子图数称，连通图的连通分量为1。</li>
+<li>强连通图：有向图任意节点可以相互到达</li>
+<li>弱连通图：有向图不是强连通图，但是作为无向图时是连通图。</li>
+</ul>
+<p><strong>最短路径</strong></p>
+<ul>
+<li>两个节点之间的最短距离，可能是边数，如果边权重不一样就是最短的边的和。</li>
+<li>图直径：图所有节点的最短路径的最大值</li>
+</ul>
+<p><strong>节点重要性</strong></p>
+<ul>
+<li>度中心性：节点度数/(n-1)；即度越高，度中心性越高。</li>
+<li>特征向量中心性：对邻接矩阵求特征值、特征向量，最大特征值对应的特征向量就是各个节点的特征向量中心性。<ul>
+<li>不只看边数，还可以反映连接节点的重要性。</li>
+</ul>
+</li>
+<li>中介中心性：经过自己的最短路径数/总的最短路径数<ul>
+<li>如果有的节点对最短路径可以有多种走法，则分数平均。</li>
+</ul>
+</li>
+<li>连接中心性：(n-1)/该节点到其它节点的最短路径之和。<ul>
+<li>即节点越靠中心，分母越小，值越大。</li>
+</ul>
+</li>
+</ul>
+<p><strong>PageRank</strong></p>
+<ul>
+<li>边的PageRank值为源节点的PageRank除以出度，节点的PageRank值等于入边的PageRank值之和；交替计算直至稳定。<pre class="line-numbers language-python" data-language="python"><code class="language-python">import networkx as nx
+
+# 可以从其它的数据结构中导入，如pandas邻接表
+G &#x3D; nx.from_..()  
+nx.degree(G)
+nx.connected_components(G)
+......
+nx.pagerank(G)
+......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>拉普拉斯矩阵</strong></p>
+<ul>
+<li>$L=D-A$，其中$A$为图的邻接矩阵，$D$为图的度矩阵（对角）；对拉普拉斯矩阵进行特征值分解可以得到一系列特征值和对应的特征向量。</li>
+</ul>
+<p><strong>图卷积</strong></p>
+<ul>
 <li>卷积是将数据从一个域转换到另一个域中，如信号处理领域中从时域到频域，图像处理中从图片到特征图，图领域中从图到对应特征向量；图像中的每一个特征图是对图像的一种分解，图中的特征向量也是对图连接关系的一种分解。<ul>
 <li>DEFFERRARD M, BRESSON X, VANDERGHEYNST P. Convolutional neural networks on graphs with fast localized spectral filtering[C]//Advances in neural information processing systems. 2016: 3844–3852.</li>
 </ul>
@@ -1374,8 +1441,16 @@
 <td>整体控制，容易跑偏，图片更清晰</td>
 </tr>
 </tbody></table>
+<h4 id="变分自编码器"><a href="#变分自编码器" class="headerlink" title="变分自编码器"></a>变分自编码器</h4><p>变分自编码器本质上是希望学习数据的分布，编码器将原始数据分布映射到某个标准分布（如：正太分布、均匀分布），解码器再将标准分布映射到数据分布，最终编码器和解码器就都学习到了原数据分布的信息。其中解码器可以用于生成新数据。</p>
+<ul>
+<li>变分自编码器不是直接让隐变量Z符合标准正太分布，而是让每个样本生成的均值方差接近标准正太分布（均值接近0，方差接近1）</li>
+<li>重参数技巧是为了解决采样过程无法求导</li>
+<li>KL散度相当于正则项的作用，让编码器得到的量以及重参数后的隐向量尽量接近标准正太分布。</li>
+<li>当decoder还没有训练好时（重构误差远大于KL loss），就会适当降低噪声（方差）这会使KL loss增加，使得拟合起来容易一些（重构误差开始下降）；反之，如果decoder训练得还不错时（重构误差小于KL loss），这时候噪声就会增加（KL loss减少），使得拟合更加困难了（重构误差又开始增加），这时候decoder就要想办法提高它的生成/泛化能力了。</li>
+<li>重构的过程是希望没噪声的，而KL loss则希望有高斯噪声的，两者是对立的。所以VAE内部其实是包含了一个对抗的过程，只不过它们两者是混合起来，共同进化的。</li>
+<li>变分：对泛函求极值</li>
+</ul>
 <p><strong>注：</strong><br>泛函：函数到数值的映射，如：KL散度<br>算子：函数到函数的映射，如：梯度</p>
-<p>变分：对泛函求极值</p>
 <h2 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h2><p><strong>维度灾难</strong></p>
 <ul>
 <li>随着特征数的增加，特征空间变得越来越稀疏，需要极多的数据才能有较好的估计效果。即增加维度有利于可分性，但不利于了解数据分布属性。</li>
@@ -1417,7 +1492,10 @@
 <li>效果受限于最近邻的计算。</li>
 </ul>
 <p><strong>LLE</strong><br>获取样本局部嵌入信息，并使低维表示保持这一信息。</p>
-<h2 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h2><p>集成学习与深度学习有异曲同工之妙，如：bagging类似于广度网络（dropout机制），boosting类似于深度残差网络，同时每一层都直连到输出。</p>
+<h2 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h2><ul>
+<li>集成学习与深度学习有异曲同工之妙，如：bagging类似于广度网络（dropout机制），boosting类似于深度残差网络，同时每一层都直连到输出。</li>
+<li>许多模型如决策树、SVM、神经网络等都可以通过增加参数量等方式持续降低训练误差，但这种训练误差下降一般伴随着方差的明显增大，因为越往后会更多的拟合噪声；而集成学习的策略每次训练新的基学习器都会有限拟合重要特征，每个基学习器的参数量有限。</li>
+</ul>
 <h3 id="boosting"><a href="#boosting" class="headerlink" title="boosting"></a>boosting</h3><ul>
 <li>相比深度学习，集成学习boosting的训练过程类似于逐层预训练，在优化上的困难要小得多，因此数据集适合集成学习时，集成学习比深度学习更有优势。同时集成学习的参数量往往要小得多，充分利用了参数的能力，且参数相互制衡，因此往往不容易过拟合。当然boosting不容易过拟合的一个重要保障是要用一些简单的模型作为基模型。</li>
 <li>同时集成学习同时利用所有学习器的结果，类似于深度学习中的直连，将所有层都直接和输出连接。</li>
@@ -1430,8 +1508,8 @@
 <li>每次增加新的学习器，训练误差严格下降。</li>
 </ul>
 <h3 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h3><ul>
-<li>bagging+决策树；</li>
-<li>每一颗决策树随机选取样本和随机选取特征组合。</li>
+<li>bagging+决策树+自助采样法+随机子空间；</li>
+<li>随机子空间：每一棵树随机采样一部分特征来使用，增加多样性，避免模型总是使用最强的几个特征，将数据解释限制在狭窄的范围内；</li>
 </ul>
 <h3 id="梯度提升树（GBT）"><a href="#梯度提升树（GBT）" class="headerlink" title="梯度提升树（GBT）"></a>梯度提升树（GBT）</h3><p><strong>提升树（BT）</strong>：</p>
 <ul>
@@ -1582,6 +1660,14 @@
 <li>线性回归+sigmoid函数，广义线性模型；</li>
 <li>将线性回归的值域从无穷映射到$[0,1]$区间，并将其解释为样本为某一类的概率；因此逻辑回归是概率模型，用于分类问题。</li>
 <li>逻辑回归学习的是决策边界，而不是数据分布，因此是判别模型。</li>
+</ul>
+<h4 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h4><ul>
+<li>线性回归+符号函数</li>
+<li>优化目标是感知准则而非误分类率：<ul>
+<li>误分类率：分段常数函数，每一种分类结果的分类边界都不唯一，无法给出优化方向；</li>
+<li>感知准则：自适应，适合动态学习；</li>
+</ul>
+</li>
 </ul>
 <h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><ul>
 <li>贝叶斯定理+特征条件独立假设；</li>
@@ -1762,6 +1848,27 @@
 </ul>
 </li>
 </ul>
+<h3 id="Graph-embedding"><a href="#Graph-embedding" class="headerlink" title="Graph embedding"></a>Graph embedding</h3><p>从图总提取信息，用一个向量来表示一个节点。</p>
+<p><strong>DeepWalk</strong></p>
+<ul>
+<li>随机游走： 对每个节点在图上进行随机游走，生成图上的序列，通过Word2vector的方式生成embedding。</li>
+</ul>
+<p><strong>LINE</strong></p>
+<ul>
+<li>一阶相似性：相互连接的节点相似；一条边的两节点embedding內积求sigmoid作为联合概率分布，不同边的联合概率分布按边权重加权作为loss。</li>
+<li>二阶相似性：相邻接点相似的节点相似；已知一个节点时，计算其它节点的条件概率，按边的权重加权作为loss。</li>
+<li>将一阶和二阶embedding直接拼接得到最终的embedding。</li>
+</ul>
+<p><strong>node2vector</strong></p>
+<ul>
+<li>同质性：相近的节点相似</li>
+<li>结构等价性：连接结构相似的节点相似</li>
+<li>按一定概率游走，调整参数使模型倾向于学习不同信息；设置p、q的值，控制游走的方向倾向于在附近游走还是在远处游走。  </li>
+</ul>
+<p><strong>struc2vector</strong></p>
+<ul>
+<li>两个节点的相似性通过两个节点的n-hop邻居的度的相似性的判断，也就是两个节点的结构。</li>
+</ul>
 
                 
             </div>
@@ -1826,10 +1933,6 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">深度学习</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%AE%97%E6%B3%95/">
                                     <span class="chip bg-color">算法</span>
                                 </a>
@@ -1856,6 +1959,10 @@
                             
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
                                 </a>
                             
                                 <a href="/tags/%E6%A6%82%E7%8E%87/">
@@ -2133,20 +2240,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -2428,7 +2535,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">62k</span>&nbsp;字
+                class="white-color">56.9k</span>&nbsp;字
             
             
             

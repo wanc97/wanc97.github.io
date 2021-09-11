@@ -50,29 +50,6 @@
   </entry>
   
   <entry>
-    <title>操作系统</title>
-    <link href="http://notego.top/2021/04/09/cao-zuo-xi-tong/"/>
-    <id>http://notego.top/2021/04/09/cao-zuo-xi-tong/</id>
-    <published>2021-04-09T15:31:45.000Z</published>
-    <updated>2021-04-09T15:32:43.000Z</updated>
-    
-    
-    
-    
-    <category term="计算机基础" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="操作系统" scheme="http://notego.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="编程语言" scheme="http://notego.top/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="汇编" scheme="http://notego.top/tags/%E6%B1%87%E7%BC%96/"/>
-    
-    <category term="C" scheme="http://notego.top/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《道德经》笔记</title>
     <link href="http://notego.top/2021/04/08/dao-de-jing-bi-ji/"/>
     <id>http://notego.top/2021/04/08/dao-de-jing-bi-ji/</id>
@@ -93,11 +70,13 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
+    
     <category term="老子" scheme="http://notego.top/tags/%E8%80%81%E5%AD%90/"/>
     
     <category term="无为" scheme="http://notego.top/tags/%E6%97%A0%E4%B8%BA/"/>
-    
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
     
     <category term="德" scheme="http://notego.top/tags/%E5%BE%B7/"/>
     
@@ -105,90 +84,7 @@
     
     <category term="上善若水" scheme="http://notego.top/tags/%E4%B8%8A%E5%96%84%E8%8B%A5%E6%B0%B4/"/>
     
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
     <category term="善" scheme="http://notego.top/tags/%E5%96%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些佛学知识</title>
-    <link href="http://notego.top/2021/04/04/yi-xie-fo-xue-zhi-shi/"/>
-    <id>http://notego.top/2021/04/04/yi-xie-fo-xue-zhi-shi/</id>
-    <published>2021-04-04T01:32:06.000Z</published>
-    <updated>2021-08-19T16:04:46.585Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;般若波罗蜜多心经&quot;&gt;&lt;a href=&quot;#般若波罗蜜多心经&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="佛学" scheme="http://notego.top/tags/%E4%BD%9B%E5%AD%A6/"/>
-    
-    <category term="金刚经" scheme="http://notego.top/tags/%E9%87%91%E5%88%9A%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自动编码器</title>
-    <link href="http://notego.top/2021/04/03/zi-dong-bian-ma-qi/"/>
-    <id>http://notego.top/2021/04/03/zi-dong-bian-ma-qi/</id>
-    <published>2021-04-03T06:55:36.000Z</published>
-    <updated>2021-04-04T13:11:36.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;变分自编码器&quot;&gt;&lt;a href=&quot;#变分自编码器&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="自动编码器" scheme="http://notego.top/tags/%E8%87%AA%E5%8A%A8%E7%BC%96%E7%A0%81%E5%99%A8/"/>
-    
-    <category term="变分" scheme="http://notego.top/tags/%E5%8F%98%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对深度学习的一些想法</title>
-    <link href="http://notego.top/2021/04/03/dui-shen-du-xue-xi-de-yi-xie-xiang-fa/"/>
-    <id>http://notego.top/2021/04/03/dui-shen-du-xue-xi-de-yi-xie-xiang-fa/</id>
-    <published>2021-04-03T06:53:24.000Z</published>
-    <updated>2021-05-14T15:46:22.975Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;观点&quot;&gt;&lt;a href=&quot;#观点&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="mind" scheme="http://notego.top/tags/mind/"/>
     
   </entry>
   
@@ -242,13 +138,13 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
     <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
     <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
+    
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
     
     <category term="天人合一" scheme="http://notego.top/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/"/>
     
@@ -273,7 +169,7 @@
     <link href="http://notego.top/2021/03/31/ji-qi-xue-xi-ji-chu/"/>
     <id>http://notego.top/2021/03/31/ji-qi-xue-xi-ji-chu/</id>
     <published>2021-03-31T12:24:54.000Z</published>
-    <updated>2021-09-03T01:57:56.457Z</updated>
+    <updated>2021-09-11T09:16:52.000Z</updated>
     
     
       
@@ -289,8 +185,6 @@
     <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
     
     <category term="监督学习" scheme="http://notego.top/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
@@ -304,6 +198,8 @@
     <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="机器学习" scheme="http://notego.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="概率" scheme="http://notego.top/tags/%E6%A6%82%E7%8E%87/"/>
     
@@ -411,7 +307,7 @@
     <link href="http://notego.top/2021/03/31/tui-jian-xi-tong/"/>
     <id>http://notego.top/2021/03/31/tui-jian-xi-tong/</id>
     <published>2021-03-31T12:11:10.000Z</published>
-    <updated>2021-08-24T09:31:36.000Z</updated>
+    <updated>2021-09-09T02:12:20.000Z</updated>
     
     
       
@@ -481,70 +377,11 @@
   </entry>
   
   <entry>
-    <title>图神经网络</title>
-    <link href="http://notego.top/2021/03/31/tu-shen-jing-wang-luo/"/>
-    <id>http://notego.top/2021/03/31/tu-shen-jing-wang-luo/</id>
-    <published>2021-03-31T11:57:11.000Z</published>
-    <updated>2021-05-24T14:40:11.737Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;图基本知识&quot;&gt;&lt;a href=&quot;#图基本知识&quot; class=&quot;headerlink&quot; title=&quot;图基本知识&quot;&gt;&lt;/a&gt;图基本知识&lt;/h2&gt;&lt;h4 id=&quot;图&quot;&gt;&lt;a href=&quot;#图&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="图" scheme="http://notego.top/tags/%E5%9B%BE/"/>
-    
-    <category term="神经网络" scheme="http://notego.top/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="Embedding" scheme="http://notego.top/tags/Embedding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《富爸爸穷爸爸》笔记</title>
-    <link href="http://notego.top/2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/"/>
-    <id>http://notego.top/2021/03/31/fu-ba-ba-qiong-ba-ba-bi-ji/</id>
-    <published>2021-03-31T11:54:00.000Z</published>
-    <updated>2021-04-04T13:09:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;情绪决定是否有钱&quot;&gt;&lt;a href=&quot;#情绪决定是否有钱&quot; class=&quot;headerlink&quot; title=&quot;情绪决定是否有钱&quot;&gt;&lt;/a&gt;情绪决定是否有钱&lt;/h3&gt;&lt;p&gt;不要因为情绪、非理性冲动消费&lt;/p&gt;
-&lt;h3 id=&quot;在工作中学习&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="理财" scheme="http://notego.top/tags/%E7%90%86%E8%B4%A2/"/>
-    
-    <category term="财商" scheme="http://notego.top/tags/%E8%B4%A2%E5%95%86/"/>
-    
-    <category term="资产" scheme="http://notego.top/tags/%E8%B5%84%E4%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
     <title>自勉册</title>
     <link href="http://notego.top/2021/03/30/zi-mian-ce/"/>
     <id>http://notego.top/2021/03/30/zi-mian-ce/</id>
     <published>2021-03-30T15:42:46.000Z</published>
-    <updated>2021-09-08T08:32:04.291Z</updated>
+    <updated>2021-09-11T03:37:35.000Z</updated>
     
     
       
