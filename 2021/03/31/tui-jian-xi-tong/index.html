@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-09
+                    2021-09-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    20 分
                 </div>
                 
 
@@ -530,7 +530,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><p><strong>为什么需要推荐</strong></p>
+                <h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>为什么需要推荐</strong></p>
 <ul>
 <li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li>
 <li>马太效应：头部效应明显，强者愈强；</li>
@@ -564,28 +564,134 @@
 <li>广告：Almost all。</li>
 </ul>
 <p><strong>协同过滤</strong><br>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</p>
-<p><strong>用户行为数据</strong></p>
+<p><strong>影响推荐的元素</strong></p>
 <ul>
-<li><p><strong>显式反馈</strong></p>
+<li>UI&amp;UE：即⼈机交互设计和⽤户体验设计，直接影响用户体验；</li>
+<li>数据：决定信息量，决定推荐效果的上限</li>
+<li>领域知识：对业务的理解，才能设计更加合适的算法和策略，可以认为是人工先验知识，可以增加推荐系统的信息量；</li>
+<li>算法：影响系统的长期效果</li>
+</ul>
+<p><strong>用户画像</strong></p>
+<ul>
+<li>推荐系统训练过程中的副产品，也就是用户、项目的各种属性特征，最后以向量化的方式呈现</li>
+<li>最终用户画像的维度取决于哪些维度对于推荐有用</li>
+</ul>
+<h4 id="相似度-距离"><a href="#相似度-距离" class="headerlink" title="相似度/距离"></a>相似度/距离</h4><ul>
+<li>不同的距离度量方式有各自的特点，无绝对优劣，应该针对问题场景选择；</li>
+</ul>
+<p><strong>欧氏距离</strong></p>
+<ul>
+<li>欧式空间中的绝对距离</li>
+<li>不适合隐式反馈</li>
+</ul>
+<p><strong>余弦距离</strong></p>
+<ul>
+<li>向量角度距离，不满足距离定义的三角不等式</li>
+<li>适用于主要考虑倾向性、感情方向，而数据量不等的场景，如摘要与文章的相似度，不同用户喜好相似度等</li>
+<li>适用于显示反馈的评分数据</li>
+</ul>
+<p><strong>皮尔逊相关系数</strong></p>
+<ul>
+<li>两个变量的协方差和标准差的商；</li>
+<li>余弦相似度度量的是向量的绝对方向，皮尔逊相关系数度量的是随机变量变化的方向差别是正相关还是负相关</li>
+</ul>
+<p><strong>杰卡德（Jaccard）系数</strong></p>
+<ul>
+<li>集合交集与并集的比，非常适合布尔向量；</li>
+<li>适合隐式反馈数据；</li>
+</ul>
+<h4 id="推荐系统评价"><a href="#推荐系统评价" class="headerlink" title="推荐系统评价"></a>推荐系统评价</h4><h5 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h5><p>离线实验、用户调查、在线实验依次递进。</p>
+<ul>
+<li><p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
+<blockquote>
+<ul>
+<li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li>
+<li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li>
+</ul>
+</blockquote>
 </li>
-<li><p>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等</p>
+<li><p><strong>用户调查</strong>：在上线测试前选定一部分用户进行验证测试</p>
+<blockquote>
+<ul>
+<li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li>
+<li>优点：得到很多离线测试无法得到的指标</li>
+<li>缺点：成本高，效果越好需要越多用户</li>
+</ul>
+</blockquote>
 </li>
-<li><p>信息密度大但量小，用户从浏览、点击、加购物车、购买、评分是一系列漏斗，数据量越来越小</p>
-</li>
-<li><p>对应评分预测</p>
-</li>
-<li><p><strong>隐式反馈</strong></p>
-</li>
-<li><p>不能明确用户喜好的行为，包括：浏览记录等</p>
-</li>
-<li><p>信息密度小但量大</p>
-</li>
-<li><p>对应CTR（Click Through Rate）预估</p>
-</li>
-<li><p><strong>对比</strong></p>
+<li><p><strong>在线实验</strong>：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</p>
+<blockquote>
+<ul>
+<li>优点：获得推荐算法的实际指标</li>
+<li>缺点：周期长，设计较为复杂</li>
+</ul>
+</blockquote>
 </li>
 </ul>
-<table>
+<h5 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h5><ul>
+<li>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</li>
+</ul>
+<p><strong>用户满意度</strong></p>
+<ul>
+<li>点击率、用户停留时间、转化率、用户评价等等，只能通过用户调查、在线测试获得。</li>
+</ul>
+<p><strong>预测准确率</strong></p>
+<ul>
+<li><p>离线评价指标，绝大多数的论文都会围绕这个指标。</p>
+</li>
+<li><p>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</p>
+</li>
+<li><p>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</p>
+<ul>
+<li>$\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}$</li>
+<li>$\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}$</li>
+</ul>
+</li>
+<li><p>归一化折损累计增益NDCG</p>
+</li>
+<li><p>AUC：ROC曲线下的面积；当有$M$个正例和$N$个负例时，总共有$M * N$个正负例对，当正例排在负例前时为正序贡献1，否则为逆序贡献0，如果得分相同则贡献0.5，所有的贡献和作为分子，除以对数$M * N$得到AUC值。</p>
+</li>
+</ul>
+<p><strong>覆盖率</strong></p>
+<ul>
+<li>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</li>
+<li>$\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}$</li>
+<li>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</li>
+<li>$H=-\sum_{i=1}^{n} p(i) \log p(i)$</li>
+<li>p(i)是物品i的流行程度</li>
+<li>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)$</li>
+</ul>
+<p><strong>多样性</strong></p>
+<ul>
+<li>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</li>
+<li>$\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}$</li>
+</ul>
+<p><strong>新颖性</strong></p>
+<ul>
+<li>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</li>
+<li>一些观点将新颖性定义为不流行程度</li>
+</ul>
+<p><strong>惊喜度</strong><br>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p>
+<p><strong>信任度</strong><br>相同的产品，推荐方式的不同用户的反应会截然不同，例如以广告的方式呈现时用户容易反感，而告诉用户他的号朋友也在用时就更容易接受。</p>
+<p><strong>实时性</strong></p>
+<ul>
+<li>许多商品如新闻、微博具有时间限制；</li>
+<li>新商品的冷启动</li>
+</ul>
+<p><strong>鲁棒性</strong><br>具有抵挡攻击，反作弊的能力</p>
+<p><strong>商业效果</strong><br>如广告的投放量</p>
+<h4 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h4><h5 id="显式反馈"><a href="#显式反馈" class="headerlink" title="显式反馈"></a>显式反馈</h5><ul>
+<li>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等</li>
+<li>信息密度大但量小，用户从浏览、点击、加购物车、购买、评分是一系列漏斗，数据量越来越小</li>
+<li>对应评分预测</li>
+</ul>
+<h5 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h5><ul>
+<li>不能明确用户喜好的行为，包括：浏览记录等</li>
+<li>信息密度小但量大</li>
+<li>对应CTR（Click Through Rate）预估</li>
+<li>可以通过隐式反馈次数得到置信度，对损失函数进行加权</li>
+</ul>
+<h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><table>
 <thead>
 <tr>
 <th>角度</th>
@@ -618,69 +724,29 @@
 <td>都有</td>
 <td>只有正反馈</td>
 </tr>
+<tr>
+<td>数据形式</td>
+<td>实数</td>
+<td>布尔</td>
+</tr>
 </tbody></table>
-<p><strong>影响推荐的元素</strong></p>
-<ul>
-<li>UI&amp;UE：即⼈机交互设计和⽤户体验设计，直接影响用户体验；</li>
-<li>数据：决定信息量，决定推荐效果的上限</li>
-<li>领域知识：对业务的理解，才能设计更加合适的算法和策略，可以认为是人工先验知识，可以增加推荐系统的信息量；</li>
-<li>算法：影响系统的长期效果</li>
+<h5 id="负样本"><a href="#负样本" class="headerlink" title="负样本"></a>负样本</h5><ul>
+<li>隐式反馈的信息一般提供用户感兴趣的正向信息，而模型训练还需要负向信息，因此需要对其它未交互的样本进行采样得到负样本；</li>
 </ul>
-<p><strong>用户画像</strong></p>
+<p><strong>随机负采样</strong></p>
 <ul>
-<li>推荐系统训练过程中的副产品，也就是用户、项目的各种属性特征，最后以向量化的方式呈现</li>
-<li>最终用户画像的维度取决于哪些维度对于推荐有用</li>
+<li>思想比较直接，但是因为推荐中头部效应明显，能够学到的信息少；</li>
+<li>大量的未交互项目可能只是用户未发现，作为负样本不是很合理；</li>
 </ul>
-<h3 id="推荐系统评价"><a href="#推荐系统评价" class="headerlink" title="推荐系统评价"></a>推荐系统评价</h3><h4 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h4><p>离线实验、用户调查、在线实验依次递进。</p>
+<p><strong>热门负采样</strong></p>
 <ul>
-<li><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</li>
+<li>越热门的项目，用户看到的概率更大，可以以更大的概率进行采样；</li>
+<li>按照概率采样最后往往可以最大化表示与样本的互信息，有更好地关联性；</li>
 </ul>
-<blockquote>
+<p><strong>浏览未交互</strong></p>
 <ul>
-<li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li>
-<li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li>
+<li>用户看到却没有点击/交互的项目有更加明显的负向信息，或者说有明确的监督信息；</li>
 </ul>
-</blockquote>
-<ul>
-<li><strong>用户调查</strong>：在上线测试前选定一部分用户进行验证测试</li>
-</ul>
-<blockquote>
-<ul>
-<li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li>
-<li>优点：得到很多离线测试无法得到的指标</li>
-<li>缺点：成本高，效果越好需要越多用户</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>在线实验</strong>：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</li>
-</ul>
-<blockquote>
-<ul>
-<li>优点：获得推荐算法的实际指标</li>
-<li>缺点：周期长，设计较为复杂</li>
-</ul>
-</blockquote>
-<h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</p>
-<p><strong>用户满意度</strong><br>点击率、用户停留时间、转化率、用户评价等等，只能通过用户调查、在线测试获得。</p>
-<p><strong>预测准确率</strong><br>离线评价指标，绝大多数的论文都会围绕这个指标。</p>
-<ul>
-<li>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</li>
-<li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾<br>$\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}$<br>$\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}$</li>
-</ul>
-<p>归一化折损累计增益NDCG</p>
-<p><strong>覆盖率</strong><br>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。<br>$\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}$<br>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量<br>$H=-\sum_{i=1}^{n} p(i) \log p(i)$<br>p(i)是物品i的流行程度<br>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)$</p>
-<p><strong>多样性</strong><br>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。<br>$\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}$</p>
-<p><strong>新颖性</strong><br>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</p>
-<p>一些观点将新颖性定义为不流行程度</p>
-<p><strong>惊喜度</strong><br>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p>
-<p><strong>信任度</strong><br>相同的产品，推荐方式的不同用户的反应会截然不同，例如以广告的方式呈现时用户容易反感，而告诉用户他的号朋友也在用时就更容易接受。</p>
-<p><strong>实时性</strong></p>
-<ul>
-<li>许多商品如新闻、微博具有时间限制；</li>
-<li>新商品的冷启动</li>
-</ul>
-<p><strong>鲁棒性</strong><br>具有抵挡攻击，反作弊的能力</p>
-<p><strong>商业效果</strong><br>如广告的投放量</p>
 <h3 id="经典推荐算法"><a href="#经典推荐算法" class="headerlink" title="经典推荐算法"></a>经典推荐算法</h3><h4 id="基于流行度"><a href="#基于流行度" class="headerlink" title="基于流行度"></a>基于流行度</h4><ul>
 <li>非个性化；</li>
 <li>在没有其它信息的时候兜底，可以类比一个信号的均值分量；</li>
@@ -691,8 +757,8 @@
 <li>比例=绝对热度/展示量：抵消展示量的偏差</li>
 </ul>
 <p><strong>先验流行度</strong></p>
-<p>当项目没有曝光或曝光量较小时，无法计算绝对热度和比例，可以通过加入先验信息来得到一个流行度。</p>
 <ul>
+<li>当项目没有曝光或曝光量较小时，无法计算绝对热度和比例，可以通过加入先验信息来得到一个流行度。</li>
 <li>贝叶斯估计：根据全局或所属类别特征，得到先验的曝光量和点击量，在此基础上进行累加，得到平滑的流行度。</li>
 <li>时间段转化：如果流行度是针对一段时间的，可以将上一段时间的曝光量和点击量乘以一个时间折扣系数作为这一时间段的先验。</li>
 </ul>
@@ -701,22 +767,29 @@
 <li>缓解单个用户/项目信息不足</li>
 </ul>
 <p><strong>基于相似用户的协同过滤</strong></p>
-<p>计算相似用户+用相似用户对于物品的评分组合得到目标用户对于物品的评分</p>
-<p>组合方式</p>
 <ul>
+<li>计算相似用户+用相似用户对于物品的评分组合得到目标用户对于物品的评分</li>
+<li>组合方式<ul>
 <li>平均</li>
 <li>按相似用户相似度加权平均</li>
 <li>减去相似用户的打分偏置后加权平均</li>
 </ul>
+</li>
+</ul>
 <p><strong>基于相似物品的协同过滤</strong></p>
-<p>物品与用户有着对等的关系，因此也可以从物品的角度进行协同过滤</p>
-<p>找到用户的偏好物品+计算物品的相似物品</p>
+<ul>
+<li>物品与用户有着对等的关系，因此也可以从物品的角度进行协同过滤</li>
+<li>找到用户的偏好物品+计算物品的相似物品</li>
+</ul>
 <h4 id="基于内容信息"><a href="#基于内容信息" class="headerlink" title="基于内容信息"></a>基于内容信息</h4><ul>
 <li>把推荐系统当做监督学习任务来看待，输入用户和物品各种特征，预测点击量、购买率等信息。</li>
 <li>核心就是认为需要预测的变量（评分、点击率等等）是所有显式变量的一个回归结果。</li>
 <li>最基础的模型是逻辑斯蒂回归（LR）</li>
 </ul>
-<h4 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h4><p><strong>隐变量</strong></p>
+<h4 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h4><ul>
+<li>矩阵分解的流行起源于10年前的Netflix大赛，当时各类矩阵分解模型都在实际数据中起到了很好的效果。</li>
+</ul>
+<p><strong>隐变量</strong></p>
 <ul>
 <li>“隐藏的变量”或者叫“隐藏的参数”</li>
 <li>如混合高斯分布中，一个样本可能来自不同的高斯分布，在每一个高斯分布上有一个权重；样本在各个分布上的权重就是隐变量。</li>
@@ -726,15 +799,27 @@
 <li>将$m * n$的用户项目交互矩阵分解为$m * k$和$k * n$的两个低秩矩阵的乘积；</li>
 <li>每一个长度为$k$的低维向量用来代表一个用户或项目，其中有$k$个隐变量；</li>
 <li>每一个隐变量指示一个隐含的分布/特征，虽然不能直接说出这些隐变量的含义，但是可以通过隐变量预测用户和项目的可能交互概率。</li>
+<li>通过矩阵分解可以极大地降低参数量，提升参数的泛化性能；</li>
 </ul>
-<p>矩阵分解的流行起源于10年前的Netflix大赛，当时各类矩阵分解模型都在实际数据中起到了很好的效果。</p>
 <p><strong>分解方式</strong></p>
 <ul>
-<li>最小二乘法+梯度下降</li>
+<li>交替最小二乘法：两个潜在矩阵交替寻优；</li>
+<li>梯度下降；</li>
 <li>其它各种数学方法，SVD分解，概率矩阵分解。。。</li>
 </ul>
-<p><strong>加入特征信息</strong><br>经典的矩阵分解有冷启动的问题；没有利用各种其它特征信息。</p>
-<p>加入特征信息的方式是将隐向量写成各种特征信息的组合，这样在学习的过程中不仅可以学到隐向量，还可以得到各个特征的表示，解决冷启动，还可以对隐向量表示起到一定的正则化效果。</p>
+<p><strong>提取偏置信息</strong></p>
+<ul>
+<li>不同的人、项目、全局的平均分都不一样，可以将这个平均分/偏置提取出来单独学习</li>
+</ul>
+<p><strong>加入特征信息</strong></p>
+<ul>
+<li>经典的矩阵分解有冷启动的问题；没有利用各种其它特征信息。</li>
+<li>加入特征信息的方式是将隐向量写成各种特征信息的组合，这样在学习的过程中不仅可以学到隐向量，还可以得到各个特征的表示，解决冷启动，还可以对隐向量表示起到一定的正则化效果。</li>
+</ul>
+<p><strong>划分时间</strong></p>
+<ul>
+<li>不同时间的数据训练不同的隐向量</li>
+</ul>
 <h4 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h4><ul>
 <li>基于内容+矩阵分解思想</li>
 <li>主体是基于内容的做法，输入特征，得到预测值</li>
@@ -1538,7 +1623,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.9k</span>&nbsp;字
+                class="white-color">57.7k</span>&nbsp;字
             
             
             

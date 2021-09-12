@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -521,14 +521,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-11
+                    2021-09-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    22.4k
+                    22.5k
                 </div>
                 
 
@@ -1669,7 +1669,7 @@ nx.pagerank(G)
 </ul>
 </li>
 </ul>
-<h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><ul>
+<h3 id="概率图"><a href="#概率图" class="headerlink" title="概率图"></a>概率图</h3><h4 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h4><ul>
 <li>贝叶斯定理+特征条件独立假设；</li>
 <li>朴素贝叶斯的基础是贝叶斯定理，即通过贝叶斯定理计算样本为各个类别的后验概率；</li>
 <li>朴素贝叶斯朴素在特征条件独立假设，通过该假设，极大地降低参数量（将参数量从指数级降为线性级）。</li>
@@ -1699,6 +1699,14 @@ nx.pagerank(G)
 <p><strong>缺点</strong></p>
 <ul>
 <li>无法给出分类概率（条件概率的特征独立性假设强，所以得到的概率不能太当真）</li>
+</ul>
+<h4 id="贝叶斯网络"><a href="#贝叶斯网络" class="headerlink" title="贝叶斯网络"></a>贝叶斯网络</h4><ul>
+<li>在众多的随机变量中，通过条件独立性假设来降低参数量，得到随机变量的有向无环图；</li>
+<li>可以用于因果推断；</li>
+<li>有向边表示依赖关系，入度为0的节点事件不受其他随机变量影响，入度不为0的节点概率为条件概率的形式；</li>
+</ul>
+<h4 id="马尔科夫网络"><a href="#马尔科夫网络" class="headerlink" title="马尔科夫网络"></a>马尔科夫网络</h4><ul>
+<li>无向图，可以对关系进行建模，不能用于因果推断</li>
 </ul>
 <h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p>树的每一个根节点通过一个特征对样本进行区分，叶节点的数据归为一类或一个输出值。</p>
 <p><strong>信息熵</strong>是用来衡量信息不确定性的指标:</p>
@@ -2535,7 +2543,7 @@ nx.pagerank(G)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.9k</span>&nbsp;字
+                class="white-color">57.7k</span>&nbsp;字
             
             
             
