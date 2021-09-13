@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-12
+                    2021-09-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.7k
+                    6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    21 分
                 </div>
                 
 
@@ -600,7 +600,7 @@
 <li>集合交集与并集的比，非常适合布尔向量；</li>
 <li>适合隐式反馈数据；</li>
 </ul>
-<h4 id="推荐系统评价"><a href="#推荐系统评价" class="headerlink" title="推荐系统评价"></a>推荐系统评价</h4><h5 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h5><p>离线实验、用户调查、在线实验依次递进。</p>
+<h4 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h4><p>离线实验、用户调查、在线实验依次递进。</p>
 <ul>
 <li><p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
 <blockquote>
@@ -628,7 +628,7 @@
 </blockquote>
 </li>
 </ul>
-<h5 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h5><ul>
+<h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><ul>
 <li>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</li>
 </ul>
 <p><strong>用户满意度</strong></p>
@@ -637,20 +637,23 @@
 </ul>
 <p><strong>预测准确率</strong></p>
 <ul>
-<li><p>离线评价指标，绝大多数的论文都会围绕这个指标。</p>
-</li>
-<li><p>评分预测：RMSE（均方根误差）、MAE（绝对值误差）</p>
-</li>
-<li><p>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾</p>
-<ul>
+<li>离线评价指标，绝大多数的论文都会围绕这个指标。</li>
+<li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾<ul>
 <li>$\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}$</li>
 <li>$\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}$</li>
 </ul>
 </li>
-<li><p>归一化折损累计增益NDCG</p>
-</li>
-<li><p>AUC：ROC曲线下的面积；当有$M$个正例和$N$个负例时，总共有$M * N$个正负例对，当正例排在负例前时为正序贡献1，否则为逆序贡献0，如果得分相同则贡献0.5，所有的贡献和作为分子，除以对数$M * N$得到AUC值。</p>
-</li>
+<li>归一化折损累计增益NDCG</li>
+</ul>
+<p><strong>point-wise</strong></p>
+<ul>
+<li>对于一个用户，独立地给每个项目进行打分，如评分预测：RMSE（均方根误差）、MAE（绝对值误差），点击率预估等；</li>
+</ul>
+<p><strong>pair-wise</strong></p>
+<ul>
+<li>不关注项目的具体得分，而更多地要求将正样本排列在负样本前面；相对于point-wise可以增加数据量，因为每一个用户可以得到更多地正负样本对；</li>
+<li>AUC：ROC曲线下的面积；当有$M$个正例和$N$个负例时，总共有$M * N$个正负例对，当正例排在负例前时为正序贡献1，否则为逆序贡献0，如果得分相同则贡献0.5，所有的贡献和作为分子，除以对数$M * N$得到AUC值；</li>
+<li>BPR（Bayesian Personalized Ranking）：贝叶斯个性化排序，在pair-wise正负样本对的基础上加入先验知识（如L2正则化），最大化后验概率；</li>
 </ul>
 <p><strong>覆盖率</strong></p>
 <ul>
@@ -937,6 +940,13 @@
 </ul>
 <p><strong>经典模型</strong></p>
 <ul>
+<li>LR：学习各个特征权重，不能直接学到交叉特征；如果要交叉特征需要手动交叉，泛化性差；</li>
+<li>FM：引入矩阵分解的思想，对二阶交叉特征的权重进行泛化；</li>
+<li>FFM：Field-aware Factorization，在FM的基础上引入Field的概念，每一个特征不止有一个隐因子向量，而是对不同的Field各有一个隐因子向量；<ul>
+<li>FM在LR的基础上大幅降低参数量，提升泛化性，而FFM则是在FM的基础上后退一步，增加参数量，提升模型表达能力；</li>
+</ul>
+</li>
+<li>LR+GBDT：GBDT适合做特征组合，每一棵树就是在依次组合出不同的交叉特征；LR为每一棵树的结果学习权重；</li>
 <li>Wide&amp;Deep：Wide部分擅长记忆，可以拿到用户的基本信息；Deep部分擅长学习泛化能力的特征。<ul>
 <li>Wide部分使用带L1正则化的Follow-the-regularized-leader(FTRL)进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
 </ul>
@@ -992,7 +1002,7 @@
 </li>
 </ul>
 <h4 id="交互数据"><a href="#交互数据" class="headerlink" title="交互数据"></a>交互数据</h4><p>在有了一定的交互数据后就可以利用交互数据进行冷启动。</p>
-<h3 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h3><ul>
+<h3 id="Bandit"><a href="#Bandit" class="headerlink" title="Bandit"></a>Bandit</h3><h3 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h3><ul>
 <li>Exploit：通过已经探明的兴趣进行推荐</li>
 <li>Explore：通过与已有兴趣无关的逻辑推荐，探索用户兴趣</li>
 </ul>
@@ -1623,7 +1633,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">57.7k</span>&nbsp;字
+                class="white-color">58k</span>&nbsp;字
             
             
             
