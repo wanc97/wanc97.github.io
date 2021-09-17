@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -521,7 +521,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-12
+                    2021-09-14
                 </div>
                 
 
@@ -758,8 +758,7 @@
 <h3 id="信息论"><a href="#信息论" class="headerlink" title="信息论"></a>信息论</h3><p><strong>信息</strong></p>
 <ul>
 <li>从不太可能发生的事件中能学到更多的有用信息。<ul>
-<li>发生可能性较大的事件包含较少的信息;</li>
-<li>发生可能性较小的事件包含较多的信息;</li>
+<li>发生可能性较大的事件包含较少的信息，发生可能性较小的事件包含较多的信息;</li>
 <li>独立事件包含额外的信息。</li>
 </ul>
 </li>
@@ -1189,7 +1188,7 @@
 <li>RNN在前向传播和反向传播的时候都有矩阵乘幂，序列略长就必然崩溃，实用性非常低，主要是思想重要。</li>
 <li>LSTM在RNN上加入门控逻辑（遗忘、输入、输出），选择性遗忘和更新信息，可以应用在序列不太长的情况；</li>
 <li>GRU整合门数量（更新、复位）并进一步减少参数量（不区分cell和h），优化结构。</li>
-<li>attention机制可以解决长时间依赖的问题。</li>
+<li>attention机制可以解决长时间依赖的问题：不再去记录中间信息，而是学习捕获数据间的联系，因此不受长序列信息丢失的影响；</li>
 <li>循环神经网络中sigmoid的0～1区间用于模拟门的开闭；tanh用于信息激活函数，线性区间大于sigmoid，同时防止relu可能带来的信息爆炸；</li>
 <li>编码-解码架构可以应对seq2seq问题中输入输出序列长度不一致的情况；</li>
 </ul>
@@ -1636,7 +1635,7 @@ nx.pagerank(G)
 <ul>
 <li>模型简单；</li>
 <li>可解释性强，权重向量直观地表达了各个特征在预测中的重要性；</li>
-<li>很多功能强大的非线性模型(nolinear model)可以在线性模型的基础上通过引入层级结构或者非线性映射得到。</li>
+<li>很多功能强大的非线性模型$(nolinear model)$可以在线性模型的基础上通过引入层级结构或者非线性映射得到。</li>
 </ul>
 <p><strong>线性模型&amp;非线性模型</strong></p>
 <ul>
@@ -2248,20 +2247,20 @@ nx.pagerank(G)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%93%B2%E5%AD%A6/">
-                        <span class="chip bg-color">哲学</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%81%93%E5%AE%B6/">
-                        <span class="chip bg-color">道家</span>
-                    </a>
-                    
                     <a href="/tags/%E9%81%93/">
                         <span class="chip bg-color">道</span>
                     </a>
                     
                     <a href="/tags/%E8%87%AA%E7%84%B6/">
                         <span class="chip bg-color">自然</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%93%B2%E5%AD%A6/">
+                        <span class="chip bg-color">哲学</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93%E5%AE%B6/">
+                        <span class="chip bg-color">道家</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
@@ -2543,7 +2542,7 @@ nx.pagerank(G)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58k</span>&nbsp;字
+                class="white-color">58.6k</span>&nbsp;字
             
             
             

@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-13
+                    2021-09-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6k
+                    6.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    22 分
                 </div>
                 
 
@@ -600,7 +600,7 @@
 <li>集合交集与并集的比，非常适合布尔向量；</li>
 <li>适合隐式反馈数据；</li>
 </ul>
-<h4 id="评价实验方式"><a href="#评价实验方式" class="headerlink" title="评价实验方式"></a>评价实验方式</h4><p>离线实验、用户调查、在线实验依次递进。</p>
+<h4 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h4><p>离线实验、用户调查、在线实验依次递进。</p>
 <ul>
 <li><p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
 <blockquote>
@@ -951,6 +951,8 @@
 <li>Wide部分使用带L1正则化的Follow-the-regularized-leader(FTRL)进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
 </ul>
 </li>
+<li>YoutubeNet：将用户历史观看的视频embedding通过mean pooling来得到一个用户侧特征；然后用户侧特征级联得到一个向量，通过MLP得到用户embedding；</li>
+<li>Spotify：用循环神经网络来做歌单的下一首歌推荐；</li>
 </ul>
 <h4 id="融入对比学习"><a href="#融入对比学习" class="headerlink" title="融入对比学习"></a>融入对比学习</h4><p><strong>DHCN：Self-Supervised Hypergraph Convolutional Networks for Session-based Recommendation</strong></p>
 <ul>
@@ -1002,9 +1004,34 @@
 </li>
 </ul>
 <h4 id="交互数据"><a href="#交互数据" class="headerlink" title="交互数据"></a>交互数据</h4><p>在有了一定的交互数据后就可以利用交互数据进行冷启动。</p>
-<h3 id="Bandit"><a href="#Bandit" class="headerlink" title="Bandit"></a>Bandit</h3><h3 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h3><ul>
+<h3 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h3><ul>
 <li>Exploit：通过已经探明的兴趣进行推荐</li>
 <li>Explore：通过与已有兴趣无关的逻辑推荐，探索用户兴趣</li>
+</ul>
+<h4 id="Bandit"><a href="#Bandit" class="headerlink" title="Bandit"></a>Bandit</h4><ul>
+<li>臂：可能的选择；</li>
+<li>回报：做选择后得到的奖励；</li>
+<li>环境：影响每个选择的因素，在推荐中不同的用户和其它实时特征都是环境；</li>
+<li>思路：确定高收益和尝试次数比较少（不确定性高）的选择更加容易被选择；</li>
+</ul>
+<p><strong>汤普森采样算法</strong></p>
+<ul>
+<li>认为每个用户在每个选择上的收益概率符合贝塔分布，当尝试次数较小时，分布比较发散，容易被探索，当尝试次数变多时，分布变得集中，是否被选中变得更加确定；</li>
+</ul>
+<p><strong>UCB算法</strong></p>
+<ul>
+<li>Upper Confidence Bound：置信区间上界，每个臂的得分由两部分组成，收益均值和不确定性，尝试次数越少，不确定性越高；即平均收益越高，尝试次数越少的臂越容易被选择；</li>
+</ul>
+<p><strong>LinUCB算法</strong></p>
+<ul>
+<li>不只是使用单个用户的尝试次数来获得收益均值和上界，而是通过用户特征来学习，每一个选择有一套参数，参数与输入用户的特征共同得到；</li>
+<li>相比UCB，参数量更少，收敛更快，泛化性更好；</li>
+<li>当选择的数量较少时，可以每个选择一套参数，当选择的数量过多时，可以引入选择的特征并共享参数；</li>
+</ul>
+<p><strong>Epsilon 贪婪算法</strong></p>
+<ul>
+<li>$p$是$(0,1)$之间的一个较小的数，每次以概率$p$随机选择一个臂，同时以概率$1-p$选择目前收益最高的选择；</li>
+<li>$p$越小就越保守，越大则越激进；</li>
 </ul>
 
                 
@@ -1633,7 +1660,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58k</span>&nbsp;字
+                class="white-color">58.6k</span>&nbsp;字
             
             
             
