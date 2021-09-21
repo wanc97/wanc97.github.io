@@ -165,11 +165,11 @@
   </entry>
   
   <entry>
-    <title>机器学习基础</title>
-    <link href="http://notego.top/2021/03/31/ji-qi-xue-xi-ji-chu/"/>
-    <id>http://notego.top/2021/03/31/ji-qi-xue-xi-ji-chu/</id>
+    <title>机器学习</title>
+    <link href="http://notego.top/2021/03/31/ji-qi-xue-xi/"/>
+    <id>http://notego.top/2021/03/31/ji-qi-xue-xi/</id>
     <published>2021-03-31T12:24:54.000Z</published>
-    <updated>2021-09-14T07:02:01.365Z</updated>
+    <updated>2021-09-21T02:21:59.000Z</updated>
     
     
       
@@ -246,7 +246,7 @@
     <link href="http://notego.top/2021/03/31/python/"/>
     <id>http://notego.top/2021/03/31/python/</id>
     <published>2021-03-31T12:17:10.000Z</published>
-    <updated>2021-09-06T12:53:24.000Z</updated>
+    <updated>2021-09-21T02:28:59.000Z</updated>
     
     
       
@@ -277,15 +277,17 @@
     <link href="http://notego.top/2021/03/31/git/"/>
     <id>http://notego.top/2021/03/31/git/</id>
     <published>2021-03-31T12:15:28.000Z</published>
-    <updated>2021-04-08T02:09:51.000Z</updated>
+    <updated>2021-09-21T02:31:45.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h3&gt;&lt;p&gt;git init   初始化仓库&lt;/p&gt;
-&lt;h3 id=&quot;查询&quot;&gt;&lt;a href=&quot;#查询&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git init   初始化仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;查询&quot;&gt;&lt;a href=&quot;#查询&quot;</summary>
         
       
     
@@ -307,7 +309,7 @@
     <link href="http://notego.top/2021/03/31/tui-jian-xi-tong/"/>
     <id>http://notego.top/2021/03/31/tui-jian-xi-tong/</id>
     <published>2021-03-31T12:11:10.000Z</published>
-    <updated>2021-09-20T13:41:25.000Z</updated>
+    <updated>2021-09-21T02:24:22.000Z</updated>
     
     
       
@@ -340,7 +342,7 @@
     <link href="http://notego.top/2021/03/31/shu-ju-jie-gou-yu-suan-fa/"/>
     <id>http://notego.top/2021/03/31/shu-ju-jie-gou-yu-suan-fa/</id>
     <published>2021-03-31T12:01:26.000Z</published>
-    <updated>2021-09-12T13:07:29.000Z</updated>
+    <updated>2021-09-21T02:23:43.000Z</updated>
     
     
       
