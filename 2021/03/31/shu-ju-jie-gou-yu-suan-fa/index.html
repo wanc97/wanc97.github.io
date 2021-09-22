@@ -509,14 +509,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-21
+                    2021-09-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.7k
+                    10.8k
                 </div>
                 
 
@@ -546,7 +546,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基本观点"><a href="#基本观点" class="headerlink" title="基本观点"></a>基本观点</h2><ul>
+                <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
 <li>广义上的算法就是解决问题的方法，这是任何领域都需要考虑的问题，但是为什么只有信息领域如此强调呢？主要因为信息领域存在大量类似的问题，一个合适的算法优化可以带来极大的效用提高，相比之下，其它领域的问题缺少同质性。</li>
 <li>程序设计=数据结构+算法。</li>
 <li>算法的精髓：所有可以降低问题复杂度的算法都是在寻找一种划分，使得问题熵减。<ul>
@@ -614,9 +614,9 @@
 </blockquote>
 <h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>对于递推关系： $T(n)=aT(\frac{n}{b})+f(n),a&gt;=1,b&gt;1$<br>$n$为问题规模，$a$为子问题个数，$\frac{n}{b}$为子问题规模，$f(n)$为递归以外的计算工作。</p>
 <p>$log_ba$与$f(n)$直接影响复杂度</p>
-<p><strong>情况一</strong><br>当$O(f(n)) &lt; O(n^{log_ba})$ (多项式地小于)时：$O(n^{log_ba})$主导复杂度，$T(n)=O(n^{logb(a)})$</p>
-<p><strong>情况二</strong><br>当$O(f(n)) &gt; O(n^{log_ba})$ (多项式地大于)时：$f(n)$主导复杂度，$T(n)=O(f(n))$</p>
-<p><strong>情况三</strong><br>当$O(f(n)) = O(n^{log_ba}log^{k}n)$（差距不足多项式）时，共同影响复杂度，$T(n)=O(n^{log_ba}log^{k+1}n)$</p>
+<p><strong>情况一</strong><br>当$O(f(n)) &lt; O(n^{log_ba})$ 多项式地小于时：$O(n^{log_ba})$主导复杂度，$T(n)=O(n^{logb(a)})$</p>
+<p><strong>情况二</strong><br>当$O(f(n)) &gt; O(n^{log_ba})$ 多项式地大于时：$f(n)$主导复杂度，$T(n)=O(f(n))$</p>
+<p><strong>情况三</strong><br>当$O(f(n)) = O(n^{log_ba}log^{k}n)$差距不足多项式时，共同影响复杂度，$T(n)=O(n^{log_ba}log^{k+1}n)$</p>
 <p>注：部分复杂度符号使用粗略</p>
 <h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
 <li>广度优先：从一个节点开始，往外一层一层地拓展，第零层为起始节点，第一层为直接与起始节点相连的结点，第n层为直接与第n-1层相连但不属于前面任意一层地结点，直到遍历完所有节点。</li>
@@ -633,24 +633,21 @@
 </ul>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>逻辑结构和物理结构</strong></p>
 <ul>
-<li><p>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</p>
+<li>数据结构分为逻辑结构和物理结构，逻辑结构是元素间的抽象关系，更加重要，物理结构是元素在计算机上的存储方式。</li>
+<li>数据物理结构：<ul>
+<li>顺序存储结构：在存储介质上连续存放，与逻辑结构的数组对应；</li>
+<li>链式存储结构：数据元素存放在任意位置，通过指针（地址）联系；</li>
+</ul>
 </li>
-<li><p>数据逻辑结构分为：</p>
-<ul>
+<li>数据逻辑结构分为：<ul>
 <li>集合结构：元素间没有关系；</li>
 <li>线性结构：一个接一个的关系，更准确的说是按一定顺序先后排列的关系；</li>
 <li>树形结构：一对多关系；</li>
 <li>图形结构：多对多关系；</li>
 </ul>
 </li>
-<li><p>数据物理结构：</p>
-<ul>
-<li>顺序存储结构：在存储介质上连续存放，与逻辑结构对应；</li>
-<li>链式存储结构：数据元素存放在任意位置，通过指针（地址）联系；</li>
 </ul>
-</li>
-</ul>
-<p>常用数据逻辑结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p>
+<p>常用数据结构：数组、字符串、链表、栈、队列、双端队列、树、图……</p>
 <p><strong>基本数据结构：数组&amp;链表</strong></p>
 <ul>
 <li>数组的优势在于改查，$O(1)$的时间实现访问、读写；缺点是增删时复杂度高；</li>
@@ -668,7 +665,7 @@
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>特殊数组</strong></p>
 <ul>
 <li>前缀和数组：等于原数组的积分，适用于频繁使用数组一段区间大小的情况；</li>
-<li>差分数组：等于数组的差分，适用于数组频繁对一段区间的值进行共同操作的情况；</li>
+<li>差分数组：等于数组的差分，适用于数组频繁对一段区间的值进行共同加减操作的情况；</li>
 </ul>
 <p><strong>常见题目</strong></p>
 <ul>
@@ -773,7 +770,7 @@
 <ul>
 <li>先进先出，常用于顺序处理问题的场合，如：广度优先搜索。</li>
 <li>双端队列可以利用双链表来实现，在队列的两端都用$O(1)$的时间进行查询、增加、删除。常用于长度动态变化的窗口或区间。</li>
-<li>循环队列的一个好处是可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。</li>
+<li>循环队列的一个好处是可以固定长度的数组实现。</li>
 </ul>
 <p><strong>单调栈</strong></p>
 <ul>
@@ -789,7 +786,7 @@
 <li>用队列实现：依次弹出栈元素，放入队列，从队列中取出压入栈；队列先进先出，而栈后进先出的特性带来了逆序。</li>
 </ul>
 </li>
-<li>用一个额外的栈实现栈中元素排序：原理就是让元素倒来倒去，让元素有序。</li>
+<li>用一个额外的栈实现栈中元素排序：原理就是让元素倒来倒去，让元素有序；原理类似于插入排序。</li>
 <li>数组取划窗最大值：双端队列，存放元素下标，压入的时候比较，去掉不符合的，同时从一端获得最大元素的下标。</li>
 </ul>
 <h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><ul>
@@ -847,7 +844,7 @@ def traverse(root):
 <li>有向无环图：不包含有向环的有向图。</li>
 <li>树是连通且不包含圈/环的无向图。</li>
 <li>对于有n个结点的无向图，这三条中任意两条可以作为树的定义并推导出第三条：连通，边数为$n-1$，没有圈。</li>
-<li>二部图：如果一个无向图的结点用红蓝两种颜色区分，可以使得每条边的两个结点一个是红色一个是蓝色。<ul>
+<li>二部图/二分图：如果一个无向图的结点用红蓝两种颜色区分，可以使得每条边的两个结点一个是红色一个是蓝色。<ul>
 <li>如果一个无向图不包含奇圈，那就是二部图。</li>
 <li>广度优先遍历的结果中不包含连接同一层结点的边的无向图是二部图。</li>
 </ul>
@@ -997,7 +994,7 @@ def traverse(root):
 </li>
 <li>穷举方向可以是<strong>自顶向下</strong>的<strong>递归</strong>，也可以是<strong>自底向上</strong>的<strong>迭代</strong></li>
 <li>一个优化角度是<strong>穷举顺序</strong>，合适的穷举顺序可以少使用备忘录，降低空间复杂度</li>
-<li>对于有指数种情况的问题，要么是可以用动态规划来求解，要么就只能应用在输入规模极小的场景。</li>
+<li>对于有指数种情况的问题:要么是可以用动态规划来求解;要么就只能应用在输入规模极小的场景；或者可以在回溯中大量剪枝。</li>
 </ul>
 <p><strong>通用框架</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 自底向上
@@ -1023,7 +1020,7 @@ def dp(状态1,状态2,...):
 <li>编辑距离：状态是两个字符串的子串的编辑距离，子问题是通过几种可选择的操作可以得到的子问题，优化的是编辑距离。</li>
 <li>最长公共子序列：状态是两个字符串的子串的最长公共子序列，子问题是减掉一两个字符串最后一个字符得到的。</li>
 <li>最长回文子序列：状态是字符串的子串的最长回文子序列，子问题是从左右两端减掉一两个字符后的最长回文子序列。</li>
-<li>最长上升子序列：状态是索引，子问题是每个位置前左右元素中，包括这个位置的最长上升子序列。</li>
+<li>最长上升子序列：状态是索引，子问题是每个位置前所有元素中，包括这个位置的最长上升子序列。</li>
 <li>得分数组左右取分，预测赢家，状态是剩下数字的起始和结束位置； </li>
 </ul>
 <h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p><strong>基本思想</strong></p>
@@ -1061,7 +1058,7 @@ def backtrack(路径, 选择列表):
 <li>n皇后：每行一个皇后，所以选择列表就是每一行的皇后的列数，选择的时候判断是否冲突；</li>
 <li>全排列：每一步从剩下的选择中选择；</li>
 <li>m个元素平分成k个元素和相同的子集：决策深度为元素数m，每个元素有k种选择，每个集合的最终总和是确定的，用于判断是否合适；<ul>
-<li>可以先对元素进行排序，优先选择较大的元素，更容易出发停止条件，以减小计算量。</li>
+<li>可以先对元素进行排序，优先选择较大的元素，更容易触发停止条件，以减小计算量。</li>
 <li>也可以从桶的角度，先选择桶，再选择元素放不放，各个桶之间的状态相对独立一些，可以把最坏复杂度从$O(k^m)$降到$O(k*2^m)$。</li>
 </ul>
 </li>
@@ -1251,10 +1248,13 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     nums[y] &#x3D; x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="发糖果"><a href="#发糖果" class="headerlink" title="发糖果"></a>发糖果</h3><ul>
-<li>问题：给一个列表，是孩子的评分，改孩子发糖果，要保证评分高的孩子得到的糖果数比两边评分低的孩子多</li>
+<li>问题：给一个列表，是孩子的评分，给孩子发糖果，要保证评分高的孩子得到的糖果数比两边评分低的孩子多</li>
 <li>解决：左右各遍历一次，记录给每个孩子最少的糖果，取最大值。</li>
 </ul>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p><a target="_blank" rel="noopener" href="http://www.csie.ntnu.edu.tw/~u91029/">演算法笔记</a></p>
+<h3 id="蓄水池采样"><a href="#蓄水池采样" class="headerlink" title="蓄水池采样"></a>蓄水池采样</h3><ul>
+<li>问题：数据流式到达，总数$n$未知，从中采样$k$个，保证每个数据被采样的概率都是$\frac{k}{n}$；</li>
+<li>解决：前$k$个数据直接保存，第$m$个数据到达时，以$\frac{k}{m}$的概率替代当前保留数据，使得所有数据等概率；</li>
+</ul>
 
                 
             </div>
@@ -1516,59 +1516,6 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     
 
     
-        
-    <div id="SOHUCS"></div>
-    <script type="text/javascript">
-        window.onload = function () {
-            var loadChangYan = function () {
-                var appid = 'cyvnQSGsI';
-                var conf = 'prod_58a16b26d99bc6e4eca685a4819ffc09';
-                var width = window.innerWidth || document.documentElement.clientWidth;
-                if (width < 960) {
-                    var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
-                    var script = document.createElement('script');
-                    script.type = 'text/javascript';
-                    script.charset = 'utf-8';
-                    script.id = 'changyan_mobile_js';
-                    script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
-                        '&conf=' + conf;
-                    head.appendChild(script);
-                } else {
-                    var loadJs = function (d, a) {
-                        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-                        var b = document.createElement("script");
-                        b.setAttribute("type", "text/javascript");
-                        b.setAttribute("charset", "UTF-8");
-                        b.setAttribute("src", d);
-                        if (typeof a === "function") {
-                            if (window.attachEvent) {
-                                b.onreadystatechange = function () {
-                                    var e = b.readyState;
-                                    if (e === "loaded" || e === "complete") {
-                                        b.onreadystatechange = null;
-                                        a()
-                                    }
-                                }
-                            } else {
-                                b.onload = a
-                            }
-                        }
-                        c.appendChild(b)
-                    };
-                    loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
-                        window.changyan.api.config({
-                            appid: appid,
-                            conf: conf
-                        })
-                    });
-                }
-            }
-
-            loadChangYan();
-        }
-    </script>
-
-    
 
     
 
@@ -1592,7 +1539,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            让每一次相遇都充满期待
+                            让每一次相遇都值得期待
                         
                     </div>
                     <div class="publish-info">
