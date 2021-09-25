@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-21
+                    2021-09-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.7k
+                    8.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    27 分
+                    29 分
                 </div>
                 
 
@@ -596,32 +596,42 @@
 <li>适合隐式反馈数据；</li>
 </ul>
 <h4 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h4><p>离线实验、用户调查、在线实验依次递进。</p>
-<ul>
-<li><p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
-<blockquote>
+<p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
 <ul>
 <li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li>
 <li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li>
 </ul>
-</blockquote>
-</li>
-<li><p><strong>用户调查</strong>：在上线测试前选定一部分用户进行验证测试</p>
-<blockquote>
+<p><strong>单位业务规则测试</strong></p>
+<ul>
+<li>对部分/单元的业务/功能进行测试，考察是否正常工作，类似于传统的软件测试；</li>
+</ul>
+<p><strong>case分析</strong>：在上线测试前选定一部分case进行验证测试，通过调用推荐服务，查看一些代表性case的效果，查看推荐效果和一些可以计算的指标；</p>
 <ul>
 <li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li>
 <li>优点：得到很多离线测试无法得到的指标</li>
 <li>缺点：成本高，效果越好需要越多用户</li>
 </ul>
-</blockquote>
-</li>
-<li><p><strong>在线实验</strong>：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</p>
-<blockquote>
+<p><strong>在线实验</strong>：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</p>
 <ul>
 <li>优点：获得推荐算法的实际指标</li>
 <li>缺点：周期长，设计较为复杂</li>
+<li>影响因素：<ul>
+<li>流量大小：越大越好；</li>
+<li>流量分配是否均匀、分层、合理；</li>
+<li>流量是否无偏：前后实验是否相互影响；</li>
 </ul>
-</blockquote>
 </li>
+<li>流量划分：<ul>
+<li>域：对流量进行直接划分；为了更加灵活配置流量</li>
+<li>层：每一层做一个实验，各个层的划分相互正交；域和层之间可以连续嵌套；</li>
+<li>桶：一个层的实验中的每一个实验组都是一个桶，每一个桶对应一组特殊的参数；用户划分要通过合适的散列函数如MD5来进行均匀划分；</li>
+</ul>
+</li>
+<li>统计效果：流量越大，统计意义越明显</li>
+</ul>
+<p><strong>用户访谈</strong></p>
+<ul>
+<li>在线实验的指标可能不全面，可能损害长期效果；</li>
 </ul>
 <h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><ul>
 <li>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</li>
@@ -658,6 +668,11 @@
 <li>$H=-\sum_{i=1}^{n} p(i) \log p(i)$</li>
 <li>p(i)是物品i的流行程度</li>
 <li>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)$</li>
+</ul>
+<p><strong>个性化</strong></p>
+<ul>
+<li>不同用户推荐列表的相似程度；</li>
+<li>基尼系数：推荐项目的马太效应有多严重；</li>
 </ul>
 <p><strong>多样性</strong></p>
 <ul>
@@ -814,6 +829,147 @@
 <td>协同过滤、数据处理/挖掘、模型训练等可以离线的尽可能离线</td>
 <td>根据实时数据对模型进行在线训练/更新</td>
 <td>排序打分；重排；过滤等逻辑；互动规则</td>
+</tr>
+</tbody></table>
+<p><strong>存储</strong></p>
+<ul>
+<li>数据类型：<ul>
+<li>稀疏型：ID特征、类别特征；</li>
+<li>dense/稠密型：embedding；</li>
+</ul>
+</li>
+<li>正排：一般用用户ID、项目ID，得到用户、项目的各种属性；需要列式数据库，如HBase、Cassandra等；</li>
+<li>倒排：一般以特征为key，得到一系列项目等；需要KV数据库，如Redis等；</li>
+<li>分布式参数服务器：存储机器学习模型参数；</li>
+<li>ElasticSearch：</li>
+</ul>
+<h4 id="常见开源工具-轮子"><a href="#常见开源工具-轮子" class="headerlink" title="常见开源工具/轮子"></a>常见开源工具/轮子</h4><p><strong>内容分析</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>场景</th>
+<th>接口语言</th>
+<th>分布式</th>
+<th>支持方</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LightLDA</td>
+<td>主题模型</td>
+<td>C++</td>
+<td>分布式</td>
+<td>Microsoft</td>
+</tr>
+<tr>
+<td>gensim</td>
+<td>主题模型，词嵌入</td>
+<td>Python</td>
+<td>单机多线程</td>
+<td>adimrehurek.com</td>
+</tr>
+<tr>
+<td>plda</td>
+<td>主题模型</td>
+<td>C++</td>
+<td>单机多线程、分布式</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>DMWE</td>
+<td>词嵌入</td>
+<td>C++</td>
+<td>分布式</td>
+<td>Microsoft</td>
+</tr>
+<tr>
+<td>tensorflow-word2vec</td>
+<td>词嵌入</td>
+<td>Python</td>
+<td>分布式、单机</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>FastTest</td>
+<td>词嵌入，文本分类</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>liblinear</td>
+<td>文本分类</td>
+<td>C++、Python、Java等</td>
+<td>单机</td>
+<td>台湾大学</td>
+</tr>
+</tbody></table>
+<p><strong>协同过滤</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>场景</th>
+<th>接口语言</th>
+<th>分布式</th>
+<th>支持方</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>kgraph</td>
+<td>knn相似度计算和搜索</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>aaalgo</td>
+</tr>
+<tr>
+<td>annoy</td>
+<td>稠密低维向量KNN相似搜索</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>spotify</td>
+</tr>
+<tr>
+<td>faiss</td>
+<td>稠密低维向量KNN相似搜索，聚类</td>
+<td>C++、Python</td>
+<td>单机多线程、GPU加速</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>nmslib</td>
+<td>稠密低维向量KNN相似搜索</td>
+<td>C++、Python</td>
+<td>单机</td>
+<td>nmslib</td>
+</tr>
+<tr>
+<td>spark.rowmatrix.columnsimilarities</td>
+<td>基于用户/物品的协同过滤</td>
+<td>Scala、Java、Python</td>
+<td>单机多线程</td>
+<td>Twitter</td>
+</tr>
+<tr>
+<td>lightfm</td>
+<td>SVD矩阵分解，SVD++矩阵分解，BPR矩阵分解</td>
+<td>Python</td>
+<td>单机多线程</td>
+<td>lyst</td>
+</tr>
+<tr>
+<td>implicit</td>
+<td>基于用户/物品的协同过滤，ALS矩阵分解，BPR矩阵分解</td>
+<td>Python</td>
+<td>单机多线程、GPU加速</td>
+<td>benfrederickson.com</td>
+</tr>
+<tr>
+<td>QMF</td>
+<td>加权ALS矩阵分解，BPR矩阵分解</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>Quora</td>
 </tr>
 </tbody></table>
 <h4 id="搜索、推荐、广告"><a href="#搜索、推荐、广告" class="headerlink" title="搜索、推荐、广告"></a>搜索、推荐、广告</h4><table>
@@ -1752,7 +1908,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59.8k</span>&nbsp;字
+                class="white-color">60.6k</span>&nbsp;字
             
             
             
