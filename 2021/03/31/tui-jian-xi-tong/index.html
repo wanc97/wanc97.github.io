@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-25
+                    2021-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.4k
+                    9.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    29 分
+                    32 分
                 </div>
                 
 
@@ -530,7 +530,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>为什么需要推荐</strong></p>
+                <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><ul>
+<li>推荐场景相对于图像、文本等场景来说，混沌程度更高；</li>
+<li>因为图像、文本等领域的信息高度集中在单一数据中，没有过于复杂的交互逻辑，换句话说人可以很容易识别图片中有什么，理解文本的情感，所以是把人可以做好的事情交给机器去做；</li>
+<li>而影响推荐的因素不胜枚举，往往只有极高情商的人可以做好推荐，所以推荐系统是去做人做不好的事情，是一种非常不同的调整；</li>
+<li>当然这种不同即决定了推荐很难做到特别好，但同时也使得人们对推荐系统的效果有更高的容忍度；推荐推得奇奇怪怪大家可以接受，但计算机视觉指鹿为马一定会被嘲讽；</li>
+</ul>
+<h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>为什么需要推荐</strong></p>
 <ul>
 <li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li>
 <li>马太效应：头部效应明显，强者愈强；</li>
@@ -595,7 +601,7 @@
 <li>集合交集与并集的比，非常适合布尔向量；</li>
 <li>适合隐式反馈数据；</li>
 </ul>
-<h4 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h4><p>离线实验、用户调查、在线实验依次递进。</p>
+<h4 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h4><p>离线实验、单元测试、在线实验、用户访谈依次递进。</p>
 <p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
 <ul>
 <li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li>
@@ -755,6 +761,10 @@
 <ul>
 <li>越热门的项目，用户看到的概率更大，可以以更大的概率进行采样；</li>
 <li>按照概率采样最后往往可以最大化表示与样本的互信息，有更好地关联性；</li>
+</ul>
+<p><strong>同类负采样</strong></p>
+<ul>
+<li>对一个正样本，它的同类样本相对于一般样本更有可能被交互，但是没有交互，里面有更多信息，可以加大采样频率；</li>
 </ul>
 <p><strong>浏览未交互</strong></p>
 <ul>
@@ -1031,7 +1041,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="基于协同过滤"><a href="#基于协同过滤" class="headerlink" title="基于协同过滤"></a>基于协同过滤</h4><ul>
+<h4 id="基于协同过滤（CF）"><a href="#基于协同过滤（CF）" class="headerlink" title="基于协同过滤（CF）"></a>基于协同过滤（CF）</h4><ul>
 <li>协同+过滤：相似+信息共用+过滤信息</li>
 <li>缓解单个用户/项目信息不足</li>
 </ul>
@@ -1049,11 +1059,6 @@
 <ul>
 <li>物品与用户有着对等的关系，因此也可以从物品的角度进行协同过滤</li>
 <li>找到用户的偏好物品+计算物品的相似物品</li>
-</ul>
-<h4 id="基于内容信息"><a href="#基于内容信息" class="headerlink" title="基于内容信息"></a>基于内容信息</h4><ul>
-<li>把推荐系统当做监督学习任务来看待，输入用户和物品各种特征，预测点击量、购买率等信息。</li>
-<li>核心就是认为需要预测的变量（评分、点击率等等）是所有显式变量的一个回归结果。</li>
-<li>最基础的模型是逻辑斯蒂回归（LR）</li>
 </ul>
 <h4 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h4><ul>
 <li>矩阵分解的流行起源于10年前的Netflix大赛，当时各类矩阵分解模型都在实际数据中起到了很好的效果。</li>
@@ -1089,11 +1094,6 @@
 <ul>
 <li>不同时间的数据训练不同的隐向量</li>
 </ul>
-<h4 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h4><ul>
-<li>基于内容+矩阵分解思想</li>
-<li>主体是基于内容的做法，输入特征，得到预测值</li>
-<li>在LR的基础上增加二阶交叉特征，用矩阵分解的方式得到交叉特征的权重，降低参数量，提升泛化性</li>
-</ul>
 <h4 id="张量分解（TF）"><a href="#张量分解（TF）" class="headerlink" title="张量分解（TF）"></a>张量分解（TF）</h4><ul>
 <li>张量分解是矩阵分解的推广，矩阵分解运用在用户和项目两个角度，而张量可以拓展到更高的角度，如用户、项目、上下文。</li>
 <li>张量分解的方法：<ul>
@@ -1105,6 +1105,45 @@
 <li>矩阵分解和张量分解都可以用神经网络代替后面的内积运算/还原过程，得到能力更强的现代推荐算法。</li>
 </ul>
 <h4 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h4><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
+<h4 id="神经协同过滤（NCF）"><a href="#神经协同过滤（NCF）" class="headerlink" title="神经协同过滤（NCF）"></a>神经协同过滤（NCF）</h4><ul>
+<li>可以看成矩阵分解的非线性拓展，将用户侧embedding与项目侧embedding共同通过神经网络得到输出；</li>
+<li>可以通过加入side info来使用特征信息，缓解冷启动；</li>
+</ul>
+<h4 id="基于内容信息-LR"><a href="#基于内容信息-LR" class="headerlink" title="基于内容信息/LR"></a>基于内容信息/LR</h4><ul>
+<li>把推荐系统当做监督学习任务来看待，输入用户和物品各种特征，预测点击量、购买率等信息。</li>
+<li>核心就是认为需要预测的变量（评分、点击率等等）是所有显式变量的一个回归结果。</li>
+<li>最基础的模型是逻辑斯蒂回归（LR）：学习各个特征权重，不能直接学到交叉特征；如果要交叉特征需要手动交叉，泛化性差；</li>
+</ul>
+<h4 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h4><ul>
+<li>基于内容+矩阵分解思想</li>
+<li>主体是基于内容的做法，输入特征，得到预测值</li>
+<li>在LR的基础上增加二阶交叉特征，用矩阵分解的方式得到交叉特征的权重，降低参数量，提升泛化性</li>
+</ul>
+<h4 id="基于域的分解机（FFM）"><a href="#基于域的分解机（FFM）" class="headerlink" title="基于域的分解机（FFM）"></a>基于域的分解机（FFM）</h4><ul>
+<li>Field-aware Factorization，在FM的基础上引入Field的概念，每一个特征不止有一个隐因子向量，而是对不同的Field各有一个隐因子向量；</li>
+<li>FM在LR的基础上大幅降低参数量，提升泛化性，而FFM则是在FM的基础上后退一步，增加参数量，提升模型表达能力；</li>
+</ul>
+<h4 id="LR-GBDT"><a href="#LR-GBDT" class="headerlink" title="LR+GBDT"></a>LR+GBDT</h4><ul>
+<li>GBDT适合做特征组合，每一棵树就是在依次组合出不同的交叉特征；LR为每一棵树的结果学习权重；</li>
+<li>通过树模型得到高阶交叉特征；</li>
+</ul>
+<h4 id="Wide-amp-Deep"><a href="#Wide-amp-Deep" class="headerlink" title="Wide&amp;Deep"></a>Wide&amp;Deep</h4><ul>
+<li>Wide部分就是LR，擅长记忆，可以拿到用户的基本信息；Deep部分擅长学习泛化能力的特征。</li>
+<li>Wide部分使用带L1正则化的Follow-the-regularized-leader(FTRL)进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
+</ul>
+<h4 id="DeepFM"><a href="#DeepFM" class="headerlink" title="DeepFM"></a>DeepFM</h4><ul>
+<li>类似于Wide&amp;Deep，一边用FM，另一边用神经网络得到高阶交叉特征；</li>
+</ul>
+<h4 id="YoutubeNet"><a href="#YoutubeNet" class="headerlink" title="YoutubeNet"></a>YoutubeNet</h4><ul>
+<li>将用户历史观看的视频embedding通过mean pooling来得到一个用户侧特征；然后用户侧特征级联得到一个向量，通过MLP得到用户embedding；</li>
+</ul>
+<h4 id="Spotify"><a href="#Spotify" class="headerlink" title="Spotify"></a>Spotify</h4><ul>
+<li>用循环神经网络来做歌单的下一首歌推荐；</li>
+</ul>
+<h4 id="DIN"><a href="#DIN" class="headerlink" title="DIN"></a>DIN</h4><ul>
+<li>对用户交互序列进行attention加权pooling；</li>
+<li>attention是计算历史交互项目与待打分项目之间的关系；</li>
+</ul>
 <h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p><strong>内容源去重</strong></p>
 <ul>
 <li>对不同来源的内容进行重复识别和过滤；</li>
@@ -1162,44 +1201,56 @@
 <li>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</li>
 <li>召回与排序都是推荐算法，但是召回面对的是海量的待选，因此从算法上降低复杂度并从工程上简化线上流程。</li>
 </ul>
+<h4 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h4><p><strong>无个性化</strong><br>只使用项目侧特征</p>
+<ul>
+<li>热门召回、高复购、高潜力、。。。</li>
+</ul>
+<p><strong>有个性化</strong><br>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p>
 <h4 id="向量化召回"><a href="#向量化召回" class="headerlink" title="向量化召回"></a>向量化召回</h4><ul>
 <li>通过用户的向量到库中寻找最近/相似的项目</li>
 <li>本质上是一个KNN问题</li>
 <li>工程上会通过一些方式来加速</li>
 </ul>
-<h5 id="faiss"><a href="#faiss" class="headerlink" title="faiss"></a>faiss</h5><p>由Facebook开发，为稠密向量提供高效相似度搜索和聚类的框架。</p>
+<h5 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h5><p><strong>faiss</strong><br>由Facebook开发，为稠密向量提供高效相似度搜索和聚类的框架。</p>
 <ul>
 <li>提供多种检索方法</li>
 <li>速度快</li>
 <li>可存在内存和磁盘中</li>
 <li>C++实现，提供Python封装调用。</li>
 <li>大部分算法支持GPU实现</li>
-</ul>
-<p><strong>加速搜索</strong></p>
-<ul>
+<li>加速搜索<ul>
 <li>通过K-means建立聚类中心</li>
 <li>将聚类信息写入倒排中，</li>
 <li>搜索时先查询聚类中心，再查询最近的相似向量</li>
 </ul>
-<h5 id="KDtree"><a href="#KDtree" class="headerlink" title="KDtree"></a>KDtree</h5><p>将数据循环在各个维度上二分到超矩形中</p>
-<h5 id="Balltree"><a href="#Balltree" class="headerlink" title="Balltree"></a>Balltree</h5><p>将数据划分到超球中</p>
-<h5 id="Annoy"><a href="#Annoy" class="headerlink" title="Annoy"></a>Annoy</h5><p>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
-<h5 id="NSW"><a href="#NSW" class="headerlink" title="NSW"></a>NSW</h5><ul>
+</li>
+</ul>
+<p><strong>KDtree</strong><br>将数据循环在各个维度上二分到超矩形中</p>
+<p><strong>Balltree</strong><br>将数据划分到超球中</p>
+<p><strong>Annoy</strong><br>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
+<p><strong>NSW</strong></p>
+<ul>
 <li>Navigable Small World graphs：基于图，从任意节点开始，计算自己与近邻节点到目标点的距离，更新为最近的点，依次进行至找到最近的节点。</li>
 <li>经典思路复杂度较高，可以通过依次随机插入的方式构图，来得到节点连接的高速公路，降低计算量</li>
 <li>HNSW加入了跳表结构做了进一步优化，每一个点都有50%概率进入上一层的有序链表。这样可以保证表层是“高速通道”，底层是精细查找，计算时从上往下依次查找。</li>
 </ul>
-<h4 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h4><p>只使用项目侧特征</p>
-<blockquote>
-<ul>
-<li>热门召回</li>
-<li>高复购</li>
-<li>高潜力</li>
-<li>。。。</li>
+<h5 id="协同过滤召回"><a href="#协同过滤召回" class="headerlink" title="协同过滤召回"></a>协同过滤召回</h5><ul>
+<li>通过历史交互行为计算相似，或先矩阵分解，通过隐向量计算相似；</li>
 </ul>
-</blockquote>
-<h4 id="有个性化"><a href="#有个性化" class="headerlink" title="有个性化"></a>有个性化</h4><p>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p>
-<h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><p>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。<br>召回要求快，所使用到的模型不能太复杂。<br>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</p>
+<h5 id="graph-embedding"><a href="#graph-embedding" class="headerlink" title="graph embedding"></a>graph embedding</h5><ul>
+<li>将项目序列建图，在图上通过graph embedding的方式得到项目embedding，进而得到相似项目；</li>
+<li>mixed graph-vector model:利用协同过滤CF得到相似最近邻，进而根据最近邻建图，再用graph embedding；</li>
+</ul>
+<h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><ul>
+<li>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。</li>
+<li>召回要求快，所使用到的模型不能太复杂。</li>
+<li>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</li>
+</ul>
+<h5 id="DSSM-双塔"><a href="#DSSM-双塔" class="headerlink" title="DSSM/双塔"></a>DSSM/双塔</h5><ul>
+<li>Deep Structured Semantic Models：深度语义匹配模型，分别为用户/query，和项目/doc等构建一个子网络，子网络输出embedding向量，训练好网络后可以离线保存项目的向量，在线得到用户侧embedding向量，计算相似度，向量化召回；</li>
+<li>双塔设计的目的是为了快，线上只需要进行内积运算；如果用户侧没有实时特征，则可以直接做成倒排拉链存储，线上只需要查询；</li>
+<li>內积也可以换成其它合适的距离度量方式，如余弦相似度等；</li>
+</ul>
 <h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p>
 <h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
 <p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
@@ -1241,29 +1292,17 @@
 </ul>
 </li>
 </ul>
-<p><strong>经典模型</strong></p>
-<ul>
-<li>LR：学习各个特征权重，不能直接学到交叉特征；如果要交叉特征需要手动交叉，泛化性差；</li>
-<li>FM：引入矩阵分解的思想，对二阶交叉特征的权重进行泛化；</li>
-<li>FFM：Field-aware Factorization，在FM的基础上引入Field的概念，每一个特征不止有一个隐因子向量，而是对不同的Field各有一个隐因子向量；<ul>
-<li>FM在LR的基础上大幅降低参数量，提升泛化性，而FFM则是在FM的基础上后退一步，增加参数量，提升模型表达能力；</li>
-</ul>
-</li>
-<li>LR+GBDT：GBDT适合做特征组合，每一棵树就是在依次组合出不同的交叉特征；LR为每一棵树的结果学习权重；</li>
-<li>Wide&amp;Deep：Wide部分擅长记忆，可以拿到用户的基本信息；Deep部分擅长学习泛化能力的特征。<ul>
-<li>Wide部分使用带L1正则化的Follow-the-regularized-leader(FTRL)进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
-</ul>
-</li>
-<li>YoutubeNet：将用户历史观看的视频embedding通过mean pooling来得到一个用户侧特征；然后用户侧特征级联得到一个向量，通过MLP得到用户embedding；</li>
-<li>Spotify：用循环神经网络来做歌单的下一首歌推荐；</li>
-</ul>
 <h4 id="融入对比学习"><a href="#融入对比学习" class="headerlink" title="融入对比学习"></a>融入对比学习</h4><p><strong>DHCN：Self-Supervised Hypergraph Convolutional Networks for Session-based Recommendation</strong></p>
 <ul>
 <li>DHCN：双通道超图卷积网络，引入自监督，最大化两个通道学习的会话表示之间的互信息，以改善推荐效果。</li>
 <li>超图：一个超边可以连接多个不同顶点，对应一个共同的权值，即一条超边对应一个会话。 </li>
 </ul>
 <h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><ul>
-<li>新用户、项目的信息比较少，很难学好；</li>
+<li>新用户、项目的信息比较少，很难学好；<ul>
+<li>新用户没有行为，也很少信息；</li>
+<li>新项目无反馈历史，也很难得到曝光，召回策略往往也是冷启动不友好；</li>
+</ul>
+</li>
 <li>所有的做法都是从各种角度加入信息，有信息是做好的必要条件；常见的是使用side information，以及通过各种非模型的策略。</li>
 </ul>
 <h4 id="side-information"><a href="#side-information" class="headerlink" title="side information"></a>side information</h4><ul>
@@ -1280,6 +1319,7 @@
 <li>Learning to Warm Up Cold Item Embeddings for Cold-start Recommendation with Meta Scaling and Shifting Networks. SIGIR2021.<img src='/medias/image/推荐系统-Meta Warm Up Framework (MWUF).jpg' width="100%"></li>
 </ul>
 </li>
+<li>Airbnb Word2vec：不使用属性的embedding，而是使用每个属性得到最近邻项目，根据最近邻项目的embedding合成新项目的表示；</li>
 </ul>
 </li>
 <li><strong>知识图谱</strong>：从图谱中挖掘信息。<ul>
@@ -1908,7 +1948,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.6k</span>&nbsp;字
+                class="white-color">61.3k</span>&nbsp;字
             
             
             
