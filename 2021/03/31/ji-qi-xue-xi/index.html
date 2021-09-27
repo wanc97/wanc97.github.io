@@ -528,14 +528,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    22.6k
+                    22.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    79 分
+                    80 分
                 </div>
                 
 
@@ -1044,9 +1044,13 @@
 <li>动量法自适应调整梯度（动量）等。</li>
 </ul>
 </li>
-<li>第k步的学习率记做$ϵ_k$ ，则保证SGD收敛的一个充分条件是：$\sum_k ϵ_k=\infty$, $\sum_k ϵ_k^2&lt;\infty$</li>
+<li>第k步的学习率记做$ϵ_k$ ：<ul>
+<li>$\sum_k ϵ_k=\infty$：保证无论多远，梯度都可以更新到；</li>
+<li>$\sum_k ϵ_k^2&lt;\infty$：保证更新过程稳定收敛；</li>
+</ul>
+</li>
 <li>在随机梯度下降中，学习率固定，因此随着梯度大小变化，参数更新量可能为任意数。而RMSProp动量法通过自适应的方式将参数更新量从无穷区间映射到了大约$[-ϵ,ϵ]$（定性得到的大约区间，不一定）。</li>
-<li>设置合理的学习率；</li>
+<li>batch size大时，优化曲面更加稳定，可以设置更大的学习率；反之batch size小时，学习率要设置的小一些；</li>
 <li>周期性得让学习率随轮次减小以适应新的优化情况：<ul>
 <li>指数衰减：$\mu=\mu_0e^{-k}$</li>
 <li>反比衰减：$\mu=\frac{\mu_0}{1+k}$</li>
@@ -1059,6 +1063,10 @@
 <li>上升：学习率过大，梯度更新发散；</li>
 </ul>
 </li>
+<li>AdaGrad：将参数历次梯度的斜边的倒数用来自适应调整学习率；梯度大的参数学习率小；很容易还没优化好就停止了；</li>
+<li>RMSProp：在AdaGrad的基础上，将累计求和的部分改成了指数滑动，避免自适应学习率快速衰减的问题，自适应学习率可以根据需要变大和变小；</li>
+<li>AdaDelta：在RMSProp的基础上，在分子上加入参数变化量的指数滑动斜边，进一步调和，让更新大的参数的学习率可以不太小，缓解自适应学习率的波动；</li>
+<li>Adam：在RMSProp的基础上，加入动量法，然后对动量、斜边进行一些调和，改善早起的偏差；</li>
 </ul>
 <p><strong>早停</strong></p>
 <ul>
@@ -1076,14 +1084,19 @@
 </ul>
 </li>
 </ul>
+<p><strong>梯度截断</strong></p>
+<ul>
+<li>对梯度按阈值截断或按模截断，以避免梯度爆炸；</li>
+</ul>
 <p><strong>特征scaling</strong></p>
 <ul>
 <li>对每一个特征，将数据减去该特征的均值并除以标准差，改善不同参数的一致性，使得超曲面更加均匀一些。</li>
 </ul>
 <p><strong>动量Momentum</strong></p>
 <ul>
-<li>动量更新参数而不是直接用梯度，动量与上一次的动量和现在的梯度相关，或者说现在和以前的梯度共同决定；</li>
+<li>使用动量更新参数而不是直接用梯度，动量与上一次的动量和现在的梯度相关，或者说现在和以前的梯度共同决定；</li>
 <li>通过这种方式可以调和不同参数的更新值，方向相同的梯度会变大以加快更新速度，方向反复变化的梯度会变小以降低震荡；</li>
+<li>Nesterov加速梯度：先用历史动量更新参数，然后计算梯度并更新，调整先后顺序；</li>
 </ul>
 <p><strong>权重衰减/weight decay</strong></p>
 <ul>
@@ -2497,7 +2510,7 @@ nx.pagerank(G)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">61.3k</span>&nbsp;字
+                class="white-color">61.6k</span>&nbsp;字
             
             
             
