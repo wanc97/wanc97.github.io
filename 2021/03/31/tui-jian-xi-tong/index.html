@@ -500,14 +500,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.6k
+                    10.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    33 分
+                    37 分
                 </div>
                 
 
@@ -533,8 +533,8 @@
                 <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><ul>
 <li>推荐场景相对于图像、文本等场景来说，混沌程度更高；</li>
 <li>因为图像、文本等领域的信息高度集中在单一数据中，没有过于复杂的交互逻辑，换句话说人可以很容易识别图片中有什么，理解文本的情感，所以是把人可以做好的事情交给机器去做；</li>
-<li>而影响推荐的因素不胜枚举，往往只有极高情商的人可以做好推荐，所以推荐系统是去做人做不好的事情，是一种非常不同的调整；</li>
-<li>当然这种不同即决定了推荐很难做到特别好，但同时也使得人们对推荐系统的效果有更高的容忍度；推荐推得奇奇怪怪大家可以接受，但计算机视觉指鹿为马一定会被嘲讽；</li>
+<li>而影响推荐的因素不胜枚举，往往只有极高情商的人可以做好推荐，所以推荐系统是去做人做不好的事情，是一种非常不同的挑战；</li>
+<li>当然这种不同既决定了推荐很难做到特别好，但同时也使得人们对推荐系统的效果有更高的容忍度；推荐推得奇奇怪怪大家容易接受，但计算机视觉指鹿为马一定会被嘲讽；</li>
 </ul>
 <h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>为什么需要推荐</strong></p>
 <ul>
@@ -588,7 +588,7 @@
 <p><strong>余弦距离</strong></p>
 <ul>
 <li>向量角度距离，不满足距离定义的三角不等式</li>
-<li>适用于主要考虑倾向性、感情方向，而数据量不等的场景，如摘要与文章的相似度，不同用户喜好相似度等</li>
+<li>适用于主要考虑倾向性、情感方向，而数据量不等的场景，如摘要与文章的相似度，不同用户喜好相似度等</li>
 <li>适用于显示反馈的评分数据</li>
 </ul>
 <p><strong>皮尔逊相关系数</strong></p>
@@ -637,7 +637,7 @@
 </ul>
 <p><strong>用户访谈</strong></p>
 <ul>
-<li>在线实验的指标可能不全面，可能损害长期效果；</li>
+<li>在线实验的指标可能不全面，可能损害长期效果，通过用户访谈发现一些潜在问题；</li>
 </ul>
 <h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><ul>
 <li>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</li>
@@ -672,8 +672,8 @@
 <li>$\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}$</li>
 <li>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</li>
 <li>$H=-\sum_{i=1}^{n} p(i) \log p(i)$</li>
-<li>p(i)是物品i的流行程度</li>
-<li>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p\left(i_{j}\right)$</li>
+<li>$p(i)$是物品i的流行程度</li>
+<li>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p(i_{j})$</li>
 </ul>
 <p><strong>个性化</strong></p>
 <ul>
@@ -687,7 +687,7 @@
 </ul>
 <p><strong>新颖性</strong></p>
 <ul>
-<li>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，即包括在本平台交互过的，也包括在其它地方交互过的。</li>
+<li>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，既包括在本平台交互过的，也包括在其它地方交互过的。</li>
 <li>一些观点将新颖性定义为不流行程度</li>
 </ul>
 <p><strong>惊喜度</strong><br>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p>
@@ -734,19 +734,14 @@
 <td>分布式文件系统</td>
 </tr>
 <tr>
-<td>实时性</td>
-<td>实时</td>
-<td>有延迟</td>
-</tr>
-<tr>
 <td>正负反馈</td>
 <td>都有</td>
-<td>只有正反馈</td>
+<td>只有正反馈/单向信号</td>
 </tr>
 <tr>
 <td>数据形式</td>
-<td>实数</td>
-<td>布尔</td>
+<td>主要实数</td>
+<td>主要布尔</td>
 </tr>
 </tbody></table>
 <h5 id="负样本"><a href="#负样本" class="headerlink" title="负样本"></a>负样本</h5><ul>
@@ -1165,7 +1160,57 @@
 <li>使用Bi-LSTM去捕捉用户在多个历史会话中兴趣的交互和演变；</li>
 <li>计算待打分项目与各个session的相似度，加权求和；<img src='/medias/image/推荐系统-DSIN.jpg' width="80%"></li>
 </ul>
-<h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p><strong>内容源去重</strong></p>
+<h4 id="多目标"><a href="#多目标" class="headerlink" title="多目标"></a>多目标</h4><h5 id="ESMM-Entire-Space-Multi-Task-Model"><a href="#ESMM-Entire-Space-Multi-Task-Model" class="headerlink" title="ESMM/Entire Space Multi-Task Model"></a>ESMM/Entire Space Multi-Task Model</h5><ul>
+<li>两个完全一样的子模型学习pCTR和pCVR，然后将这两个值相乘得到pCTCVR，损失函数是pCTR和pCTCVR的乘积；</li>
+<li>pCTR的正样本是有点击行为的曝光事件，负样本是没有点击行为的曝光事件。PCTCVR的正样本是同时具有点击和转化的曝光事件，负样本是没有点击的或者点击没有转化的曝光事件。</li>
+<li>两个子模型共享embedding，缓解数据稀疏性的问题；</li>
+<li>结构设计使得pCVR的子模型也可以从曝光未点击的样本中学习；缓解模型用户点击的样本来训练，但是预测却是用的整个样本空间的样本选择偏差；</li>
+</ul>
+<h5 id="MMoE-Multi-gate-Mixture-of-Experts"><a href="#MMoE-Multi-gate-Mixture-of-Experts" class="headerlink" title="MMoE/Multi-gate Mixture-of-Experts"></a>MMoE/Multi-gate Mixture-of-Experts</h5><ul>
+<li>许多多目标的模型采用Shared-Bottom的方式，共享底层网络，在多目标任务接近时效果较好，而在多目标差异较大时效果一般；</li>
+<li>MoE是使用简单的前馈神经网络和可训练门控单元组成的子结构，门控单元根据输入控制前馈神经网络的输出；</li>
+<li>MMoE用多个MoE并行代替Shared-Bottom网络，当多任务的相关性越低时，MMoE的效果越明显；</li>
+</ul>
+<h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="多目标-1"><a href="#多目标-1" class="headerlink" title="多目标"></a>多目标</h4><h5 id="目的-amp-困难"><a href="#目的-amp-困难" class="headerlink" title="目的&amp;困难"></a>目的&amp;困难</h5><ul>
+<li>推荐系统中的数据大多是隐式反馈；<ul>
+<li>且以漏斗的形式出现，如电商场景下的点击、收藏、加购物车、购买、评价等，数量依次减少；</li>
+<li>同时有许多可以共同优化的目标，如留存、观看时长、分享等；</li>
+</ul>
+</li>
+<li>众多的目标都是我们想要优化的：优化多目标可以得到更多的数据量，缓解数据稀疏性；</li>
+<li>优化多目标有许多困难：<ul>
+<li>不同用户的表达偏好不同，有的倾向于点赞，有的倾向于收藏等；</li>
+<li>不同物品的目标之间存在偏差，如标题党在点击量上占优势；</li>
+<li>不同目标的重要程度不一样，如购买高于收藏；</li>
+</ul>
+</li>
+</ul>
+<h5 id="改变样本权重"><a href="#改变样本权重" class="headerlink" title="改变样本权重"></a>改变样本权重</h5><ul>
+<li>对重要的优化目标的样本给更大的权重，可以在不调整模型架构的情况下，实现多个目标的预测；</li>
+<li>没有对多目标进行建模，样本权重的确定比较主观；</li>
+</ul>
+<h5 id="多模型分数融合"><a href="#多模型分数融合" class="headerlink" title="多模型分数融合"></a>多模型分数融合</h5><ul>
+<li>排序阶段为每一个目标单独训练出一个分数，然后在重排阶段将这些分数组合成一个新的分数，可以采用连乘、指数等方式；</li>
+<li>模型简单，但是分数融合的超参数难以学习；</li>
+</ul>
+<h5 id="排序学习（Learning-To-Rank，LTR）"><a href="#排序学习（Learning-To-Rank，LTR）" class="headerlink" title="排序学习（Learning To Rank，LTR）"></a>排序学习（Learning To Rank，LTR）</h5><ul>
+<li>借助pair-wise的训练方式，让重要的目标排在前面，如购买比点击重要，则购买的商品应该排在点击的商品前面；</li>
+<li>只需要单个模型，不需要设计主观的超参数；</li>
+<li>样本不平衡的问题可能会被放大，如有的用户；</li>
+</ul>
+<h5 id="多任务学习（Multi-Task-Learning，MTL）"><a href="#多任务学习（Multi-Task-Learning，MTL）" class="headerlink" title="多任务学习（Multi-Task Learning，MTL）"></a>多任务学习（Multi-Task Learning，MTL）</h5><ul>
+<li>思想类似于迁移学习；</li>
+</ul>
+<p><strong>基于参数的共享/Parameter Based</strong></p>
+<ul>
+<li>多个任务共用底层的网络结构，在后面分开采用不同的结构；</li>
+<li>如果多个目标直接的关联性强，则可以起到相互增强的想过，缓解数据稀疏；反之如果关联性不强则可能相互干扰；</li>
+</ul>
+<p><strong>基于约束的共享/Regularization Based</strong></p>
+<ul>
+<li>每个任务有各自的模型和参数，可以选择对不同模型的一些参数加上约束，如通过L2正则化来拉近他们的距离；</li>
+</ul>
+<h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p><strong>内容源去重</strong></p>
 <ul>
 <li>对不同来源的内容进行重复识别和过滤；</li>
 </ul>
@@ -1969,7 +2014,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">62.6k</span>&nbsp;字
+                class="white-color">63.5k</span>&nbsp;字
             
             
             
