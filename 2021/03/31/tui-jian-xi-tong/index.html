@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -1164,7 +1164,7 @@
 <li>两个完全一样的子模型学习pCTR和pCVR，然后将这两个值相乘得到pCTCVR，损失函数是pCTR和pCTCVR的乘积；</li>
 <li>pCTR的正样本是有点击行为的曝光事件，负样本是没有点击行为的曝光事件。PCTCVR的正样本是同时具有点击和转化的曝光事件，负样本是没有点击的或者点击没有转化的曝光事件。</li>
 <li>两个子模型共享embedding，缓解数据稀疏性的问题；</li>
-<li>结构设计使得pCVR的子模型也可以从曝光未点击的样本中学习；缓解模型用户点击的样本来训练，但是预测却是用的整个样本空间的样本选择偏差；</li>
+<li>结构设计使得pCVR的子模型也可以从曝光未点击的样本中学习；缓解使用用户点击的样本来训练，而用的整个样本空间来预测的样本选择偏差；</li>
 </ul>
 <h5 id="MMoE-Multi-gate-Mixture-of-Experts"><a href="#MMoE-Multi-gate-Mixture-of-Experts" class="headerlink" title="MMoE/Multi-gate Mixture-of-Experts"></a>MMoE/Multi-gate Mixture-of-Experts</h5><ul>
 <li>许多多目标的模型采用Shared-Bottom的方式，共享底层网络，在多目标任务接近时效果较好，而在多目标差异较大时效果一般；</li>
@@ -1196,7 +1196,7 @@
 <h5 id="排序学习（Learning-To-Rank，LTR）"><a href="#排序学习（Learning-To-Rank，LTR）" class="headerlink" title="排序学习（Learning To Rank，LTR）"></a>排序学习（Learning To Rank，LTR）</h5><ul>
 <li>借助pair-wise的训练方式，让重要的目标排在前面，如购买比点击重要，则购买的商品应该排在点击的商品前面；</li>
 <li>只需要单个模型，不需要设计主观的超参数；</li>
-<li>样本不平衡的问题可能会被放大，如有的用户；</li>
+<li>样本不平衡的问题可能会被放大，如点击10次在这里也还是算一次；</li>
 </ul>
 <h5 id="多任务学习（Multi-Task-Learning，MTL）"><a href="#多任务学习（Multi-Task-Learning，MTL）" class="headerlink" title="多任务学习（Multi-Task Learning，MTL）"></a>多任务学习（Multi-Task Learning，MTL）</h5><ul>
 <li>思想类似于迁移学习；</li>
@@ -1208,7 +1208,7 @@
 </ul>
 <p><strong>基于约束的共享/Regularization Based</strong></p>
 <ul>
-<li>每个任务有各自的模型和参数，可以选择对不同模型的一些参数加上约束，如通过L2正则化来拉近他们的距离；</li>
+<li>每个任务有各自的模型和参数，可以选择对不同模型的一些参数加上约束，如通过L2正则化来拉近它们的距离；</li>
 </ul>
 <h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p><strong>内容源去重</strong></p>
 <ul>
@@ -1291,7 +1291,7 @@
 </ul>
 </li>
 </ul>
-<p><strong>KDtree</strong><br>将数据循环在各个维度上二分到超矩形中</p>
+<p><strong>KDtree</strong><br>将数据递归的在各个维度上二分到超矩形中</p>
 <p><strong>Balltree</strong><br>将数据划分到超球中</p>
 <p><strong>Annoy</strong><br>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
 <p><strong>NSW</strong></p>
@@ -2014,7 +2014,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">63.5k</span>&nbsp;字
+                class="white-color">63.8k</span>&nbsp;字
             
             
             

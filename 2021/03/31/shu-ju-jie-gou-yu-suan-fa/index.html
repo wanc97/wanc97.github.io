@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-22
+                    2021-10-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.8k
+                    11.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    37 分
+                    38 分
                 </div>
                 
 
@@ -977,6 +977,7 @@ def traverse(root):
 </ul>
 <p><strong>常见应用</strong></p>
 <ul>
+<li>幂乘可以二分进行，从线性复杂度转化为对数复杂度；</li>
 <li>斐波拉切数列求解可以转化成幂乘问题，然后用分治化简。</li>
 <li>归并排序、快速排序</li>
 <li>快排思想选k大/小</li>
@@ -1254,6 +1255,29 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <h3 id="蓄水池采样"><a href="#蓄水池采样" class="headerlink" title="蓄水池采样"></a>蓄水池采样</h3><ul>
 <li>问题：数据流式到达，总数$n$未知，从中采样$k$个，保证每个数据被采样的概率都是$\frac{k}{n}$；</li>
 <li>解决：前$k$个数据直接保存，第$m$个数据到达时，以$\frac{k}{m}$的概率替代当前保留数据，使得所有数据等概率；</li>
+</ul>
+<h3 id="素数数量"><a href="#素数数量" class="headerlink" title="素数数量"></a>素数数量</h3><ul>
+<li>统计区间$[2,n)$的素数个数,外循环从小到大寻找素数，内循环将其倍数标注为非素数；</li>
+<li>外循环只需要遍历到$\sqrt n$的位置，内循环只需要从$i^2$开始遍历；<pre class="line-numbers language-python" data-language="python"><code class="language-python">def count_primes(n):
+    is_primes &#x3D; [True for _ in range(n)]
+    for i in range(2, int(n**0.5)+1):
+        if is_primes[i]:
+            for j in range(i**2, n, i):
+                is_primes[j] &#x3D; False
+    return sum(is_primes)-2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="阶乘后面的0"><a href="#阶乘后面的0" class="headerlink" title="阶乘后面的0"></a>阶乘后面的0</h3><ul>
+<li>任意一个数的阶乘，后面有多少个0，其实是看有多少个2,5组合，2远多于5，所以只看5<pre class="line-numbers language-python" data-language="python"><code class="language-python">def trailingZeroes(n):
+    zero_count &#x3D; 0
+    while n &gt; 0:
+        n &#x2F;&#x2F;&#x3D; 5
+        zero_count +&#x3D; n
+    return zero_count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>有k个0的阶乘有多少个，在上一个问题的基础上，通过二分查找确定边界，然后定位；</li>
+</ul>
+<h3 id="取模问题"><a href="#取模问题" class="headerlink" title="取模问题"></a>取模问题</h3><ul>
+<li>当问题规模较大时，可能出现溢出的情况或有其它要求，希望结果取模；</li>
+<li>考虑到性质：$(a*b)%k = (a%k)(b%k)%k$，可以将取模运算放在计算前，以避免溢出；</li>
 </ul>
 
                 
@@ -1835,7 +1859,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">63.5k</span>&nbsp;字
+                class="white-color">63.8k</span>&nbsp;字
             
             
             
