@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -516,14 +516,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.1k
+                    11.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    38 分
+                    41 分
                 </div>
                 
 
@@ -565,12 +565,12 @@
 </li>
 <li>实际的问题千千万万，我们不能记住所有具体的解决方案；但每个问题都可以抽象、分解为一些基本典型问题，只需要掌握这些基本问题的应对策略，就可以应对无穷的由基本问题组合而成的问题；这些基本问题也就是机器学习中的泛化特征。</li>
 </ul>
-<h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><ol>
+<h3 id="问题思路"><a href="#问题思路" class="headerlink" title="问题思路"></a>问题思路</h3><ul>
 <li>问题建模；</li>
 <li>选择并描述算法；</li>
 <li>证明算法是否能在所有实例上取得最优解；</li>
 <li>分析算法效率。</li>
-</ol>
+</ul>
 <h3 id="算法要求"><a href="#算法要求" class="headerlink" title="算法要求"></a>算法要求</h3><p><strong>基础要求</strong></p>
 <ul>
 <li>正确性：零到多个输入，至少一个输出（广义上的输出）；</li>
@@ -585,12 +585,12 @@
 <li>时间空间复杂度低。</li>
 </ul>
 <p><strong>算法层次</strong></p>
-<ol>
+<ul>
 <li>没有语法错误；</li>
 <li>对于合法输入能得到满足要求输出；</li>
 <li>对于非法输入能够有合理应对；</li>
 <li>对于故意刁难的输入可以得到满足要求的输出。</li>
-</ol>
+</ul>
 <h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p><strong>时间复杂度</strong><br>针对指定的基本运算和输入规模，算法所做运算的次数相对于输入规模的表达式。</p>
 <ul>
 <li><p>基本运算应该满足：</p>
@@ -675,12 +675,20 @@
 <li>前缀和数组：空间复杂度更高；</li>
 </ul>
 </li>
+<li>$O(1)$时间随机获得元素，要将元素紧凑的存在数组中；</li>
 </ul>
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串可以看成数组，区别在于当它以字符串形式出现时，不适合直接操作单个字符；但当以字符数组出现时可以，与数组几乎完全一致。<br><strong>常见题型</strong></p>
 <ul>
 <li>规则判断：是否是回文、是否符合整数、能否转化为数值、能否转化为算式；</li>
 <li>字符计数：哈希表、固定长度数组（字符数量有限）、滑动窗、无重复最长子串；</li>
 <li>动态规划：最长公共（回文）子串（子序列）；</li>
+<li>查找缺失元素：长度为n的序列，包含0~n之间的数，每个数字出现一次，找到没有出现过的数；<ul>
+<li>排序：时间$O(n*log(n))$，空间$O(1)$</li>
+<li>哈希表记录：时间$O(n)$，空间$O(n)$</li>
+<li>异或：时间$O(n)$，空间$O(1)$</li>
+<li>求和：时间$O(n)$，空间$O(1)$</li>
+</ul>
+</li>
 </ul>
 <p><strong>常见题目</strong></p>
 <ul>
@@ -710,6 +718,7 @@
 </li>
 <li>最长无重复子串：双指针遍历记录目前最长无重复子串，哈希表记录遍历元素最大位置，根据遍历元素位置调整指针。</li>
 <li>字符串解析：可以用栈或更加方便地用递归；字符串括号等里面是独立的单元，可以调用递归；</li>
+<li>保证相对顺序和字典序最小的字符串去重：记录每个字符的出现次数+尽可能删除小字符前的字符；</li>
 </ul>
 <h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><ul>
 <li>反转链表：<ul>
@@ -776,6 +785,9 @@
 <ul>
 <li>递减子数组数目；</li>
 <li>滑窗最大值；</li>
+<li>下一个更大元素；</li>
+<li>下一个更大元素的距离（存储下标）</li>
+<li>循环数组的下一个更大元素：让原数组重复一次；</li>
 </ul>
 <p><strong>常见题目</strong></p>
 <ul>
@@ -811,6 +823,12 @@ def traverse(root):
 <li>反转二叉树、二叉树展开为链表、求二叉树高度</li>
 <li>通过列表、前中后序遍历重构二叉树</li>
 <li>寻找重复子树：后序遍历+序列化+哈希</li>
+<li>二叉树的节点数：<ul>
+<li>任意二叉树：遍历+计数，$O(n)$；</li>
+<li>满二叉树：找深度，$O(log(n))$：</li>
+<li>完全二叉树：判断+用任意二叉树和满二叉树的方式，$O(log(n)*log(n))$；</li>
+</ul>
+</li>
 </ul>
 <h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><ul>
 <li>一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。</li>
@@ -884,6 +902,7 @@ def traverse(root):
 <ul>
 <li>LRU：缓存满时删除最旧的，快速查找需要用到哈希，时间排序用到（双向）链表；</li>
 <li>LFU：缓存满时删除访问频率最低的中最旧的，快速查找、记录每个缓存的访问次数、每个访问次数对应的缓存以及对应顺序的LRU需要用到3/4个哈希，每一个访问次数内用双向链表记录顺序；</li>
+<li>平均$O(1)$时间插入，删除，随机返回一个元素：随机返回可以用数组+随机数实现，插入删除可以将被删元素移到数组结尾，用哈希表记录元素索引；</li>
 </ul>
 <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><table>
 <thead>
@@ -981,6 +1000,7 @@ def traverse(root):
 <li>斐波拉切数列求解可以转化成幂乘问题，然后用分治化简。</li>
 <li>归并排序、快速排序</li>
 <li>快排思想选k大/小</li>
+<li>几乎各种存在有序线性搜索的地方都可以改为二分；</li>
 </ul>
 <h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p><strong>基本思想</strong></p>
 <ul>
@@ -1023,6 +1043,7 @@ def dp(状态1,状态2,...):
 <li>最长回文子序列：状态是字符串的子串的最长回文子序列，子问题是从左右两端减掉一两个字符后的最长回文子序列。</li>
 <li>最长上升子序列：状态是索引，子问题是每个位置前所有元素中，包括这个位置的最长上升子序列。</li>
 <li>得分数组左右取分，预测赢家，状态是剩下数字的起始和结束位置； </li>
+<li>为运算表达式设计优先级：子问题是一段表达式可能的优先级；</li>
 </ul>
 <h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p><strong>基本思想</strong></p>
 <ul>
@@ -1278,6 +1299,45 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <h3 id="取模问题"><a href="#取模问题" class="headerlink" title="取模问题"></a>取模问题</h3><ul>
 <li>当问题规模较大时，可能出现溢出的情况或有其它要求，希望结果取模；</li>
 <li>考虑到性质：$(a*b)%k = (a%k)(b%k)%k$，可以将取模运算放在计算前，以避免溢出；</li>
+</ul>
+<h2 id="智力题"><a href="#智力题" class="headerlink" title="智力题"></a>智力题</h2><h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><p><strong>男孩女孩</strong></p>
+<ul>
+<li>有一个家庭，有两个孩子：<ul>
+<li>其中有一个男孩，问另一个也是男孩的概率；两个孩子有男男、男女、女男、女女四种情况；其中一个是男孩，则只剩3种情况，另一个是男孩的概率为$\frac{1}{3}$</li>
+<li>第一个是男孩，问第二个也是男孩的概率；独立，概率为$\frac{1}{2}$</li>
+</ul>
+</li>
+</ul>
+<p><strong>生日相同</strong></p>
+<ul>
+<li>需要有多少人，才能使得存在至少两个人生日是同一天的概率达到50%；</li>
+<li>概率为：$1-\frac{365!}{(365-n)!365^n}$，</li>
+<li>即要求$2*365!&lt;(365-n)!365^n$，答案是23</li>
+</ul>
+<p><strong>三门问题</strong></p>
+<ul>
+<li>三扇门，两个后面是山羊，一个后面是跑车，选手先选一个门，然后主持人打开一个是山羊的门，此时选手可以选择是否换门；</li>
+<li>不换拿到跑车的概率是$\frac{1}{3}$，换拿到跑车的概率是$\frac{2}{3}$；</li>
+</ul>
+<p><strong>选择题排除</strong></p>
+<ul>
+<li>4个选项，先蒙A，然后发现B、C一定不对，是否要换D；</li>
+<li>不换正确的概率是$\frac{1}{4}$，换正确的概率是$\frac{3}{4}$；</li>
+</ul>
+<h3 id="电灯开关"><a href="#电灯开关" class="headerlink" title="电灯开关"></a>电灯开关</h3><ul>
+<li>有n盏电灯，最开始时都是关着的，第k轮每k个电灯按一次，最后有多少灯是开着的；</li>
+<li>大部分序号都可以分解成成对的因子，因此灯会被开关偶数次，最后是关着灯，而可以被整数开平方的灯会被按奇数次，最后会开着；</li>
+<li>因此结果是$int(sqrt(n))$</li>
+</ul>
+<h3 id="价值选择-石头游戏"><a href="#价值选择-石头游戏" class="headerlink" title="价值选择/石头游戏"></a>价值选择/石头游戏</h3><p><strong>左右选择一个</strong></p>
+<ul>
+<li>一排偶数堆石头，两个人依次从中选择，只能从最左边或最右边选择；</li>
+<li>先手一定赢，因为先手可以控制自己选择奇数堆还是偶数堆；</li>
+</ul>
+<p><strong>顺序选择多个</strong></p>
+<ul>
+<li>一排东西，两个人依次选择，可以选择多个，取到最后一个的人赢；</li>
+<li>根据可以选择的个数循环，一定赢或一定输；</li>
 </ul>
 
                 
@@ -1859,7 +1919,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">63.8k</span>&nbsp;字
+                class="white-color">64.7k</span>&nbsp;字
             
             
             
