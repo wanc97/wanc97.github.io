@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-05
+                    2021-10-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.6k
+                    11k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    37 分
+                    38 分
                 </div>
                 
 
@@ -1146,19 +1146,19 @@
 <h5 id="DIN-Deep-Interest-Network"><a href="#DIN-Deep-Interest-Network" class="headerlink" title="DIN/Deep Interest Network"></a>DIN/Deep Interest Network</h5><ul>
 <li>将用户交互历史序列作为特征信息输入；</li>
 <li>对用户交互序列进行attention加权pooling，重点关注与此次打分相关的历史项目，可以起到多兴趣的效果；</li>
-<li>attention是计算历史交互项目与待打分项目之间的关系；<img src='/medias/image/推荐系统-DIN.jpg' width="80%"></li>
+<li>attention是计算历史交互项目与待打分项目之间的关系；<img src='/medias/image/推荐系统-DIN.jpg' width="100%"></li>
 </ul>
 <h5 id="DIEN-Deep-Interest-Evolution-Network"><a href="#DIEN-Deep-Interest-Evolution-Network" class="headerlink" title="DIEN/Deep Interest Evolution Network"></a>DIEN/Deep Interest Evolution Network</h5><ul>
 <li>DIN等直接将用户历史看做用户兴趣，难以反应用户潜在兴趣和用户兴趣演变；</li>
 <li>Interest Extractor层用GRU对用户交互行为进行基础的兴趣建模；并引入辅助loss，将序列中的下一个item用来监督上一个单元的输出，降低GRU层的长时间依赖问题，降低优化难度；</li>
 <li>Interest Evolving层用带注意力更新门的GRU/AUGRU来学习兴趣演化过程，每个项目与待打分项目计算权重，用于更新隐状态；</li>
-<li>在用户行为序列的信息利用上，结合了注意力和GRU的优势，能更好的表达兴趣和兴趣演化；<img src='/medias/image/推荐系统-DIEN.jpg' width="80%"></li>
+<li>在用户行为序列的信息利用上，结合了注意力和GRU的优势，能更好的表达兴趣和兴趣演化；<img src='/medias/image/推荐系统-DIEN.jpg' width="100%"></li>
 </ul>
 <h5 id="DSIN-Deep-Session-Interest-Network"><a href="#DSIN-Deep-Session-Interest-Network" class="headerlink" title="DSIN/Deep Session Interest Network"></a>DSIN/Deep Session Interest Network</h5><ul>
 <li>引入session的信息，根据sequence中项目的时间间隔进行切分，超过30min就认为是两个session，同一个session中的历史交互项目高度同构，而不同session高度异构；</li>
 <li>使用带有bias编码的自注意力模块来抽取用户每个session的兴趣特征，表示编码起到位置编码的作用；</li>
 <li>使用Bi-LSTM去捕捉用户在多个历史会话中兴趣的交互和演变；</li>
-<li>计算待打分项目与各个session的相似度，加权求和；<img src='/medias/image/推荐系统-DSIN.jpg' width="80%"></li>
+<li>计算待打分项目与各个session的相似度，加权求和；<img src='/medias/image/推荐系统-DSIN.jpg' width="100%"></li>
 </ul>
 <h4 id="多目标"><a href="#多目标" class="headerlink" title="多目标"></a>多目标</h4><h5 id="ESMM-Entire-Space-Multi-Task-Model"><a href="#ESMM-Entire-Space-Multi-Task-Model" class="headerlink" title="ESMM/Entire Space Multi-Task Model"></a>ESMM/Entire Space Multi-Task Model</h5><ul>
 <li>两个完全一样的子模型学习pCTR和pCVR，然后将这两个值相乘得到pCTCVR，损失函数是pCTR和pCTCVR的乘积；</li>
@@ -1170,6 +1170,21 @@
 <li>许多多目标的模型采用Shared-Bottom的方式，共享底层网络，在多目标任务接近时效果较好，而在多目标差异较大时效果一般；</li>
 <li>MoE是使用简单的前馈神经网络和可训练门控单元组成的子结构，门控单元根据输入控制前馈神经网络的输出；</li>
 <li>MMoE用多个MoE并行代替Shared-Bottom网络，当多任务的相关性越低时，MMoE的效果越明显；</li>
+</ul>
+<h4 id="多兴趣"><a href="#多兴趣" class="headerlink" title="多兴趣"></a>多兴趣</h4><h5 id="MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall"><a href="#MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall" class="headerlink" title="MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall"></a>MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall</h5><ul>
+<li>一般的召回是根据用户属性及历史交互项目为用户生成一个表示向量，同时用项目属性给项目生成一个表示向量，计算其相似度；多兴趣网络的不同是会为用户生成多个不同的交互向量，以表征用户在多方面的兴趣；</li>
+<li>Embedding &amp;&amp; Pooling：用户侧特征embedding做concat，项目侧特征embedding做average pooling；</li>
+<li>根据$K_u=max(1,min(K,log_2(|I_u|)))$自适应地计算一个用户的兴趣数量，其中$|I_u|$表示用户的历史交互数量；</li>
+<li>胶囊网络的兴趣提取在每一个兴趣胶囊和每一个历史交互项目之间计算，因为兴趣和历史项目之间的路由系数是随机初始化的，所以每个兴趣胶囊会以不同比例提取历史交互项目的信息；</li>
+<li>每个兴趣表示都与用户属性embedding级联通过MLP得到用户表示；</li>
+<li>训练阶段目标项目与用户表示通过计算注意力得到最终的相似度；而召回时采用每一个用户表示分别召回；<img src='/medias/image/推荐系统-MIND.jpg' width="100%"></li>
+</ul>
+<h5 id="ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation"><a href="#ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation" class="headerlink" title="ComiRec/Controllable Multi-Interest Framework for Recommendation"></a>ComiRec/Controllable Multi-Interest Framework for Recommendation</h5><ul>
+<li>相比MIND只使用用户交互序列来作为用户侧输入；</li>
+<li>因为兴趣固定，所以胶囊网络可以使用原始版本；</li>
+<li>还提出了使用Self-Attentive的方式来捕捉多兴趣；</li>
+<li>训练阶段直接选择最接近的兴趣表示，不进行组合，网络更浅；</li>
+<li>在线上召回时还考虑召回项目之间的多样性； <img src='/medias/image/推荐系统-ComiRec.jpg' width="100%"></li>
 </ul>
 <h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="多目标-1"><a href="#多目标-1" class="headerlink" title="多目标"></a>多目标</h4><h5 id="目的-amp-困难"><a href="#目的-amp-困难" class="headerlink" title="目的&amp;困难"></a>目的&amp;困难</h5><ul>
 <li>推荐系统中的数据大多是隐式反馈；<ul>
@@ -2014,7 +2029,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">64.7k</span>&nbsp;字
+                class="white-color">65.1k</span>&nbsp;字
             
             
             
