@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-08
+                    2021-10-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.9k
+                    12k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    41 分
+                    42 分
                 </div>
                 
 
@@ -976,7 +976,7 @@ def traverse(root):
 </li>
 <li>区间覆盖：n个区间，组成新的序列，满足两两不相交，最少需要多少个序列才能满足呢：<ul>
 <li>优化的是最小序列数量，每一个区间最终都要被选择，则选择的过程就是要让区间尽量紧凑；</li>
-<li>按照左边界排序，每次尽量找最先开始的；</li>
+<li>按照左边界排序，依次安排各个会议的会议室；先从现有的会议室中找最早结束的，如果不满足则开辟新的会议室；会议室放在堆中，堆顶是最早结束的会议室；</li>
 </ul>
 </li>
 </ul>

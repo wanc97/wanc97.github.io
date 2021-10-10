@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -521,7 +521,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-04
+                    2021-10-08
                 </div>
                 
 
@@ -611,7 +611,7 @@
 <p><strong>概率&amp;似然</strong></p>
 <ul>
 <li>概率是描述在确定分布下某个事件发生可能性的大小；</li>
-<li>似然是描述在发生某些事件的情况下为某个分布的概率。</li>
+<li>似然是描述在发生某些事件的情况下为某个分布的可能性。</li>
 </ul>
 <p><strong>P-value</strong></p>
 <ul>
@@ -660,7 +660,7 @@
 <ul>
 <li>可以将带约束求极值的问题转化为无约束求极值问题</li>
 <li>通过引入松弛变量$\lambda\ge0$和拉格朗日乘子$\mu$可设计函数：<br>$$L(\vec{w},\lambda,\mu)=f(\vec{w})+\sum_j\lambda_jg_j(\vec{w})+\sum_k\mu_kh_k(\vec{w})$$</li>
-<li>同时由于一种奇妙的性质：<br>$$max_{\lambda,\mu}L(\vec{w},\lambda,\mu)={f(\vec{w}),\vec{w}满足约束 \atop 0,\vec{w}不满足约束}$$</li>
+<li>同时由于一种奇妙的性质：<br>$$max_{\lambda,\mu}L(\vec{w},\lambda,\mu)={f(\vec{w}),\vec{w}满足约束 \atop \infty,\vec{w}不满足约束}$$</li>
 <li>使得原问题转化为了无约束的问题：<br>$$min_{\vec{w}}max_{\lambda,\mu}L(\vec{w},\lambda,\mu)$$</li>
 <li>对偶问题即通过交换极小、极大地顺序而来,通过对偶问题往往能降低难度：<br>$$max_{\lambda,\mu}min_{\vec{w}}L(\vec{w},\lambda,\mu)$$</li>
 <li>弱对偶性：<br>$$max_{\lambda,\mu}min_{\vec{w}}L(\vec{w},\lambda,\mu)\le min_{\vec{w}}max_{\lambda,\mu}L(\vec{w},\lambda,\mu)$$</li>
@@ -1087,7 +1087,7 @@
 <li>AdaGrad：将参数历次梯度的斜边的倒数用来自适应调整学习率；梯度大的参数学习率小；很容易还没优化好就停止了；</li>
 <li>RMSProp：在AdaGrad的基础上，将累计求和的部分改成了指数滑动，避免自适应学习率快速衰减的问题，自适应学习率可以根据需要变大和变小；</li>
 <li>AdaDelta：在RMSProp的基础上，在分子上加入参数变化量的指数滑动斜边，进一步调和，让更新大的参数的学习率可以不太小，缓解自适应学习率的波动；</li>
-<li>Adam：在RMSProp的基础上，加入动量法，然后对动量、斜边进行一些调和，改善早起的偏差；</li>
+<li>Adam：在RMSProp的基础上，加入动量法，然后对动量、斜边进行一些调和，改善早期的偏差；</li>
 </ul>
 <p><strong>早停</strong></p>
 <ul>
@@ -2243,20 +2243,20 @@ nx.pagerank(G)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%81%93/">
-                        <span class="chip bg-color">道</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E7%84%B6/">
-                        <span class="chip bg-color">自然</span>
-                    </a>
-                    
                     <a href="/tags/%E5%93%B2%E5%AD%A6/">
                         <span class="chip bg-color">哲学</span>
                     </a>
                     
                     <a href="/tags/%E9%81%93%E5%AE%B6/">
                         <span class="chip bg-color">道家</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%93/">
+                        <span class="chip bg-color">道</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6/">
+                        <span class="chip bg-color">自然</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/">
