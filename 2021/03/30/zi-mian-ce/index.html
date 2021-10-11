@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-07
+                    2021-10-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9k
+                    9.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    31 分
                 </div>
                 
 
@@ -540,7 +540,8 @@
 <li>接纳不完美的自己，坚信自我的价值，才能拥有无限的力量去抵御打击、恐惧、怀疑。</li>
 <li>专注解决问题的状态是舒适的、快乐的；明确不同事情的重要程度，将注意力放在重要的事情上。</li>
 <li>过度回忆和设想各种小概率事件会持续地消耗精力并引发负面情绪，时刻记住世界的复杂与自身的局限，放下控制。</li>
-<li>因上用功，何须问果，把注意力放在做好该做的事情上，环境就会逐渐变好，不要紧盯着果；同时明确、可以感受的阶段目标让人更加有动力。</li>
+<li>因上用功，何须问果，把注意力放在做好该做的事情上，环境就会逐渐变好，不要紧盯着果；</li>
+<li>兴趣不是天生的，而是在正反馈下出现、强化、消长的，拆解目标以获取不断地正反馈便会更加有兴趣和动力；降低期望使得正反馈成为一个个的小确幸，降低正反馈的阈值。</li>
 <li>一阴一阳之谓道：世界处在波动、转换、循环中，变化是不变的规律，无常才是常态。</li>
 <li>快乐和焦虑都是可以培养的习惯。</li>
 <li>遇到困难时，逃避是本能，也是问题的根源；人际关系、他人的评价、观点、态度都不会带来实质伤害；不要自我欺骗，拿勇气直面问题才会幸福。</li>
@@ -871,15 +872,32 @@
 <td></td>
 <td>1、古典音乐，流水等自然声音，自然风景，香味；2、适当挑战、集中注意力、工作技巧；3、感恩与被感恩、接纳自我与现实、放松、减少压力、心情平静、瑜伽、冥想；4、运动、爬山、唱歌、社交、热水澡、巧克力、辛辣食物</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
+<h2 id="《左耳听风》读后感"><a href="#《左耳听风》读后感" class="headerlink" title="《左耳听风》读后感"></a>《左耳听风》读后感</h2><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><ul>
+<li>打好基础，以提高工作效率，较少因为不熟悉而浪费时间查错、返工；</li>
+<li>在自动化、可配置、可重用（包括记录文档）、可扩展上花功夫以解放时间；</li>
+<li>想清楚问题，拆解任务，按优先级来优先设计TODO list，如短作业、紧急作业；可以配合写日报，及时记录进展、复盘举一反三；做好长期规划；</li>
+<li>把握好注意力，做重要的事；形成高效、可持续工作的习惯；允许一定的负反馈；</li>
+<li>主动把握时间，避免被动应付：<ul>
+<li>整理出大段不被打扰时间来工作；</li>
+<li>对于做不到的需求要分析困难并给出替代方案；</li>
+<li>对于复杂需求可以提出性价比更好的方案或者削减不合理的部分；</li>
+<li>对于时间不够的需求要争取时间或明确潜在问题，降低需求方潜在预期；</li>
+</ul>
+</li>
+<li>对于高强度工作：<ul>
+<li>培养渴望，不抵触，专注投入的做事就不会觉得很累；</li>
+<li>提高效率，高效完成工作；管理时间，提升自身能力；</li>
+</ul>
+</li>
+</ul>
+<h3 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h3><ul>
+<li>故障前需要梳理系统服务、组件，为可能的故障指定应对方案，根据不同故障的影响范围设置故障等级；</li>
+<li>通过随机关闭服务器、向线上注入bug的方式进行故障演练，发现潜在问题；</li>
+<li>通过分机房、分批次的灰度发布，以测试系统稳定性；</li>
+<li>发生故障时最重要的是快速恢复故障、降低故障影响，debug相对次要，从快速可用的角度依次有：重启和限流、回滚、降级、紧急更新；</li>
+<li>故障后要复盘总结，梳理造成故障的潜在因素和处理故障中的不足，以便下次可以更好地应对；</li>
+</ul>
 <h2 id="摘抄"><a href="#摘抄" class="headerlink" title="摘抄"></a>摘抄</h2><ul>
 <li>事实上，你们对我的百般注解和识读，并不构成万分之一的我，却是一览无余的你们。（出处自知乎用户腐生）</li>
 <li>成熟的人分析利弊，幼稚的人执着于对错。（出处自知乎用户风墟）</li>
@@ -1591,7 +1609,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.1k</span>&nbsp;字
+                class="white-color">65.7k</span>&nbsp;字
             
             
             
