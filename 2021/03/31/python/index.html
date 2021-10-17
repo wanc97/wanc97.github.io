@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-21
+                    2021-10-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    21 分
                 </div>
                 
 
@@ -526,25 +526,111 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><p><strong>特点</strong></p>
+                <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>特点</strong></p>
 <ul>
-<li>简单优雅、大量库（内置或第三方库）、开发快；</li>
+<li>简单优雅，使用难度曲线平缓，可以快速上手；</li>
+<li>跨平台，在不同平台上开发；</li>
+<li>大量库（内置或第三方库）、开发快；</li>
+<li>扩展性强，可以将C/C++等高效语言包含成Python的库；</li>
 <li>解释型、动态型语言、慢；</li>
-<li>不可加密</li>
+<li>不可加密；</li>
+</ul>
+<p><strong>官方&amp;发行</strong></p>
+<ul>
+<li>官方版：只包含解释器；</li>
+<li>anaconda：包含解释器及常用库包（如科学计算相关包）；</li>
+</ul>
+<p><strong>工具</strong></p>
+<ul>
+<li>iPython：交互式解释器、代码补全等；</li>
+<li>jupyter notebook/lab：通过web交互的编程环境，简洁、插件多、功能强大；</li>
+<li>VScode：文本编辑器，有丰富的插件扩展；</li>
+<li>pycharm：集成开发环境；</li>
+<li>pip：帮助解决依赖问题；</li>
 </ul>
 <p><strong>随机函数</strong></p>
 <ul>
 <li>随机数种子的作用是设置一个起点，起点的设置一次有效，但实际效果是持续的；</li>
 <li>Pytorch需要专门为GPU设置seed；</li>
 </ul>
-<h4 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h4><p><strong>起始</strong></p>
+<h4 id="书写规范"><a href="#书写规范" class="headerlink" title="书写规范"></a>书写规范</h4><p><strong>起始</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">#!&#x2F;usr&#x2F;bin&#x2F;env python3 
 # -*- coding: utf-8 -*-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>前者在Linux、Mac OS中指定编译器；后者告诉编译器用utf-8来读取源码。</li>
 </ul>
-<h3 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h3><p>列表list是Python中的一个强大的数据结构，本质上是一个可以动态调整大小的ArrayList,list存储数据是在一个数组中存储元素的地址，地址实际指向的元素可以是很多种形式：数字、布尔、字符串、元祖、链表。</p>
-<p><strong>创建</strong></p>
+<p><strong>缩进</strong></p>
+<ul>
+<li>不同级别的代码块通过缩进进行区分；</li>
+<li>缩进是4个空格，许多文本编辑器会默认将tab键转为4个空格；</li>
+</ul>
+<p><strong>注释</strong></p>
+<ul>
+<li>合适比例的注释可以增强代码的可读性；<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 注释放在这里面<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p><strong>命名</strong></p>
+<ul>
+<li>字母下划线开头，字母下划线数字组成，但一般很少使用下划线开头；</li>
+<li>通常变量、函数名全小写，类名首字母大写；</li>
+<li>变量、函数、类等的命名应当尽可能顾名思义，降低歧义，增加可读性；</li>
+<li>降低硬编码，更多用变量常量代表；</li>
+</ul>
+<p><strong>PEP8</strong></p>
+<ul>
+<li>Python代码风格优雅的定义</li>
+</ul>
+<h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">if a:
+    # 代码块
+elif b:
+    # 代码块
+...
+else:
+    # 代码块<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">while a:  # 当a为真时执行代码
+    # 代码块
+    continue # 也可以通过continue结束本次循环
+    break # 也可以通过break终止循环
+
+for b_i in b: # b为可迭代对象，如列表、元组、字符串等，b_i为其中的每一个元素
+    # 代码块
+    continue # 也可以通过continue结束本次循环
+    break # 也可以通过break终止循环 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>顺序、条件、循环可以相互嵌套，但循环直接放在条件中的情况比较少，一般过于复杂的代码会用函数包装；</li>
+</ul>
+<h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><ul>
+<li>用于代替极其简单的函数</li>
+<li>格式：lambda 参数: 返回<pre class="line-numbers language-python" data-language="python"><code class="language-python">lambda x,y&#x3D;7: x+y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="基本数据结构"><a href="#基本数据结构" class="headerlink" title="基本数据结构"></a>基本数据结构</h4><ul>
+<li>整数（int）、浮点数（float）、字符串（str）、布尔值（bool）<pre class="line-numbers language-python" data-language="python"><code class="language-python">base_type &#x3D; [10, 23.4, &#39;sdfh32h45&#39;, True, False]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>可以通过其它类型合适的数据相互初始化，如<pre class="line-numbers language-python" data-language="python"><code class="language-python">print(int(&#39;23&#39;)) # 23<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="序列类型数据结构"><a href="#序列类型数据结构" class="headerlink" title="序列类型数据结构"></a>序列类型数据结构</h4><ul>
+<li>字符串：由连续的字符组成；整个都不能改变，改变需要新建对象；</li>
+<li>元组：由连续的任意对象组成，存放的是这些对象的引用；元组存放的引用不能边变，但是引用指向的内容可以变；</li>
+<li>列表：由连续的任意对象组成，存放的是这些对象的引用；列表存放的引用也可以变；<pre class="line-numbers language-python" data-language="python"><code class="language-python">a &#x3D; &#39;ahdk432&#39;
+b &#x3D; (2, 6, &#39;45&#39;, [4,&#39;78&#39;])
+c &#x3D; [&#39;gs&#39;, 4, 7, [34, &#39;56&#39;]]
+sequence_type &#x3D; [a, b, c]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="字符串str"><a href="#字符串str" class="headerlink" title="字符串str"></a>字符串str</h4><p><strong>常见操作</strong></p>
+<ul>
+<li>in/not in 判断成员关系；</li>
+<li>+连接两个字符串；</li>
+<li>*可以对字符串进行重复；</li>
+<li>[::]，索引、切片操作；</li>
+<li>.strip()去掉开头和末尾的字符</li>
+</ul>
+<p><strong>替换</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">print(&#39;可以在%s，以及%s，通过替换的方式得到所需字符串&#39; % (&#39;这里&#39;, &#39;这里...等&#39;))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h4><ul>
+<li>相比list，更多的是用在不需要改变的场景，通过元组可以防止更改；</li>
+</ul>
+<h4 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h4><p>列表list是Python中的一个强大的数据结构，本质上是一个可以动态调整大小的ArrayList,list存储数据是在一个数组中存储元素的地址，地址实际指向的元素可以是很多种形式：数字、布尔、字符串、元祖、链表。<br><strong>创建</strong></p>
 <blockquote>
 <ol>
 <li>用中括号[]包裹元素直接生成，元素使用逗号分隔；</li>
@@ -642,7 +728,172 @@ g&#x3D;fibon(1000000)
 next(g)# 1
 next(g)# 1
 next(g)# 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h3><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><ul>
+
+<h4 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h4><ul>
+<li>底层是hash表，是一个个的$(key, value)$对；</li>
+<li>key要求是可以进行hash计算的元素，对value则限制较少；<pre class="line-numbers language-python" data-language="python"><code class="language-python">dict1 &#x3D; dict()
+dict1[&#39;name&#39;] &#x3D; &#39;wan chuan&#39;
+dict1[&#39;age&#39;] &#x3D; 24
+dict1.keys() # 是key的list
+dict1.values() # 是value的list
+dict1.items() # 是(key, value)元组的list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>字典推导式</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">d&#x3D;&#123;x:x*2 for x in range(5)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="定义-amp-参数"><a href="#定义-amp-参数" class="headerlink" title="定义&amp;参数"></a>定义&amp;参数</h4><ul>
+<li>通过指定参数名字，可以变化参数的先后位置，但一般不建议变位置；</li>
+<li>默认参数可以不输入<pre class="line-numbers language-python" data-language="python"><code class="language-python"># c,d是可边长参数,c是list形式，d是字典形式
+def fun_name(a, b&#x3D;1, *c, **d):
+    print(c)
+    print(d)
+    if b &#x3D;&#x3D; 1: 
+        return a 
+    else:
+        return a**b
+
+print(fun_name(3))
+print(fun_name(3, 2))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><ul>
+<li>在函数中出现与外部同名的变量，会出现两个备份，在函数内使用内部局部变量；</li>
+<li>通过在函数内的变量前加上global，可以指定函数内的变量为全局变量，以影响函数外；</li>
+</ul>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><ul>
+<li>实现内部函数调用外部变量</li>
+<li>可以得到带变量/状态的函数，这个状态可以是函数<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 得到一个任意数量的累加器
+def counter(*c):
+    if not c:
+        cnt &#x3D; [0]
+    else:
+        cnt &#x3D; [i for i in c]
+    def add_one():
+        for i in range(len(cnt)):
+            cnt[i] +&#x3D; 1
+        return cnt
+    return add_one
+f &#x3D; counter(1,7,3)
+print(f())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>考虑到变量有不同的层次，因此闭包也可以多层嵌套，得到更加抽象的闭包</li>
+</ul>
+<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><ul>
+<li>装饰器通过闭包得到，简单说是把函数包一层；<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 得到一个计时装饰器
+def timer(func):
+    def wrapper(*a,**b):
+        start_time &#x3D; time.time()
+        func(*a,**b)
+        end_time &#x3D; time.time()
+        print(&#39;time is %s&#39; % (end_time-start_time))
+    return wrapper
+
+@timer
+def do_something(n,show&#x3D;&#39;null&#39;):
+    time.sleep(n)
+    print(show)
+do_something(2,&#39;hello world&#39;)
+
+# 也可以将@的形式写为：
+def do_something(n,show&#x3D;&#39;null&#39;):
+    time.sleep(n)
+    print(show)
+do_something &#x3D; timer(do_something)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h4><ul>
+<li>在文件操作后需要对文件进行关闭，不能漏掉，可以通过with as语句，更加优雅、安全的达到目的；</li>
+</ul>
+<h3 id="常用内建方法"><a href="#常用内建方法" class="headerlink" title="常用内建方法"></a>常用内建方法</h3><h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><ul>
+<li>Python中将文件、网络、IO等都抽象为了文件，因此操作方法比价通用简洁；与Linux类似；<pre class="line-numbers language-python" data-language="python"><code class="language-python">f &#x3D; open(&#39;file.txt&#39;, &#39;w&#39;) # mode&#x3D;&#39;w&#39;&#x2F;&#39;r&#39;
+f.write(&#39;这里需要是字符串&#39;)
+f.close()
+
+f &#x3D; open(&#39;file.txt&#39;, &#39;r&#39;) # mode&#x3D;&#39;w&#39;&#x2F;&#39;r&#39;
+print(f.readline()) # 读一行
+print(f.readline(m)) # 读m个字符
+print(f.tell())  # 文件指针的位置
+print(f.readlines()) # 列表形式读全部，每行一个元素
+f.seek(n, whence&#x3D;0)  # 将文件指针的位置移到whence+n，即可以从指定位置开始偏移
+print(f.read()) # 全部读
+f.close()
+
+# .close()如果漏掉是严重错误，通过下面的with as语句，可以不用写.close()，相当于隐式的包含了
+with open(&#39;file.txt&#39;, &#39;r&#39;) as f:
+    f.read()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><ul>
+<li>各种异常都是Exception的子类，所以Exception可以捕获所有异常<pre class="line-numbers language-python" data-language="python"><code class="language-python">try:
+    # 需要监控的代码
+except (ValueError, KeyError, AttributeError):
+    # 捕获到特定异常时的处理
+except Exception as e:
+    # 捕获到所有异常时的处理
+    print(e)
+finally:
+    # 无论是否异常都会执行的代码，如关闭文件等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">from functools import reduce
+filter(fun, iterable) # 根据fun得到True&#x2F;False，对iterable的值进行过滤
+map(fun, *iterables)  # 对iterables中的值用根据fun进行处理
+reduce(fun, sequence) # 根据fun对sequence中的值进行聚合
+zip(iter1[,iter2[...]]) # 将多个iter合并成一个iter，返回列表迭代器
+sorted(iterable, key&#x3D;fun) # 通过key的函数来选择排序的key，以实现对复杂对象的排序<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">class Class_name1():
+    def __init__(self,att1,att2):
+        &#39;&#39;&#39;
+        构造函数，初始化
+        &#39;&#39;&#39;
+        self.att1 &#x3D; att1
+        self.__att2 &#x3D; att2 # 通过双下划线，可以将属性隐藏起来，避免外部直接访问，即类的封装
+    
+    def func1(self):
+        pass
+
+    def __enter__(self): # 初始化前执行
+        pass
+
+    def __exit__(self, exc_type, exc_val, exc_tb): 
+        # 使用with语句时，在代码块执行结束时执行
+        # exc_tb是捕获的with语句执行期间的异常
+        pass
+
+class Class_name2(Class_name1):   #Class_name2从Class_name1继承
+    def __init__(self,att1,att2,att3,att4):
+        super().__init__(att1,att2) # 调用父类的初始化方法初始化父类定义的属性
+        # Class_name1.__init__(att1,att2) 也可以用这种方式进行父类属性初始化，当从多个父类继承时，只能用这种方法
+        self.att3 &#x3D; att3
+        self.att4 &#x3D; att4
+        # self.att1 &#x3D; att4 如果子类定义了父类已经定义的变量或函数，则会覆盖&#x2F;重写，即多台
+    
+    def func2(self):
+        pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><h4 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">import threading
+
+def my_thread(arg):
+    pass
+
+threads &#x3D; []
+for arg in args:
+    t &#x3D; threading.Thread(target&#x3D;my_thread,args&#x3D;(arg)) # 创建线程，并设置执行方法和参数
+    t.start()  # 启动线程，开始执行
+    threads.append(t)
+
+for t in threads:
+    t.join() # 分别等待所有线程都运行结束<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">import queue   # 队列库，可以实现生产者消费者模型
+q &#x3D; queue.Queue()
+q.put(3)  # 加入队列
+q.get()   # 从队列中取出
+q.task_done() # 提示已经取出元素并执行完，方便join判断是否结束
+q.join() # 等待队列被消耗完<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h3><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><ul>
+<li>导入模块：<pre class="line-numbers language-python" data-language="python"><code class="language-python">from ab import cde as f
+f.func() <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>制作模块：将方法、类等写成py文件或者用文件夹组织；</li>
+</ul>
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><ul>
 <li>JSON 的全称是  JavaScript Object Notation，是一种轻量级的数据交换格式。最初，JSON 只是JavaScript 的子集，但由于其简单易用而迅速走红。</li>
 <li>现今大部分编程语言都支持对 JSON 的解析与生成，而近些年异军突起的 NoSQL 数据库也多参照 JSON来设计数据存储格式，例如 Mongodb 的BSON（Binary JSON）。</li>
 <li>JSON 有以下六种数据类型：number、boolean、string、null、array、object。前三种很好理解，第四个 null 对应 Python 的 None，最后两种，对应 Python 的列表和字典。</li>
@@ -1455,7 +1706,7 @@ with torch.no_grad()：<span aria-hidden="true" class="line-numbers-rows"><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.4k</span>&nbsp;字
+                class="white-color">67.8k</span>&nbsp;字
             
             
             
