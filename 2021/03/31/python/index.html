@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -496,7 +496,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.9k
+                    6k
                 </div>
                 
 
@@ -1115,19 +1115,24 @@ plt.hist([1,2,3,5,6,7])
 plt.scatter(x,y)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="urllib"><a href="#urllib" class="headerlink" title="urllib"></a>urllib</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">from urllib import request, parse
+<h4 id="urllib-requests-BeautifulSoup"><a href="#urllib-requests-BeautifulSoup" class="headerlink" title="urllib/requests/BeautifulSoup"></a>urllib/requests/BeautifulSoup</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">from urllib import request, parse
+import requests
+from bs4 import BeautifulSoup
 
 url &#x3D; &#39;http:&#x2F;&#x2F;www.baidu.com&#39;
 response &#x3D; request.urlopen(url, timeout&#x3D;1)
-response.read().decode(&#39;utf-8&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+response.read().decode(&#39;utf-8&#39;)
 
-<h4 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
-
-url &#x3D; &#39;http:&#x2F;&#x2F;www.baidu.com&#39;
 response &#x3D; requests.get(url)
 response &#x3D; requests.post(url)
 response.text
-response.json()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+response.json()
+
+soup &#x3D; BeautifulSoup(response.text, &#39;lxml&#39;)
+soup.prettify()
+soup.title.string
+soup.p
+soup.a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="heapq"><a href="#heapq" class="headerlink" title="heapq"></a>heapq</h4><ul>
 <li><code>heapq.heapify(&#39;list&#39;)</code>:将一个list堆化，默认最小堆，最大堆可以将元素乘以-1。</li>
