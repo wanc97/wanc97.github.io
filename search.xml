@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Go</title>
+      <link href="2021/10/20/go/"/>
+      <url>2021/10/20/go/</url>
+      
+        <content type="html"><![CDATA[<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><strong>挑战</strong></p><ul><li>多核硬件架构</li><li>超大规模分布式计算集群</li><li>Web模式导致的前所未有的开发规模和更新速度</li></ul><p><strong>特点</strong></p><ul><li>简单：关键字少，只有25个</li><li>高效：支持垃圾回收的同时支持指针</li><li>生产力：语法简介</li><li>适合云计算、区块链</li></ul><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><strong>hello world</strong></p><pre class="line-numbers language-go" data-language="go"><code class="language-go">package main  &#x2F;&#x2F; 包import &quot;fmt&quot;  &#x2F;&#x2F; 代码依赖&#x2F;&#x2F; 功能实现func main()  &#123;fmt.Println(&quot;Hello World&quot;)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>包必须是package main；</li><li>方法必须是func main()；</li><li>文件名不一定是main.go</li></ul><p><strong>数据结构</strong></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微服务</title>
       <link href="2021/04/17/wei-fu-wu/"/>
       <url>2021/04/17/wei-fu-wu/</url>
@@ -53,19 +66,19 @@
       
         <tags>
             
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
+            
             <tag> 老子 </tag>
             
             <tag> 无为 </tag>
-            
-            <tag> 道 </tag>
             
             <tag> 德 </tag>
             
             <tag> 无 </tag>
             
             <tag> 上善若水 </tag>
-            
-            <tag> 自然 </tag>
             
             <tag> 善 </tag>
             
@@ -119,13 +132,13 @@
       
         <tags>
             
-            <tag> 道 </tag>
-            
-            <tag> 自然 </tag>
-            
             <tag> 哲学 </tag>
             
             <tag> 道家 </tag>
+            
+            <tag> 道 </tag>
+            
+            <tag> 自然 </tag>
             
             <tag> 天人合一 </tag>
             
