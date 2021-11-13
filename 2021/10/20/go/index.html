@@ -464,14 +464,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-21
+                    2021-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    144
+                    322
                 </div>
                 
 
@@ -507,28 +507,57 @@
 <li>超大规模分布式计算集群</li>
 <li>Web模式导致的前所未有的开发规模和更新速度</li>
 </ul>
-<p><strong>特点</strong></p>
+<p><strong>基本特点</strong></p>
 <ul>
 <li>简单：关键字少，只有25个</li>
-<li>高效：支持垃圾回收的同时支持指针</li>
+<li>高效：支持垃圾回收的同时支持指针直接访问</li>
 <li>生产力：语法简介</li>
 <li>适合云计算、区块链</li>
+</ul>
+<p><strong>其它特点</strong></p>
+<ul>
+<li>不支持指针运算</li>
 </ul>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><strong>hello world</strong></p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go">package main  &#x2F;&#x2F; 包
 
-import &quot;fmt&quot;  &#x2F;&#x2F; 代码依赖
+import (
+	&quot;fmt&quot;
+	&quot;os&quot;
+) &#x2F;&#x2F; 代码依赖
 
 &#x2F;&#x2F; 功能实现
 func main()  &#123;
 	fmt.Println(&quot;Hello World&quot;)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    os.Exit(0)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>包必须是package main；</li>
 <li>方法必须是func main()；</li>
 <li>文件名不一定是main.go</li>
+<li>不支持返回值，通过os.Exit返回状态，通过os.Args获得参数</li>
 </ul>
 <p><strong>数据结构</strong></p>
+<ul>
+<li>基本数据类型bool,int,uint,float,byte,complex等常见类型</li>
+<li>不支持隐式类型转换，包括原类型和别名类型之间也不支持</li>
+</ul>
+<p><strong>运算符</strong></p>
+<ul>
+<li>算术运算符：+,-,*,/,%,++,–，<ul>
+<li>其中++,–只有后置，没有前置</li>
+</ul>
+</li>
+<li>比较运算符：==,!=,&gt;,&lt;,&gt;=,&lt;=<ul>
+<li>当数组维数相同时，可以通过==进行比较，这是其它语言不支持的，其它语言的数组存放的一般是指针/应用</li>
+</ul>
+</li>
+<li>逻辑运算符：&amp;&amp;,||,!</li>
+<li>位运算符：&amp;,|,^,&lt;&lt;,&gt;&gt;<ul>
+<li>&amp;^：按位清零，</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
@@ -1049,7 +1078,7 @@ func main()  &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.8k</span>&nbsp;字
+                class="white-color">69.7k</span>&nbsp;字
             
             
             
