@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -516,7 +516,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12.1k
+                    12k
                 </div>
                 
 
@@ -810,13 +810,13 @@
 <li>一般采用递归的方法遍历比较清晰，二叉树遍历分为：前序遍历、中序遍历、后序遍历</li>
 <li>树的遍历得到的结果并非一一对应，不同的树可以得到相同的遍历结果。</li>
 <li>很多问题一旦写成递归形式都可以看成树的遍历，快排-前序遍历、归并排序-后序遍历、回溯-决策树DFS遍历</li>
-<li>二叉树相关的题大多可以通过写成递归遍历的形式快速解决；<pre class="line-numbers language-python" data-language="python"><code class="language-python">&#x2F;* 二叉树遍历框架 *&#x2F;
-def traverse(root):
-    &#x2F;&#x2F; 前序遍历
-    traverse(root.left)
-    &#x2F;&#x2F; 中序遍历
-    traverse(root.right)
-    &#x2F;&#x2F; 后序遍历<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>二叉树相关的题大多可以通过写成递归遍历的形式快速解决；<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">/</span><span class="token operator">*</span> 二叉树遍历框架 <span class="token operator">*</span><span class="token operator">/</span>
+<span class="token keyword">def</span> <span class="token function">traverse</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">//</span> 前序遍历
+    traverse<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+    <span class="token operator">//</span> 中序遍历
+    traverse<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token operator">//</span> 后序遍历<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p><strong>常见题目</strong></p>
 <ul>
@@ -1024,18 +1024,18 @@ def traverse(root):
 <li>对于有指数种情况的问题:要么是可以用动态规划来求解;要么就只能应用在输入规模极小的场景；或者可以在回溯中大量剪枝。</li>
 </ul>
 <p><strong>通用框架</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 自底向上
-dp &#x3D; ...
-for 状态1 in 状态1取值:
-    for 状态2 in 状态2取值:
-        for ...:
-            dp[状态1][状态2][...] &#x3D; 择优(选择1,选择2,...)
-# 自顶向下
-memory &#x3D; ...
-def dp(状态1,状态2,...):
-    if 状态1,状态2,... not in memory:
-        memory[状态1][状态2][...] &#x3D; 择优(dp(选择1),dp(选择2),dp(...))
-    return memory[状态1][状态2][...]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 自底向上</span>
+dp <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">for</span> 状态<span class="token number">1</span> <span class="token keyword">in</span> 状态<span class="token number">1</span>取值<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> 状态<span class="token number">2</span> <span class="token keyword">in</span> 状态<span class="token number">2</span>取值<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span>状态<span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>状态<span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token operator">=</span> 择优<span class="token punctuation">(</span>选择<span class="token number">1</span><span class="token punctuation">,</span>选择<span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token comment"># 自顶向下</span>
+memory <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">def</span> <span class="token function">dp</span><span class="token punctuation">(</span>状态<span class="token number">1</span><span class="token punctuation">,</span>状态<span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> 状态<span class="token number">1</span><span class="token punctuation">,</span>状态<span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">not</span> <span class="token keyword">in</span> memory<span class="token punctuation">:</span>
+        memory<span class="token punctuation">[</span>状态<span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>状态<span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token operator">=</span> 择优<span class="token punctuation">(</span>dp<span class="token punctuation">(</span>选择<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>dp<span class="token punctuation">(</span>选择<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>dp<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> memory<span class="token punctuation">[</span>状态<span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>状态<span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>常见题目</strong></p>
 <ul>
@@ -1064,15 +1064,15 @@ def dp(状态1,状态2,...):
 <li>有时候适当调整选择顺序可以降低最坏复杂度。</li>
 </ul>
 <p><strong>通用框架</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">result &#x3D; []
-def backtrack(路径, 选择列表):
-    if 满足结束条件:
-        result.add(路径)
-        return
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> 满足结束条件<span class="token punctuation">:</span>
+        result<span class="token punctuation">.</span>add<span class="token punctuation">(</span>路径<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
 
-    for 选择 in 选择列表:
+    <span class="token keyword">for</span> 选择 <span class="token keyword">in</span> 选择列表<span class="token punctuation">:</span>
         做选择
-        backtrack(路径, 选择列表)
+        backtrack<span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span>
         撤销选择<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol>
@@ -1169,28 +1169,28 @@ def backtrack(路径, 选择列表):
 <li>利用二分和分治的思想，大约循环$log(n)$层，每次将原数组划分成两个无序部分，但是其中一个部分都大于另一个部分。</li>
 <li>可以看成是一种特殊的冒泡排序，所有元素跟相同的元素比较，使得每次比较一遍可以让所有元素都<strong>沉</strong>或<strong>浮</strong>。</li>
 <li>还可以看成是一种前序遍历，根节点完成划分，两个子节点完成子数组的排序；</li>
-<li>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))-O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。<pre class="line-numbers language-python" data-language="python"><code class="language-python">def partition(arr, low, high):
-    i, j &#x3D; low, low 
-    pivot &#x3D; arr[high] # 取最后一个元素当做pivot
-    while j &lt; high:
-        # 当前元素小于或等于 pivot
-        if arr[j] &lt; pivot:
-            arr[i], arr[j] &#x3D; arr[j], arr[i]
-            i +&#x3D; 1 #pivot位置前进1步
-        j +&#x3D; 1
-    arr[i], arr[high] &#x3D; arr[high], arr[i] #将pivot放到正确的位置并返回位置索引i
-    return i
-# 快速排序函数
-def quick_sort(arr, low, high):
-    if low &lt; high:
-        pi &#x3D; partition(arr, low, high)
-        quick_sort(arr, low, pi - 1)
-        quick_sort(arr, pi + 1, high)
+<li>快排每次划分不一定是在中间，需要记住划分位置，所以空间复杂度为$O(log(n))-O(n)$，如果用递归，空间复杂度就是递归深度，如果是迭代做，空间复杂度就是记住划分位置。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i<span class="token punctuation">,</span> j <span class="token operator">=</span> low<span class="token punctuation">,</span> low 
+    pivot <span class="token operator">=</span> arr<span class="token punctuation">[</span>high<span class="token punctuation">]</span> <span class="token comment"># 取最后一个元素当做pivot</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;</span> high<span class="token punctuation">:</span>
+        <span class="token comment"># 当前元素小于或等于 pivot</span>
+        <span class="token keyword">if</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> pivot<span class="token punctuation">:</span>
+            arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span> <span class="token comment">#pivot位置前进1步</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+    arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>high<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>high<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token comment">#将pivot放到正确的位置并返回位置索引i</span>
+    <span class="token keyword">return</span> i
+<span class="token comment"># 快速排序函数</span>
+<span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> low <span class="token operator">&lt;</span> high<span class="token punctuation">:</span>
+        pi <span class="token operator">=</span> partition<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> high<span class="token punctuation">)</span>
+        quick_sort<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> pi <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        quick_sort<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> pi <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> high<span class="token punctuation">)</span>
  
-arr &#x3D; [1,10,2,7, 8, 9,1, 5]
-# arr &#x3D; [1,1,1,1,1]
-quick_sort(arr, 0, len(arr)-1)
-print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token comment"># arr = [1,1,1,1,1]</span>
+quick_sort<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><ul>
 <li>利用分治的思想，将问题划分为更小的子问题，$问题数量的增长+额外代价 &lt; 问题复杂度的减小$时就可以降低复杂度。<ul>
@@ -1268,15 +1268,15 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p><strong>暴力解法</strong><br>将一对有关系的节点放到一个集合中，若存在两个集合，则对集合进行合并。</p>
 <p><strong>高效解法</strong></p>
 <ul>
-<li>对于新的关系，寻找两个节点是否有公共祖先，没有则合并，将一个祖先的祖先设置为另一个祖先，找祖先的代码：<pre class="line-numbers language-python" data-language="python"><code class="language-python">def find(x):
-    if nums[x] !&#x3D; x:
-        nums[x] &#x3D; find(nums[x])
-    return nums[x]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>合并的时候将简单的树合并到复杂的树上，以尽量控制树的深度。<pre class="line-numbers language-python" data-language="python"><code class="language-python">def merge(x,y):
-    if rank[x] &lt; rank[y]:
-        x, y &#x3D; y, x
-    rank[x] &#x3D; rank[x] + rank[y]
-    nums[y] &#x3D; x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>对于新的关系，寻找两个节点是否有公共祖先，没有则合并，将一个祖先的祖先设置为另一个祖先，找祖先的代码：<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> x<span class="token punctuation">:</span>
+        nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> find<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>合并的时候将简单的树合并到复杂的树上，以尽量控制树的深度。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        x<span class="token punctuation">,</span> y <span class="token operator">=</span> y<span class="token punctuation">,</span> x
+    rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+</span> rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span>
+    nums<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="发糖果"><a href="#发糖果" class="headerlink" title="发糖果"></a>发糖果</h3><ul>
 <li>问题：给一个列表，是孩子的评分，给孩子发糖果，要保证评分高的孩子得到的糖果数比两边评分低的孩子多</li>
@@ -1288,21 +1288,21 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 </ul>
 <h3 id="素数数量"><a href="#素数数量" class="headerlink" title="素数数量"></a>素数数量</h3><ul>
 <li>统计区间$[2,n)$的素数个数,外循环从小到大寻找素数，内循环将其倍数标注为非素数；</li>
-<li>外循环只需要遍历到$\sqrt n$的位置，内循环只需要从$i^2$开始遍历；<pre class="line-numbers language-python" data-language="python"><code class="language-python">def count_primes(n):
-    is_primes &#x3D; [True for _ in range(n)]
-    for i in range(2, int(n**0.5)+1):
-        if is_primes[i]:
-            for j in range(i**2, n, i):
-                is_primes[j] &#x3D; False
-    return sum(is_primes)-2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>外循环只需要遍历到$\sqrt n$的位置，内循环只需要从$i^2$开始遍历；<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">count_primes</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    is_primes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">True</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>n<span class="token operator">**</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> is_primes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                is_primes<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">return</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>is_primes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="阶乘后面的0"><a href="#阶乘后面的0" class="headerlink" title="阶乘后面的0"></a>阶乘后面的0</h3><ul>
-<li>任意一个数的阶乘，后面有多少个0，其实是看有多少个2,5组合，2远多于5，所以只看5<pre class="line-numbers language-python" data-language="python"><code class="language-python">def trailingZeroes(n):
-    zero_count &#x3D; 0
-    while n &gt; 0:
-        n &#x2F;&#x2F;&#x3D; 5
-        zero_count +&#x3D; n
-    return zero_count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>任意一个数的阶乘，后面有多少个0，其实是看有多少个2,5组合，2远多于5，所以只看5<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    zero_count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        n <span class="token operator">//=</span> <span class="token number">5</span>
+        zero_count <span class="token operator">+=</span> n
+    <span class="token keyword">return</span> zero_count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>有k个0的阶乘有多少个，在上一个问题的基础上，通过二分查找确定边界，然后定位；</li>
 </ul>
 <h3 id="取模问题"><a href="#取模问题" class="headerlink" title="取模问题"></a>取模问题</h3><ul>
@@ -1928,7 +1928,7 @@ print(arr)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">69.7k</span>&nbsp;字
+                class="white-color">69.6k</span>&nbsp;字
             
             
             

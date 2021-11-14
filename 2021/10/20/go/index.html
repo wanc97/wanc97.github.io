@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-12
+                    2021-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    322
+                    522
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -519,31 +519,29 @@
 <li>不支持指针运算</li>
 </ul>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><strong>hello world</strong></p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go">package main  &#x2F;&#x2F; 包
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main  <span class="token comment">// 包</span>
 
-import (
-	&quot;fmt&quot;
-	&quot;os&quot;
-) &#x2F;&#x2F; 代码依赖
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"os"</span>
+<span class="token punctuation">)</span> <span class="token comment">// 代码依赖</span>
 
-&#x2F;&#x2F; 功能实现
-func main()  &#123;
-	fmt.Println(&quot;Hello World&quot;)
-    os.Exit(0)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 功能实现</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">&#123;</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span>
+    os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>包必须是package main；</li>
 <li>方法必须是func main()；</li>
 <li>文件名不一定是main.go</li>
 <li>不支持返回值，通过os.Exit返回状态，通过os.Args获得参数</li>
 </ul>
-<p><strong>数据结构</strong></p>
-<ul>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ul>
 <li>基本数据类型bool,int,uint,float,byte,complex等常见类型</li>
 <li>不支持隐式类型转换，包括原类型和别名类型之间也不支持</li>
 </ul>
-<p><strong>运算符</strong></p>
-<ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
 <li>算术运算符：+,-,*,/,%,++,–，<ul>
 <li>其中++,–只有后置，没有前置</li>
 </ul>
@@ -557,6 +555,40 @@ func main()  &#123;
 <li>&amp;^：按位清零，</li>
 </ul>
 </li>
+</ul>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><ul>
+<li>只有for一个关键字，如果省掉布尔条件，则为无限循环；<pre class="line-numbers language-go" data-language="go"><code class="language-go">n <span class="token operator">:=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> n <span class="token operator">&lt;</span> <span class="token number">5</span> <span class="token punctuation">&#123;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+    n<span class="token operator">++</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="条件结构"><a href="#条件结构" class="headerlink" title="条件结构"></a>条件结构</h3><ul>
+<li>布尔条件可以分成两段式，在前一段执行一个命令，再得到布尔条件；<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">if</span> n <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">&#123;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">"this 1\n"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> n <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> n <span class="token operator">==</span> <span class="token number">2</span> <span class="token punctuation">&#123;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">"this 2\n"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">"this 3\n"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>switch条件语句的每个case不需要接break，默认自动提供break；</li>
+<li>switch条件语句也可以不直接跟判断变量，而在case中补充，作用类似于if语句；</li>
+<li>case的判断条件可以用逗号分割多个满足的条件<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">switch</span> n <span class="token operator">:=</span> <span class="token number">4</span><span class="token punctuation">;</span> n <span class="token punctuation">&#123;</span>
+<span class="token keyword">case</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span>
+<span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token keyword">default</span><span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">switch</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">case</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span>
+<span class="token keyword">case</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">,</span> n <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token keyword">default</span><span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 
                 
@@ -1078,7 +1110,7 @@ func main()  &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">69.7k</span>&nbsp;字
+                class="white-color">69.6k</span>&nbsp;字
             
             
             
