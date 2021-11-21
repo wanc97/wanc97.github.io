@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2021-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    5.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    24 分
                 </div>
                 
 
@@ -575,7 +575,8 @@
 </ul>
 <p><strong>命名</strong></p>
 <ul>
-<li>字母下划线开头，字母下划线数字组成，但一般很少使用下划线开头；</li>
+<li>字母下划线开头，字母下划线数字组成；</li>
+<li>但一般很少使用下划线开头定义常规变量和函数，下划线开头用在特殊场景；</li>
 <li>通常变量、函数名全小写，类名首字母大写；</li>
 <li>变量、函数、类等的命名应当尽可能顾名思义，降低歧义，增加可读性；</li>
 <li>降低硬编码，更多用变量常量代表；</li>
@@ -671,36 +672,42 @@ not_trans <span class="token operator">=</span> <span class="token string">r'在
 <li>从0开始索引，左闭右开区间使得切片很优雅。</li>
 </ul>
 </blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span>
+a2 <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'asdfgjsld'</span><span class="token punctuation">)</span>
+a3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> a3<span class="token punctuation">)</span>
+
+a1<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+a1<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'asd'</span><span class="token punctuation">)</span>
+a4 <span class="token operator">=</span> a1<span class="token operator">+</span>a2
+a2<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>a1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> a4<span class="token punctuation">)</span>
+
+<span class="token keyword">del</span> a1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+a1<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+a1<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+a2<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">del</span> a4
+<span class="token keyword">print</span><span class="token punctuation">(</span>a1<span class="token punctuation">,</span> a2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>其它操作</strong></p>
 <blockquote>
 <ol>
-<li><p>len(list)获取元素个数。</p>
-</li>
-<li><p>count()统计指定元素个数。</p>
-</li>
-<li><p>max(list)统计元素最大值（要求元素类型相同才可比较，数值类型、字符串等直接比较，其它类型比较id）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+<li>len(list)获取元素个数。</li>
+<li>count()统计指定元素个数。</li>
+<li>max(list)统计元素最大值（要求元素类型相同才可比较，数值类型、字符串等直接比较，其它类型比较id）<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
 <span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 out<span class="token punctuation">:</span><span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'dvs'</span><span class="token punctuation">,</span><span class="token string">'vsvd'</span><span class="token punctuation">,</span><span class="token string">'be'</span><span class="token punctuation">,</span><span class="token string">'dfbeab'</span><span class="token punctuation">]</span>
 <span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 out<span class="token punctuation">:</span><span class="token string">'vsvd'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>min(list)与max类似，比较正好相反。</p>
-</li>
-<li><p>index()获取指定元素索引（第一个匹配项）</p>
-</li>
-<li><p>reverse()翻转列表</p>
-</li>
-<li><p>copy()浅拷贝</p>
-</li>
-<li><p>深拷贝</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
+<li>min(list)与max类似，比较正好相反。</li>
+<li>index()获取指定元素索引（第一个匹配项）</li>
+<li>reverse()翻转列表</li>
+<li>copy()浅拷贝</li>
+<li>深拷贝<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
 copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>sort()原地排序</p>
-</li>
-<li><p>sorted(list)生成新列表</p>
-</li>
+<li>sort()原地排序</li>
+<li>sorted(list)生成新列表</li>
 </ol>
 </blockquote>
 <p><strong>列表生成式&amp;生产器表达式</strong></p>
@@ -1007,7 +1014,7 @@ json<span class="token punctuation">.</span>loads<span class="token punctuation"
 </ul>
 </blockquote>
 </li>
-<li><code>Ndarray</code>是数组，所以无论多少维都用一个中括号<code>[start:end:step]</code>完成索引、切片，而list可以层层嵌套，因此多层索引需要多个中括号。</li>
+<li><code>Ndarray</code>是数组，所以无论多少维都用一个中括号<code>[start:end:step]</code>完成索引、切片，而list可以层层嵌套，因此多层索引需要多个中括号;这种差别本质上是因为<code>Ndarray</code>无论多少维都是一个<code>Ndarray</code>，list则不是，它是不同层的。</li>
 <li>调用方法有两种途径，<code>np.fun(self)，self.fun()</code>。</li>
 <li>常用基本方法：<code>(arg)min，(arg)max，(cum)sum, diff</code>差分, <code>nonzero</code>输出非零位置索引, <code>median，mean，variance，sort, reshape</code>。</li>
 <li><code>np.sort()</code>生成新的排序后数组，<code>self.sort()</code>是在原数组基础上操作, <code>reshape</code>等也是。</li>
@@ -1762,7 +1769,7 @@ torch<span class="token punctuation">.</span>tensor<span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">70.8k</span>&nbsp;字
+                class="white-color">70.9k</span>&nbsp;字
             
             
             

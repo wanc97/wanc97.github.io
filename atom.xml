@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2021-11-16T14:35:26.268Z</updated>
+  <updated>2021-11-20T11:50:04.252Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://notego.top/2021/10/20/go/"/>
     <id>http://notego.top/2021/10/20/go/</id>
     <published>2021-10-20T13:14:22.000Z</published>
-    <updated>2021-11-16T14:35:26.268Z</updated>
+    <updated>2021-11-20T11:50:04.252Z</updated>
     
     
       
@@ -93,19 +93,19 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
+    
     <category term="老子" scheme="http://notego.top/tags/%E8%80%81%E5%AD%90/"/>
     
     <category term="无为" scheme="http://notego.top/tags/%E6%97%A0%E4%B8%BA/"/>
-    
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
     
     <category term="德" scheme="http://notego.top/tags/%E5%BE%B7/"/>
     
     <category term="无" scheme="http://notego.top/tags/%E6%97%A0/"/>
     
     <category term="上善若水" scheme="http://notego.top/tags/%E4%B8%8A%E5%96%84%E8%8B%A5%E6%B0%B4/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
     
     <category term="善" scheme="http://notego.top/tags/%E5%96%84/"/>
     
@@ -161,13 +161,13 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
     <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
     <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
+    
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
     
     <category term="天人合一" scheme="http://notego.top/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/"/>
     
@@ -269,7 +269,7 @@
     <link href="http://notego.top/2021/03/31/python/"/>
     <id>http://notego.top/2021/03/31/python/</id>
     <published>2021-03-31T12:17:10.000Z</published>
-    <updated>2021-11-15T14:01:43.270Z</updated>
+    <updated>2021-11-17T14:12:30.109Z</updated>
     
     
       
