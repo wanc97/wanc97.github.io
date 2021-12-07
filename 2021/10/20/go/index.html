@@ -473,21 +473,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-20
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -557,7 +557,11 @@
 </li>
 <li>逻辑运算符：&amp;&amp;,||,!</li>
 <li>位运算符：&amp;,|,^,&lt;&lt;,&gt;&gt;<ul>
-<li>&amp;^：按位清零，</li>
+<li>&amp;^：按位清零；<ul>
+<li>当右边值为1时，左侧对应位清零，否则左侧对应位不变；</li>
+<li>确实也等于先进行与再进行异或；其中与是找出需要清零的位，异或再对这些位进行清零。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -616,7 +620,7 @@ a<span class="token punctuation">[</span><span class="token number">1</span><spa
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>切片不支持负值</li>
 <li>切片是一个三元素的数据结构，包含切片的起始指针、可访问容量len、数组实际占用容量cap；</li>
-<li>切片的声明与数组类似，许多性质也相似，但是是不同的数据结构；数组容量不可边，切片可变；数组可用==比较，切片不能直接用==比较；</li>
+<li>切片的声明与数组类似，许多性质也相似，但是是不同的数据结构；数组容量不可变，切片可变；数组可用==比较，切片不能直接用==比较；</li>
 <li>切片可以通过append添加元素，当len小于cap时，可以不用增加cap，直接增长len即可，当len超过cap时，cap会倍增；<pre class="line-numbers language-go" data-language="go"><code class="language-go">e <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">&#125;</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
 e <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
@@ -684,6 +688,10 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 <span class="token function">delete</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+<h4 id="自定义类型"><a href="#自定义类型" class="headerlink" title="自定义类型"></a>自定义类型</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> new_type <span class="token builtin">int</span>
+<span class="token keyword">var</span>  a new_type <span class="token operator">=</span> <span class="token number">4</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数的定义、返回值、函数式编程"><a href="#函数的定义、返回值、函数式编程" class="headerlink" title="函数的定义、返回值、函数式编程"></a>函数的定义、返回值、函数式编程</h4><ul>
 <li>可以有多个返回值</li>
 <li>函数都是值传递</li>
@@ -768,9 +776,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><ul>
-<li>接口为非侵入式，不用像其它语言一样进行严格的绑定，只需要实现响应功能就可以使用接口；</li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> programmer <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>
+<li>接口为非侵入式，不用像其它语言一样进行严格的绑定，只需要实现响应功能就可以使用接口；<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> programmer <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>
 	<span class="token function">writehelloworld</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
 <span class="token punctuation">&#125;</span>
 
@@ -785,7 +791,12 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 	<span class="token keyword">var</span> i programmer
 	i <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>goprogrammer<span class="token punctuation">)</span>
 	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">writehelloworld</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h4><ul>
+<li>匿名嵌套可以直接使用另一个类的方法</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -1325,7 +1336,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75k</span>&nbsp;字
+                class="white-color">75.7k</span>&nbsp;字
             
             
             
