@@ -473,21 +473,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    11 分
                 </div>
                 
 
@@ -640,7 +640,8 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 <h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
 <li>string的默认值是””，而不是nil；</li>
 <li>可以看成是只读的数组</li>
-<li>rune可以将字符转化为编码值<pre class="line-numbers language-go" data-language="go"><code class="language-go">s <span class="token operator">:=</span> <span class="token string">"hello"</span>
+<li>rune可以将字符转化为编码值</li>
+<li>格式化输出时%T表示变量的类型，%v表示变量的值<pre class="line-numbers language-go" data-language="go"><code class="language-go">s <span class="token operator">:=</span> <span class="token string">"hello"</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
 s <span class="token operator">=</span> s<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -658,7 +659,11 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"str:"</span> <span class="token operator">+</span> strconv<span class="token punctuation">.</span><span class="token function">Itoa</span><span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> num<span class="token punctuation">,</span> e <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">Atoi</span><span class="token punctuation">(</span><span class="token string">"7"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> e <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token number">88</span> <span class="token operator">-</span> num<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token punctuation">&#125;</span>
+
+s <span class="token operator">:=</span> <span class="token string">"888"</span>
+i <span class="token operator">:=</span> <span class="token number">666</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"变量的类型%T，变量的值%v, %v"</span><span class="token punctuation">,</span> s<span class="token punctuation">,</span> s<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><ul>
 <li>初始化时指定key和value的类型，用make初始化时可以指定初始容量，避免在添加元素的过程中持续扩容。</li>
@@ -755,10 +760,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 	<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
-<li>不支持继承</li>
-</ul>
-<h4 id="实例初始化"><a href="#实例初始化" class="headerlink" title="实例初始化"></a>实例初始化</h4><ul>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h4 id="实例初始化"><a href="#实例初始化" class="headerlink" title="实例初始化"></a>实例初始化</h4><ul>
 <li>实例和指针都可以直接通过.来访问成员</li>
 <li>传递指针可以更加节省空间，传递实例会增加赋值<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> class_test <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
 	att1 <span class="token builtin">int</span>
@@ -792,9 +794,104 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 	i <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>goprogrammer<span class="token punctuation">)</span>
 	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">writehelloworld</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>可以定义一个什么内容都没有的空接口，可以往空接口中存入不同类型的数据<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">var</span> any <span class="token keyword">interface</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>any<span class="token punctuation">)</span>
+any <span class="token operator">=</span> <span class="token number">6</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>any<span class="token punctuation">)</span>
+any <span class="token operator">=</span> <span class="token string">"888"</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>any<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>还可以通过空接口实现接受不同类型参数的功能<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">empty_interface</span><span class="token punctuation">(</span>ei <span class="token keyword">interface</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> v<span class="token punctuation">,</span> ok <span class="token operator">:=</span> ei<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">&#123;</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"数据类型是int，值是"</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> v<span class="token punctuation">,</span> ok <span class="token operator">:=</span> ei<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">&#123;</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"数据类型是string，值是"</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"unknow"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token function">empty_interface</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+	<span class="token function">empty_interface</span><span class="token punctuation">(</span><span class="token string">"666"</span><span class="token punctuation">)</span>
+	<span class="token function">empty_interface</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>接口尽量使用小接口，即每个接口的方法比较少，例如一个，以减少开发者的负担；</li>
+<li>大接口可以通过小接口组合而成；</li>
+<li>方法在实现功能的时候也尽量只依赖必要功能的最小接口；</li>
 </ul>
-<h4 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h4><ul>
-<li>匿名嵌套可以直接使用另一个类的方法</li>
+<h4 id="扩展-amp-复用"><a href="#扩展-amp-复用" class="headerlink" title="扩展&amp;复用"></a>扩展&amp;复用</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// pet作为一般的父类</span>
+<span class="token keyword">type</span> pet <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>d <span class="token operator">*</span>pet<span class="token punctuation">)</span> <span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"pet"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>d <span class="token operator">*</span>pet<span class="token punctuation">)</span> <span class="token function">speak_to</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	d<span class="token punctuation">.</span><span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// dog想继承，但是go不支持继承</span>
+<span class="token comment">// 可以用一些其它方法达到类似效果</span>
+<span class="token comment">// 如在子类中包含父类，以使用父类的方法</span>
+<span class="token keyword">type</span> dog1 <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
+	p <span class="token operator">*</span>pet
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 还可以通过匿名嵌套可以直接使用另一个类的方法</span>
+<span class="token comment">// 子类可以覆盖父类原有方法，但是不能达到重载的效果，如果调用父类方法，父类还是使用原来的方法</span>
+<span class="token keyword">type</span> dog2 <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
+	pet
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>d <span class="token operator">*</span>dog2<span class="token punctuation">)</span> <span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"dog2"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">// 父类</span>
+	p <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>pet<span class="token punctuation">)</span>
+	p<span class="token punctuation">.</span><span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	p<span class="token punctuation">.</span><span class="token function">speak_to</span><span class="token punctuation">(</span><span class="token string">"wan"</span><span class="token punctuation">)</span>
+	<span class="token comment">// 包含父类</span>
+	d1 <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>dog1<span class="token punctuation">)</span>
+	d1<span class="token punctuation">.</span>p<span class="token punctuation">.</span><span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	d1<span class="token punctuation">.</span>p<span class="token punctuation">.</span><span class="token function">speak_to</span><span class="token punctuation">(</span><span class="token string">"wan"</span><span class="token punctuation">)</span>
+	<span class="token comment">// 匿名嵌套</span>
+	d2 <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>dog2<span class="token punctuation">)</span>
+	d2<span class="token punctuation">.</span><span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	d2<span class="token punctuation">.</span><span class="token function">speak_to</span><span class="token punctuation">(</span><span class="token string">"wan"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><h4 id="异常程序编写"><a href="#异常程序编写" class="headerlink" title="异常程序编写"></a>异常程序编写</h4><ul>
+<li>没有专门的异常机制，因为创始人认为程序员对于异常的使用对代码不利<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">abnormal</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> n <span class="token operator">></span> <span class="token number">1e5</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> n<span class="token punctuation">,</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"n must in [0,10000]"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> n <span class="token operator">*</span> n<span class="token punctuation">,</span> <span class="token boolean">nil</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> v<span class="token punctuation">,</span> err <span class="token operator">:=</span> <span class="token function">abnormal</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>编写处理错误的代码时，要避免嵌套，优先处理错误，让代码更加清晰。</li>
+</ul>
+<h4 id="异常退出"><a href="#异常退出" class="headerlink" title="异常退出"></a>异常退出</h4><ul>
+<li>panic一般用于严重错误，会输出调用栈信息，执行defer代码</li>
+<li>os.Exit返回错误码，不输出调用栈信息，不执行defer代码</li>
+</ul>
+<h4 id="错误恢复"><a href="#错误恢复" class="headerlink" title="错误恢复"></a>错误恢复</h4><ul>
+<li>recover，保持程序继续运行，类似于其它语言中的catch所有错误；</li>
+<li>可以放在defer代码中捕捉错误；</li>
+<li>但是不应该忽略错误，随意使用</li>
+</ul>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ul>
+<li>首字母大写的模块可以被包外代码访问</li>
 </ul>
 
                 
@@ -1104,7 +1201,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            集装箱
                         
                     </div>
                     <div class="publish-info">
@@ -1336,7 +1433,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75.7k</span>&nbsp;字
+                class="white-color">76.9k</span>&nbsp;字
             
             
             
