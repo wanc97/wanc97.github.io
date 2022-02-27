@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2022-02-17T11:25:28.609Z</updated>
+  <updated>2022-02-27T10:54:37.001Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -21,10 +21,20 @@
     <link href="http://notego.top/2022/02/11/linux/"/>
     <id>http://notego.top/2022/02/11/linux/</id>
     <published>2022-02-11T02:57:51.000Z</published>
-    <updated>2022-02-17T11:25:28.609Z</updated>
+    <updated>2022-02-27T10:54:37.001Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;h4 id=&quot;帮助命令&quot;&gt;&lt;a href=&quot;#帮助命令&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
+    <category term="计算机" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
   </entry>
@@ -99,7 +109,7 @@
     <link href="http://notego.top/2021/11/25/yi-jing-bi-ji/"/>
     <id>http://notego.top/2021/11/25/yi-jing-bi-ji/</id>
     <published>2021-11-25T08:44:36.000Z</published>
-    <updated>2022-02-23T02:39:40.197Z</updated>
+    <updated>2022-02-25T02:34:34.383Z</updated>
     
     
       
@@ -267,19 +277,19 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
     <category term="老子" scheme="http://notego.top/tags/%E8%80%81%E5%AD%90/"/>
     
     <category term="无为" scheme="http://notego.top/tags/%E6%97%A0%E4%B8%BA/"/>
+    
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
     
     <category term="德" scheme="http://notego.top/tags/%E5%BE%B7/"/>
     
     <category term="无" scheme="http://notego.top/tags/%E6%97%A0/"/>
     
     <category term="上善若水" scheme="http://notego.top/tags/%E4%B8%8A%E5%96%84%E8%8B%A5%E6%B0%B4/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
     
     <category term="善" scheme="http://notego.top/tags/%E5%96%84/"/>
     
@@ -335,13 +345,13 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
-    
-    <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
-    
     <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
     
     <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
+    
+    <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+    <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
     
     <category term="天人合一" scheme="http://notego.top/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/"/>
     
