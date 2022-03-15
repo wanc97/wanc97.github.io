@@ -489,7 +489,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-08
+                    2022-03-14
                 </div>
                 
 
@@ -624,11 +624,11 @@ sequence_type <span class="token operator">=</span> <span class="token punctuati
 </ul>
 <h4 id="字符串str"><a href="#字符串str" class="headerlink" title="字符串str"></a>字符串str</h4><p><strong>常见操作</strong></p>
 <ul>
-<li>in/not in 判断成员关系；</li>
+<li>$in/not in$ 判断成员关系；</li>
 <li>+连接两个字符串；</li>
 <li>*可以对字符串进行重复；</li>
-<li>[::]，索引、切片操作；</li>
-<li>.strip()去掉开头和末尾的字符</li>
+<li>$[::]$，索引、切片操作；</li>
+<li>$.strip()$去掉开头和末尾的字符</li>
 </ul>
 <p><strong>替换</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'可以在%s，以及%s，通过替换的方式得到所需字符串'</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token string">'这里'</span><span class="token punctuation">,</span> <span class="token string">'这里...等'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -640,34 +640,34 @@ not_trans <span class="token operator">=</span> <span class="token string">r'在
 <h4 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h4><p>列表list是Python中的一个强大的数据结构，本质上是一个可以动态调整大小的ArrayList,list存储数据是在一个数组中存储元素的地址，地址实际指向的元素可以是很多种形式：数字、布尔、字符串、元祖、链表。<br><strong>创建</strong></p>
 <blockquote>
 <ol>
-<li>用中括号[]包裹元素直接生成，元素使用逗号分隔；</li>
-<li>用list()方法，将其它数据结构（字符串、元组、range函数等）转化成列表；</li>
+<li>用中括号$[]$包裹元素直接生成，元素使用逗号分隔；</li>
+<li>用$list()$方法，将其它数据结构（字符串、元组、range函数等）转化成列表；</li>
 <li>列表生成式/列表解析式/列表推导式，生成列表。</li>
 </ol>
 </blockquote>
 <p><strong>扩充</strong></p>
 <blockquote>
 <ol>
-<li>append()在尾部添加元素；</li>
-<li>insert(k,value)在指定位置添加元素；</li>
-<li>+和list_1.extend(list_2)将两个链表拼接成一个新列表。</li>
+<li>$append()$在尾部添加元素；</li>
+<li>$insert(k,value)$在指定位置添加元素；</li>
+<li>$+$和$list_1.extend(list_2)$将两个链表拼接成一个新列表。</li>
 </ol>
 </blockquote>
 <p><strong>删除&amp;销毁</strong></p>
 <blockquote>
 <ol>
-<li>del list[m]；</li>
-<li>remove(value)删除第一个匹配项;</li>
-<li>pop(m)删除指定位置元素；</li>
-<li>clear()清空；</li>
-<li>del list销毁。</li>
+<li>$del$ $list[m]$；</li>
+<li>$remove(value)$删除第一个匹配项;</li>
+<li>$pop(m)$删除指定位置元素；</li>
+<li>$clear()$清空；</li>
+<li>$del$ $list$销毁。</li>
 </ol>
 </blockquote>
 <p><strong>切片</strong></p>
 <blockquote>
 <ul>
-<li>[i:i+n:m]：从第i位开始至i+n位，不包括i+n位，每隔m位取一个。</li>
-<li>默认值[0: -1: 1]。</li>
+<li>$[i:i+n:m]$：从第i位开始至i+n位，不包括i+n位，每隔m位取一个。</li>
+<li>默认值$[0:length:1]$。</li>
 <li>值都可以大于列表长度，取不到就是空列表，不会越界报错。</li>
 <li>从0开始索引，左闭右开区间使得切片很优雅。</li>
 </ul>
@@ -692,22 +692,22 @@ a2<span class="token punctuation">.</span>clear<span class="token punctuation">(
 <p><strong>其它操作</strong></p>
 <blockquote>
 <ol>
-<li>len(list)获取元素个数。</li>
-<li>count()统计指定元素个数。</li>
-<li>max(list)统计元素最大值（要求元素类型相同才可比较，数值类型、字符串等直接比较，其它类型比较id）<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+<li>$len(list)$获取元素个数。</li>
+<li>$count()$统计指定元素个数。</li>
+<li>$max(list)$统计元素最大值（要求元素类型相同才可比较，数值类型、字符串等直接比较，其它类型比较id）<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
 <span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 out<span class="token punctuation">:</span><span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'dvs'</span><span class="token punctuation">,</span><span class="token string">'vsvd'</span><span class="token punctuation">,</span><span class="token string">'be'</span><span class="token punctuation">,</span><span class="token string">'dfbeab'</span><span class="token punctuation">]</span>
 <span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 out<span class="token punctuation">:</span><span class="token string">'vsvd'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>min(list)与max类似，比较正好相反。</li>
-<li>index()获取指定元素索引（第一个匹配项）</li>
-<li>reverse()翻转列表</li>
-<li>copy()浅拷贝</li>
+<li>$min(list)$与$max$类似，比较正好相反。</li>
+<li>$index()$获取指定元素索引（第一个匹配项）</li>
+<li>$reverse()$翻转列表</li>
+<li>$copy()$浅拷贝</li>
 <li>深拷贝<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
 copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>sort()原地排序</li>
-<li>sorted(list)生成新列表</li>
+<li>$sort()$原地排序</li>
+<li>$sorted(list)$生成新列表</li>
 </ol>
 </blockquote>
 <p><strong>列表生成式&amp;生产器表达式</strong></p>
@@ -1768,7 +1768,7 @@ torch<span class="token punctuation">.</span>tensor<span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">86k</span>&nbsp;字
+                class="white-color">86.7k</span>&nbsp;字
             
             
             
