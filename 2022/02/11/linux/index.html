@@ -473,21 +473,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-27
+                    2022-03-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    367
+                    606
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -576,7 +576,7 @@
 </ul>
 <h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><ul>
 <li>useradd [] 新建用户<ul>
-<li>用户是通过uid区分，而不是通过名字区分</li>
+<li>用户是通过uid区分，而不是通过名字区分 </li>
 </ul>
 </li>
 <li>userdel [-r删除家目录] []</li>
@@ -589,6 +589,37 @@
 <li>su [-带运行环境切换] [] 切换用户</li>
 <li>sudo 以其它用户身份执行 </li>
 <li>visudo 设置用户的特殊命令权限</li>
+</ul>
+<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><ul>
+<li>ifconfig 网络接口配置信息</li>
+<li>route 查看网关路由信息</li>
+<li>ping [ip] 查看网络连接是否畅通</li>
+<li>traceroute  [-w 超时时间] [ip] 查看路由信息 </li>
+<li>nslookup [域名] 查看域名的IP地址</li>
+<li>telnet [域名] [端口] 测试指定端口的连通性</li>
+<li>tcpdump 按照要求对指定IP和端口进行抓包</li>
+<li>netstat [-ntpl] 显示网络状态</li>
+<li>service 查看并设置网络配置文件</li>
+</ul>
+<h4 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h4><ul>
+<li>centos/redhat 使用yum包管理器，软件包格式为rpm<ul>
+<li>rpm包格式：软件名称+软件版本+系统版本+平台.rpm<ul>
+<li>如：vim-common-7.4.10-5.el7.x86_64.rpm</li>
+</ul>
+</li>
+<li>rpm [-q查询 i安装 e卸载]  无法解决依赖关系，需要自己准备好安装包</li>
+<li>yum [list grouplist查看 install安装 update升级 remove卸载] 自动解决依赖，自动从源下载</li>
+<li>源代码编译安装<ul>
+<li>wget ….</li>
+<li>tar -zxf …</li>
+<li>./configure –prefix=…</li>
+<li>make …</li>
+<li>make install</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>debian/ubuntu 使用apt包管理器，软件包格式为deb</li>
 </ul>
 
                 
@@ -823,29 +854,28 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/11/linux/">
+                <a href="/2022/03/27/da-shu-ju/">
                     <div class="card-image">
                         
-                        <img src="/medias/image/%E3%80%8ALinux%E3%80%8B.jpg" class="responsive-img" alt="Linux">
+                        <img src="/medias/image/%E5%A4%A7%E6%95%B0%E6%8D%AE.jpg" class="responsive-img" alt="大数据">
                         
-                        <span class="card-title">Linux</span>
+                        <span class="card-title">大数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            开源操作系统，极客必备
+                            数据时代
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -858,7 +888,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1084,7 +1113,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">86.7k</span>&nbsp;字
+                class="white-color">92.7k</span>&nbsp;字
             
             
             
