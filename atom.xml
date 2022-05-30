@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2022-03-28T01:18:37.000Z</updated>
+  <updated>2022-05-30T14:05:17.787Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyTorch</title>
+    <link href="http://notego.top/2022/05/30/pytorch/"/>
+    <id>http://notego.top/2022/05/30/pytorch/</id>
+    <published>2022-05-30T14:00:33.000Z</published>
+    <updated>2022-05-30T14:05:17.787Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h2&gt;&lt;h3 id=&quot;导入重要库&quot;&gt;&lt;a href=&quot;#导入重要库&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://notego.top/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="Python" scheme="http://notego.top/tags/Python/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
+    
+    <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
+    
+  </entry>
   
   <entry>
     <title>大数据</title>
