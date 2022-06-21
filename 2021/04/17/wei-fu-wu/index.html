@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-08
+                    2022-06-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    804
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -530,30 +530,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="微服务特点"><a href="#微服务特点" class="headerlink" title="微服务特点"></a>微服务特点</h3><blockquote>
+                <h2 id="基础-amp-理论"><a href="#基础-amp-理论" class="headerlink" title="基础&amp;理论"></a>基础&amp;理论</h2><h3 id="微服务特点"><a href="#微服务特点" class="headerlink" title="微服务特点"></a>微服务特点</h3><blockquote>
 <ul>
 <li>一组小的服务</li>
 <li>独立的进程</li>
 <li>轻量级通信</li>
 <li>基于业务能力</li>
-<li><strong>独立部署</strong></li>
-<li>无集中式管理 </li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>松耦合</li>
-<li>服务向架构</li>
-<li>内容独立</li>
 </ul>
 </blockquote>
 <h3 id="微服务利弊"><a href="#微服务利弊" class="headerlink" title="微服务利弊"></a>微服务利弊</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><ul>
 <li>强模块化边界：清晰的边界</li>
-<li>可独立部署</li>
+<li>可独立部署：无集中式管理，松耦合</li>
 <li>技术多样性：可以用不同语言开发</li>
+<li>故障容忍：错误隔离，自动重启</li>
 </ul>
 <h4 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h4><ul>
-<li>分布式复杂性</li>
+<li>不恰当的设计会增加系统的复杂程度</li>
+<li> 分布式复杂性</li>
 <li>最终一致性：不同服务对相同数据进行操作时需要注意一致性</li>
 <li>运维复杂性</li>
 <li>测试复杂性</li>
@@ -639,6 +632,43 @@
 <li>应用层监控：URL、服务的可用率、响应时间</li>
 <li>系统层监控：cpu、内存、硬盘等</li>
 <li>基础设施监控：网络流量、丢包、错报、连接数</li>
+</ul>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>解决环境依赖</li>
+<li>轻量、独立、可执行、包含运行应用所需的所有工具</li>
+<li>与虚拟机的区别：底层共享OS内核</li>
+<li>位于容器引擎层，是基于IaaS基础设施层的</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>仍然有较多开销，不适合把特别轻量的任务都做成微服务</li>
+<li>更加适合immutable的服务</li>
+<li>自身不稳定，需要配套的自动恢复功能</li>
+</ul>
+<h2 id="kubernetes"><a href="#kubernetes" class="headerlink" title="kubernetes"></a>kubernetes</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>容器集群管理、协调系统，位于容器编排层，基于容器引擎层，在Docker之上</li>
+<li>协调、提供计算资源</li>
+<li>协助实现大规模云端部署<ul>
+<li>服务发现：对外提供统一入口</li>
+<li>自动扩缩容</li>
+<li>对失败的容器自动重启</li>
+<li>单例模式</li>
+</ul>
+</li>
+</ul>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
+<li>由管理节点master和工作节点node组成</li>
+<li>master：接受外部请求；调度<ul>
+<li>API Server：统一访问入口，协调其它组件，一RESTful API提供接口服务，所有对象资源的增删改查和监听操作都交给API Server处理后再提交给Etcd存储。</li>
+<li>scheduler：对容器运行、节点分布进行调度；根据调度算法为新创建的Pod选择一个Node</li>
+<li>controller-manager：管理各个资源的控制器，负责后台任务的运维、管理、升级、回滚。</li>
+</ul>
+</li>
+<li>node：工作节点<ul>
+<li>kubelet：每个节点的代理，管理节点的容器</li>
+<li>kube-proxy：负责网络</li>
+</ul>
+</li>
+<li>Etcd：外部数据存储；分布式键值存储系统，用于保存集群状态数据，如pod、Service等对象信息</li>
 </ul>
 
                 
@@ -1192,7 +1222,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96k</span>&nbsp;字
+                class="white-color">96.4k</span>&nbsp;字
             
             
             
