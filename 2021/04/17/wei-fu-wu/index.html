@@ -500,14 +500,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -644,31 +644,126 @@
 <li>更加适合immutable的服务</li>
 <li>自身不稳定，需要配套的自动恢复功能</li>
 </ul>
-<h2 id="kubernetes"><a href="#kubernetes" class="headerlink" title="kubernetes"></a>kubernetes</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<h2 id="kubernetes"><a href="#kubernetes" class="headerlink" title="kubernetes"></a>kubernetes</h2><ul>
+<li>Kubernetes 是一个可移植、可扩展的开源平台，用于管理容器化的工作负载和服务，方便进行声明式配置和自动化。</li>
+</ul>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
 <li>容器集群管理、协调系统，位于容器编排层，基于容器引擎层，在Docker之上</li>
-<li>协调、提供计算资源</li>
+<li>编排存储：自动挂载存储系统，例如本地存储、公共云等</li>
 <li>协助实现大规模云端部署<ul>
 <li>服务发现：对外提供统一入口</li>
+<li>协调、提供计算资源</li>
 <li>自动扩缩容</li>
+<li>自动部署和回滚</li>
 <li>对失败的容器自动重启</li>
 <li>单例模式</li>
 </ul>
 </li>
 </ul>
-<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
+<h3 id="组成结构"><a href="#组成结构" class="headerlink" title="组成结构"></a>组成结构</h3><ul>
 <li>由管理节点master和工作节点node组成</li>
 <li>master：接受外部请求；调度<ul>
 <li>API Server：统一访问入口，协调其它组件，一RESTful API提供接口服务，所有对象资源的增删改查和监听操作都交给API Server处理后再提交给Etcd存储。</li>
 <li>scheduler：对容器运行、节点分布进行调度；根据调度算法为新创建的Pod选择一个Node</li>
-<li>controller-manager：管理各个资源的控制器，负责后台任务的运维、管理、升级、回滚。</li>
+<li>controller-manager：管理各个资源的控制器，负责后台任务的运维、管理、升级、回滚。这些控制器包括：<ul>
+<li>节点控制器（Node Controller）：负责在节点出现故障时进行通知和响应</li>
+<li>任务控制器（Job Controller）：监测代表一次性任务的 Job 对象，然后创建 Pods 来运行这些任务直至完成</li>
+<li>端点控制器（Endpoints Controller）：填充端点（Endpoints）对象（即加入 Service 与 Pod）</li>
+<li>服务帐户和令牌控制器（Service Account &amp; Token Controllers）：为新的命名空间创建默认帐户和 API 访问令牌</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>node：工作节点<ul>
-<li>kubelet：每个节点的代理，管理节点的容器</li>
-<li>kube-proxy：负责网络</li>
+<li>kubelet：master在每个节点的代理，管理节点的容器</li>
+<li>kube-proxy：负责pod网络代理</li>
+<li>第三方容器引擎，如docker</li>
+<li>pod：运行的容器</li>
 </ul>
 </li>
-<li>Etcd：外部数据存储；分布式键值存储系统，用于保存集群状态数据，如pod、Service等对象信息</li>
+<li>Etcd：一致性、高可用性、分布式键值存储系统，用于保存集群状态数据，如pod、Service等对象信息</li>
+<li>插件：实现集群功能<ul>
+<li>DNS：为 Kubernetes 服务提供DNS记录</li>
+<li>Web界面（Dashboard）：Kubernetes 集群的通用的、基于 Web 的用户界面。 它使用户可以管理集群中运行的应用程序以及集群本身， 并进行故障排除。</li>
+<li>容器资源监控：将关于容器的一些常见的时间序列度量值保存到一个集中的数据库中， 并提供浏览这些数据的界面</li>
+<li>集群层面日志 机制负责将容器的日志数据保存到一个集中的日志存储中， 这种集中日志存储提供搜索和浏览接口。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Kubernetes-对象"><a href="#Kubernetes-对象" class="headerlink" title="Kubernetes 对象"></a>Kubernetes 对象</h4><ul>
+<li>Kubernetes对象是持久化的实体。用于表示整个集群的状态。<ul>
+<li>它们描述了如下信息：<ul>
+<li>哪些容器化应用正在运行（以及在哪些节点上运行）</li>
+<li>可以被应用使用的资源</li>
+<li>关于应用运行时表现的策略，比如重启策略、升级策略，以及容错策略</li>
+</ul>
+</li>
+<li>spec：期望状态<ul>
+<li>必须在创建对象时设置其内容。</li>
+<li>大多数情况下通过.yaml文件为kubectl提供这些信息</li>
+<li>不同Kubernetes对象得spec是不同的，包含特定该对象的嵌套字段。</li>
+</ul>
+</li>
+<li>status：当前实际状态<ul>
+<li>由Kubernetes系统和组件设置并更新的。Kubernetes会积极地管理当前实际状态，以使之达成期望状态。如：副本数量</li>
+</ul>
+</li>
+<li>.yaml文件中，需要配置的字段：<ul>
+<li>apiVersion：创建该对象所使用的Kubernetes API的版本</li>
+<li>kind：想要创建的对象的类别</li>
+<li>metadata：帮助唯一性标识对象的一些数据，包括一个name字符串、UID 和可选的namespace</li>
+<li>spec：期望的该对象的状态</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>kubectl管理对象<ul>
+<li>指令式命令：作用于活跃对象，直接进行更改<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 通过创建 Deployment 对象来运行 nginx 容器的实例：</span>
+kubectl create deployment nginx --image nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>指令式对象配置：作用于单个文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建配置文件中定义的对象：</span>
+kubectl create -f nginx.yaml
+<span class="token comment"># 删除两个配置文件中定义的对象：</span>
+kubectl delete -f nginx.yaml -f redis.yaml
+<span class="token comment"># 通过覆盖活动配置来更新配置文件中定义的对象：</span>
+kubectl replace -f nginx.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li>每个对象都有name来标识同类资源中的唯一性，和UID来标识在整个集群中的唯一性</li>
+</ul>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="服务器基本环境"><a href="#服务器基本环境" class="headerlink" title="服务器基本环境"></a>服务器基本环境</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 关闭防火墙</span>
+system stop firewalld
+system disable firewalld
+
+<span class="token comment"># 关闭selinux(Linux的一个安全机制)</span>
+<span class="token comment"># 永久</span>
+<span class="token function">sed</span> -i <span class="token string">'s/enforcing/disable/'</span> /etc/selinux/config 
+<span class="token comment"># 临时</span>
+setenforce <span class="token number">0</span>
+
+<span class="token comment"># 关闭swap</span>
+<span class="token comment"># 永久</span>
+<span class="token function">vim</span> /etc/fatab <span class="token comment"># 注释交换分区的那一行</span>
+<span class="token comment"># 临时</span>
+swapoff -a
+
+<span class="token comment"># 设置主机名</span>
+hostnamectl set-hostname <span class="token operator">&lt;</span>hostname<span class="token operator">></span>
+
+<span class="token comment"># 在master添加host</span>
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/hosts <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+ip1 name1
+ip2 name2
+ip3 name3
+EOF</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="kubeadm"><a href="#kubeadm" class="headerlink" title="kubeadm"></a>kubeadm</h4><ul>
+<li>通过kubeadm init和kubeadm join快速部署k8s集群</li>
+<li>kubeadm init创建master节点</li>
+<li>kubeadm join &lt;master节点的IP和端口&gt; 将一个节点加入到当前集群</li>
+</ul>
+<h4 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h4><ul>
+<li>通过二进制包，手动部署每个组件，组成k8s集群</li>
 </ul>
 
                 
@@ -1222,7 +1317,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.4k</span>&nbsp;字
+                class="white-color">97.4k</span>&nbsp;字
             
             
             
