@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-24
+                    2022-07-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    5.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    21 分
                 </div>
                 
 
@@ -642,12 +642,9 @@
 <li>轻量、独立、可执行、包含运行应用所需的所有工具</li>
 <li>带来开发环境的一致性</li>
 <li>便于多版本混合部署</li>
-<li>与虚拟机的区别：<ul>
-<li>底层共享OS内核，开销极低。</li>
-<li>因为不是虚拟机，所有直接将容器作为虚拟机用会有许多问题，如多进程带来的僵尸进程等。</li>
-</ul>
-</li>
+<li>容器是进程，共享OS内核，与虚拟机有本质区别</li>
 <li>位于容器引擎层，是基于IaaS基础设施层的</li>
+<li>容器是『单进程』模型，只有PID=1的进程才会被Dockerd控制，即pid=1的进程挂了Dockerd能够感知到，但是其它的进程却不受Dockerd的管理，当出现孤儿进程的时候，管理和调度是个问题。</li>
 </ul>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li>仍然有较多开销，不适合把特别轻量的任务都做成微服务</li>
@@ -795,9 +792,9 @@ ENV <span class="token operator">&lt;</span>key<span class="token operator">></s
 <li>容器镜像rootfs，是包含操作系统所有文件和目录但不包含内核的文件系统</li>
 <li>rootfs是以层的方式增量叠放在一起</li>
 <li>rootfs由只读层、init层、可读写层组成<ul>
-<li>只读层由若干层增量组成，组成的镜像。不可变，不commit</li>
-<li>可读写层存放容器运行后的改变，对只读层的删除操作是在可读写层做了一个whiteout遮盖。可变，commit</li>
-<li>存放一些只在当前容器有效，且不需要commit的内容。可变，不commit</li>
+<li>只读层：由若干层增量组成，组成的镜像。不可变，不commit</li>
+<li>可读写层：存放容器运行后的改变，对只读层的删除操作是在可读写层做了一个whiteout遮盖。可变，commit</li>
+<li>init层：存放一些只在当前容器有效，且不需要commit的内容。可变，不commit</li>
 </ul>
 </li>
 <li>容器运行就是在只读层上面加一个可读写层<ul>
@@ -834,6 +831,7 @@ ENV <span class="token operator">&lt;</span>key<span class="token operator">></s
 <li>由管理节点master和工作节点node组成</li>
 <li>master：接受外部请求；调度<ul>
 <li>API Server：统一访问入口，协调其它组件，RESTful API提供接口服务，所有对象资源的增删改查和监听操作都交给API Server处理后再提交给Etcd存储。</li>
+<li>Etcd：一致性、高可用性、分布式键值存储系统，用于保存集群状态数据，如pod、Service等对象信息</li>
 <li>scheduler：对容器运行、节点分布进行调度；根据调度算法为新创建的Pod选择一个Node</li>
 <li>controller-manager：管理各个资源的控制器，负责后台任务的运维、管理、升级、回滚。这些控制器包括：<ul>
 <li>节点控制器（Node Controller）：负责在节点出现故障时进行通知和响应</li>
@@ -845,13 +843,15 @@ ENV <span class="token operator">&lt;</span>key<span class="token operator">></s
 </ul>
 </li>
 <li>node：工作节点<ul>
-<li>kubelet：master在每个节点的代理，管理节点的容器</li>
-<li>kube-proxy：负责pod网络代理</li>
-<li>第三方容器引擎，如docker</li>
-<li>pod：最小管理单元，可以包含多个容器</li>
+<li>kubelet：master在每个节点的代理，管理节点的容器<ul>
+<li>通过CRI（Container Runtime Interface）的远程调用接口进行交互，接口定义了容器运行时的各项核心操作</li>
 </ul>
 </li>
-<li>Etcd：一致性、高可用性、分布式键值存储系统，用于保存集群状态数据，如pod、Service等对象信息</li>
+<li>kube-proxy：负责pod网络代理</li>
+<li>第三方容器引擎，如docker</li>
+<li>pod：最小管理单元，可以包含多个容器，类似于进程组</li>
+</ul>
+</li>
 <li>插件：实现集群功能<ul>
 <li>DNS：为 Kubernetes 服务提供DNS记录</li>
 <li>Web界面（Dashboard）：Kubernetes 集群的通用的、基于 Web 的用户界面。 它使用户可以管理集群中运行的应用程序以及集群本身， 并进行故障排除。</li>
@@ -914,6 +914,81 @@ kubectl get namespace<span aria-hidden="true" class="line-numbers-rows"><span></
 </ul>
 </li>
 <li>标签：附加到对象上的键值对，</li>
+</ul>
+<h3 id="作业管理"><a href="#作业管理" class="headerlink" title="作业管理"></a>作业管理</h3><ul>
+<li>每一个控制器，都以独有的方式负责某种编排功能，</li>
+<li>控制器都遵循一个通用编排模式：控制循环（control loop）；不断将实际状态调整为期望状态</li>
+<li>控制器的设计原理就是用一种对象管理另一种对象；控制器的yaml定义中上半部分是控制器定义（包括期望状态），上下半部分是被控制对象（pod）的模板；让下面对象的状态达到上面的设定</li>
+</ul>
+<h4 id="pod"><a href="#pod" class="headerlink" title="pod"></a>pod</h4><ul>
+<li>为什么要从容器变为pod？<ul>
+<li>僵尸进程的问题使得容器只适合单进程模式</li>
+<li>容器的作用是隔离环境，但是隔离得太死了，限制了单进程的发挥</li>
+<li>pod的作用是从容器中拆开一些口，保证容器间必要的交流</li>
+</ul>
+</li>
+<li>常见方式：通过让pod中的多个容器共享volume、网络等进行交流</li>
+<li>常见字段：<ul>
+<li>NodeSelector：是一个供用户将Pod与Node进行绑定的字段</li>
+<li>NodeName：经过了调度后被赋值为节点名</li>
+<li>HostAliases：定义了Pod的hosts文件（比如/etc/hosts）里的内容</li>
+</ul>
+</li>
+<li>投射数据卷（Projected Volume）：为容器提供预先定义好的数据。<ul>
+<li>Secret：把Pod想要访问的加密数据存放到Etcd中，然后通过在Pod的容器里挂载Volume访问</li>
+<li>ConfigMap：不需要加密的、应用所需的配置信息；</li>
+<li>Downward API：让Pod里的容器能够直接获取到这个Pod API对象（YAML文件）本身的信息；</li>
+</ul>
+</li>
+<li>PodPreset：自动给 Pod 填充某些字段</li>
+</ul>
+<h4 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h4><ul>
+<li>功能：<ul>
+<li>以滚动更新（rolling update）的方式实现升级容器</li>
+<li>水平扩展/收缩</li>
+</ul>
+</li>
+<li>ReplicaSet：<ul>
+<li>Deployment控制ReplicaSet，ReplicaSet控制pod</li>
+<li>水平扩展/收缩时只需要ReplicaSet改变replicas</li>
+<li>滚动更新则会新建新的ReplicaSet，逐步实现两个ReplicaSet的此消彼长</li>
+<li>旧ReplicaSet实现版本控制</li>
+</ul>
+</li>
+</ul>
+<h4 id="StatefulSet"><a href="#StatefulSet" class="headerlink" title="StatefulSet"></a>StatefulSet</h4><ul>
+<li>支持有状态应用：每个pod有了编号，不是完全一样，记录状态，然后在Pod被重新创建时，能够为新Pod恢复这些状态。<ul>
+<li>拓扑状态：pod按照一定顺序创建，且删掉后新创建的pod要与原来的pod有相同的网络标识</li>
+<li>存储状态：不同实例使用不同的存储数据，PVC，PV</li>
+</ul>
+</li>
+</ul>
+<h4 id="DaemonSet"><a href="#DaemonSet" class="headerlink" title="DaemonSet"></a>DaemonSet</h4><ul>
+<li>这个Pod运行在Kubernetes集群里的每一个节点（Node）上；</li>
+<li>每个节点上只有一个这样的Pod实例；</li>
+<li>当有新的节点加入Kubernetes集群后，该Pod会自动地在新节点上被创建出来；而当旧节点被删除后，它上面的Pod也相应地会被回收掉。</li>
+<li>常见应用：网络插件、存储插件、监控组件、日志组件</li>
+</ul>
+<h4 id="Job"><a href="#Job" class="headerlink" title="Job"></a>Job</h4><ul>
+<li>一次性离线任务</li>
+<li>常见字段：<ul>
+<li>spec.parallelism：它定义的是一个Job在任意时间最多可以启动多少个Pod同时运行</li>
+<li>spec.completions：它定义的是Job至少要完成的Pod数目，即Job的最小完成数。</li>
+<li>spec.activeDeadlineSeconds：最长运行时间</li>
+<li>spec.backoffLimit：重试次数</li>
+</ul>
+</li>
+</ul>
+<h4 id="CronJob"><a href="#CronJob" class="headerlink" title="CronJob"></a>CronJob</h4><ul>
+<li>Job对象的控制器</li>
+<li>依据schedule创建和删除Job</li>
+<li>常用字段：<ul>
+<li>spec.concurrencyPolicy：某个Job还没有执行完，是否创建新Job</li>
+</ul>
+</li>
+</ul>
+<h4 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h4><ul>
+<li></li>
 </ul>
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="服务器基本环境"><a href="#服务器基本环境" class="headerlink" title="服务器基本环境"></a>服务器基本环境</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 关闭防火墙</span>
 system stop firewalld
@@ -1502,7 +1577,7 @@ EOF</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">100.1k</span>&nbsp;字
+                class="white-color">101k</span>&nbsp;字
             
             
             
