@@ -509,7 +509,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-28
+                    2022-07-06
                 </div>
                 
 
@@ -1229,7 +1229,9 @@ quick_sort<span class="token punctuation">(</span>arr<span class="token punctuat
 <p><strong>需要排序最短子数组</strong><br>从左向右、从右往左遍历，记录边界（小于最大数的右边界，大于最小数的左边界），也就是找到两边不用排序的部分，留下中间存在逆序的部分。</p>
 <p><strong>无序数组排序后的最大差值</strong><br>通过$n$个桶，平均划分区间，将元素放入这些桶中，按序遍历查找。</p>
 <h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><ul>
-<li>定义：对有向无环图的节点进行排序，使得排序结果符合边方向<h4 id="Kahn算法"><a href="#Kahn算法" class="headerlink" title="Kahn算法"></a>Kahn算法</h4></li>
+<li>定义：对有向无环图的节点进行排序，使得排序结果符合边方向</li>
+</ul>
+<h4 id="Kahn算法"><a href="#Kahn算法" class="headerlink" title="Kahn算法"></a>Kahn算法</h4><ul>
 <li>将入度为0的节点选择出来，并去掉对应的出边；</li>
 <li>反复循环至取出所有节点。</li>
 </ul>
@@ -1254,7 +1256,7 @@ quick_sort<span class="token punctuation">(</span>arr<span class="token punctuat
 <ul>
 <li>KMP算法相对于单纯的滑动比较，主要改进在于发现最长公共前后缀在冲突时的作用，进而通过动态规划的方式避免重复劳动，降低复杂度。</li>
 <li>在比较冲突的时候，已经比较配对的部分中匹配串与模式串是相同的，因此接下来的滑动相当于是已匹配部分自己与自己比较，即寻找最长公共前后缀。</li>
-<li>最长公共前后缀与模式串的字符位置对应，因此记录最长公共前后缀信息的数组就是next数组，也是动态规划中的Menory。</li>
+<li>最长公共前后缀与模式串的字符位置对应，因此记录最长公共前后缀信息的数组就是next数组，也是动态规划中的Memory。</li>
 <li>计算next数组的过程就是动态规划的过程，当连续匹配时next数组可以依次写出，当出现不匹配时直接调用以计算出的部分即可。</li>
 <li>所以KMP算法是一种动态规划的实现，以空间换时间，用next数组记录运算信息，避免重复子问题。</li>
 </ul>
@@ -1930,7 +1932,7 @@ quick_sort<span class="token punctuation">(</span>arr<span class="token punctuat
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">101k</span>&nbsp;字
+                class="white-color">101.4k</span>&nbsp;字
             
             
             

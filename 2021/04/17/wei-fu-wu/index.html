@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-04
+                    2022-07-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.8k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    22 分
                 </div>
                 
 
@@ -871,7 +871,7 @@ ENV <span class="token operator">&lt;</span>key<span class="token operator">></s
 <li>spec：期望状态<ul>
 <li>必须在创建对象时设置其内容。</li>
 <li>大多数情况下通过.yaml文件为kubectl提供这些信息</li>
-<li>不同Kubernetes对象得spec是不同的，包含特定该对象的嵌套字段。</li>
+<li>不同Kubernetes对象的spec是不同的，包含特定该对象的嵌套字段。</li>
 </ul>
 </li>
 <li>status：当前实际状态<ul>
@@ -913,7 +913,7 @@ kubectl get namespace<span aria-hidden="true" class="line-numbers-rows"><span></
 <li>创建一个服务时，会创建一个相应的DNS条目 &lt;服务名称&gt;.&lt;名字空间名称&gt;.svc.cluster.local，这意味着如果容器只使用 &lt;服务名称&gt;，它将被解析到本地名字空间的服务。这对于跨多个名字空间（如开发、分级和生产） 使用相同的配置非常有用。跨名字空间访问则需要使用完全限定域名（FQDN）。</li>
 </ul>
 </li>
-<li>标签：附加到对象上的键值对，</li>
+<li>标签：附加到对象上的键值对</li>
 </ul>
 <h3 id="作业管理"><a href="#作业管理" class="headerlink" title="作业管理"></a>作业管理</h3><ul>
 <li>每一个控制器，都以独有的方式负责某种编排功能，</li>
@@ -987,8 +987,45 @@ kubectl get namespace<span aria-hidden="true" class="line-numbers-rows"><span></
 </ul>
 </li>
 </ul>
-<h4 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h4><ul>
-<li></li>
+<h4 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h4><h3 id="作业调度"><a href="#作业调度" class="headerlink" title="作业调度"></a>作业调度</h3><h4 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h4><ul>
+<li>requests设置pod的资源最小量，在调度的时候发挥作用</li>
+<li>limits设置pod的资源最大值，设置Cgroups，在运行的时候限制上限</li>
+<li>可压缩资源（CPU）不足limits时：根据requests按比例分配分配</li>
+<li>不可压缩资源（内存）不足limits时：根据优先级驱逐<ul>
+<li>优先驱逐Request=Limit=0的Pod</li>
+<li>其次驱逐0&lt; Request &lt; Limit &lt; Infinity</li>
+<li>0 &lt; Request == Limit会保留</li>
+</ul>
+</li>
+</ul>
+<h4 id="默认调度器"><a href="#默认调度器" class="headerlink" title="默认调度器"></a>默认调度器</h4><ul>
+<li>调度过程：<ul>
+<li>从所有的节点中，根据调度算法挑选出所有可以运行该Pod的节点；<ul>
+<li>多种算法并行过滤，不同node并行</li>
+</ul>
+</li>
+<li>再根据调度算法挑选一个最符合条件的节点作为最终结果。</li>
+</ul>
+</li>
+</ul>
+<h4 id="优先级与抢占"><a href="#优先级与抢占" class="headerlink" title="优先级与抢占"></a>优先级与抢占</h4><ul>
+<li>pod可以设置优先级</li>
+<li>高优先级的pod在调度队列中优先被调度</li>
+<li>高优先级的pod调度失败后可以抢占低优先级的pod</li>
+</ul>
+<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h4 id="service"><a href="#service" class="headerlink" title="service"></a>service</h4><ul>
+<li>主要解决pod动态变化，提供统一的访问入口，实现：<ul>
+<li>服务发现</li>
+<li>负载均衡</li>
+</ul>
+</li>
+<li>通过标签labels来关联pod</li>
+<li>ClusterIP：分配一个稳定的集群内部IP，可以通过这个IP+设置的端口访问pod</li>
+<li>NodePort：在每个node上监听一个端口来访问服务。需要自己规划端口。</li>
+<li>LoadBalancer：在NodePort的基础上增加一个公网的负载均衡器，从统一的IP进行访问，由LoadBalancer转发到node</li>
+</ul>
+<h4 id="Ingress"><a href="#Ingress" class="headerlink" title="Ingress"></a>Ingress</h4><ul>
+<li>基于service，对外提供域名访问和负载均衡</li>
 </ul>
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="服务器基本环境"><a href="#服务器基本环境" class="headerlink" title="服务器基本环境"></a>服务器基本环境</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 关闭防火墙</span>
 system stop firewalld
@@ -1577,7 +1614,7 @@ EOF</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">101k</span>&nbsp;字
+                class="white-color">101.4k</span>&nbsp;字
             
             
             
