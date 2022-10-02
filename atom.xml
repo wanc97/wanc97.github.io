@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>方寸田园</title>
+  
+  <subtitle>明心见性</subtitle>
+  <link href="http://notego.top/atom.xml" rel="self"/>
+  
+  <link href="http://notego.top/"/>
+  <updated>2022-09-30T08:25:17.112Z</updated>
+  <id>http://notego.top/</id>
+  
+  <author>
+    <name>万川</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自然语言处理</title>
+    <link href="http://notego.top/2022/09/27/zi-ran-yu-yan-chu-li/"/>
+    <id>http://notego.top/2022/09/27/zi-ran-yu-yan-chu-li/</id>
+    <published>2022-09-27T02:10:09.000Z</published>
+    <updated>2022-09-30T08:25:17.112Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;经典方法&quot;&gt;&lt;a href=&quot;#经典方法&quot; class=&quot;headerlink&quot; title=&quot;经典方法&quot;&gt;&lt;/a&gt;经典方法&lt;/h1&gt;&lt;h2 id=&quot;TF—IDF&quot;&gt;&lt;a href=&quot;#TF—IDF&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分布式训练</title>
+    <link href="http://notego.top/2022/09/22/fen-bu-shi-xun-lian/"/>
+    <id>http://notego.top/2022/09/22/fen-bu-shi-xun-lian/</id>
+    <published>2022-09-22T06:05:35.000Z</published>
+    <updated>2022-09-22T07:07:53.844Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>强化学习</title>
+    <link href="http://notego.top/2022/08/25/qiang-hua-xue-xi/"/>
+    <id>http://notego.top/2022/08/25/qiang-hua-xue-xi/</id>
+    <published>2022-08-25T20:24:54.000Z</published>
+    <updated>2022-09-29T10:05:26.316Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;强化学习基础&quot;&gt;&lt;a href=&quot;#强化学习基础&quot; class=&quot;headerlink&quot; title=&quot;强化学习基础&quot;&gt;&lt;/a&gt;强化学习基础&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="智能体" scheme="http://notego.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+    <category term="价值" scheme="http://notego.top/tags/%E4%BB%B7%E5%80%BC/"/>
+    
+    <category term="策略" scheme="http://notego.top/tags/%E7%AD%96%E7%95%A5/"/>
+    
+    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="环境" scheme="http://notego.top/tags/%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch</title>
+    <link href="http://notego.top/2022/05/30/pytorch/"/>
+    <id>http://notego.top/2022/05/30/pytorch/</id>
+    <published>2022-05-30T22:00:33.000Z</published>
+    <updated>2022-05-30T14:32:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h2&gt;&lt;h3 id=&quot;导入重要库&quot;&gt;&lt;a href=&quot;#导入重要库&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://notego.top/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="Python" scheme="http://notego.top/tags/Python/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
+    
+    <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据</title>
+    <link href="http://notego.top/2022/03/27/da-shu-ju/"/>
+    <id>http://notego.top/2022/03/27/da-shu-ju/</id>
+    <published>2022-03-27T18:46:19.000Z</published>
+    <updated>2022-03-28T01:18:37.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;大数据总览&quot;&gt;&lt;a href=&quot;#大数据总览&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux</title>
+    <link href="http://notego.top/2022/02/11/linux/"/>
+    <id>http://notego.top/2022/02/11/linux/</id>
+    <published>2022-02-11T10:57:51.000Z</published>
+    <updated>2022-03-20T02:41:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;h4 id=&quot;帮助命令&quot;&gt;&lt;a href=&quot;#帮助命令&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《为什么精英这样用脑不会累》笔记</title>
+    <link href="http://notego.top/2021/11/25/wei-shi-me-jing-ying-zhe-yang-yong-nao-bu-hui-lei-bi-ji/"/>
+    <id>http://notego.top/2021/11/25/wei-shi-me-jing-ying-zhe-yang-yong-nao-bu-hui-lei-bi-ji/</id>
+    <published>2021-11-25T16:59:02.000Z</published>
+    <updated>2021-11-25T09:01:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;物质&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;效果&lt;/th&gt;
+&lt;th&gt;缺乏&lt;/th&gt;
+&lt;th&gt;过度&lt;/th&gt;
+&lt;th&gt;调控方法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;多巴胺&lt;/td&gt;
+&lt;td&gt;1</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《把时间当作朋友》笔记</title>
+    <link href="http://notego.top/2021/11/25/ba-shi-jian-dang-zuo-peng-you-bi-ji/"/>
+    <id>http://notego.top/2021/11/25/ba-shi-jian-dang-zuo-peng-you-bi-ji/</id>
+    <published>2021-11-25T16:53:15.000Z</published>
+    <updated>2021-11-25T08:56:01.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;时间无法管理&lt;/li&gt;
+&lt;li&gt;运用心智，找到问题的根源，做正确的事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;困境&quot;&gt;&lt;a href=&quot;#困境&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="时间" scheme="http://notego.top/tags/%E6%97%B6%E9%97%B4/"/>
+    
+    <category term="自律" scheme="http://notego.top/tags/%E8%87%AA%E5%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《易经》笔记</title>
+    <link href="http://notego.top/2021/11/25/yi-jing-bi-ji/"/>
+    <id>http://notego.top/2021/11/25/yi-jing-bi-ji/</id>
+    <published>2021-11-25T16:44:36.000Z</published>
+    <updated>2022-09-30T09:38:40.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;易经&quot;&gt;&lt;a href=&quot;#易经&quot; class=&quot;headerlink&quot; title=&quot;易经&quot;&gt;&lt;/a&gt;易经&lt;/h3&gt;&lt;h4 id=&quot;易经是什么&quot;&gt;&lt;a href=&quot;#易经是什么&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
+    
+    <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+    <category term="养生" scheme="http://notego.top/tags/%E5%85%BB%E7%94%9F/"/>
+    
+    <category term="宇宙" scheme="http://notego.top/tags/%E5%AE%87%E5%AE%99/"/>
+    
+    <category term="社会" scheme="http://notego.top/tags/%E7%A4%BE%E4%BC%9A/"/>
+    
+    <category term="预测" scheme="http://notego.top/tags/%E9%A2%84%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《人性的弱点》笔记</title>
+    <link href="http://notego.top/2021/11/25/ren-xing-de-ruo-dian-bi-ji/"/>
+    <id>http://notego.top/2021/11/25/ren-xing-de-ruo-dian-bi-ji/</id>
+    <published>2021-11-25T16:37:51.000Z</published>
+    <updated>2022-09-04T07:48:01.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;批评、指责、抱怨-共情&quot;&gt;&lt;a href=&quot;#批评、指责、抱怨-共情&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
+    
+    <category term="人性" scheme="http://notego.top/tags/%E4%BA%BA%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《被讨厌的勇气》笔记</title>
+    <link href="http://notego.top/2021/11/25/bei-tao-yan-de-yong-qi-bi-ji/"/>
+    <id>http://notego.top/2021/11/25/bei-tao-yan-de-yong-qi-bi-ji/</id>
+    <published>2021-11-25T16:22:26.000Z</published>
+    <updated>2021-11-25T08:51:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;不要总想着命运给了什么，而要有勇气去用好被给予的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;三种束缚人的枷锁&quot;&gt;&lt;a href=&quot;#三种束缚人的枷锁&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
+    
+    <category term="目的论" scheme="http://notego.top/tags/%E7%9B%AE%E7%9A%84%E8%AE%BA/"/>
+    
+    <category term="自由" scheme="http://notego.top/tags/%E8%87%AA%E7%94%B1/"/>
+    
+    <category term="接纳" scheme="http://notego.top/tags/%E6%8E%A5%E7%BA%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go</title>
+    <link href="http://notego.top/2021/10/20/go/"/>
+    <id>http://notego.top/2021/10/20/go/</id>
+    <published>2021-10-20T21:14:22.000Z</published>
+    <updated>2022-02-08T05:23:51.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h3&gt;&lt;h4 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://notego.top/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>云原生</title>
+    <link href="http://notego.top/2021/04/17/wei-fu-wu/"/>
+    <id>http://notego.top/2021/04/17/wei-fu-wu/</id>
+    <published>2021-04-17T21:10:29.000Z</published>
+    <updated>2022-09-05T09:48:14.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;微服务基础-amp-理论&quot;&gt;&lt;a href=&quot;#微服务基础-amp-理论&quot; class=&quot;headerlink&quot; title=&quot;微服务基础&amp;amp;理论&quot;&gt;&lt;/a&gt;微服务基础&amp;amp;理论&lt;/h2&gt;&lt;h3 id=&quot;微服务特点&quot;&gt;&lt;a href=&quot;#微服务特点&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="微服务" scheme="http://notego.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="容器" scheme="http://notego.top/tags/%E5%AE%B9%E5%99%A8/"/>
+    
+    <category term="Docker" scheme="http://notego.top/tags/Docker/"/>
+    
+    <category term="kubernetes" scheme="http://notego.top/tags/kubernetes/"/>
+    
+    <category term="模块化" scheme="http://notego.top/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    
+    <category term="独立部署" scheme="http://notego.top/tags/%E7%8B%AC%E7%AB%8B%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="松耦合" scheme="http://notego.top/tags/%E6%9D%BE%E8%80%A6%E5%90%88/"/>
+    
+    <category term="康威法则" scheme="http://notego.top/tags/%E5%BA%B7%E5%A8%81%E6%B3%95%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《道德经》笔记</title>
+    <link href="http://notego.top/2021/04/08/dao-de-jing-bi-ji/"/>
+    <id>http://notego.top/2021/04/08/dao-de-jing-bi-ji/</id>
+    <published>2021-04-08T22:32:31.000Z</published>
+    <updated>2022-09-30T11:37:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;大幅度&lt;/p&gt;
+&lt;h3 id=&quot;《道德经》全文&quot;&gt;&lt;a href=&quot;#《道德经》全文&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
+    
+    <category term="老子" scheme="http://notego.top/tags/%E8%80%81%E5%AD%90/"/>
+    
+    <category term="无为" scheme="http://notego.top/tags/%E6%97%A0%E4%B8%BA/"/>
+    
+    <category term="德" scheme="http://notego.top/tags/%E5%BE%B7/"/>
+    
+    <category term="无" scheme="http://notego.top/tags/%E6%97%A0/"/>
+    
+    <category term="上善若水" scheme="http://notego.top/tags/%E4%B8%8A%E5%96%84%E8%8B%A5%E6%B0%B4/"/>
+    
+    <category term="善" scheme="http://notego.top/tags/%E5%96%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unicorn</title>
+    <link href="http://notego.top/2021/04/01/unicorn/"/>
+    <id>http://notego.top/2021/04/01/unicorn/</id>
+    <published>2021-04-01T20:20:40.000Z</published>
+    <updated>2022-09-30T09:50:26.091Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这里记录我想对丫头说的话、我们的美好，是我们的独有空间。&lt;/p&gt;
+&lt;h3 id=&quot;应该怎么对丫头？&quot;&gt;&lt;a href=&quot;#应该怎么对丫头？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="悄悄话" scheme="http://notego.top/categories/%E6%82%84%E6%82%84%E8%AF%9D/"/>
+    
+    
+    <category term="爱情" scheme="http://notego.top/tags/%E7%88%B1%E6%83%85/"/>
+    
+    <category term="相思" scheme="http://notego.top/tags/%E7%9B%B8%E6%80%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《庄子》笔记</title>
+    <link href="http://notego.top/2021/03/31/zhuang-zi-bi-ji/"/>
+    <id>http://notego.top/2021/03/31/zhuang-zi-bi-ji/</id>
+    <published>2021-03-31T22:59:19.000Z</published>
+    <updated>2021-11-25T09:08:17.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;《庄子》分为内篇、外篇和杂篇，其中内篇是庄子哲学体系的核心，一般认为内篇文章为庄子本人所作，外篇和杂篇则有许多是后人所加。&lt;/p&gt;
+&lt;p&gt;《庄子》内篇包括七篇文章（《逍遥游》、《齐物论》、《养生主》、《人间世》、《德充符》、《大宗师》、《应帝王》），涵盖了庄子方方面面的观念</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+    <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
+    
+    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
+    
+    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
+    
+    <category term="天人合一" scheme="http://notego.top/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/"/>
+    
+    <category term="逍遥" scheme="http://notego.top/tags/%E9%80%8D%E9%81%A5/"/>
+    
+    <category term="养生" scheme="http://notego.top/tags/%E5%85%BB%E7%94%9F/"/>
+    
+    <category term="辩证" scheme="http://notego.top/tags/%E8%BE%A9%E8%AF%81/"/>
+    
+    <category term="无待" scheme="http://notego.top/tags/%E6%97%A0%E5%BE%85/"/>
+    
+    <category term="小大之辩" scheme="http://notego.top/tags/%E5%B0%8F%E5%A4%A7%E4%B9%8B%E8%BE%A9/"/>
+    
+    <category term="鹏" scheme="http://notego.top/tags/%E9%B9%8F/"/>
+    
+    <category term="超越" scheme="http://notego.top/tags/%E8%B6%85%E8%B6%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习</title>
+    <link href="http://notego.top/2021/03/31/ji-qi-xue-xi/"/>
+    <id>http://notego.top/2021/03/31/ji-qi-xue-xi/</id>
+    <published>2021-03-31T20:24:54.000Z</published>
+    <updated>2022-09-27T02:14:07.185Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数学基础&quot;&gt;&lt;a href=&quot;#数学基础&quot; class=&quot;headerlink&quot; title=&quot;数学基础&quot;&gt;&lt;/a&gt;数学基础&lt;/h2&gt;&lt;h3 id=&quot;线性代数&quot;&gt;&lt;a href=&quot;#线性代数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="监督学习" scheme="http://notego.top/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="无监督学习" scheme="http://notego.top/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="特征" scheme="http://notego.top/tags/%E7%89%B9%E5%BE%81/"/>
+    
+    <category term="过拟合" scheme="http://notego.top/tags/%E8%BF%87%E6%8B%9F%E5%90%88/"/>
+    
+    <category term="机器学习" scheme="http://notego.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="http://notego.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="概率" scheme="http://notego.top/tags/%E6%A6%82%E7%8E%87/"/>
+    
+    <category term="泛化" scheme="http://notego.top/tags/%E6%B3%9B%E5%8C%96/"/>
+    
+    <category term="偏差" scheme="http://notego.top/tags/%E5%81%8F%E5%B7%AE/"/>
+    
+    <category term="方差" scheme="http://notego.top/tags/%E6%96%B9%E5%B7%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL</title>
+    <link href="http://notego.top/2021/03/31/sql/"/>
+    <id>http://notego.top/2021/03/31/sql/</id>
+    <published>2021-03-31T20:18:56.000Z</published>
+    <updated>2021-11-25T09:15:13.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;SQL（Structured Query Language 结构化查询语言）是数据库操作的标准&lt;/p&gt;
+&lt;h3 id=&quot;SQL-amp-NoSQL&quot;&gt;&lt;a href=&quot;#SQL-amp-NoSQL&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://notego.top/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="SQL" scheme="http://notego.top/tags/SQL/"/>
+    
+    <category term="数据库" scheme="http://notego.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="主键" scheme="http://notego.top/tags/%E4%B8%BB%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python</title>
+    <link href="http://notego.top/2021/03/31/python/"/>
+    <id>http://notego.top/2021/03/31/python/</id>
+    <published>2021-03-31T20:17:10.000Z</published>
+    <updated>2022-03-14T02:04:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h3&gt;&lt;h4 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://notego.top/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="Python" scheme="http://notego.top/tags/Python/"/>
+    
+    <category term="JSON" scheme="http://notego.top/tags/JSON/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
+    
+    <category term="pandas" scheme="http://notego.top/tags/pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git</title>
+    <link href="http://notego.top/2021/03/31/git/"/>
+    <id>http://notego.top/2021/03/31/git/</id>
+    <published>2021-03-31T20:15:28.000Z</published>
+    <updated>2021-11-25T08:57:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git init   初始化仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;查询&quot;&gt;&lt;a href=&quot;#查询&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Git" scheme="http://notego.top/tags/Git/"/>
+    
+    <category term="版本管理" scheme="http://notego.top/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="code" scheme="http://notego.top/tags/code/"/>
+    
+  </entry>
+  
+</feed>

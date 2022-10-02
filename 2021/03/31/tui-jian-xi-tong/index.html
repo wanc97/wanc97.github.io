@@ -1,0 +1,2308 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="推荐系统, 方寸田园">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>推荐系统 | 方寸田园</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">方寸田园</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">方寸田园</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wanc97" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wanc97" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/image/rs3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">推荐系统</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%8E%A8%E8%8D%90/">
+                                <span class="chip bg-color">推荐</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%98%BE%E5%BC%8F%E5%8F%8D%E9%A6%88/">
+                                <span class="chip bg-color">显式反馈</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9A%90%E5%BC%8F%E5%8F%8D%E9%A6%88/">
+                                <span class="chip bg-color">隐式反馈</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/">
+                                <span class="chip bg-color">协同过滤</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%AC%E5%9B%9E/">
+                                <span class="chip bg-color">召回</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                推荐系统
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-31
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-12-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    11k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    38 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><ul>
+<li>推荐场景相对于图像、文本等场景来说，混沌程度更高；</li>
+<li>因为图像、文本等领域的信息高度集中在单一数据中，没有过于复杂的交互逻辑，换句话说人可以很容易识别图片中有什么，理解文本的情感，所以是把人可以做好的事情交给机器去做；</li>
+<li>而影响推荐的因素不胜枚举，往往只有极高情商的人可以做好推荐，所以推荐系统是去做人做不好的事情，是一种非常不同的挑战；</li>
+<li>当然这种不同既决定了推荐很难做到特别好，但同时也使得人们对推荐系统的效果有更高的容忍度；推荐推得奇奇怪怪大家容易接受，但计算机视觉指鹿为马一定会被嘲讽；</li>
+</ul>
+<h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>为什么需要推荐</strong></p>
+<ul>
+<li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li>
+<li>马太效应：头部效应明显，强者愈强；</li>
+<li>目标不明确：用户很多时候没有明确的需求。</li>
+<li>社会的发展趋势是建立越来越多的连接；推荐系统就是通过已有连接预测可能与人建立的连接。</li>
+</ul>
+<p><strong>推荐系统要解决</strong></p>
+<ul>
+<li>在数百毫秒内提供推荐结果<ul>
+<li>尽量离线完成各种计算，线上只保留非常少的步骤</li>
+<li>采用召回、粗排、精排、重排等多层架构，保障速度和准确性</li>
+</ul>
+</li>
+<li>发掘和创造未知的需求；</li>
+</ul>
+<p><strong>推荐的方式</strong></p>
+<ul>
+<li>社会化推荐：朋友；</li>
+<li>基于内容：利用用户、项目、环境特征，学习模型；<ul>
+<li>机器学习、数据驱动；</li>
+</ul>
+</li>
+<li>协同过滤：基于相似、使用交互数据；<ul>
+<li>用户可以齐心协力，通过不断地和平台互动，使推荐列表能够不断地过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</li>
+</ul>
+</li>
+<li>混合推荐：使用多种策略，优势互补，实际中多为混合。</li>
+</ul>
+<p><strong>影响推荐的元素</strong></p>
+<ul>
+<li>UI&amp;UE：即⼈机交互设计和⽤户体验设计，直接影响用户体验；</li>
+<li>数据：决定信息量，决定推荐效果的上限；</li>
+<li>领域知识：对业务的理解，才能设计更加合适的算法和策略，可以认为是人工先验知识，可以增加推荐系统的信息量；</li>
+<li>算法：影响系统的长期效果；</li>
+</ul>
+<p><strong>用户画像</strong></p>
+<ul>
+<li>推荐系统训练过程中的副产品，也就是用户、项目的各种属性特征，最后以向量化的方式呈现；</li>
+<li>最终用户画像的维度取决于哪些维度对于推荐有用；</li>
+</ul>
+<h4 id="相似度-距离"><a href="#相似度-距离" class="headerlink" title="相似度/距离"></a>相似度/距离</h4><ul>
+<li>不同的距离度量方式有各自的特点，无绝对优劣，应该针对问题场景选择；</li>
+</ul>
+<p><strong>欧氏距离</strong></p>
+<ul>
+<li>欧式空间中的绝对距离</li>
+<li>不适合隐式反馈</li>
+</ul>
+<p><strong>余弦距离</strong></p>
+<ul>
+<li>向量角度距离，不满足距离定义的三角不等式</li>
+<li>适用于主要考虑倾向性、情感方向，而数据量不等的场景，如摘要与文章的相似度，不同用户喜好相似度等</li>
+<li>适用于显示反馈的评分数据</li>
+</ul>
+<p><strong>皮尔逊相关系数</strong></p>
+<ul>
+<li>两个变量的协方差和标准差的商；</li>
+<li>余弦相似度度量的是向量的绝对方向，皮尔逊相关系数度量的是随机变量变化的方向差别是正相关还是负相关</li>
+</ul>
+<p><strong>杰卡德（Jaccard）系数</strong></p>
+<ul>
+<li>集合交集与并集的比，非常适合布尔向量；</li>
+<li>适合隐式反馈数据；</li>
+</ul>
+<h4 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h4><p>离线实验、单元测试、在线实验、用户访谈依次递进。</p>
+<p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
+<ul>
+<li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li>
+<li>缺点：无法计算商业关心的指标、离线实验的指标与实际商业指标存在gap。</li>
+</ul>
+<p><strong>单元业务规则测试</strong></p>
+<ul>
+<li>对部分/单元的业务/功能进行测试，考察是否正常工作，类似于传统的软件测试；</li>
+</ul>
+<p><strong>case分析</strong>：在上线测试前选定一部分case进行验证测试，通过调用推荐服务，查看一些代表性case的效果，查看推荐效果和一些可以计算的指标；</p>
+<ul>
+<li>重点：保住选定用户是整体的独立同分布采样，分层、随机采样</li>
+<li>优点：得到很多离线测试无法得到的指标</li>
+<li>缺点：成本高，效果越好需要越多用户</li>
+</ul>
+<p><strong>在线实验</strong>：AB测试，在实际环境下将用户随机分组，不同用户使用不同的推荐系统，测试效果</p>
+<ul>
+<li>优点：获得推荐算法的实际指标</li>
+<li>缺点：周期长，设计较为复杂</li>
+<li>影响因素：<ul>
+<li>流量大小：越大越好；</li>
+<li>流量分配是否均匀、分层、合理；</li>
+<li>流量是否无偏：前后实验是否相互影响；</li>
+</ul>
+</li>
+<li>流量划分：<ul>
+<li>域：对流量进行直接划分；为了更加灵活配置流量</li>
+<li>层：每一层做一个实验，各个层的划分相互正交；域和层之间可以连续嵌套；</li>
+<li>桶：一个层的实验中的每一个实验组都是一个桶，每一个桶对应一组特殊的参数；用户划分要通过合适的散列函数如MD5来进行均匀划分；</li>
+</ul>
+</li>
+<li>统计效果：流量越大，统计意义越明显</li>
+</ul>
+<p><strong>用户访谈</strong></p>
+<ul>
+<li>在线实验的指标可能不全面，可能损害长期效果，通过用户访谈发现一些潜在问题；</li>
+</ul>
+<h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><ul>
+<li>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</li>
+</ul>
+<p><strong>用户满意度</strong></p>
+<ul>
+<li>点击率、用户停留时间、转化率、用户评价等等，只能通过用户调查、在线测试获得。</li>
+</ul>
+<p><strong>预测准确率</strong></p>
+<ul>
+<li>离线评价指标，绝大多数的论文都会围绕这个指标。</li>
+<li>TopN推荐：准确率（Precision）、召回率（Recall），对于同一个模型或系统，两个指标相互矛盾<ul>
+<li>$\text { Recall }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|T(u)|}$</li>
+<li>$\text { Precision }=\frac{\sum_{u \in U}|R(u) \cap T(u)|}{\sum_{u \in U}|R(u)|}$</li>
+</ul>
+</li>
+<li>归一化折损累计增益NDCG</li>
+</ul>
+<p><strong>point-wise</strong></p>
+<ul>
+<li>对于一个用户，独立地给每个项目进行打分，如评分预测：RMSE（均方根误差）、MAE（绝对值误差），点击率预估等；</li>
+</ul>
+<p><strong>pair-wise</strong></p>
+<ul>
+<li>不关注项目的具体得分，而更多地要求将正样本排列在负样本前面；相对于point-wise可以增加数据量，因为每一个用户可以得到更多地正负样本对；</li>
+<li>AUC：ROC曲线下的面积；当有$M$个正例和$N$个负例时，总共有$M * N$个正负例对，当正例排在负例前时为正序贡献1，否则为逆序贡献0，如果得分相同则贡献0.5，所有的贡献和作为分子，除以对数$M * N$得到AUC值；</li>
+<li>BPR（Bayesian Personalized Ranking）：贝叶斯个性化排序，在pair-wise正负样本对的基础上加入先验知识（如L2正则化），最大化后验概率；</li>
+</ul>
+<p><strong>覆盖率</strong></p>
+<ul>
+<li>对所有用户的推荐item占总item的比例，评价是否有效地覆盖长尾商品，是item提供商重点关注的指标。</li>
+<li>$\text { Coverage }=\frac{\left|U_{u \in \mathrm{U}} R(u)\right|}{|I|}$</li>
+<li>这里未考虑不同item之间的公平性，可以用信息熵或基尼系数加以衡量</li>
+<li>$H=-\sum_{i=1}^{n} p(i) \log p(i)$</li>
+<li>$p(i)$是物品i的流行程度</li>
+<li>$G=\frac{1}{n-1} \sum_{j=1}^{n}(2 j-n-1) p(i_{j})$</li>
+</ul>
+<p><strong>个性化</strong></p>
+<ul>
+<li>不同用户推荐列表的相似程度；</li>
+<li>基尼系数：推荐项目的马太效应有多严重；</li>
+</ul>
+<p><strong>多样性</strong></p>
+<ul>
+<li>用户的兴趣往往是广泛的，因此需要避免推荐系统的推荐过于相似，这样难以发现用户潜在兴趣点。</li>
+<li>$\text { Diversity }=1-\frac{\sum_{i, j \in R(u), i \neq j} s(i, j)}{\frac{1}{2}|R(u)|(|R(u)|-1)}$</li>
+</ul>
+<p><strong>新颖性</strong></p>
+<ul>
+<li>推荐系统应该尽量不给用户推荐用户已经有过交互过的产品，既包括在本平台交互过的，也包括在其它地方交互过的。</li>
+<li>一些观点将新颖性定义为不流行程度</li>
+</ul>
+<p><strong>惊喜度</strong><br>推荐用户过去没有兴趣也没有交互，但交互后会满意的产品</p>
+<p><strong>信任度</strong><br>相同的产品，推荐方式的不同用户的反应会截然不同，例如以广告的方式呈现时用户容易反感，而告诉用户他的号朋友也在用时就更容易接受。</p>
+<p><strong>实时性</strong></p>
+<ul>
+<li>许多商品如新闻、微博具有时间限制；</li>
+<li>新商品的冷启动</li>
+</ul>
+<p><strong>鲁棒性</strong><br>具有抵挡攻击，反作弊的能力</p>
+<p><strong>商业效果</strong><br>如广告的投放量</p>
+<h4 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h4><h5 id="显式反馈"><a href="#显式反馈" class="headerlink" title="显式反馈"></a>显式反馈</h5><ul>
+<li>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等</li>
+<li>信息密度大但量小，用户从浏览、点击、加购物车、购买、评分是一系列漏斗，数据量越来越小</li>
+<li>对应评分预测</li>
+</ul>
+<h5 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h5><ul>
+<li>不能明确用户喜好的行为，包括：浏览记录等</li>
+<li>信息密度小但量大</li>
+<li>对应CTR（Click Through Rate）预估</li>
+<li>可以通过隐式反馈次数得到置信度，对损失函数进行加权</li>
+</ul>
+<h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>显式反馈</th>
+<th>隐式反馈</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户兴趣</td>
+<td>明确</td>
+<td>不明确</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>较少</td>
+<td>庞大</td>
+</tr>
+<tr>
+<td>存储</td>
+<td>数据库</td>
+<td>分布式文件系统</td>
+</tr>
+<tr>
+<td>正负反馈</td>
+<td>都有</td>
+<td>只有正反馈/单向信号</td>
+</tr>
+<tr>
+<td>数据形式</td>
+<td>主要实数</td>
+<td>主要布尔</td>
+</tr>
+</tbody></table>
+<h5 id="负样本"><a href="#负样本" class="headerlink" title="负样本"></a>负样本</h5><ul>
+<li>隐式反馈的信息一般提供用户感兴趣的正向信息，而模型训练还需要负向信息，因此需要对其它未交互的样本进行采样得到负样本；</li>
+</ul>
+<p><strong>随机负采样</strong></p>
+<ul>
+<li>思想比较直接，但是因为推荐中头部效应明显，能够学到的信息少；</li>
+<li>大量的未交互项目可能只是用户未发现，作为负样本不是很合理；</li>
+</ul>
+<p><strong>热门负采样</strong></p>
+<ul>
+<li>越热门的项目，用户看到的概率更大，可以以更大的概率进行采样；</li>
+<li>按照概率采样最后往往可以最大化表示与样本的互信息，有更好地关联性；</li>
+</ul>
+<p><strong>同类负采样</strong></p>
+<ul>
+<li>对一个正样本，它的同类样本相对于一般样本更有可能被交互，但是没有交互，里面有更多信息，可以加大采样频率；</li>
+</ul>
+<p><strong>浏览未交互</strong></p>
+<ul>
+<li>用户看到却没有点击/交互的项目有更加明显的负向信息，或者说有明确的监督信息；</li>
+</ul>
+<h4 id="实时推荐"><a href="#实时推荐" class="headerlink" title="实时推荐"></a>实时推荐</h4><ul>
+<li>信息的价值随时间衰减，所以用户的当下行为非常重要；</li>
+<li>实时的层次：响应快、实时特征、实时更新模型；</li>
+<li>将实时数据写入kafka中，另一侧从kafka中读取数据进行实时流计算；</li>
+<li>常见流计算框架：storm、S4、streaming；</li>
+</ul>
+<h4 id="推荐系统架构"><a href="#推荐系统架构" class="headerlink" title="推荐系统架构"></a>推荐系统架构</h4><p><strong>特点</strong></p>
+<ul>
+<li>实时响应；</li>
+<li>及时、准确、全面记录用户反馈数据/信息；</li>
+<li>降级；</li>
+<li>监控；</li>
+<li>便于策略实验；</li>
+</ul>
+<p><strong>通用架构</strong></p>
+<ul>
+<li>日志收集：从用户端收集各种数据信息；<ul>
+<li>现代推荐系统是数据驱动，数据获取是必要环节；</li>
+<li>数据用途由浅入深：制作报表、数据分析、机器学习；</li>
+<li>数据包括用户、项目等的静态信息和用户在使用产品的过程中产生的信息，一般通过埋点记录得到日志，整合成表格；</li>
+<li>需要保证数据的正确、完整、及时</li>
+</ul>
+</li>
+<li>数据处理/机器学习：根据收集的信息进行数据处理和机器学习的任务，提供项目打分；<ul>
+<li>模型训练等离线，打分实时；</li>
+<li>打分要明确目标；充分使用多目标信息；挖掘正向和负向信号；</li>
+</ul>
+</li>
+<li>内容发布：通过推/拉的方式将信息/项目推送到用户侧；<ul>
+<li>拉：用户侧调用服务或发送请求，以获取所需内容；更加实时，但是操作复杂；</li>
+<li>推：内容产生后推送给订阅者/粉丝等；非实时/延迟，可用性高，冗余存储；</li>
+<li>综合使用：活跃度高的用户、与作者/内容亲密度高的用户更多地推；活跃度低、亲密度低的用户更多地拉；</li>
+</ul>
+</li>
+<li>监控：监测系统运行的重要指标，确保系统的稳定和安全；</li>
+</ul>
+<p><strong>架构分层</strong></p>
+<table>
+<thead>
+<tr>
+<th>分层</th>
+<th>离线</th>
+<th>近线</th>
+<th>在线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>特点</td>
+<td>不使用实时数据，不提供实时服务</td>
+<td>使用实时数据，不保证实时服务</td>
+<td>使用实时数据，保证实时服务</td>
+</tr>
+<tr>
+<td>优势</td>
+<td>可以批量处理大量数据；没有响应时间限制</td>
+<td>使用实时信息且响应时间要求不严格</td>
+<td>信息全面；只进行必要计算</td>
+</tr>
+<tr>
+<td>约束</td>
+<td>静态信息，无法及时应对用户、环境变化</td>
+<td></td>
+<td>保证响应时间和稳定性</td>
+</tr>
+<tr>
+<td>举例</td>
+<td>协同过滤、数据处理/挖掘、模型训练等可以离线的尽可能离线</td>
+<td>根据实时数据对模型进行在线训练/更新</td>
+<td>排序打分；重排；过滤等逻辑；互动规则</td>
+</tr>
+</tbody></table>
+<p><strong>存储</strong></p>
+<ul>
+<li>数据类型：<ul>
+<li>稀疏型：ID特征、类别特征；</li>
+<li>dense/稠密型：embedding；</li>
+</ul>
+</li>
+<li>正排：一般用用户ID、项目ID，得到用户、项目的各种属性；需要列式数据库，如HBase、Cassandra等；</li>
+<li>倒排：一般以特征为key，得到一系列项目等；需要KV数据库，如Redis等；</li>
+<li>分布式参数服务器：存储机器学习模型参数；</li>
+<li>ElasticSearch：</li>
+</ul>
+<h4 id="常见开源工具-轮子"><a href="#常见开源工具-轮子" class="headerlink" title="常见开源工具/轮子"></a>常见开源工具/轮子</h4><p><strong>内容分析</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>场景</th>
+<th>接口语言</th>
+<th>分布式</th>
+<th>支持方</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LightLDA</td>
+<td>主题模型</td>
+<td>C++</td>
+<td>分布式</td>
+<td>Microsoft</td>
+</tr>
+<tr>
+<td>gensim</td>
+<td>主题模型，词嵌入</td>
+<td>Python</td>
+<td>单机多线程</td>
+<td>adimrehurek.com</td>
+</tr>
+<tr>
+<td>plda</td>
+<td>主题模型</td>
+<td>C++</td>
+<td>单机多线程、分布式</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>DMWE</td>
+<td>词嵌入</td>
+<td>C++</td>
+<td>分布式</td>
+<td>Microsoft</td>
+</tr>
+<tr>
+<td>tensorflow-word2vec</td>
+<td>词嵌入</td>
+<td>Python</td>
+<td>分布式、单机</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>FastTest</td>
+<td>词嵌入，文本分类</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>liblinear</td>
+<td>文本分类</td>
+<td>C++、Python、Java等</td>
+<td>单机</td>
+<td>台湾大学</td>
+</tr>
+</tbody></table>
+<p><strong>协同过滤</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>场景</th>
+<th>接口语言</th>
+<th>分布式</th>
+<th>支持方</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>kgraph</td>
+<td>knn相似度计算和搜索</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>aaalgo</td>
+</tr>
+<tr>
+<td>annoy</td>
+<td>稠密低维向量KNN相似搜索</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>spotify</td>
+</tr>
+<tr>
+<td>faiss</td>
+<td>稠密低维向量KNN相似搜索，聚类</td>
+<td>C++、Python</td>
+<td>单机多线程、GPU加速</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>nmslib</td>
+<td>稠密低维向量KNN相似搜索</td>
+<td>C++、Python</td>
+<td>单机</td>
+<td>nmslib</td>
+</tr>
+<tr>
+<td>spark.rowmatrix.columnsimilarities</td>
+<td>基于用户/物品的协同过滤</td>
+<td>Scala、Java、Python</td>
+<td>单机多线程</td>
+<td>Twitter</td>
+</tr>
+<tr>
+<td>lightfm</td>
+<td>SVD矩阵分解，SVD++矩阵分解，BPR矩阵分解</td>
+<td>Python</td>
+<td>单机多线程</td>
+<td>lyst</td>
+</tr>
+<tr>
+<td>implicit</td>
+<td>基于用户/物品的协同过滤，ALS矩阵分解，BPR矩阵分解</td>
+<td>Python</td>
+<td>单机多线程、GPU加速</td>
+<td>benfrederickson.com</td>
+</tr>
+<tr>
+<td>QMF</td>
+<td>加权ALS矩阵分解，BPR矩阵分解</td>
+<td>C++、Python</td>
+<td>单机多线程</td>
+<td>Quora</td>
+</tr>
+</tbody></table>
+<h4 id="搜索、推荐、广告"><a href="#搜索、推荐、广告" class="headerlink" title="搜索、推荐、广告"></a>搜索、推荐、广告</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>搜索</th>
+<th>推荐</th>
+<th>广告</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>信息连接方式</td>
+<td>拉</td>
+<td>推、拉</td>
+<td>推</td>
+</tr>
+<tr>
+<td>关注点</td>
+<td>消费者</td>
+<td>消费者、生产者</td>
+<td>生产者</td>
+</tr>
+<tr>
+<td>是否需要惊喜</td>
+<td>否</td>
+<td>是</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>倒排索引</td>
+<td>用</td>
+<td>一般用</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>共同架构：过滤/召回、排序</li>
+</ul>
+<h3 id="经典推荐算法"><a href="#经典推荐算法" class="headerlink" title="经典推荐算法"></a>经典推荐算法</h3><h4 id="基于流行度-热度-热门-排行榜"><a href="#基于流行度-热度-热门-排行榜" class="headerlink" title="基于流行度/热度/热门/排行榜"></a>基于流行度/热度/热门/排行榜</h4><p><strong>特点</strong></p>
+<ul>
+<li>非个性化；</li>
+<li>降级的推荐系统，在没有其它信息及其它策略出问题的时候兜底，可以类比一个信号的均值分量；</li>
+<li>可以作为老用户的兴趣发现方式</li>
+</ul>
+<p><strong>排序策略</strong></p>
+<ul>
+<li>绝对热度、比例（绝对热度/展示量，抵消展示量的偏差），缺点：<ul>
+<li>容易被攻击/刷榜；</li>
+<li>马太效应，一些项目长期存在；</li>
+</ul>
+</li>
+<li>考虑时间因素：让排序因素随时间衰减；</li>
+<li>考虑多种行为：如用户除了点击等赞成行为，还可能有踩等反对行为，以及一些可以反映项目质量的指标；</li>
+<li>考虑置信区间/威尔逊分数：根据样本数，计算好评率的置信分数，样本不足时，置信区间很宽；</li>
+<li>先验流行度：当项目没有曝光或曝光量较小时，无法计算绝对热度和比例，可以通过加入先验信息来得到一个流行度。<ul>
+<li>贝叶斯估计：根据全局或所属类别特征，得到先验的曝光量和点击量，在此基础上进行累加，得到平滑的流行度。</li>
+<li>时间段转化：如果流行度是针对一段时间的，可以将上一段时间的曝光量和点击量乘以一个时间折扣系数作为这一时间段的先验。</li>
+</ul>
+</li>
+</ul>
+<h4 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h4><h5 id="基于协同过滤（CF）"><a href="#基于协同过滤（CF）" class="headerlink" title="基于协同过滤（CF）"></a>基于协同过滤（CF）</h5><ul>
+<li>协同+过滤：相似+信息共用+过滤信息</li>
+<li>缓解单个用户/项目信息不足</li>
+</ul>
+<p><strong>基于相似用户的协同过滤</strong></p>
+<ul>
+<li>计算相似用户+用相似用户对于物品的评分组合得到目标用户对于物品的评分</li>
+<li>组合方式<ul>
+<li>平均</li>
+<li>按相似用户相似度加权平均</li>
+<li>减去相似用户的打分偏置后加权平均</li>
+</ul>
+</li>
+</ul>
+<p><strong>基于相似物品的协同过滤</strong></p>
+<ul>
+<li>物品与用户有着对等的关系，因此也可以从物品的角度进行协同过滤</li>
+<li>找到用户的偏好物品+计算物品的相似物品</li>
+</ul>
+<h5 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h5><ul>
+<li>矩阵分解的流行起源于10年前的Netflix大赛，当时各类矩阵分解模型都在实际数据中起到了很好的效果。</li>
+</ul>
+<p><strong>隐变量</strong></p>
+<ul>
+<li>“隐藏的变量”或者叫“隐藏的参数”</li>
+<li>如混合高斯分布中，一个样本可能来自不同的高斯分布，在每一个高斯分布上有一个权重；样本在各个分布上的权重就是隐变量。</li>
+</ul>
+<p><strong>矩阵分解</strong></p>
+<ul>
+<li>将$m * n$的用户项目交互矩阵分解为$m * k$和$k * n$的两个低秩矩阵的乘积；</li>
+<li>每一个长度为$k$的低维向量用来代表一个用户或项目，其中有$k$个隐变量；</li>
+<li>每一个隐变量指示一个隐含的分布/特征，虽然不能直接说出这些隐变量的含义，但是可以通过隐变量预测用户和项目的可能交互概率。</li>
+<li>通过矩阵分解可以极大地降低参数量，提升参数的泛化性能；</li>
+</ul>
+<p><strong>分解方式</strong></p>
+<ul>
+<li>交替最小二乘法：两个潜在矩阵交替寻优；</li>
+<li>梯度下降；</li>
+<li>其它各种数学方法，SVD分解，概率矩阵分解。。。</li>
+</ul>
+<p><strong>提取偏置信息</strong></p>
+<ul>
+<li>不同的人、项目、全局的平均分都不一样，可以将这个平均分/偏置提取出来单独学习</li>
+</ul>
+<p><strong>加入特征信息</strong></p>
+<ul>
+<li>经典的矩阵分解有冷启动的问题；没有利用各种其它特征信息。</li>
+<li>加入特征信息的方式是将隐向量写成各种特征信息的组合，这样在学习的过程中不仅可以学到隐向量，还可以得到各个特征的表示，解决冷启动，还可以对隐向量表示起到一定的正则化效果。</li>
+</ul>
+<p><strong>划分时间</strong></p>
+<ul>
+<li>不同时间的数据训练不同的隐向量</li>
+</ul>
+<h5 id="张量分解（TF）"><a href="#张量分解（TF）" class="headerlink" title="张量分解（TF）"></a>张量分解（TF）</h5><ul>
+<li>张量分解是矩阵分解的推广，矩阵分解运用在用户和项目两个角度，而张量可以拓展到更高的角度，如用户、项目、上下文。</li>
+<li>张量分解的方法：<ul>
+<li><strong>CP分解</strong>：把$m * n * r$的用户项目上下文矩阵分解为$m * k$和$n * k$和$r * k$低秩矩阵，小矩阵可以相乘直接还原出原矩阵；</li>
+<li><strong>高阶奇异值</strong>分解：把$m * n * r$的用户项目上下文矩阵分解为$m * a$和$n * b$和$r * c$低秩矩阵，小矩阵不能直接还原出原矩阵，但是自由度更高;</li>
+</ul>
+</li>
+<li>张量分解的稀疏性问题更加严重</li>
+<li>矩阵分解和张量分解都可以用神经网络代替后面的内积运算/还原过程，得到能力更强的现代推荐算法。</li>
+</ul>
+<h5 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h5><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
+<h5 id="神经协同过滤（NCF）"><a href="#神经协同过滤（NCF）" class="headerlink" title="神经协同过滤（NCF）"></a>神经协同过滤（NCF）</h5><ul>
+<li>可以看成矩阵分解的非线性拓展，将用户侧embedding与项目侧embedding共同通过神经网络得到输出；</li>
+<li>可以通过加入side info来使用特征信息，缓解冷启动；</li>
+</ul>
+<h4 id="基于内容-amp-特征交叉"><a href="#基于内容-amp-特征交叉" class="headerlink" title="基于内容&amp;特征交叉"></a>基于内容&amp;特征交叉</h4><h5 id="基于内容信息-LR"><a href="#基于内容信息-LR" class="headerlink" title="基于内容信息/LR"></a>基于内容信息/LR</h5><ul>
+<li>把推荐系统当做监督学习任务来看待，输入用户和物品各种特征，预测点击量、购买率等信息。</li>
+<li>核心就是认为需要预测的变量（评分、点击率等等）是所有显式变量的一个回归结果。</li>
+<li>最基础的模型是逻辑斯蒂回归（LR）：学习各个特征权重，不能直接学到交叉特征；如果要交叉特征需要手动交叉，泛化性差；</li>
+</ul>
+<h5 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h5><ul>
+<li>基于内容+矩阵分解思想</li>
+<li>主体是基于内容的做法，输入特征，得到预测值</li>
+<li>在LR的基础上增加二阶交叉特征，用矩阵分解的方式得到交叉特征的权重，降低参数量，提升泛化性</li>
+</ul>
+<h5 id="基于域的分解机（FFM）"><a href="#基于域的分解机（FFM）" class="headerlink" title="基于域的分解机（FFM）"></a>基于域的分解机（FFM）</h5><ul>
+<li>Field-aware Factorization，在FM的基础上引入Field的概念，每一个特征不止有一个隐因子向量，而是对不同的Field各有一个隐因子向量；</li>
+<li>FM在LR的基础上大幅降低参数量，提升泛化性，而FFM则是在FM的基础上后退一步，增加参数量，提升模型表达能力；</li>
+</ul>
+<h5 id="LR-GBDT"><a href="#LR-GBDT" class="headerlink" title="LR+GBDT"></a>LR+GBDT</h5><ul>
+<li>GBDT适合做特征组合，每一棵树就是在依次组合出不同的交叉特征；LR为每一棵树的结果学习权重；</li>
+<li>通过树模型得到高阶交叉特征；</li>
+</ul>
+<h5 id="Wide-amp-Deep"><a href="#Wide-amp-Deep" class="headerlink" title="Wide&amp;Deep"></a>Wide&amp;Deep</h5><ul>
+<li>Wide部分就是LR，擅长记忆，可以拿到用户的基本信息；Deep部分擅长学习泛化能力的特征。</li>
+<li>Wide部分使用带L1正则化的Follow-the-regularized-leader(FTRL)进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
+</ul>
+<h5 id="DeepFM"><a href="#DeepFM" class="headerlink" title="DeepFM"></a>DeepFM</h5><ul>
+<li>类似于Wide&amp;Deep，一边用FM，另一边用神经网络得到高阶交叉特征；</li>
+</ul>
+<h5 id="DCN"><a href="#DCN" class="headerlink" title="DCN"></a>DCN</h5><ul>
+<li>离散特征转化为embedding，与dense特征级联，得到输入向量；</li>
+<li>cross网络和deep网络并联：<ul>
+<li>cross网络的公式：$x_{l+1}=x_0x^T_lw_l+b_l+x_l$，其中$x_0x^T_lw_l$将上一层的embedding与输入交叉，最后的$x_l$则以直连的方式实现残差连接；</li>
+<li>deep网络则通过MLP使用特征组合的方式；</li>
+</ul>
+</li>
+</ul>
+<h4 id="用户历史行为"><a href="#用户历史行为" class="headerlink" title="用户历史行为"></a>用户历史行为</h4><h5 id="YoutubeNet"><a href="#YoutubeNet" class="headerlink" title="YoutubeNet"></a>YoutubeNet</h5><ul>
+<li>将用户历史观看的视频embedding通过mean pooling来得到一个用户侧特征；然后用户侧特征级联得到一个向量，通过MLP得到用户embedding；</li>
+</ul>
+<h5 id="Spotify"><a href="#Spotify" class="headerlink" title="Spotify"></a>Spotify</h5><ul>
+<li>用循环神经网络来做歌单的下一首歌推荐；</li>
+</ul>
+<h5 id="DIN-Deep-Interest-Network"><a href="#DIN-Deep-Interest-Network" class="headerlink" title="DIN/Deep Interest Network"></a>DIN/Deep Interest Network</h5><ul>
+<li>将用户交互历史序列作为特征信息输入；</li>
+<li>对用户交互序列进行attention加权pooling，重点关注与此次打分相关的历史项目，可以起到多兴趣的效果；</li>
+<li>attention是计算历史交互项目与待打分项目之间的关系；<img src='/medias/image/推荐系统-DIN.jpg' width="100%"></li>
+</ul>
+<h5 id="DIEN-Deep-Interest-Evolution-Network"><a href="#DIEN-Deep-Interest-Evolution-Network" class="headerlink" title="DIEN/Deep Interest Evolution Network"></a>DIEN/Deep Interest Evolution Network</h5><ul>
+<li>DIN等直接将用户历史看做用户兴趣，难以反应用户潜在兴趣和用户兴趣演变；</li>
+<li>Interest Extractor层用GRU对用户交互行为进行基础的兴趣建模；并引入辅助loss，将序列中的下一个item用来监督上一个单元的输出，降低GRU层的长时间依赖问题，降低优化难度；</li>
+<li>Interest Evolving层用带注意力更新门的GRU/AUGRU来学习兴趣演化过程，每个项目与待打分项目计算权重，用于更新隐状态；</li>
+<li>在用户行为序列的信息利用上，结合了注意力和GRU的优势，能更好的表达兴趣和兴趣演化；<img src='/medias/image/推荐系统-DIEN.jpg' width="100%"></li>
+</ul>
+<h5 id="DSIN-Deep-Session-Interest-Network"><a href="#DSIN-Deep-Session-Interest-Network" class="headerlink" title="DSIN/Deep Session Interest Network"></a>DSIN/Deep Session Interest Network</h5><ul>
+<li>引入session的信息，根据sequence中项目的时间间隔进行切分，超过30min就认为是两个session，同一个session中的历史交互项目高度同构，而不同session高度异构；</li>
+<li>使用带有bias编码的自注意力模块来抽取用户每个session的兴趣特征，表示编码起到位置编码的作用；</li>
+<li>使用Bi-LSTM去捕捉用户在多个历史会话中兴趣的交互和演变；</li>
+<li>计算待打分项目与各个session的相似度，加权求和；<img src='/medias/image/推荐系统-DSIN.jpg' width="100%"></li>
+</ul>
+<h4 id="多目标"><a href="#多目标" class="headerlink" title="多目标"></a>多目标</h4><h5 id="ESMM-Entire-Space-Multi-Task-Model"><a href="#ESMM-Entire-Space-Multi-Task-Model" class="headerlink" title="ESMM/Entire Space Multi-Task Model"></a>ESMM/Entire Space Multi-Task Model</h5><ul>
+<li>两个完全一样的子模型学习pCTR和pCVR，然后将这两个值相乘得到pCTCVR，损失函数是pCTR和pCTCVR的乘积；</li>
+<li>pCTR的正样本是有点击行为的曝光事件，负样本是没有点击行为的曝光事件。PCTCVR的正样本是同时具有点击和转化的曝光事件，负样本是没有点击的或者点击没有转化的曝光事件。</li>
+<li>两个子模型共享embedding，缓解数据稀疏性的问题；</li>
+<li>结构设计使得pCVR的子模型也可以从曝光未点击的样本中学习；缓解使用用户点击的样本来训练，而用的整个样本空间来预测的样本选择偏差；</li>
+</ul>
+<h5 id="MMoE-Multi-gate-Mixture-of-Experts"><a href="#MMoE-Multi-gate-Mixture-of-Experts" class="headerlink" title="MMoE/Multi-gate Mixture-of-Experts"></a>MMoE/Multi-gate Mixture-of-Experts</h5><ul>
+<li>许多多目标的模型采用Shared-Bottom的方式，共享底层网络，在多目标任务接近时效果较好，而在多目标差异较大时效果一般；</li>
+<li>MoE是使用简单的前馈神经网络和可训练门控单元组成的子结构，门控单元根据输入控制前馈神经网络的输出；</li>
+<li>MMoE用多个MoE并行代替Shared-Bottom网络，当多任务的相关性越低时，MMoE的效果越明显；</li>
+</ul>
+<h4 id="多兴趣"><a href="#多兴趣" class="headerlink" title="多兴趣"></a>多兴趣</h4><h5 id="MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall"><a href="#MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall" class="headerlink" title="MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall"></a>MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall</h5><ul>
+<li>一般的召回是根据用户属性及历史交互项目为用户生成一个表示向量，同时用项目属性给项目生成一个表示向量，计算其相似度；多兴趣网络的不同是会为用户生成多个不同的交互向量，以表征用户在多方面的兴趣；</li>
+<li>Embedding &amp;&amp; Pooling：用户侧特征embedding做concat，项目侧特征embedding做average pooling；</li>
+<li>根据$K_u=max(1,min(K,log_2(|I_u|)))$自适应地计算一个用户的兴趣数量，其中$|I_u|$表示用户的历史交互数量；</li>
+<li>胶囊网络的兴趣提取在每一个兴趣胶囊和每一个历史交互项目之间计算，因为兴趣和历史项目之间的路由系数是随机初始化的，所以每个兴趣胶囊会以不同比例提取历史交互项目的信息；</li>
+<li>每个兴趣表示都与用户属性embedding级联通过MLP得到用户表示；</li>
+<li>训练阶段目标项目与用户表示通过计算注意力得到最终的相似度；而召回时采用每一个用户表示分别召回；<img src='/medias/image/推荐系统-MIND.jpg' width="100%"></li>
+</ul>
+<h5 id="ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation"><a href="#ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation" class="headerlink" title="ComiRec/Controllable Multi-Interest Framework for Recommendation"></a>ComiRec/Controllable Multi-Interest Framework for Recommendation</h5><ul>
+<li>相比MIND只使用用户交互序列来作为用户侧输入；</li>
+<li>因为兴趣固定，所以胶囊网络可以使用原始版本；</li>
+<li>还提出了使用Self-Attentive的方式来捕捉多兴趣；</li>
+<li>训练阶段直接选择最接近的兴趣表示，不进行组合，网络更浅；</li>
+<li>在线上召回时还考虑召回项目之间的多样性； <img src='/medias/image/推荐系统-ComiRec.jpg' width="100%"></li>
+</ul>
+<h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="多目标-1"><a href="#多目标-1" class="headerlink" title="多目标"></a>多目标</h4><h5 id="目的-amp-困难"><a href="#目的-amp-困难" class="headerlink" title="目的&amp;困难"></a>目的&amp;困难</h5><ul>
+<li>推荐系统中的数据大多是隐式反馈；<ul>
+<li>且以漏斗的形式出现，如电商场景下的点击、收藏、加购物车、购买、评价等，数量依次减少；</li>
+<li>同时有许多可以共同优化的目标，如留存、观看时长、分享等；</li>
+</ul>
+</li>
+<li>众多的目标都是我们想要优化的：优化多目标可以得到更多的数据量，缓解数据稀疏性；</li>
+<li>优化多目标有许多困难：<ul>
+<li>不同用户的表达偏好不同，有的倾向于点赞，有的倾向于收藏等；</li>
+<li>不同物品的目标之间存在偏差，如标题党在点击量上占优势；</li>
+<li>不同目标的重要程度不一样，如购买高于收藏；</li>
+</ul>
+</li>
+</ul>
+<h5 id="改变样本权重"><a href="#改变样本权重" class="headerlink" title="改变样本权重"></a>改变样本权重</h5><ul>
+<li>对重要的优化目标的样本给更大的权重，可以在不调整模型架构的情况下，实现多个目标的预测；</li>
+<li>没有对多目标进行建模，样本权重的确定比较主观；</li>
+</ul>
+<h5 id="多模型分数融合"><a href="#多模型分数融合" class="headerlink" title="多模型分数融合"></a>多模型分数融合</h5><ul>
+<li>排序阶段为每一个目标单独训练出一个分数，然后在重排阶段将这些分数组合成一个新的分数，可以采用连乘、指数等方式；</li>
+<li>模型简单，但是分数融合的超参数难以学习；</li>
+</ul>
+<h5 id="排序学习（Learning-To-Rank，LTR）"><a href="#排序学习（Learning-To-Rank，LTR）" class="headerlink" title="排序学习（Learning To Rank，LTR）"></a>排序学习（Learning To Rank，LTR）</h5><ul>
+<li>借助pair-wise的训练方式，让重要的目标排在前面，如购买比点击重要，则购买的商品应该排在点击的商品前面；</li>
+<li>只需要单个模型，不需要设计主观的超参数；</li>
+<li>样本不平衡的问题可能会被放大，如点击10次在这里也还是算一次；</li>
+</ul>
+<h5 id="多任务学习（Multi-Task-Learning，MTL）"><a href="#多任务学习（Multi-Task-Learning，MTL）" class="headerlink" title="多任务学习（Multi-Task Learning，MTL）"></a>多任务学习（Multi-Task Learning，MTL）</h5><ul>
+<li>思想类似于迁移学习；</li>
+</ul>
+<p><strong>基于参数的共享/Parameter Based</strong></p>
+<ul>
+<li>多个任务共用底层的网络结构，在后面分开采用不同的结构；</li>
+<li>如果多个目标直接的关联性强，则可以起到相互增强的想过，缓解数据稀疏；反之如果关联性不强则可能相互干扰；</li>
+</ul>
+<p><strong>基于约束的共享/Regularization Based</strong></p>
+<ul>
+<li>每个任务有各自的模型和参数，可以选择对不同模型的一些参数加上约束，如通过L2正则化来拉近它们的距离；</li>
+</ul>
+<h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p><strong>内容源去重</strong></p>
+<ul>
+<li>对不同来源的内容进行重复识别和过滤；</li>
+</ul>
+<p><strong>曝光过滤/去重</strong></p>
+<ul>
+<li>过滤类型：<ul>
+<li>历史曝光</li>
+<li>历史曝光类似</li>
+<li>同一产品不同位置重复</li>
+</ul>
+</li>
+<li>过滤位置：<ul>
+<li>召回：<ul>
+<li>如果使用es框架，可以在召回前做，将用户曝光序列或曝光相似序列作为not query；</li>
+<li>如果使用redis等kv存储结构，不支持查询时，过滤时则在召回后过滤。</li>
+</ul>
+</li>
+<li>重排：在计算资源足够的情况下，可以在重排阶段，对相似度高的项目进行过滤</li>
+</ul>
+</li>
+</ul>
+<p><strong>重复识别</strong></p>
+<ul>
+<li>hash算法：如MD5，缺点是内容改一点点，指纹/哈希值就会非常不同，无法识别类似或者说几乎一致的内容；</li>
+<li>Simhash：所产生的hash签名在一定程度上可以表征原内容的相似度。<ul>
+<li>流程：分词并设计权重、词hash成整数/二进制序列、加权合并、得到Simhash签名、计算汉明距离</li>
+<li>寻找重复的优化：两两计算记录复杂度高，可以通过哈希表的思路简化；</li>
+</ul>
+</li>
+<li>Bloomfilter/布隆过滤器：通过多个独立的hash函数共同判断是否重复；</li>
+</ul>
+<h4 id="加权采样"><a href="#加权采样" class="headerlink" title="加权采样"></a>加权采样</h4><p><strong>应用场景</strong></p>
+<ul>
+<li>标签召回时，标签数量多，如果全用计算量大，用一部分则会丢失信息，通过加权采样可以：<ul>
+<li>大大减少召回时的计算复杂度；</li>
+<li>可以保留更多的用户标签/信息；</li>
+<li>每次召回计算时还能有所变化；</li>
+<li>虽然有变化，但是依然受标签的权重相对大小约束。</li>
+</ul>
+</li>
+<li>排行榜的分数由许多元素组成，可以进行采样</li>
+</ul>
+<p><strong>有限数据集采样</strong></p>
+<ul>
+<li>生成随机数，乘以权重，排序取top，得到的结果与权重成正比；</li>
+<li>在指数分布上采样，将权重融入到分布参数中；</li>
+</ul>
+<p><strong>无限数据集</strong></p>
+<ul>
+<li>蓄水池采样：需要$k$个样本，当第$n$个样本到来时，以$\frac{k}{n}$的概率替换原有缓存，以保证流式数据可以等概率采样；</li>
+</ul>
+<h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><ul>
+<li>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。</li>
+<li>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</li>
+<li>召回与排序都是推荐算法，但是召回面对的是海量的待选，因此从算法上降低复杂度并从工程上简化线上流程。</li>
+</ul>
+<h4 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h4><p><strong>无个性化</strong><br>只使用项目侧特征</p>
+<ul>
+<li>热门召回、高复购、高潜力、。。。</li>
+</ul>
+<p><strong>有个性化</strong><br>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p>
+<h4 id="向量化召回"><a href="#向量化召回" class="headerlink" title="向量化召回"></a>向量化召回</h4><ul>
+<li>通过用户的向量到库中寻找最近/相似的项目</li>
+<li>本质上是一个KNN问题</li>
+<li>工程上会通过一些方式来加速</li>
+</ul>
+<h5 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h5><p><strong>faiss</strong><br>由Facebook开发，为稠密向量提供高效相似度搜索和聚类的框架。</p>
+<ul>
+<li>提供多种检索方法</li>
+<li>速度快</li>
+<li>可存在内存和磁盘中</li>
+<li>C++实现，提供Python封装调用。</li>
+<li>大部分算法支持GPU实现</li>
+<li>加速搜索<ul>
+<li>通过K-means建立聚类中心</li>
+<li>将聚类信息写入倒排中，</li>
+<li>搜索时先查询聚类中心，再查询最近的相似向量</li>
+</ul>
+</li>
+</ul>
+<p><strong>KDtree</strong><br>将数据递归的在各个维度上二分到超矩形中</p>
+<p><strong>Balltree</strong><br>将数据划分到超球中</p>
+<p><strong>Annoy</strong><br>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
+<p><strong>NSW</strong></p>
+<ul>
+<li>Navigable Small World graphs：基于图，从任意节点开始，计算自己与近邻节点到目标点的距离，更新为最近的点，依次进行至找到最近的节点。</li>
+<li>经典思路复杂度较高，可以通过依次随机插入的方式构图，来得到节点连接的高速公路，降低计算量</li>
+<li>HNSW加入了跳表结构做了进一步优化，每一个点都有50%概率进入上一层的有序链表。这样可以保证表层是“高速通道”，底层是精细查找，计算时从上往下依次查找。</li>
+</ul>
+<h5 id="协同过滤召回"><a href="#协同过滤召回" class="headerlink" title="协同过滤召回"></a>协同过滤召回</h5><ul>
+<li>通过历史交互行为计算相似，或先矩阵分解，通过隐向量计算相似；</li>
+</ul>
+<h5 id="graph-embedding"><a href="#graph-embedding" class="headerlink" title="graph embedding"></a>graph embedding</h5><ul>
+<li>将项目序列建图，在图上通过graph embedding的方式得到项目embedding，进而得到相似项目；</li>
+<li>mixed graph-vector model:利用协同过滤CF得到相似最近邻，进而根据最近邻建图，再用graph embedding；</li>
+</ul>
+<h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><ul>
+<li>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。</li>
+<li>召回要求快，所使用到的模型不能太复杂。</li>
+<li>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</li>
+</ul>
+<h5 id="DSSM-双塔"><a href="#DSSM-双塔" class="headerlink" title="DSSM/双塔"></a>DSSM/双塔</h5><ul>
+<li>Deep Structured Semantic Models：深度语义匹配模型，分别为用户/query，和项目/doc等构建一个子网络，子网络输出embedding向量，训练好网络后可以离线保存项目的向量，在线得到用户侧embedding向量，计算相似度，向量化召回；</li>
+<li>双塔设计的目的是为了快，线上只需要进行内积运算；如果用户侧没有实时特征，则可以直接做成倒排拉链存储，线上只需要查询；</li>
+<li>內积也可以换成其它合适的距离度量方式，如余弦相似度等；</li>
+</ul>
+<h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p>
+<h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
+<p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
+<h5 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h5><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p><strong>词汇</strong></p>
+<ul>
+<li>会话session推荐：基于会话中已知项目，进行next-item预测；</li>
+</ul>
+<p><strong>发展脉络</strong></p>
+<ul>
+<li>记忆：<ul>
+<li>LR：一层网络/线性模型，能学到各个特征对于结果的贡献值，但不能学习到特征之间的交叉信息，想要得到交叉关系只能将特征组合成交叉特征。<ul>
+<li>能力有限，只能学到线性关系，能力上限明显，依赖人工组合特征，但是主要特征和重要组合特征已经可以满足很多需求了，因此简单实用。</li>
+<li>作为baseline模型，进一步优化需要人工组合特征，不适合进一步发展，能力较弱，难以平衡泛化性和模型容量。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Embedding：细化特征，从单个数据转化为一系列隐式特征，提高特征的表达能力；<ul>
+<li>矩阵分解：将用户和项目表示为Embedding隐向量。</li>
+<li>LR➕Embedding可以看成式学习多个LR然后集成，集成的时候LR的参数设为一致，不一致的部分就是Embedding。</li>
+<li>向量化召回：通过Embedding隐式的计算相似。</li>
+</ul>
+</li>
+<li>特征交叉：增加特征表达能力<ul>
+<li>LR：一阶特征或手动组合特征；</li>
+<li>FM：自动学习二阶特征；</li>
+<li>DNN：高阶交叉</li>
+<li>wide&amp;deep：LR低阶记忆+高阶交叉</li>
+</ul>
+</li>
+<li>Field &amp; Pooling：<ul>
+<li>Field：推荐领域的特征往往非常高维、稀疏，所有特征的Embedding如果都直接输入到模型中，参数量将难以承受，且泛化性较差；如果将同一类特征的Embedding进行整合，成为一个Embedding，这样可以大大降低参数量，这样得到的Embedding的信息更加有代表性，也更加具有泛化性。</li>
+<li>Pooling：将同一个Field中的Embedding进行整合的过程，包括mean/max、加权等等。<ul>
+<li>YoutubeNet：mean pooling；</li>
+<li>DIN：对用户交互序列进行attention加权pooling</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="融入对比学习"><a href="#融入对比学习" class="headerlink" title="融入对比学习"></a>融入对比学习</h4><p><strong>DHCN：Self-Supervised Hypergraph Convolutional Networks for Session-based Recommendation</strong></p>
+<ul>
+<li>DHCN：双通道超图卷积网络，引入自监督，最大化两个通道学习的会话表示之间的互信息，以改善推荐效果。</li>
+<li>超图：一个超边可以连接多个不同顶点，对应一个共同的权值，即一条超边对应一个会话。 </li>
+</ul>
+<h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><ul>
+<li>新用户、项目的信息比较少，很难学好；<ul>
+<li>新用户没有行为，也很少信息；</li>
+<li>新项目无反馈历史，也很难得到曝光，召回策略往往也是冷启动不友好；</li>
+</ul>
+</li>
+<li>所有的做法都是从各种角度加入信息，有信息是做好的必要条件；常见的是使用side information，以及通过各种非模型的策略。</li>
+</ul>
+<h4 id="side-information"><a href="#side-information" class="headerlink" title="side information"></a>side information</h4><ul>
+<li>利用<strong>属性特征</strong>，即ID特征以外，具有<strong>泛化能力</strong>的特征的embedding对冷启动项进行初始化。<ul>
+<li>DropoutNet：通过Dropout机制，促进模型充分学习各种特征，而不是专注在ID特征，以更好的实现冷启动。<ul>
+<li>DropoutNet: Addressing Cold Start in Recommender Systems. NeurIPS2017.</li>
+</ul>
+</li>
+<li>MetaEmbedding：用一个模型利用其它特征来初始化ID特征的embedding。<ul>
+<li>Warm Up Cold-start Advertisements: Improving CTR Predictions via Learning to Learn ID Embeddings. SIGIR2019.<img src='/medias/image/推荐系统-MetaEmbedding.jpg' width="100%"></li>
+</ul>
+</li>
+<li>Meta Warm Up Framework：考虑到冷启动商品与非冷启动商品的分布不同（有无/多少交互的用户/项），加入对应的结构，使得学到的分布更加准确。<ul>
+<li>Learning to Warm Up Cold Item Embeddings for Cold-start Recommendation with Meta Scaling and Shifting Networks. SIGIR2021.<img src='/medias/image/推荐系统-Meta Warm Up Framework (MWUF).jpg' width="100%"></li>
+</ul>
+</li>
+<li>Airbnb Word2vec：不使用属性的embedding，而是使用每个属性得到最近邻项目，根据最近邻项目的embedding合成新项目的表示；</li>
+</ul>
+</li>
+<li><strong>知识图谱</strong>：从图谱中挖掘信息。<ul>
+<li>。。。<ul>
+<li>Knowledge-aware Graph Neural Networks with Label Smoothness Regularization for Recommender Systems. KDD2019.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>跨领域推荐</strong>：一个领域信息丰富，另一个领域信息匮乏，可以将其它领域的信息用于辅助。<ul>
+<li>基于映射的方法：学习一个从一个领域到另一个领域的映射。<ul>
+<li>Cross-Domain Recommendation: An Embedding and Mapping Approach. IJCAI2017.</li>
+<li>Transfer-Meta Framework for Cross-domain Recommendation to Cold-Start Users. SIGIR2021.<img src='/medias/image/推荐系统-跨领域-map.jpg' width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>多行为推荐</strong>：用户可能没有购买，但是有点击、收藏等行为，可以使用这些信息辅助<ul>
+<li>。。。<ul>
+<li>Multi-behavior Recommendation with Graph Convolutional Networks. SIGIR2020.</li>
+<li>Modeling the Sequential Dependence among Audience Multi-step Conversions with Multi-task Learning in Targeted Display Advertising. KDD2021.<img src='/medias/image/推荐系统-多行为冷启动.jpg' width="100%"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="交互数据"><a href="#交互数据" class="headerlink" title="交互数据"></a>交互数据</h4><p>在有了一定的交互数据后就可以利用交互数据进行冷启动。</p>
+<h3 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h3><ul>
+<li>Exploit：通过已经探明的兴趣进行推荐</li>
+<li>Explore：通过与已有兴趣无关的逻辑推荐，探索用户兴趣</li>
+</ul>
+<h4 id="Bandit"><a href="#Bandit" class="headerlink" title="Bandit"></a>Bandit</h4><ul>
+<li>臂：可能的选择；</li>
+<li>回报：做选择后得到的奖励；</li>
+<li>环境：影响每个选择的因素，在推荐中不同的用户和其它实时特征都是环境；</li>
+<li>思路：确定高收益和尝试次数比较少（不确定性高）的选择更加容易被选择；</li>
+</ul>
+<p><strong>汤普森采样算法</strong></p>
+<ul>
+<li>认为每个用户在每个选择上的收益概率符合贝塔分布，当尝试次数较小时，分布比较发散，容易被探索，当尝试次数变多时，分布变得集中，是否被选中变得更加确定；</li>
+</ul>
+<p><strong>UCB算法</strong></p>
+<ul>
+<li>Upper Confidence Bound：置信区间上界，每个臂的得分由两部分组成，收益均值和不确定性，尝试次数越少，不确定性越高；即平均收益越高，尝试次数越少的臂越容易被选择；</li>
+</ul>
+<p><strong>LinUCB算法</strong></p>
+<ul>
+<li>不只是使用单个用户的尝试次数来获得收益均值和上界，而是通过用户特征来学习，每一个选择有一套参数，参数与输入用户的特征共同得到；</li>
+<li>相比UCB，参数量更少，收敛更快，泛化性更好；</li>
+<li>当选择的数量较少时，可以每个选择一套参数，当选择的数量过多时，可以引入选择的特征并共享参数；</li>
+</ul>
+<p><strong>Epsilon 贪婪算法</strong></p>
+<ul>
+<li>$p$是$(0,1)$之间的一个较小的数，每次以概率$p$随机选择一个臂，同时以概率$1-p$选择目前收益最高的选择；</li>
+<li>$p$越小就越保守，越大则越激进；</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">万川</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://notego.top/2021/03/31/tui-jian-xi-tong/">http://notego.top/2021/03/31/tui-jian-xi-tong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">万川</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%8E%A8%E8%8D%90/">
+                                    <span class="chip bg-color">推荐</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%98%BE%E5%BC%8F%E5%8F%8D%E9%A6%88/">
+                                    <span class="chip bg-color">显式反馈</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9A%90%E5%BC%8F%E5%8F%8D%E9%A6%88/">
+                                    <span class="chip bg-color">隐式反馈</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/">
+                                    <span class="chip bg-color">协同过滤</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8F%AC%E5%9B%9E/">
+                                    <span class="chip bg-color">召回</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你好，同行的有缘人</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/31/git/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/image/git1.jpg" class="responsive-img" alt="Git">
+                        
+                        <span class="card-title">Git</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                    计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">版本管理</span>
+                    </a>
+                    
+                    <a href="/tags/code/">
+                        <span class="chip bg-color">code</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/31/shu-ju-jie-gou-yu-suan-fa/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/image/as3.jpg" class="responsive-img" alt="数据结构与算法">
+                        
+                        <span class="card-title">数据结构与算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            更高、更快、更强
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%8C%E5%88%86/">
+                        <span class="chip bg-color">二分</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">遍历</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="chip bg-color">时间复杂度</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="chip bg-color">空间复杂度</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A0%91/">
+                        <span class="chip bg-color">树</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('20')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 方寸田园<br />'
+            + '文章作者: 万川<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">万川</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">125.8k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "3";
+                    var startDate = "31";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wanc97" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wanc97@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3221927185" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3221927185" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI4MzEzNjIxNw==#wechat_redirect" class="tooltipped" target="_blank" data-tooltip="微信联系我: W3221927185" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 雪花特效 --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
