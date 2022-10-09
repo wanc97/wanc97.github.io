@@ -473,21 +473,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-30
+                    2022-10-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.8k
+                    5.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    20 分
                 </div>
                 
 
@@ -716,7 +716,7 @@
 <ol>
 <li>重新训练；</li>
 <li>通过Word2Vec、GloVe等提前获得并固定；</li>
-<li>通过Word2Vec、GloVe等提前获得并继续训练。</li>
+<li>通过Word2Vec、GloVe等提前获得并继续训练。<img src='/medias/image/2022-10-08-12-03-35.png' width="100%"></li>
 </ol>
 <ul>
 <li>由于文本分类的数据集相对较小，因此第一种方式往往信息不充足；</li>
@@ -789,17 +789,14 @@
 <ul>
 <li>最佳的困惑度是1，也就是模型总是以1的概率正确预测词</li>
 <li>最坏的困惑度是$|V|$<ul>
-<li>表面上困惑度的值还可以增加到正无穷，但其实这种情况是学习到了某种反向的相关性<br>$$<br>Perplexity(y_{1:M})=2^{-\frac{1}{M}L(y_{1:M})} =<pre><code>    2^&#123;-\frac&#123;1&#125;&#123;M&#125;\sum\limits_&#123;t=1&#125;^M\log_2 p(y_t|y_&#123;1:t-1&#125;)&#125;=
-    2^&#123;-\frac&#123;1&#125;&#123;M&#125;\cdot M \cdot \log_2\frac&#123;1&#125;&#123;|V|&#125;&#125;=2^&#123;\log_2 |V|&#125; =|V|
-</code></pre>
-$$</li>
+<li>表面上困惑度的值还可以增加到正无穷，但其实这种情况是学习到了某种反向的相关性<br>$$<br>Perplexity(y_{1:M})=2^{-\frac{1}{M}L(y_{1:M})} = 2^{-\frac{1}{M}\sum\limits_{t=1}^M\log_2 p(y_t|y_{1:t-1})}=2^{-\frac{1}{M}\cdot M \cdot \log_2\frac{1}{|V|}}=2^{\log_2 |V|} =|V|<br>$$</li>
 </ul>
 </li>
 </ul>
 <h1 id="seq2seq"><a href="#seq2seq" class="headerlink" title="seq2seq"></a>seq2seq</h1><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>从一个序列到另一个序列的任务，一般包含编码器和解码器两个组件：<br><img src='/medias/image/2022-09-30-14-40-17.png' width="60%"></p>
 <p>最常见的seq2seq任务是机器翻译<br><img src='/medias/image/2022-09-30-14-38-52.png' width="80%"></p>
-<p>seq2seq任务可以看成是条件语言模型<br><img src='/medias/image/2022-09-30-14-41-17.png' width="60%"><br><img src='/medias/image/2022-09-30-14-42-53.png' width="100%"><br>当然，条件语言模型中的条件$x并不一定要是语言，也可以是图像等其它形式</p>
-<p><strong>损失函数</strong>与<strong>生成推理</strong>的解码问题与语言模型一致</p>
+<p>seq2seq任务可以看成是条件语言模型<br><img src='/medias/image/2022-09-30-14-41-17.png' width="60%"><br><img src='/medias/image/2022-09-30-14-42-53.png' width="100%"><br>当然，条件语言模型中的条件$x$并不一定要是文本，也可以是图像等其它形式</p>
+<p><strong>损失函数</strong>和<strong>生成推理</strong>的解码问题与语言模型一致</p>
 <h2 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h2><h3 id="RNN-1"><a href="#RNN-1" class="headerlink" title="RNN"></a>RNN</h3><p>最经典的结构<br><img src='/medias/image/2022-09-30-14-45-52.png' width="100%"><br>RNN编码器将输入的条件句转化为一个向量表示；<br>通过可视化可以发现，有相似意思的输入句子，在向量特征空间中比较接近：<br><img src='/medias/image/2022-09-30-14-47-48.png' width="100%"></p>
 <h3 id="注意力"><a href="#注意力" class="headerlink" title="注意力"></a>注意力</h3><h4 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h4><p>RNN编码器将输入句子的所有信息都压缩为一个向量；<br>这个过程会存在损失信息，且不相关的信息难以压缩的问题。<br>因此编码器与解码器之间的特征向量成了瓶颈。<br>注意力机制用待解码的特征向量与所有输入位置的特征向量计算出一个注意力分数：<br><img src='/medias/image/2022-09-30-15-11-56.png' width="100%"><br>这个注意力分数进一步归一化得到权重，与所有输入位置的特征向量加权求和得到最终的待解码特征向量：<br><img src='/medias/image/2022-09-30-15-12-09.png' width="80%"></p>
 <h4 id="注意力计算"><a href="#注意力计算" class="headerlink" title="注意力计算"></a>注意力计算</h4><p>注意力分数有多种方式可以计算，包括：</p>
@@ -846,6 +843,37 @@ $$</li>
 </tr>
 </tbody></table>
 <h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>transformer不能得到词在序列中的位置，而这是十分重要的<br>位置编码主动记录这种信息<br>$$<br>PE_{pos, 2i}=\sin(pos/10000^{2i/d_{model}}) \\<br>PE_{pos, 2i+1}=\cos(pos/10000^{2i/d_{model}})<br>$$<br><img src='/medias/image/2022-09-30-16-01-23.png' width="50%"></p>
+<h1 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="引入-3"><a href="#引入-3" class="headerlink" title="引入"></a>引入</h3><p>很多场景下数据量较小，难以训练出较好地模型，可以考虑将其它场景下训练好的包好丰富信息的模型迁移到目标场景。</p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><img src='/medias/image/2022-10-08-12-10-05.png' width="80%">
+
+<h2 id="词嵌入-2"><a href="#词嵌入-2" class="headerlink" title="词嵌入"></a>词嵌入</h2><p>如前文提到的，将词嵌入应用到文本分类等场景中：可以利用大量无标签文本对词嵌入进行预训练，然后将词嵌入应用到文本分类任务中微调，可以同时使用两个场景的数据信息。</p>
+<h2 id="基于语言模型的词嵌入"><a href="#基于语言模型的词嵌入" class="headerlink" title="基于语言模型的词嵌入"></a>基于语言模型的词嵌入</h2><p>词嵌入方法得到的词表示仅仅包含的词的使用信息，而通过语言模型得到的词表示可以包含词所在的上下文信息。</p>
+<p>因此基于语言模型的词嵌入：</p>
+<ul>
+<li>不是简单地训练并迁移词的嵌入向量；</li>
+<li>而是训练并迁移一个语言模型，使得新场景可以直接得到上下文的表示。<img src='/medias/image/2022-10-08-14-16-26.png' width="80%"></li>
+</ul>
+<h3 id="CoVe"><a href="#CoVe" class="headerlink" title="CoVe"></a>CoVe</h3><p>CoVe通过翻译的预训练任务来得到上下文词向量，具体的：</p>
+<ul>
+<li><p>设计一个机器翻译的任务：</p>
+<img src='/medias/image/2022-10-08-14-21-50.png' width="60%"></li>
+<li><p>将训练好的模型的编码器部分拿出来用在下游任务中，具体的将编码器的输出和词嵌入结合，其中包含了丰富的信息：</p>
+<img src='/medias/image/2022-10-08-14-22-41.png' width="40%"></li>
+</ul>
+<h3 id="ELMo"><a href="#ELMo" class="headerlink" title="ELMo"></a>ELMo</h3><p>在CoVe的基础上：</p>
+<ul>
+<li>将翻译任务改为了语言模型；</li>
+<li>不是直接查表得到词的嵌入而是使用一个字符级别的网络学习，可以扩展到不认识的词。<img src='/medias/image/2022-10-08-14-29-58.png' width="100%"></li>
+</ul>
+<p>最后将各个层的表示加权级联：<br><img src='/medias/image/2022-10-08-14-30-33.png' width="80%"></p>
+<h2 id="基于模型的迁移"><a href="#基于模型的迁移" class="headerlink" title="基于模型的迁移"></a>基于模型的迁移</h2><p>预训练环境不是只提供词表示，而是提供整个模型。<br>下游任务不需要设计各自的网络，只需要处理输入输出即可微调。<br><img src='/medias/image/2022-10-08-14-50-46.png' width="60%"></p>
+<h3 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h3><p>生成式预训练语言模型，相当于transformer的解码器部分，在预训练后可以用于各种任务：<br><img src='/medias/image/2022-10-08-14-59-32.png' width="100%"></p>
+<p>预训练阶段的损失函数为语言模型的损失函数：$L_{xent}=-\sum\limits_{t=1}^n\log(p(y_t| y_{\mbox{&lt;}t}))$<br>微调阶段的损失函数为语言模型的损失函数加上任务的损失函数：$L = L_{xent} + \lambda \cdot L_{task}$</p>
+<h3 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h3><p>双向编码器表示，相当于transformer的编码器部分</p>
+<p>BERT有两种预训练任务：NSP、MLM</p>
+<h3 id="NSP"><a href="#NSP" class="headerlink" title="NSP"></a>NSP</h3><p>分类任务，输入两个句子的连接，判断两个句子是否是前后句。<br>输入由句子的嵌入、位置嵌入、段落嵌入组成<br>正例和负例的比例各占一半</p>
+<h3 id="MLM"><a href="#MLM" class="headerlink" title="MLM"></a>MLM</h3><p>随机将一部分词改为mask、其他词或不变，在输出预测这些词<br><img src='/medias/image/2022-10-08-15-15-07.png' width="80%"></p>
+<h2 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h2><p>为了减少微调的参数量，适配器在预训练模型中插入一些参数量小的模块，并只训练这些模块：<br><img src='/medias/image/2022-10-08-15-29-27.png' width="80%"><br><img src='/medias/image/2022-10-08-15-29-38.png' width="100%"></p>
 
                 
             </div>
@@ -1344,7 +1372,7 @@ $$</li>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">125.8k</span>&nbsp;字
+                class="white-color">127k</span>&nbsp;字
             
             
             
