@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-09
+                    2022-10-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    15k
+                    15.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    62 分
+                    63 分
                 </div>
                 
 
@@ -1499,6 +1499,37 @@ deltas <span class="token operator">=</span> r <span class="token operator">+</s
 <h2 id="基于模型的策略优化"><a href="#基于模型的策略优化" class="headerlink" title="基于模型的策略优化"></a>基于模型的策略优化</h2><p>PETS等算法可以构建环境模型用于推演<br>Dyna算法可以通过历史数据来优化策略，减少交互数据的需求<br>因此<code>基于模型的策略优化(MBPO)</code>结合两者可以使用环境模型来生成数据，减少交互数据的需求</p>
 <p>具体的，MBPO算法会把真实环境样本作为分支推演的起点，使用模型进行一定步数的推演，并用推演得到的模型数据用来训练模型。<br><img src='/medias/image/2022-09-19-12-20-18.png' width="100%"><br>在复杂环境中，MBPO的表现远远好于PETS算法</p>
 <p>当模型误差、策略偏移程度较小时，可以采用较大的分支推演步数；反之要采用较小的分支推演步数，甚至不适合采用分支推演。</p>
+<h1 id="多智能体"><a href="#多智能体" class="headerlink" title="多智能体"></a>多智能体</h1><p>当环境中存在多个智能体时，存在许多困难：</p>
+<ul>
+<li>每个智能体所面对的环境是非稳态的；</li>
+<li>多个智能体的训练可能是多目标的</li>
+<li>训练评估的复杂度增加</li>
+</ul>
+<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><ul>
+<li>完全中心化：将多个智能体进行决策当作一个超级智能体在进行决策，即把所有智能体的状态聚合在一起当作一个全局的超级状态，把所有智能体的动作连起来作为一个联合动作。<ul>
+<li>环境稳态，可以保证收敛性</li>
+<li>不能应对智能体数量很多或者环境很大的情况</li>
+</ul>
+</li>
+<li>完全去中心化：每个智能体单独学习，不考虑其它智能体<ul>
+<li>环境不稳态</li>
+<li>有利于扩展</li>
+</ul>
+</li>
+<li>中心化训练去中心化执行：训练的时候采用中心化，智能体可以得到一些全局信息，而执行时采用去中心化，得不到全局信息</li>
+</ul>
+<h2 id="IPPO"><a href="#IPPO" class="headerlink" title="IPPO"></a>IPPO</h2><p>独立 PPO（Independent PPO，IPPO）：每个智能体使用一个PPO算法单独训练<br>当不同的智能体完全同质时，可以对不同智能体进行参数共享</p>
+<h2 id="MAPPO"><a href="#MAPPO" class="headerlink" title="MAPPO"></a>MAPPO</h2><p>在IPPO的基础上，将评论家进行中心化，让评论家可以观察到全局信息。<br>当然，如果智能体区别较大时，也可以使用不同的网络，不一定要参数共享，主要是要能看到全局信息。wanc</p>
+<h2 id="MADDPG"><a href="#MADDPG" class="headerlink" title="MADDPG"></a>MADDPG</h2><p>采用DDPG算法，每个智能体采用不同的actor，共用相同的critic<br>MADDPG针对连续动作，学习的是确定性策略。</p>
+<h2 id="COMA"><a href="#COMA" class="headerlink" title="COMA"></a>COMA</h2><p>采用中心化训练、去中心化执行：<br><img src='/medias/image/2022-10-17-11-11-17.png' width="100%"><br>采用反事实基线（counterfactual baseline）来解决信用分配的问题<br>COMA针对离散动作，学习的是​随机策略​。</p>
+<h2 id="VDN"><a href="#VDN" class="headerlink" title="VDN"></a>VDN</h2><img src='/medias/image/2022-10-17-10-23-58.png' width="40%">
+如图，在多智能体场景下使用完全独立的agent，每个agent无法知道全局信息，只能最大化自己的收益，这样无法得到整体的最优解，可能存在囚徒困境等问题。
+VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
+<img src='/medias/image/2022-10-17-10-27-12.png' width="40%">
+各个agent可以根据情况进行参数共享或不共享。
+通过优化整体的Q值来提升整体效果
+
+<h2 id="QMIX"><a href="#QMIX" class="headerlink" title="QMIX"></a>QMIX</h2><p>在VDN的基础上优化了整体Q值的计算，通过神经网络计算：<br><img src='/medias/image/2022-10-17-10-19-30.png' width="100%"><br>其中网络输入各个agent的Q值，同时网络的参数由整体状态值决定。</p>
 <h1 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h1><h2 id="稀疏奖励"><a href="#稀疏奖励" class="headerlink" title="稀疏奖励"></a>稀疏奖励</h2><p>很多场景下奖励和惩罚出现的频率很低，即稀疏，这样训练网络非常困难。</p>
 <h3 id="Reward-Shaping"><a href="#Reward-Shaping" class="headerlink" title="Reward Shaping"></a>Reward Shaping</h3><p>可以自己设计一个合适的环境reward，来引导智能体往合适的方向探索。</p>
 <h4 id="Curiosity"><a href="#Curiosity" class="headerlink" title="Curiosity"></a>Curiosity</h4><p>还可以设计一个好奇分数，将好奇分数加到价值上，增加智能体的探索：<br><img src='/medias/image/2022-09-05-11-47-12.png' width="60%"></p>
@@ -1533,27 +1564,6 @@ deltas <span class="token operator">=</span> r <span class="token operator">+</s
 </ul>
 <p>目标导向的强化学习会在策略网络、值网络的输入加上一个目标，这样可以给经验库中的数据加上合适的目标使得奖励信号变得稠密；同时可以应对目标变动的情况。</p>
 <h3 id="HER"><a href="#HER" class="headerlink" title="HER"></a>HER</h3><p>事后经验回放（hindsight experience replay，HER）是在数据层面应用目标导向的思想。<br><img src='/medias/image/2022-09-19-14-58-43.png' width="100%"></p>
-<h2 id="多智能体"><a href="#多智能体" class="headerlink" title="多智能体"></a>多智能体</h2><p>当环境中存在多个智能体时，存在许多困难：</p>
-<ul>
-<li>每个智能体所面对的环境是非稳态的；</li>
-<li>多个智能体的训练可能是多目标的</li>
-<li>训练评估的复杂度增加</li>
-</ul>
-<h3 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h3><ul>
-<li>完全中心化：将多个智能体进行决策当作一个超级智能体在进行决策，即把所有智能体的状态聚合在一起当作一个全局的超级状态，把所有智能体的动作连起来作为一个联合动作。<ul>
-<li>环境稳态，可以保证收敛性</li>
-<li>不能应对智能体数量很多或者环境很大的情况</li>
-</ul>
-</li>
-<li>完全去中心化：每个智能体单独学习，不考虑其它智能体<ul>
-<li>环境不稳态</li>
-<li>有利于扩展</li>
-</ul>
-</li>
-<li>中心化训练去中心化执行：训练的时候采用中心化，智能体可以得到一些全局信息，而执行时采用去中心化，得不到全局信息</li>
-</ul>
-<h3 id="IPPO"><a href="#IPPO" class="headerlink" title="IPPO"></a>IPPO</h3><p>独立 PPO（Independent PPO，IPPO）：每个智能体使用一个PPO算法单独训练<br>当不同的智能体完全同质时，可以对不同智能体进行参数共享</p>
-<h3 id="MADDPG"><a href="#MADDPG" class="headerlink" title="MADDPG"></a>MADDPG</h3><p>采用DDPG算法，每个智能体采用不同的actor，共用相同的critic</p>
 <h1 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>强化学习包含许多基本模块和思路，这些模块和思路分别被提出用以解决不同问题，当所面对的场景符合时，可以尝试拿来主义，将合适的额思想进行有机的结合。</p>
 <h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ul>
 <li>值函数：相对容易优化，可以评估状态或者状态动作对的价值</li>
@@ -2132,7 +2142,7 @@ deltas <span class="token operator">=</span> r <span class="token operator">+</s
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">127k</span>&nbsp;字
+                class="white-color">127.7k</span>&nbsp;字
             
             
             

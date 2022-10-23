@@ -489,7 +489,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-14
+                    2022-10-19
                 </div>
                 
 
@@ -604,6 +604,7 @@
     <span class="token keyword">break</span> <span class="token comment"># 也可以通过break终止循环 </span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
+<li>for语句可以作用于迭代器；迭代器内部都需要实现__iter__方法。</li>
 <li>顺序、条件、循环可以相互嵌套，但循环直接放在条件中的情况比较少，一般过于复杂的代码会用函数包装；</li>
 </ul>
 <h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><ul>
@@ -669,7 +670,7 @@ not_trans <span class="token operator">=</span> <span class="token string">r'在
 <li>$[i:i+n:m]$：从第i位开始至i+n位，不包括i+n位，每隔m位取一个。</li>
 <li>默认值$[0:length:1]$。</li>
 <li>值都可以大于列表长度，取不到就是空列表，不会越界报错。</li>
-<li>从0开始索引，左闭右开区间使得切片很优雅。</li>
+<li>从0开始索引，左闭右开区间使得切片很优雅。<br>step可以是负数，代表从后往前取，这种情况是先翻转再看索引来截取。</li>
 </ul>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span>
@@ -756,7 +757,7 @@ dict1<span class="token punctuation">.</span>items<span class="token punctuation
 
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="定义-amp-参数"><a href="#定义-amp-参数" class="headerlink" title="定义&amp;参数"></a>定义&amp;参数</h4><ul>
 <li>通过指定参数名字，可以变化参数的先后位置，但一般不建议变位置；</li>
-<li>默认参数可以不输入<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># c,d是可边长参数,c是list形式，d是字典形式</span>
+<li>默认参数可以不输入<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># c,d是可变长参数,c是list形式，d是字典形式</span>
 <span class="token keyword">def</span> <span class="token function">fun_name</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">*</span>c<span class="token punctuation">,</span> <span class="token operator">**</span>d<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
@@ -899,7 +900,7 @@ time<span class="token punctuation">.</span>localtime<span class="token punctuat
 time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">r'%Y-%m-%d %H:%M:%S'</span><span class="token punctuation">)</span>  <span class="token comment"># 结构化输出，选择输出哪几个量</span>
 
 nowtime <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># 当前时间</span>
-settime <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">)</span>  <span class="token comment"># 当前时间</span>
+settime <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">)</span>  <span class="token comment"># 设定时间</span>
 deltatime <span class="token operator">=</span> datetime<span class="token punctuation">.</span>timedelta<span class="token punctuation">(</span>minutes<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>  <span class="token comment"># 偏移时间</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>nowtime <span class="token operator">-</span> deltatime<span class="token punctuation">,</span> settime <span class="token operator">+</span> deltatime<span class="token punctuation">)</span>  <span class="token comment"># 时间计算</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -932,7 +933,7 @@ deltatime <span class="token operator">=</span> datetime<span class="token punct
         <span class="token comment"># Class_name1.__init__(att1,att2) 也可以用这种方式进行父类属性初始化，当从多个父类继承时，只能用这种方法</span>
         self<span class="token punctuation">.</span>att3 <span class="token operator">=</span> att3
         self<span class="token punctuation">.</span>att4 <span class="token operator">=</span> att4
-        <span class="token comment"># self.att1 = att4 如果子类定义了父类已经定义的变量或函数，则会覆盖/重写，即多台</span>
+        <span class="token comment"># self.att1 = att4 如果子类定义了父类已经定义的变量或函数，则会覆盖/重写，即多态</span>
     
     <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">pass</span>
@@ -1004,6 +1005,7 @@ json<span class="token punctuation">.</span>loads<span class="token punctuation"
     <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">#&#123;'name':'Tom','age':'8','score':88&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>ujson可以代替json，且速度更快。</p>
 <h4 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h4><ul>
 <li><code>Numpy</code>基于<code>c</code>语言实现，因此十分高效，<code>pandas</code>又基于<code>numpy</code>，提供更加丰富的功能。</li>
 <li>生成<code>ndarray</code>数据的三种主要方式：<blockquote>
@@ -1768,7 +1770,7 @@ torch<span class="token punctuation">.</span>tensor<span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">127k</span>&nbsp;字
+                class="white-color">127.7k</span>&nbsp;字
             
             
             
