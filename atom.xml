@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2022-10-22T13:23:57.556Z</updated>
+  <updated>2022-10-27T10:10:11.000Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>《人的全景》笔记</title>
     <link href="http://notego.top/2022/10/22/ren-de-quan-jing-bi-ji/"/>
     <id>http://notego.top/2022/10/22/ren-de-quan-jing-bi-ji/</id>
-    <published>2022-10-22T03:53:09.000Z</published>
-    <updated>2022-10-22T13:23:57.556Z</updated>
+    <published>2022-10-21T19:53:09.000Z</published>
+    <updated>2022-10-27T10:10:11.000Z</updated>
     
     
       
@@ -43,14 +43,20 @@
     
     <category term="思维体操" scheme="http://notego.top/tags/%E6%80%9D%E7%BB%B4%E4%BD%93%E6%93%8D/"/>
     
+    <category term="负反馈" scheme="http://notego.top/tags/%E8%B4%9F%E5%8F%8D%E9%A6%88/"/>
+    
+    <category term="比较" scheme="http://notego.top/tags/%E6%AF%94%E8%BE%83/"/>
+    
+    <category term="经验价值清单" scheme="http://notego.top/tags/%E7%BB%8F%E9%AA%8C%E4%BB%B7%E5%80%BC%E6%B8%85%E5%8D%95/"/>
+    
   </entry>
   
   <entry>
     <title>自然语言处理</title>
     <link href="http://notego.top/2022/09/27/zi-ran-yu-yan-chu-li/"/>
     <id>http://notego.top/2022/09/27/zi-ran-yu-yan-chu-li/</id>
-    <published>2022-09-27T02:10:09.000Z</published>
-    <updated>2022-10-08T07:29:55.107Z</updated>
+    <published>2022-09-26T18:10:09.000Z</published>
+    <updated>2022-10-28T11:13:56.000Z</updated>
     
     
       
@@ -72,8 +78,8 @@
     <title>分布式训练</title>
     <link href="http://notego.top/2022/09/22/fen-bu-shi-xun-lian/"/>
     <id>http://notego.top/2022/09/22/fen-bu-shi-xun-lian/</id>
-    <published>2022-09-22T06:05:35.000Z</published>
-    <updated>2022-09-22T07:07:53.844Z</updated>
+    <published>2022-09-21T22:05:35.000Z</published>
+    <updated>2022-10-28T02:52:43.000Z</updated>
     
     
       
@@ -95,8 +101,8 @@
     <title>强化学习</title>
     <link href="http://notego.top/2022/08/25/qiang-hua-xue-xi/"/>
     <id>http://notego.top/2022/08/25/qiang-hua-xue-xi/</id>
-    <published>2022-08-25T20:24:54.000Z</published>
-    <updated>2022-10-17T05:55:52.032Z</updated>
+    <published>2022-08-25T12:24:54.000Z</published>
+    <updated>2022-10-27T03:56:30.000Z</updated>
     
     
       
@@ -112,13 +118,13 @@
     <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
+    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
+    
     <category term="智能体" scheme="http://notego.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     
     <category term="价值" scheme="http://notego.top/tags/%E4%BB%B7%E5%80%BC/"/>
     
     <category term="策略" scheme="http://notego.top/tags/%E7%AD%96%E7%95%A5/"/>
-    
-    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="环境" scheme="http://notego.top/tags/%E7%8E%AF%E5%A2%83/"/>
     
@@ -128,8 +134,8 @@
     <title>PyTorch</title>
     <link href="http://notego.top/2022/05/30/pytorch/"/>
     <id>http://notego.top/2022/05/30/pytorch/</id>
-    <published>2022-05-30T22:00:33.000Z</published>
-    <updated>2022-05-30T14:32:04.000Z</updated>
+    <published>2022-05-30T14:00:33.000Z</published>
+    <updated>2022-10-27T09:24:51.000Z</updated>
     
     
       
@@ -157,7 +163,7 @@
     <title>大数据</title>
     <link href="http://notego.top/2022/03/27/da-shu-ju/"/>
     <id>http://notego.top/2022/03/27/da-shu-ju/</id>
-    <published>2022-03-27T18:46:19.000Z</published>
+    <published>2022-03-27T10:46:19.000Z</published>
     <updated>2022-03-28T01:18:37.000Z</updated>
     
     
@@ -180,7 +186,7 @@
     <title>Linux</title>
     <link href="http://notego.top/2022/02/11/linux/"/>
     <id>http://notego.top/2022/02/11/linux/</id>
-    <published>2022-02-11T10:57:51.000Z</published>
+    <published>2022-02-11T02:57:51.000Z</published>
     <updated>2022-03-20T02:41:32.000Z</updated>
     
     
@@ -203,7 +209,7 @@
     <title>《为什么精英这样用脑不会累》笔记</title>
     <link href="http://notego.top/2021/11/25/wei-shi-me-jing-ying-zhe-yang-yong-nao-bu-hui-lei-bi-ji/"/>
     <id>http://notego.top/2021/11/25/wei-shi-me-jing-ying-zhe-yang-yong-nao-bu-hui-lei-bi-ji/</id>
-    <published>2021-11-25T16:59:02.000Z</published>
+    <published>2021-11-25T08:59:02.000Z</published>
     <updated>2021-11-25T09:01:12.000Z</updated>
     
     
@@ -237,7 +243,7 @@
     <title>《把时间当作朋友》笔记</title>
     <link href="http://notego.top/2021/11/25/ba-shi-jian-dang-zuo-peng-you-bi-ji/"/>
     <id>http://notego.top/2021/11/25/ba-shi-jian-dang-zuo-peng-you-bi-ji/</id>
-    <published>2021-11-25T16:53:15.000Z</published>
+    <published>2021-11-25T08:53:15.000Z</published>
     <updated>2021-11-25T08:56:01.000Z</updated>
     
     
@@ -268,8 +274,8 @@
     <title>《易经》笔记</title>
     <link href="http://notego.top/2021/11/25/yi-jing-bi-ji/"/>
     <id>http://notego.top/2021/11/25/yi-jing-bi-ji/</id>
-    <published>2021-11-25T16:44:36.000Z</published>
-    <updated>2022-10-20T09:49:11.000Z</updated>
+    <published>2021-11-25T08:44:36.000Z</published>
+    <updated>2022-10-26T10:12:15.000Z</updated>
     
     
       
@@ -303,7 +309,7 @@
     <title>《人性的弱点》笔记</title>
     <link href="http://notego.top/2021/11/25/ren-xing-de-ruo-dian-bi-ji/"/>
     <id>http://notego.top/2021/11/25/ren-xing-de-ruo-dian-bi-ji/</id>
-    <published>2021-11-25T16:37:51.000Z</published>
+    <published>2021-11-25T08:37:51.000Z</published>
     <updated>2022-09-04T07:48:01.000Z</updated>
     
     
@@ -330,7 +336,7 @@
     <title>《被讨厌的勇气》笔记</title>
     <link href="http://notego.top/2021/11/25/bei-tao-yan-de-yong-qi-bi-ji/"/>
     <id>http://notego.top/2021/11/25/bei-tao-yan-de-yong-qi-bi-ji/</id>
-    <published>2021-11-25T16:22:26.000Z</published>
+    <published>2021-11-25T08:22:26.000Z</published>
     <updated>2021-11-25T08:51:49.000Z</updated>
     
     
@@ -364,7 +370,7 @@
     <title>Go</title>
     <link href="http://notego.top/2021/10/20/go/"/>
     <id>http://notego.top/2021/10/20/go/</id>
-    <published>2021-10-20T21:14:22.000Z</published>
+    <published>2021-10-20T13:14:22.000Z</published>
     <updated>2022-02-08T05:23:51.000Z</updated>
     
     
@@ -387,7 +393,7 @@
     <title>云原生</title>
     <link href="http://notego.top/2021/04/17/wei-fu-wu/"/>
     <id>http://notego.top/2021/04/17/wei-fu-wu/</id>
-    <published>2021-04-17T21:10:29.000Z</published>
+    <published>2021-04-17T13:10:29.000Z</published>
     <updated>2022-09-05T09:48:14.000Z</updated>
     
     
@@ -426,7 +432,7 @@
     <title>《道德经》笔记</title>
     <link href="http://notego.top/2021/04/08/dao-de-jing-bi-ji/"/>
     <id>http://notego.top/2021/04/08/dao-de-jing-bi-ji/</id>
-    <published>2021-04-08T22:32:31.000Z</published>
+    <published>2021-04-08T14:32:31.000Z</published>
     <updated>2022-10-20T09:55:23.000Z</updated>
     
     
@@ -465,8 +471,8 @@
     <title>Unicorn</title>
     <link href="http://notego.top/2021/04/01/unicorn/"/>
     <id>http://notego.top/2021/04/01/unicorn/</id>
-    <published>2021-04-01T20:20:40.000Z</published>
-    <updated>2022-09-30T09:50:26.091Z</updated>
+    <published>2021-04-01T12:20:40.000Z</published>
+    <updated>2022-09-30T09:50:26.000Z</updated>
     
     
       
@@ -493,7 +499,7 @@
     <title>《庄子》笔记</title>
     <link href="http://notego.top/2021/03/31/zhuang-zi-bi-ji/"/>
     <id>http://notego.top/2021/03/31/zhuang-zi-bi-ji/</id>
-    <published>2021-03-31T22:59:19.000Z</published>
+    <published>2021-03-31T14:59:19.000Z</published>
     <updated>2021-11-25T09:08:17.000Z</updated>
     
     
@@ -541,8 +547,8 @@
     <title>机器学习</title>
     <link href="http://notego.top/2021/03/31/ji-qi-xue-xi/"/>
     <id>http://notego.top/2021/03/31/ji-qi-xue-xi/</id>
-    <published>2021-03-31T20:24:54.000Z</published>
-    <updated>2022-09-27T02:14:07.185Z</updated>
+    <published>2021-03-31T12:24:54.000Z</published>
+    <updated>2022-10-26T06:05:56.000Z</updated>
     
     
       
@@ -560,8 +566,6 @@
     
     <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
-    
     <category term="监督学习" scheme="http://notego.top/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="无监督学习" scheme="http://notego.top/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
@@ -569,6 +573,8 @@
     <category term="特征" scheme="http://notego.top/tags/%E7%89%B9%E5%BE%81/"/>
     
     <category term="过拟合" scheme="http://notego.top/tags/%E8%BF%87%E6%8B%9F%E5%90%88/"/>
+    
+    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="机器学习" scheme="http://notego.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
@@ -588,7 +594,7 @@
     <title>SQL</title>
     <link href="http://notego.top/2021/03/31/sql/"/>
     <id>http://notego.top/2021/03/31/sql/</id>
-    <published>2021-03-31T20:18:56.000Z</published>
+    <published>2021-03-31T12:18:56.000Z</published>
     <updated>2021-11-25T09:15:13.000Z</updated>
     
     
@@ -618,8 +624,8 @@
     <title>Python</title>
     <link href="http://notego.top/2021/03/31/python/"/>
     <id>http://notego.top/2021/03/31/python/</id>
-    <published>2021-03-31T20:17:10.000Z</published>
-    <updated>2022-10-19T08:37:02.328Z</updated>
+    <published>2021-03-31T12:17:10.000Z</published>
+    <updated>2022-10-19T08:37:02.000Z</updated>
     
     
       
