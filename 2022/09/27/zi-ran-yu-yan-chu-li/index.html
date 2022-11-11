@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-02
+                    2022-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.8k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    23 分
                 </div>
                 
 
@@ -904,6 +904,24 @@
 <h4 id="NSP"><a href="#NSP" class="headerlink" title="NSP"></a>NSP</h4><p>分类任务，输入两个句子的连接，判断两个句子是否是前后句。<br>输入由句子的嵌入、位置嵌入、段落嵌入组成<br>正例和负例的比例各占一半</p>
 <h4 id="MLM"><a href="#MLM" class="headerlink" title="MLM"></a>MLM</h4><p>随机将一部分词改为mask、其他词或不变，在输出预测这些词<br><img src='/medias/image/2022-10-08-15-15-07.png' width="80%"><br>即：完形填空</p>
 <h2 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h2><p>为了减少微调的参数量，适配器在预训练模型中插入一些参数量小的模块，并只训练这些模块：<br><img src='/medias/image/2022-10-08-15-29-27.png' width="80%"><br><img src='/medias/image/2022-10-08-15-29-38.png' width="100%"></p>
+<h1 id="聊天机器人"><a href="#聊天机器人" class="headerlink" title="聊天机器人"></a>聊天机器人</h1><h2 id="开放聊天"><a href="#开放聊天" class="headerlink" title="开放聊天"></a>开放聊天</h2><h3 id="规则型"><a href="#规则型" class="headerlink" title="规则型"></a>规则型</h3><p><strong>正则化匹配</strong>：<code>人工智能标记语言（AIML）</code>是一种基于XML标准的声明式语言，它规定了可以在机器人中使用的编程构想和数据结构。<br>可以基于<code>人工智能标记语言（AIML）</code>来定义聊天机器人的模式和回复，构建模式匹配聊天机器人<br><img src='/medias/image/2022-11-04-10-48-03.png' width="100%"><br>有答案就直接返回；<br>没有答案可以通过一定的规则进行泛化匹配；</p>
+<h3 id="主题知识问答"><a href="#主题知识问答" class="headerlink" title="主题知识问答"></a>主题知识问答</h3><p>包括：</p>
+<ul>
+<li>主题知识整理；</li>
+<li>主题实体词识别；</li>
+<li>主题知识点匹配；</li>
+<li>主题无答案个性化回复；</li>
+</ul>
+<img src='/medias/image/2022-11-04-10-53-06.png' width="60%">
+中文命名实体识别（Named Entity Recognition，NER）是指识别中文文本中实体的边界和类别。命名实体识别是文本处理中的基础技术，广泛应用在自然语言处理、推荐系统、知识图谱等领域，比如推荐系统中的基于实体的用户画像、基于实体召回等。
+
+<h3 id="图谱问答"><a href="#图谱问答" class="headerlink" title="图谱问答"></a>图谱问答</h3><img src='/medias/image/2022-11-04-11-03-44.png' width="100%">
+无歧义实体答案合成：当问题不直接匹配时，可以根据图谱找到合适的节点
+歧义实体答案合成：当问题不直接匹配且实体存在多个可能选项时，可以反问用户
+
+<h3 id="生成式问答"><a href="#生成式问答" class="headerlink" title="生成式问答"></a>生成式问答</h3><p>在seq2seq的基础上加入合适的信息，如主题、情绪、性别等等，得到基于情绪的回答：<br><img src='/medias/image/2022-11-04-12-07-28.png' width="100%"></p>
+<p>在输入上加入风格特征，得到基于风格化的回答：<br><img src='/medias/image/2022-11-04-12-12-06.png' width="100%"></p>
+<h2 id="机器阅读"><a href="#机器阅读" class="headerlink" title="机器阅读"></a>机器阅读</h2><p>阅读材料，根据提问给出答案</p>
 
                 
             </div>
@@ -1472,7 +1490,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">130.5k</span>&nbsp;字
+                class="white-color">134.7k</span>&nbsp;字
             
             
             

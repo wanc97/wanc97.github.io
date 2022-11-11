@@ -449,6 +449,10 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
+                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">模型</span>
+                            </a>
+                        
                             <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">监督学习</span>
                             </a>
@@ -463,10 +467,6 @@
                         
                             <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
                                 <span class="chip bg-color">过拟合</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                <span class="chip bg-color">模型</span>
                             </a>
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
@@ -521,21 +521,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-26
+                    2022-11-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    22.8k
+                    23.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    79 分
+                    81 分
                 </div>
                 
 
@@ -802,39 +802,33 @@
 <li>每一个模型都是在学习一个分布，当分布变化时，模型自然不能取得更好的效果。</li>
 </ul>
 <p><strong>拒绝策略</strong><br>在判决结果置信度低时，在实际中有必要使用拒绝决策，即不对数据的类别进行判定或预测。</p>
-<h3 id="信息论"><a href="#信息论" class="headerlink" title="信息论"></a>信息论</h3><p><strong>信息</strong></p>
-<ul>
+<h3 id="信息论"><a href="#信息论" class="headerlink" title="信息论"></a>信息论</h3><h4 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h4><ul>
 <li>从不太可能发生的事件中能学到更多的有用信息。<ul>
 <li>发生可能性较大的事件包含较少的信息，发生可能性较小的事件包含较多的信息;</li>
 <li>独立事件包含额外的信息。</li>
 </ul>
 </li>
 </ul>
-<p><strong>自信息self-information</strong></p>
-<ul>
+<h4 id="自信息self-information"><a href="#自信息self-information" class="headerlink" title="自信息self-information"></a>自信息self-information</h4><ul>
 <li>对于事件 ，定义自信息self-information为该事件发生概率的负对数，即概率越大的事件信息越少。</li>
 <li>自信息仅仅处理单个输出，但是如果计算自信息的期望，它就是熵。</li>
 </ul>
-<p><strong>熵函数</strong></p>
-<ul>
+<h4 id="熵函数"><a href="#熵函数" class="headerlink" title="熵函数"></a>熵函数</h4><ul>
 <li>用来对q这个分布的不确定性进行编码所需的信息量；</li>
 </ul>
-<p><strong>相对熵（KL散度）</strong></p>
-<ul>
+<h4 id="相对熵（KL散度）"><a href="#相对熵（KL散度）" class="headerlink" title="相对熵（KL散度）"></a>相对熵（KL散度）</h4><ul>
 <li>给定分布q之后，还需要多少信息来编码分布p；<ul>
 <li>假如两个分布完全一样，相对熵就是0；</li>
 <li>两个分布不一样时相对熵增加至无穷大；</li>
 </ul>
 </li>
 </ul>
-<p><strong>交叉熵</strong></p>
-<ul>
+<h4 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h4><ul>
 <li>度量两个分布的距离，在分类问题中对应最大似然估计。范围为真实分布的熵到无穷大；</li>
 <li>p与q的交叉熵=p的熵+p与q的相对熵。</li>
 </ul>
-<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><p><strong>特征提取</strong><br>原始数据（如文章、图像）的维度、特征数往往极高，为了实现有效地识别，需要从数据中找到有效特征。</p>
-<p><strong>特征空间</strong></p>
-<ul>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><h4 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h4><p>原始数据（如文章、图像）的维度、特征数往往极高，为了实现有效地识别，需要从数据中找到有效特征。</p>
+<h4 id="特征空间"><a href="#特征空间" class="headerlink" title="特征空间"></a>特征空间</h4><ul>
 <li>输入空间：所有输入的可能取值；</li>
 <li>输出空间：所有输出的可能取值。</li>
 <li>特征空间：经过特征工程处理过的输入空间<ul>
@@ -845,31 +839,32 @@
 </ul>
 </li>
 </ul>
-<p><strong>泛化</strong></p>
-<ul>
+<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><ul>
 <li>更加一般、更加普遍的规律、特征；如PCA分解时，对应奇异值/方差越大的分量是越普遍的分量，也越具有泛化性。</li>
 <li>越具有泛化能力的信息越具有普适性，也越是机器学习和人学习的重点。</li>
 <li>泛化特征与所研究问题有关，如不同的分类问题中，同一个特征的重要程度不一样。</li>
 </ul>
-<p><strong>假设空间</strong></p>
-<ul>
+<h4 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h4><ul>
 <li>代表模型的函数集合。这也称作模型的表示容量representational capacity。</li>
 <li>不同的模型（算法）有不同的假设空间（函数空间），因此需要考虑所需要的找到的假设函数是不是在假设空间中；</li>
 <li>由于额外的限制因素（比如优化算法的限制），模型的有效容量effective capacity一般会小于模型的表示容量。</li>
 <li>通常在模型的假设空间中找出最佳的函数是非常困难的优化问题，实际应用中只是挑选一个使得训练误差足够低的函数即可。</li>
 </ul>
-<h3 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h3><p><strong>独立同分布</strong></p>
-<ul>
+<h3 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h3><h4 id="独立同分布"><a href="#独立同分布" class="headerlink" title="独立同分布"></a>独立同分布</h4><ul>
 <li>机器学习中的训练数据和测试数据要求是在同一个分布中进行独立同分布产生。</li>
 <li>学习过程中，假定这个分布存在，但是具体参数未知。</li>
 </ul>
-<p><strong>生成模型&amp;判别模型</strong><br>区别在于有没有显式计算分布。</p>
+<h4 id="参数模型-amp-非参数模型"><a href="#参数模型-amp-非参数模型" class="headerlink" title="参数模型&amp;非参数模型"></a>参数模型&amp;非参数模型</h4><ul>
+<li>参数模型假设总体服从某个分布，这个分布可以由一些参数确定，如正态分布由均值和标准差确定，在此基础上构建的模型称为参数模型；</li>
+<li>非参数模型对于总体的分布不做任何假设或者说是数据分布假设自由，只知道其分布是存在的，所以就无法得到其分布的相关参数，只能通过非参数统计的方法进行推断。</li>
+<li>参数模型和非参数模型中的“参数”并不是模型中的参数，而是数据分布的参数。</li>
+</ul>
+<h4 id="生成模型-amp-判别模型"><a href="#生成模型-amp-判别模型" class="headerlink" title="生成模型&amp;判别模型"></a>生成模型&amp;判别模型</h4><p>区别在于有没有显式计算分布。</p>
 <ul>
 <li>判别模型是得到决策边界，判断样本为不同类别的概率，不显式计算分布，隐式学习到数据分布信息；</li>
 <li>生成模型是显式计算样本数据与类别的分布信息，判别时计算样本为哪一类的概率更大。<img src='/medias/image/机器学习-生成判别.jpeg' width="80%"></li>
 </ul>
-<p><strong>误差可以分解为偏差、方差和噪声之和</strong></p>
-<ul>
+<h4 id="误差可以分解为偏差、方差和噪声之和"><a href="#误差可以分解为偏差、方差和噪声之和" class="headerlink" title="误差可以分解为偏差、方差和噪声之和"></a>误差可以分解为偏差、方差和噪声之和</h4><ul>
 <li>偏差：描述模型对于特定数据（训练集）的拟合效果,度量了学习算法的期望预测与真实结果之间的偏离程度，刻画了学习算法本身的拟合能力。</li>
 <li>方差：描述模型在不同数据（训练集与测试集）上拟合效果的差别，度量了训练集的变动所导致的学习性能的变化，刻画了数据扰动造成的影响。</li>
 <li>噪声：度量了在当前任务上任何学习算法所能达到的期望泛化误差的下界，刻画了学习问题本身的难度。</li>
@@ -1234,32 +1229,47 @@
 <li>对于GAN、风格迁移这类任务上，Instance Norm效果要优于BN，因为每张图片自己的风格比较独立，不应该与batch中其它图片产生太大联系。</li>
 <li>Instance Norm也不依赖于batch size，适合在线学习，也适合于RNN网络。</li>
 </ul>
-<h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><ul>
-<li>在MLP的基础上增加了两个先验：局部性连接 &amp; 参数共享。</li>
+<h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><h4 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h4><ul>
+<li>在MLP的基础上增加了两个先验：<ul>
+<li>局部性连接</li>
+<li>参数共享。</li>
+</ul>
+</li>
 <li>这两个先验假设使得卷积网络相对于MLP的参数量大减，泛化能力更加强，可以更好地学习到图像数据中的重要模式（主要指像素之间的变化关系、组合关系，所以非常适合计算视觉领域，当然也可以用在同样具有类似重要特征组合方式的领域）。</li>
 <li>卷积和互相关都是由函数到函数的算子，其中卷积包括反转和求和两个过程，互相关只有求和；所以卷积神经网络是披着卷积外衣的互相关网络。</li>
 <li>卷积核的大小也会影响卷积核的表达能力，参数量小的卷积核所能产生的可能性也少。</li>
+<li>每个卷积核得到一个通道的输出，增加卷积核数量，可以从更多角度进行特征提取</li>
+<li>等变性：$f(T(x))=T(f(x))$，卷积层参数共享带来一定的平移等变性，等变性可以看成是对数据噪声的一种抑制，如图片分类中无论物体在图片的中央还是边缘，都应该得到一样的结果，这种位置信息就是和分类无关的噪声；</li>
+<li>卷积核参数均值影响特征图亮度，值相加和为1时处理之后的图像与原始图像的亮度相比几乎一致，小于1时减小，大于1时增大；</li>
 </ul>
-<blockquote>
-<ul>
-<li>卷积层：提取数据组合特征；</li>
-<li>池化层：降低数据量；</li>
-<li>1*1卷积：增加非线性，降低参数量；</li>
+<h4 id="填充-amp-amp-步幅"><a href="#填充-amp-amp-步幅" class="headerlink" title="填充&amp;&amp;步幅"></a>填充&amp;&amp;步幅</h4><p>以二维输入为例，输入的高宽分别为$n_h$，$n_w$，卷积核的高宽分别为$k_h$，$k_w$，填充的高宽分别为$p_h$，$p_w$，步幅的高宽分别为$s_h$，$s_w$，则输出形状为：<br>$$<br>\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor<br>$$<br>当步幅为1时，设置$p_h=k_h-1, p_w=k_w-1$，输出的形状与输入的形状一致。</p>
+<h4 id="pooling层"><a href="#pooling层" class="headerlink" title="pooling层"></a>pooling层</h4><ul>
+<li>池化层：降低数据量；<ul>
+<li>max pooling</li>
+<li>mean pooling</li>
+<li>全局平均池化：提供平移不变性，丢失很多细节</li>
+</ul>
+</li>
+<li>不变性：$f(T(x))=f(x)$，池化层带来一定不变性；</li>
+</ul>
+<h4 id="经典网络"><a href="#经典网络" class="headerlink" title="经典网络"></a>经典网络</h4><ul>
+<li>AlexNet：它是第一个在大规模视觉竞赛中击败传统计算机视觉模型的大型神经网络；</li>
+<li>使用重复块的网络（VGG）：它利用许多重复的神经网络块；</li>
+<li>网络中的网络（NiN）：它重复使用由卷积层和1*1卷积层（用来代替全连接层）来构建深层网络;增加非线性，降低参数量；</li>
+<li>含并行连结的网络（GoogLeNet）：它使用并行连结的网络<ul>
+<li>通过多尺度卷积核利用不同窗口大小的卷积层和最大汇聚层来并行抽取信息，学习不同尺度特征；</li>
+<li>分支训练：网络分叉，可以将梯度信息更好的传递到底层，防止梯度消失。</li>
+</ul>
+</li>
+<li>残差网络（ResNet）：它通过残差块构建跨层的数据通道，是计算机视觉中最流行的体系架构；</li>
+<li>稠密连接网络（DenseNet）：它的计算成本很高，但给我们带来了更好的效果。</li>
+</ul>
+<h4 id="其它策略"><a href="#其它策略" class="headerlink" title="其它策略"></a>其它策略</h4><ul>
 <li>1*n卷积：降低参数量；</li>
 <li>Dropout：类似bagging，集成学习的效果，降低方差；</li>
 <li>数据增广：变相增加数据量，抵消不重要信息，加强核心成分，避免模型学偏；</li>
-<li>ReLU：缓解梯度消失；</li>
-<li>多尺度卷积核：学习不同尺度特征；</li>
 <li>空洞卷积：多尺度+减少参数量；</li>
 <li>BN：应对数据分布漂移，避免数据整体进入饱和区，进而缓解梯度消失和梯度爆炸的问题；</li>
-<li>不变性：$f(T(x))=f(x)$，池化层带来一定不变性；</li>
-<li>等变性：$f(T(x))=T(f(x))$，卷积层参数共享带来一定的平移等变性，等变性可以看成是对数据噪声的一种抑制，如图片分类中无论物体在图片的中央还是边缘，都应该得到一样的结果，这种位置信息就是和分类无关的噪声；</li>
-<li>全局平均池化：提供平移不变性，丢失很多细节</li>
-<li>分支训练：网络分叉，如GoogLeNet，可以将梯度信息更好的传递到底层，防止梯度消失。</li>
-</ul>
-</blockquote>
-<ul>
-<li>卷积核参数均值影响特征图亮度，值相加和为1时处理之后的图像与原始图像的亮度相比几乎一致，小于1时减小，大于1时增大；</li>
 </ul>
 <h3 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h3><ul>
 <li>RNN在MLP的基础上加上（不同时刻/序列点）参数共享的先验。</li>
@@ -1959,6 +1969,10 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
+                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">模型</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">监督学习</span>
                                 </a>
@@ -1973,10 +1987,6 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
                             
                                 <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
                                     <span class="chip bg-color">过拟合</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                    <span class="chip bg-color">模型</span>
                                 </a>
                             
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
@@ -2503,7 +2513,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">130.5k</span>&nbsp;字
+                class="white-color">134.7k</span>&nbsp;字
             
             
             

@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-08
+                    2022-11-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11k
+                    14.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    38 分
+                    51 分
                 </div>
                 
 
@@ -530,21 +530,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><ul>
+                <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
 <li>推荐场景相对于图像、文本等场景来说，混沌程度更高；</li>
 <li>因为图像、文本等领域的信息高度集中在单一数据中，没有过于复杂的交互逻辑，换句话说人可以很容易识别图片中有什么，理解文本的情感，所以是把人可以做好的事情交给机器去做；</li>
 <li>而影响推荐的因素不胜枚举，往往只有极高情商的人可以做好推荐，所以推荐系统是去做人做不好的事情，是一种非常不同的挑战；</li>
 <li>当然这种不同既决定了推荐很难做到特别好，但同时也使得人们对推荐系统的效果有更高的容忍度；推荐推得奇奇怪怪大家容易接受，但计算机视觉指鹿为马一定会被嘲讽；</li>
 </ul>
-<h3 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>为什么需要推荐</strong></p>
-<ul>
+<h1 id="推荐系统基础"><a href="#推荐系统基础" class="headerlink" title="推荐系统基础"></a>推荐系统基础</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="为什么需要推荐"><a href="#为什么需要推荐" class="headerlink" title="为什么需要推荐"></a>为什么需要推荐</h3><ul>
 <li>信息过载：信息量大，无法有效查找到喜欢及需要的内容；</li>
 <li>马太效应：头部效应明显，强者愈强；</li>
 <li>目标不明确：用户很多时候没有明确的需求。</li>
 <li>社会的发展趋势是建立越来越多的连接；推荐系统就是通过已有连接预测可能与人建立的连接。</li>
 </ul>
-<p><strong>推荐系统要解决</strong></p>
-<ul>
+<h3 id="推荐系统要解决"><a href="#推荐系统要解决" class="headerlink" title="推荐系统要解决"></a>推荐系统要解决</h3><ul>
 <li>在数百毫秒内提供推荐结果<ul>
 <li>尽量离线完成各种计算，线上只保留非常少的步骤</li>
 <li>采用召回、粗排、精排、重排等多层架构，保障速度和准确性</li>
@@ -552,8 +550,7 @@
 </li>
 <li>发掘和创造未知的需求；</li>
 </ul>
-<p><strong>推荐的方式</strong></p>
-<ul>
+<h3 id="推荐的方式"><a href="#推荐的方式" class="headerlink" title="推荐的方式"></a>推荐的方式</h3><ul>
 <li>社会化推荐：朋友；</li>
 <li>基于内容：利用用户、项目、环境特征，学习模型；<ul>
 <li>机器学习、数据驱动；</li>
@@ -565,43 +562,41 @@
 </li>
 <li>混合推荐：使用多种策略，优势互补，实际中多为混合。</li>
 </ul>
-<p><strong>影响推荐的元素</strong></p>
-<ul>
+<h3 id="影响推荐的元素"><a href="#影响推荐的元素" class="headerlink" title="影响推荐的元素"></a>影响推荐的元素</h3><ul>
 <li>UI&amp;UE：即⼈机交互设计和⽤户体验设计，直接影响用户体验；</li>
 <li>数据：决定信息量，决定推荐效果的上限；</li>
 <li>领域知识：对业务的理解，才能设计更加合适的算法和策略，可以认为是人工先验知识，可以增加推荐系统的信息量；</li>
 <li>算法：影响系统的长期效果；</li>
 </ul>
-<p><strong>用户画像</strong></p>
-<ul>
+<h3 id="用户画像"><a href="#用户画像" class="headerlink" title="用户画像"></a>用户画像</h3><ul>
 <li>推荐系统训练过程中的副产品，也就是用户、项目的各种属性特征，最后以向量化的方式呈现；</li>
 <li>最终用户画像的维度取决于哪些维度对于推荐有用；</li>
 </ul>
-<h4 id="相似度-距离"><a href="#相似度-距离" class="headerlink" title="相似度/距离"></a>相似度/距离</h4><ul>
+<h2 id="相似度-距离"><a href="#相似度-距离" class="headerlink" title="相似度/距离"></a>相似度/距离</h2><ul>
 <li>不同的距离度量方式有各自的特点，无绝对优劣，应该针对问题场景选择；</li>
 </ul>
-<p><strong>欧氏距离</strong></p>
-<ul>
+<h3 id="欧氏距离"><a href="#欧氏距离" class="headerlink" title="欧氏距离"></a>欧氏距离</h3><ul>
 <li>欧式空间中的绝对距离</li>
 <li>不适合隐式反馈</li>
 </ul>
-<p><strong>余弦距离</strong></p>
+<h3 id="余弦距离"><a href="#余弦距离" class="headerlink" title="余弦距离"></a>余弦距离</h3><p>$$ sim_{uv} = cos(u,v) =\frac{u\cdot v}{|u|\cdot |v|} $$</p>
 <ul>
 <li>向量角度距离，不满足距离定义的三角不等式</li>
 <li>适用于主要考虑倾向性、情感方向，而数据量不等的场景，如摘要与文章的相似度，不同用户喜好相似度等</li>
 <li>适用于显示反馈的评分数据</li>
 </ul>
-<p><strong>皮尔逊相关系数</strong></p>
+<h3 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h3><p>$$ sim(u,v)=\frac{\sum_{i\in I}(r_{ui}-\bar r_u)(r_{vi}-\bar r_v)}{\sqrt{\sum_{i\in I }(r_{ui}-\bar r_u)^2}\sqrt{\sum_{i\in I }(r_{vi}-\bar r_v)^2}} $$</p>
 <ul>
 <li>两个变量的协方差和标准差的商；</li>
 <li>余弦相似度度量的是向量的绝对方向，皮尔逊相关系数度量的是随机变量变化的方向差别是正相关还是负相关</li>
+<li>相较于余弦相似度，皮尔逊相关系数通过使用用户的平均分对各独立评分进行修正，减小了用户评分偏置的影响。</li>
 </ul>
-<p><strong>杰卡德（Jaccard）系数</strong></p>
+<h3 id="杰卡德（Jaccard）系数"><a href="#杰卡德（Jaccard）系数" class="headerlink" title="杰卡德（Jaccard）系数"></a>杰卡德（Jaccard）系数</h3><p>$$ sim_{uv}=\frac{|N(u) \cap N(v)|}{|N(u)| \cup|N(v)|} $$</p>
 <ul>
 <li>集合交集与并集的比，非常适合布尔向量；</li>
-<li>适合隐式反馈数据；</li>
+<li>适合隐式反馈数据：一般无法反映具体用户的评分喜好信息，所以常用来评估用户是否会对某物品进行打分，而不是预估用户会对某物品打多少分。</li>
 </ul>
-<h4 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h4><p>离线实验、单元测试、在线实验、用户访谈依次递进。</p>
+<h2 id="实验评价方式"><a href="#实验评价方式" class="headerlink" title="实验评价方式"></a>实验评价方式</h2><p>离线实验、单元测试、在线实验、用户访谈依次递进。</p>
 <p><strong>离线实验</strong>：收集数据、制作数据集、实验与评价</p>
 <ul>
 <li>优点：不需要有实际系统的控制权、不需要用户参与实验、速度快可以大量实验。</li>
@@ -639,7 +634,7 @@
 <ul>
 <li>在线实验的指标可能不全面，可能损害长期效果，通过用户访谈发现一些潜在问题；</li>
 </ul>
-<h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><ul>
+<h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><ul>
 <li>不同的评价指标提供不同方面的效果评价，需要根据实际需求组合选取</li>
 </ul>
 <p><strong>用户满意度</strong></p>
@@ -663,7 +658,7 @@
 <p><strong>pair-wise</strong></p>
 <ul>
 <li>不关注项目的具体得分，而更多地要求将正样本排列在负样本前面；相对于point-wise可以增加数据量，因为每一个用户可以得到更多地正负样本对；</li>
-<li>AUC：ROC曲线下的面积；当有$M$个正例和$N$个负例时，总共有$M * N$个正负例对，当正例排在负例前时为正序贡献1，否则为逆序贡献0，如果得分相同则贡献0.5，所有的贡献和作为分子，除以对数$M * N$得到AUC值；</li>
+<li>AUC：ROC曲线下的面积；当有$M$个正例和$N$个负例时，总共有$M * N$个正负例对，当正例排在负例前时为正序贡献1，否则为逆序贡献0，如果得分相同则贡献0.5，所有的贡献和作为分子，除以总数$M * N$得到AUC值；</li>
 <li>BPR（Bayesian Personalized Ranking）：贝叶斯个性化排序，在pair-wise正负样本对的基础上加入先验知识（如L2正则化），最大化后验概率；</li>
 </ul>
 <p><strong>覆盖率</strong></p>
@@ -699,18 +694,18 @@
 </ul>
 <p><strong>鲁棒性</strong><br>具有抵挡攻击，反作弊的能力</p>
 <p><strong>商业效果</strong><br>如广告的投放量</p>
-<h4 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h4><h5 id="显式反馈"><a href="#显式反馈" class="headerlink" title="显式反馈"></a>显式反馈</h5><ul>
+<h2 id="用户行为数据"><a href="#用户行为数据" class="headerlink" title="用户行为数据"></a>用户行为数据</h2><h3 id="显式反馈"><a href="#显式反馈" class="headerlink" title="显式反馈"></a>显式反馈</h3><ul>
 <li>用户明确对物品的喜好，包括：喜欢/不喜欢，评分等</li>
 <li>信息密度大但量小，用户从浏览、点击、加购物车、购买、评分是一系列漏斗，数据量越来越小</li>
 <li>对应评分预测</li>
 </ul>
-<h5 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h5><ul>
+<h3 id="隐式反馈"><a href="#隐式反馈" class="headerlink" title="隐式反馈"></a>隐式反馈</h3><ul>
 <li>不能明确用户喜好的行为，包括：浏览记录等</li>
 <li>信息密度小但量大</li>
 <li>对应CTR（Click Through Rate）预估</li>
 <li>可以通过隐式反馈次数得到置信度，对损失函数进行加权</li>
 </ul>
-<h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><table>
+<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><table>
 <thead>
 <tr>
 <th>角度</th>
@@ -744,7 +739,7 @@
 <td>主要布尔</td>
 </tr>
 </tbody></table>
-<h5 id="负样本"><a href="#负样本" class="headerlink" title="负样本"></a>负样本</h5><ul>
+<h3 id="负样本"><a href="#负样本" class="headerlink" title="负样本"></a>负样本</h3><ul>
 <li>隐式反馈的信息一般提供用户感兴趣的正向信息，而模型训练还需要负向信息，因此需要对其它未交互的样本进行采样得到负样本；</li>
 </ul>
 <p><strong>随机负采样</strong></p>
@@ -765,22 +760,20 @@
 <ul>
 <li>用户看到却没有点击/交互的项目有更加明显的负向信息，或者说有明确的监督信息；</li>
 </ul>
-<h4 id="实时推荐"><a href="#实时推荐" class="headerlink" title="实时推荐"></a>实时推荐</h4><ul>
+<h2 id="实时推荐"><a href="#实时推荐" class="headerlink" title="实时推荐"></a>实时推荐</h2><ul>
 <li>信息的价值随时间衰减，所以用户的当下行为非常重要；</li>
 <li>实时的层次：响应快、实时特征、实时更新模型；</li>
 <li>将实时数据写入kafka中，另一侧从kafka中读取数据进行实时流计算；</li>
 <li>常见流计算框架：storm、S4、streaming；</li>
 </ul>
-<h4 id="推荐系统架构"><a href="#推荐系统架构" class="headerlink" title="推荐系统架构"></a>推荐系统架构</h4><p><strong>特点</strong></p>
-<ul>
+<h2 id="推荐系统架构"><a href="#推荐系统架构" class="headerlink" title="推荐系统架构"></a>推荐系统架构</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
 <li>实时响应；</li>
 <li>及时、准确、全面记录用户反馈数据/信息；</li>
 <li>降级；</li>
 <li>监控；</li>
 <li>便于策略实验；</li>
 </ul>
-<p><strong>通用架构</strong></p>
-<ul>
+<h3 id="通用架构"><a href="#通用架构" class="headerlink" title="通用架构"></a>通用架构</h3><ul>
 <li>日志收集：从用户端收集各种数据信息；<ul>
 <li>现代推荐系统是数据驱动，数据获取是必要环节；</li>
 <li>数据用途由浅入深：制作报表、数据分析、机器学习；</li>
@@ -801,8 +794,7 @@
 </li>
 <li>监控：监测系统运行的重要指标，确保系统的稳定和安全；</li>
 </ul>
-<p><strong>架构分层</strong></p>
-<table>
+<h3 id="架构分层"><a href="#架构分层" class="headerlink" title="架构分层"></a>架构分层</h3><table>
 <thead>
 <tr>
 <th>分层</th>
@@ -836,8 +828,9 @@
 <td>排序打分；重排；过滤等逻辑；互动规则</td>
 </tr>
 </tbody></table>
-<p><strong>存储</strong></p>
-<ul>
+<img src='/medias/image/2022-11-07-18-14-27.png' width="100%">
+
+<h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><ul>
 <li>数据类型：<ul>
 <li>稀疏型：ID特征、类别特征；</li>
 <li>dense/稠密型：embedding；</li>
@@ -848,8 +841,7 @@
 <li>分布式参数服务器：存储机器学习模型参数；</li>
 <li>ElasticSearch：</li>
 </ul>
-<h4 id="常见开源工具-轮子"><a href="#常见开源工具-轮子" class="headerlink" title="常见开源工具/轮子"></a>常见开源工具/轮子</h4><p><strong>内容分析</strong></p>
-<table>
+<h2 id="常见开源工具-轮子"><a href="#常见开源工具-轮子" class="headerlink" title="常见开源工具/轮子"></a>常见开源工具/轮子</h2><h3 id="内容分析"><a href="#内容分析" class="headerlink" title="内容分析"></a>内容分析</h3><table>
 <thead>
 <tr>
 <th></th>
@@ -909,8 +901,7 @@
 <td>台湾大学</td>
 </tr>
 </tbody></table>
-<p><strong>协同过滤</strong></p>
-<table>
+<h3 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h3><table>
 <thead>
 <tr>
 <th></th>
@@ -977,7 +968,7 @@
 <td>Quora</td>
 </tr>
 </tbody></table>
-<h4 id="搜索、推荐、广告"><a href="#搜索、推荐、广告" class="headerlink" title="搜索、推荐、广告"></a>搜索、推荐、广告</h4><table>
+<h2 id="搜索、推荐、广告"><a href="#搜索、推荐、广告" class="headerlink" title="搜索、推荐、广告"></a>搜索、推荐、广告</h2><table>
 <thead>
 <tr>
 <th></th>
@@ -1010,18 +1001,40 @@
 <td>一般用</td>
 <td></td>
 </tr>
+<tr>
+<td>目标</td>
+<td>精准、权威、质量</td>
+<td>多样性、吸引力、整体效果</td>
+<td>精确</td>
+</tr>
+<tr>
+<td>训练</td>
+<td></td>
+<td>point-wise，pair-wise，list-wise</td>
+<td>point-wise</td>
+</tr>
+<tr>
+<td>模型偏好</td>
+<td>双塔</td>
+<td>序列</td>
+<td>注意力</td>
+</tr>
+<tr>
+<td>辅助策略</td>
+<td>对搜索词和内容的理解</td>
+<td>多样性、长期兴趣</td>
+<td>价格、成本、利润</td>
+</tr>
 </tbody></table>
 <ul>
 <li>共同架构：过滤/召回、排序</li>
 </ul>
-<h3 id="经典推荐算法"><a href="#经典推荐算法" class="headerlink" title="经典推荐算法"></a>经典推荐算法</h3><h4 id="基于流行度-热度-热门-排行榜"><a href="#基于流行度-热度-热门-排行榜" class="headerlink" title="基于流行度/热度/热门/排行榜"></a>基于流行度/热度/热门/排行榜</h4><p><strong>特点</strong></p>
-<ul>
+<h1 id="经典推荐算法"><a href="#经典推荐算法" class="headerlink" title="经典推荐算法"></a>经典推荐算法</h1><h2 id="基于流行度-热度-热门-排行榜"><a href="#基于流行度-热度-热门-排行榜" class="headerlink" title="基于流行度/热度/热门/排行榜"></a>基于流行度/热度/热门/排行榜</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
 <li>非个性化；</li>
 <li>降级的推荐系统，在没有其它信息及其它策略出问题的时候兜底，可以类比一个信号的均值分量；</li>
 <li>可以作为老用户的兴趣发现方式</li>
 </ul>
-<p><strong>排序策略</strong></p>
-<ul>
+<h3 id="排序策略"><a href="#排序策略" class="headerlink" title="排序策略"></a>排序策略</h3><ul>
 <li>绝对热度、比例（绝对热度/展示量，抵消展示量的偏差），缺点：<ul>
 <li>容易被攻击/刷榜；</li>
 <li>马太效应，一些项目长期存在；</li>
@@ -1036,12 +1049,11 @@
 </ul>
 </li>
 </ul>
-<h4 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h4><h5 id="基于协同过滤（CF）"><a href="#基于协同过滤（CF）" class="headerlink" title="基于协同过滤（CF）"></a>基于协同过滤（CF）</h5><ul>
+<h2 id="协同过滤-1"><a href="#协同过滤-1" class="headerlink" title="协同过滤"></a>协同过滤</h2><h3 id="经典协同过滤（CF）"><a href="#经典协同过滤（CF）" class="headerlink" title="经典协同过滤（CF）"></a>经典协同过滤（CF）</h3><ul>
 <li>协同+过滤：相似+信息共用+过滤信息</li>
 <li>缓解单个用户/项目信息不足</li>
 </ul>
-<p><strong>基于相似用户的协同过滤</strong></p>
-<ul>
+<h4 id="基于相似用户的协同过滤"><a href="#基于相似用户的协同过滤" class="headerlink" title="基于相似用户的协同过滤"></a>基于相似用户的协同过滤</h4><ul>
 <li>计算相似用户+用相似用户对于物品的评分组合得到目标用户对于物品的评分</li>
 <li>组合方式<ul>
 <li>平均</li>
@@ -1050,12 +1062,45 @@
 </ul>
 </li>
 </ul>
-<p><strong>基于相似物品的协同过滤</strong></p>
+<img src='/medias/image/2022-11-08-11-57-59.png' width="60%">
+
+<p>缺点：</p>
 <ul>
+<li>数据稀疏：用户只会购买极少数商品</li>
+<li>计算量大</li>
+</ul>
+<h4 id="基于相似物品的协同过滤"><a href="#基于相似物品的协同过滤" class="headerlink" title="基于相似物品的协同过滤"></a>基于相似物品的协同过滤</h4><ul>
 <li>物品与用户有着对等的关系，因此也可以从物品的角度进行协同过滤</li>
 <li>找到用户的偏好物品+计算物品的相似物品</li>
 </ul>
-<h5 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h5><ul>
+<img src='/medias/image/2022-11-08-12-02-08.png' width="60%">
+
+<p>缺点：</p>
+<ul>
+<li><p>热门物品跟很多物品都相似</p>
+</li>
+<li><p>一般用户少的时候更适合基于用户的协同过滤；物品少的时候更适合基于物品的协同过滤。</p>
+</li>
+</ul>
+<h4 id="swing"><a href="#swing" class="headerlink" title="swing"></a>swing</h4><ul>
+<li>基于物品的相似使用购买物品的用户来代表物品，但用户很多，这具有很多噪声，泛化性不够</li>
+<li>swing从用户共同购买的角度的获得物品的相似性</li>
+</ul>
+<img src='/medias/image/2022-11-08-12-16-13.png' width="40%">
+计算公式：
+$$s(i,j)=\sum\limits_{u\in U_i\cap U_j} \sum\limits_{v \in U_i\cap U_j}w_uw_v \frac{1}{\alpha+|I_u \cap I_v|}$$
+其中$U_i$ 是点击过商品i的用户集合，$I_u$ 是用户u点击过的商品集合，$\alpha$是平滑系数。
+
+<p>$w_u=\frac{1}{\sqrt{|I_u|}},w_v=\frac{1}{\sqrt{|I_v|}}$是用户权重参数，来降低活跃用户的影响。</p>
+<p>缺点：计算复杂度高</p>
+<h4 id="Item2Vec"><a href="#Item2Vec" class="headerlink" title="Item2Vec"></a>Item2Vec</h4><ul>
+<li>基于Word2Vec的Skip-Gram模型计算物品的相似度，并且还丢弃了时间、空间信息。</li>
+<li>也可以考虑上时间</li>
+<li>基于Item2Vec得到物品的向量表示后，物品之间的相似度可由二者之间的余弦相似度计算得到。</li>
+<li>可以看出，Item2Vec在计算物品之间相似度时，仍然依赖于不同物品之间的共现。因为，其无法解决物品的冷启动问题。</li>
+<li>一种解决方法：取出与冷启物品类别相同的非冷启物品，将它们向量的均值作为冷启动物品的向量表示。</li>
+</ul>
+<h3 id="基于矩阵分解（MF）"><a href="#基于矩阵分解（MF）" class="headerlink" title="基于矩阵分解（MF）"></a>基于矩阵分解（MF）</h3><ul>
 <li>矩阵分解的流行起源于10年前的Netflix大赛，当时各类矩阵分解模型都在实际数据中起到了很好的效果。</li>
 </ul>
 <p><strong>隐变量</strong></p>
@@ -1089,89 +1134,137 @@
 <ul>
 <li>不同时间的数据训练不同的隐向量</li>
 </ul>
-<h5 id="张量分解（TF）"><a href="#张量分解（TF）" class="headerlink" title="张量分解（TF）"></a>张量分解（TF）</h5><ul>
+<h3 id="张量分解（TF）"><a href="#张量分解（TF）" class="headerlink" title="张量分解（TF）"></a>张量分解（TF）</h3><ul>
 <li>张量分解是矩阵分解的推广，矩阵分解运用在用户和项目两个角度，而张量可以拓展到更高的角度，如用户、项目、上下文。</li>
 <li>张量分解的方法：<ul>
-<li><strong>CP分解</strong>：把$m * n * r$的用户项目上下文矩阵分解为$m * k$和$n * k$和$r * k$低秩矩阵，小矩阵可以相乘直接还原出原矩阵；</li>
+<li><strong>CP分解</strong>：把$m<em>n</em>r$的用户项目上下文矩阵分解为$m * k$和$n * k$和$r * k$低秩矩阵，小矩阵可以相乘直接还原出原矩阵；</li>
 <li><strong>高阶奇异值</strong>分解：把$m * n * r$的用户项目上下文矩阵分解为$m * a$和$n * b$和$r * c$低秩矩阵，小矩阵不能直接还原出原矩阵，但是自由度更高;</li>
 </ul>
 </li>
 <li>张量分解的稀疏性问题更加严重</li>
 <li>矩阵分解和张量分解都可以用神经网络代替后面的内积运算/还原过程，得到能力更强的现代推荐算法。</li>
 </ul>
-<h5 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h5><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
-<h5 id="神经协同过滤（NCF）"><a href="#神经协同过滤（NCF）" class="headerlink" title="神经协同过滤（NCF）"></a>神经协同过滤（NCF）</h5><ul>
+<h3 id="协同矩阵分解（CMF）"><a href="#协同矩阵分解（CMF）" class="headerlink" title="协同矩阵分解（CMF）"></a>协同矩阵分解（CMF）</h3><p>当有多种交互信息，如用户项目交互矩阵、用户用户关系矩阵时，矩阵分解无法同时利用两个矩阵的信息；协同矩阵分解的思路是让两个矩阵分解进行参数共享，来使得最终学到的低秩矩阵包含两种信息。</p>
+<h3 id="神经协同过滤（NCF）"><a href="#神经协同过滤（NCF）" class="headerlink" title="神经协同过滤（NCF）"></a>神经协同过滤（NCF）</h3><ul>
 <li>可以看成矩阵分解的非线性拓展，将用户侧embedding与项目侧embedding共同通过神经网络得到输出；</li>
 <li>可以通过加入side info来使用特征信息，缓解冷启动；</li>
 </ul>
-<h4 id="基于内容-amp-特征交叉"><a href="#基于内容-amp-特征交叉" class="headerlink" title="基于内容&amp;特征交叉"></a>基于内容&amp;特征交叉</h4><h5 id="基于内容信息-LR"><a href="#基于内容信息-LR" class="headerlink" title="基于内容信息/LR"></a>基于内容信息/LR</h5><ul>
+<h2 id="基于内容-amp-特征交叉"><a href="#基于内容-amp-特征交叉" class="headerlink" title="基于内容&amp;特征交叉"></a>基于内容&amp;特征交叉</h2><h3 id="基于内容信息-LR"><a href="#基于内容信息-LR" class="headerlink" title="基于内容信息/LR"></a>基于内容信息/LR</h3><ul>
 <li>把推荐系统当做监督学习任务来看待，输入用户和物品各种特征，预测点击量、购买率等信息。</li>
 <li>核心就是认为需要预测的变量（评分、点击率等等）是所有显式变量的一个回归结果。</li>
 <li>最基础的模型是逻辑斯蒂回归（LR）：学习各个特征权重，不能直接学到交叉特征；如果要交叉特征需要手动交叉，泛化性差；</li>
 </ul>
-<h5 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h5><ul>
+<h3 id="分解机（FM）"><a href="#分解机（FM）" class="headerlink" title="分解机（FM）"></a>分解机（FM）</h3><ul>
 <li>基于内容+矩阵分解思想</li>
 <li>主体是基于内容的做法，输入特征，得到预测值</li>
 <li>在LR的基础上增加二阶交叉特征，用矩阵分解的方式得到交叉特征的权重，降低参数量，提升泛化性</li>
+<li>FM模型的公式定义如下： </li>
 </ul>
-<h5 id="基于域的分解机（FFM）"><a href="#基于域的分解机（FFM）" class="headerlink" title="基于域的分解机（FFM）"></a>基于域的分解机（FFM）</h5><ul>
+<p>$$ \hat{y}(\mathbf{x}):=w_{0}+\sum_{i=1}^{n} w_{i} x_{i}+\sum_{i=1}^{n} \sum_{j=i+1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle x_{i} x_{j} $$</p>
+<ul>
+<li>其中，$i$ 表示特征的序号，$n$ 表示特征的数量；$x_i \in \mathbb{R}$ 表示第 $i$ 个特征的值。</li>
+<li>$v_i,v_j \in \mathbb{R}^{k} $ 分别表示特征 $x_i,x_j$ 对应的隐语义向量（Embedding向量），$\left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle :=\sum_{f=1}^{k} v_{i, f} \cdot v_{j, f}$</li>
+<li>$w_0,w_i\in \mathbb{R}$ 均表示需要学习的参数。</li>
+</ul>
+<p>观察FM的二阶特征交互项，可知其计算复杂度为 $O\left(k n^{2}\right)$ 。为了降低计算复杂度，按照如下公式进行变换。<br>$$\sum_{i=1}^{n} \sum_{j=i+1}^{n} \left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle x_{i} x_{j} \\<br>= \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle x_{i} x_{j}-\frac{1}{2} \sum_{i=1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{i}\right\rangle x_{i} x_{i} \\<br>= \frac{1}{2}\left(\sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{f=1}^{k} v_{i, f} v_{j, f} x_{i} x_{j}-\sum_{i=1}^{n} \sum_{f=1}^{k} v_{i, f} v_{i, f} x_{i} x_{i}\right) \\<br>= \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{i=1}^{n} v_{i, f} x_{i}\right)^{}\left(\sum_{j=1}^{n} v_{j, f} x_{j}\right)-\sum_{i=1}^{n} v_{i, f}^{2} x_{i}^{2}\right) \\<br>= \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{i=1}^{n} v_{i, f} x_{i}\right)^{2}-\sum_{i=1}^{n} v_{i, f}^{2} x_{i}^{2}\right)<br>$$</p>
+<ul>
+<li>公式变换后，计算复杂度由 $O\left(k n^{2}\right)$ 降到 $O\left(k n\right)$。</li>
+</ul>
+<h3 id="基于域的分解机（FFM）"><a href="#基于域的分解机（FFM）" class="headerlink" title="基于域的分解机（FFM）"></a>基于域的分解机（FFM）</h3><ul>
 <li>Field-aware Factorization，在FM的基础上引入Field的概念，每一个特征不止有一个隐因子向量，而是对不同的Field各有一个隐因子向量；</li>
 <li>FM在LR的基础上大幅降低参数量，提升泛化性，而FFM则是在FM的基础上后退一步，增加参数量，提升模型表达能力；</li>
 </ul>
-<h5 id="LR-GBDT"><a href="#LR-GBDT" class="headerlink" title="LR+GBDT"></a>LR+GBDT</h5><ul>
+<h3 id="PNN"><a href="#PNN" class="headerlink" title="PNN"></a>PNN</h3><p>设计Product层先对低阶特征进行充分的交叉组合之后再送入到DNN中<br><img src='/medias/image/2022-11-09-14-53-03.png' width="60%"><br>Product层有线性和非线性两部分。<br>其中线性部分是将输入特征直接做线性变换：<br>$$l_z^n = W_z^n \odot{z} = \sum_{i=1}^N \sum_{j=1}^M W^n_{z,i,j} z_{i,j}$$<br>非线性部分则是先对输入embedding先做交叉再做线性变换：<br>$$ \begin{aligned} l_p^n &amp;= W_p^n \odot{p} \\ &amp;= \sum_{i=1}^N \sum_{j=1}^N W^n_{p,i,j}p_{i,j} \\ &amp;= \sum_{i=1}^N \sum_{j=1}^N W^n_{p,i,j} f_i f_j^T \end{aligned} $$</p>
+<h3 id="LR-GBDT"><a href="#LR-GBDT" class="headerlink" title="LR+GBDT"></a>LR+GBDT</h3><img src='/medias/image/2022-11-09-14-23-23.png' width="50%">
+
+<ul>
 <li>GBDT适合做特征组合，每一棵树就是在依次组合出不同的交叉特征；LR为每一棵树的结果学习权重；</li>
 <li>通过树模型得到高阶交叉特征；</li>
+<li>通过GBDT进行特征组合之后得到的离散向量是和训练数据的原特征一块作为逻辑回归的输入， 而不仅仅全是这种离散特征</li>
+<li>建树的时候用ensemble建树的原因就是一棵树的表达能力很弱，不足以表达多个有区分性的特征组合，多棵树的表达能力更强一些。GBDT每棵树都在学习前面棵树尚存的不足，迭代多少次就会生成多少棵树。</li>
+<li>RF也是多棵树，但从效果上有实践证明不如GBDT。且GBDT前面的树，特征分裂主要体现对多数样本有区分度的特征；后面的树，主要体现的是经过前N颗树，残差仍然较大的少数样本。优先选用在整体上有区分度的特征，再选用针对少数样本有区分度的特征，思路更加合理，这应该也是用GBDT的原因。</li>
+<li>在CRT预估中， GBDT一般会建立两类树(非ID特征建一类， ID类特征建一类)， AD，ID类特征在CTR预估中是非常重要的特征，直接将AD，ID作为feature进行建树不可行，故考虑为每个AD，ID建GBDT树。<ul>
+<li>非ID类树：不以细粒度的ID建树，此类树作为base，即便曝光少的广告、广告主，仍可以通过此类树得到有区分性的特征、特征组合</li>
+<li>ID类树：以细粒度 的ID建一类树，用于发现曝光充分的ID对应有区分性的特征、特征组合</li>
 </ul>
-<h5 id="Wide-amp-Deep"><a href="#Wide-amp-Deep" class="headerlink" title="Wide&amp;Deep"></a>Wide&amp;Deep</h5><ul>
-<li>Wide部分就是LR，擅长记忆，可以拿到用户的基本信息；Deep部分擅长学习泛化能力的特征。</li>
-<li>Wide部分使用带L1正则化的Follow-the-regularized-leader(FTRL)进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
+</li>
 </ul>
-<h5 id="DeepFM"><a href="#DeepFM" class="headerlink" title="DeepFM"></a>DeepFM</h5><ul>
+<h3 id="Wide-amp-Deep"><a href="#Wide-amp-Deep" class="headerlink" title="Wide&amp;Deep"></a>Wide&amp;Deep</h3><img src='/medias/image/2022-11-09-15-27-34.png' width="100%">
+
+<ul>
+<li>Wide部分就是LR，擅长记忆，可以拿到用户的基本偏好；Deep部分擅长学习泛化能力的特征。</li>
+<li>Wide部分使用带L1正则化的<code>Follow-the-regularized-leader(FTRL)</code>进行优化，以提升稀疏性，去掉不重要的特征；Deep采用正常的AdaGrad进行优化。</li>
+</ul>
+<p>$$<br> \phi_{k}(x)=\prod_{i=1}^d x_i^{c_{ki}}, c_{ki}\in {0,1} \\<br> a^{(l+1)} = f(W^{l}a^{(l)} + b^{l})  \\<br> P(Y=1|x)=\delta(w_{wide}^T[x,\phi(x)] + w_{deep}^T a^{(lf)} + b)<br>$$</p>
+<h3 id="DeepFM"><a href="#DeepFM" class="headerlink" title="DeepFM"></a>DeepFM</h3><ul>
 <li>类似于Wide&amp;Deep，一边用FM，另一边用神经网络得到高阶交叉特征；</li>
 </ul>
-<h5 id="DCN"><a href="#DCN" class="headerlink" title="DCN"></a>DCN</h5><ul>
+<img src='/medias/image/2022-11-09-15-40-06.png' width="60%">
+
+<h3 id="DCN"><a href="#DCN" class="headerlink" title="DCN"></a>DCN</h3><img src='/medias/image/2022-11-09-15-15-32.png' width="60%">
+
+<ul>
 <li>离散特征转化为embedding，与dense特征级联，得到输入向量；</li>
-<li>cross网络和deep网络并联：<ul>
+<li>cross网络和deep网络并联，即用cross网络代替Wide&amp;Deep模型中的Wide部分：<ul>
 <li>cross网络的公式：$x_{l+1}=x_0x^T_lw_l+b_l+x_l$，其中$x_0x^T_lw_l$将上一层的embedding与输入交叉，最后的$x_l$则以直连的方式实现残差连接；</li>
 <li>deep网络则通过MLP使用特征组合的方式；</li>
 </ul>
 </li>
 </ul>
-<h4 id="用户历史行为"><a href="#用户历史行为" class="headerlink" title="用户历史行为"></a>用户历史行为</h4><h5 id="YoutubeNet"><a href="#YoutubeNet" class="headerlink" title="YoutubeNet"></a>YoutubeNet</h5><ul>
+<img src='/medias/image/2022-11-09-15-16-53.png' width="50%">
+
+<h3 id="AutoInt"><a href="#AutoInt" class="headerlink" title="AutoInt"></a>AutoInt</h3><p>Wide&amp;Deep家族的Wide不能得到很深的交叉特征，Deep的交叉不具有可解释性<br>AutoInt采用transformer<br><img src='/medias/image/2022-11-09-15-20-21.png' width="60%"></p>
+<h2 id="用户历史行为"><a href="#用户历史行为" class="headerlink" title="用户历史行为"></a>用户历史行为</h2><h3 id="YoutubeNet"><a href="#YoutubeNet" class="headerlink" title="YoutubeNet"></a>YoutubeNet</h3><ul>
 <li>将用户历史观看的视频embedding通过mean pooling来得到一个用户侧特征；然后用户侧特征级联得到一个向量，通过MLP得到用户embedding；</li>
 </ul>
-<h5 id="Spotify"><a href="#Spotify" class="headerlink" title="Spotify"></a>Spotify</h5><ul>
+<img src='/medias/image/2022-11-08-15-23-52.png' width="90%">
+
+<h3 id="Spotify"><a href="#Spotify" class="headerlink" title="Spotify"></a>Spotify</h3><ul>
 <li>用循环神经网络来做歌单的下一首歌推荐；</li>
 </ul>
-<h5 id="DIN-Deep-Interest-Network"><a href="#DIN-Deep-Interest-Network" class="headerlink" title="DIN/Deep Interest Network"></a>DIN/Deep Interest Network</h5><ul>
+<h3 id="DIN-Deep-Interest-Network"><a href="#DIN-Deep-Interest-Network" class="headerlink" title="DIN/Deep Interest Network"></a>DIN/Deep Interest Network</h3><ul>
 <li>将用户交互历史序列作为特征信息输入；</li>
 <li>对用户交互序列进行attention加权pooling，重点关注与此次打分相关的历史项目，可以起到多兴趣的效果；</li>
 <li>attention是计算历史交互项目与待打分项目之间的关系；<img src='/medias/image/推荐系统-DIN.jpg' width="100%"></li>
 </ul>
-<h5 id="DIEN-Deep-Interest-Evolution-Network"><a href="#DIEN-Deep-Interest-Evolution-Network" class="headerlink" title="DIEN/Deep Interest Evolution Network"></a>DIEN/Deep Interest Evolution Network</h5><ul>
+<h3 id="DIEN-Deep-Interest-Evolution-Network"><a href="#DIEN-Deep-Interest-Evolution-Network" class="headerlink" title="DIEN/Deep Interest Evolution Network"></a>DIEN/Deep Interest Evolution Network</h3><ul>
 <li>DIN等直接将用户历史看做用户兴趣，难以反应用户潜在兴趣和用户兴趣演变；</li>
 <li>Interest Extractor层用GRU对用户交互行为进行基础的兴趣建模；并引入辅助loss，将序列中的下一个item用来监督上一个单元的输出，降低GRU层的长时间依赖问题，降低优化难度；</li>
 <li>Interest Evolving层用带注意力更新门的GRU/AUGRU来学习兴趣演化过程，每个项目与待打分项目计算权重，用于更新隐状态；</li>
 <li>在用户行为序列的信息利用上，结合了注意力和GRU的优势，能更好的表达兴趣和兴趣演化；<img src='/medias/image/推荐系统-DIEN.jpg' width="100%"></li>
 </ul>
-<h5 id="DSIN-Deep-Session-Interest-Network"><a href="#DSIN-Deep-Session-Interest-Network" class="headerlink" title="DSIN/Deep Session Interest Network"></a>DSIN/Deep Session Interest Network</h5><ul>
+<h3 id="DSIN-Deep-Session-Interest-Network"><a href="#DSIN-Deep-Session-Interest-Network" class="headerlink" title="DSIN/Deep Session Interest Network"></a>DSIN/Deep Session Interest Network</h3><ul>
 <li>引入session的信息，根据sequence中项目的时间间隔进行切分，超过30min就认为是两个session，同一个session中的历史交互项目高度同构，而不同session高度异构；</li>
 <li>使用带有bias编码的自注意力模块来抽取用户每个session的兴趣特征，表示编码起到位置编码的作用；</li>
 <li>使用Bi-LSTM去捕捉用户在多个历史会话中兴趣的交互和演变；</li>
 <li>计算待打分项目与各个session的相似度，加权求和；<img src='/medias/image/推荐系统-DSIN.jpg' width="100%"></li>
 </ul>
-<h4 id="多目标"><a href="#多目标" class="headerlink" title="多目标"></a>多目标</h4><h5 id="ESMM-Entire-Space-Multi-Task-Model"><a href="#ESMM-Entire-Space-Multi-Task-Model" class="headerlink" title="ESMM/Entire Space Multi-Task Model"></a>ESMM/Entire Space Multi-Task Model</h5><ul>
+<h2 id="多目标"><a href="#多目标" class="headerlink" title="多目标"></a>多目标</h2><h3 id="ESMM-Entire-Space-Multi-Task-Model"><a href="#ESMM-Entire-Space-Multi-Task-Model" class="headerlink" title="ESMM/Entire Space Multi-Task Model"></a>ESMM/Entire Space Multi-Task Model</h3><ul>
 <li>两个完全一样的子模型学习pCTR和pCVR，然后将这两个值相乘得到pCTCVR，损失函数是pCTR和pCTCVR的乘积；</li>
 <li>pCTR的正样本是有点击行为的曝光事件，负样本是没有点击行为的曝光事件。PCTCVR的正样本是同时具有点击和转化的曝光事件，负样本是没有点击的或者点击没有转化的曝光事件。</li>
 <li>两个子模型共享embedding，缓解数据稀疏性的问题；</li>
 <li>结构设计使得pCVR的子模型也可以从曝光未点击的样本中学习；缓解使用用户点击的样本来训练，而用的整个样本空间来预测的样本选择偏差；</li>
 </ul>
-<h5 id="MMoE-Multi-gate-Mixture-of-Experts"><a href="#MMoE-Multi-gate-Mixture-of-Experts" class="headerlink" title="MMoE/Multi-gate Mixture-of-Experts"></a>MMoE/Multi-gate Mixture-of-Experts</h5><ul>
+<img src='/medias/image/2022-11-09-16-24-53.png' width="80%">
+<img src='/medias/image/2022-11-09-16-26-54.png' width="40%">
+
+<h3 id="MMoE-Multi-gate-Mixture-of-Experts"><a href="#MMoE-Multi-gate-Mixture-of-Experts" class="headerlink" title="MMoE/Multi-gate Mixture-of-Experts"></a>MMoE/Multi-gate Mixture-of-Experts</h3><ul>
 <li>许多多目标的模型采用Shared-Bottom的方式，共享底层网络，在多目标任务接近时效果较好，而在多目标差异较大时效果一般；</li>
 <li>MoE是使用简单的前馈神经网络和可训练门控单元组成的子结构，门控单元根据输入控制前馈神经网络的输出；</li>
 <li>MMoE用多个MoE并行代替Shared-Bottom网络，当多任务的相关性越低时，MMoE的效果越明显；</li>
 </ul>
-<h4 id="多兴趣"><a href="#多兴趣" class="headerlink" title="多兴趣"></a>多兴趣</h4><h5 id="MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall"><a href="#MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall" class="headerlink" title="MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall"></a>MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall</h5><ul>
+<img src='/medias/image/2022-11-09-16-30-20.png' width="100%">
+
+<h3 id="PLE"><a href="#PLE" class="headerlink" title="PLE"></a>PLE</h3><ul>
+<li>任务学习中不可避免的两个缺点：<ul>
+<li>负迁移（Negative Transfer）：针对相关性较差的任务，使用shared-bottom这种硬参数共享的机制会出现负迁移现象，不同任务之间存在冲突时，会导致模型无法有效进行参数的学习，不如对多个任务单独训练。</li>
+<li>跷跷板现象（Seesaw Phenomenon）：针对相关性较为复杂的场景，通常不可避免出现跷跷板现象。多任务学习模式下，往往能够提升一部分任务的效果，但同时需要牺牲其他任务的效果。即使通过MMOE这种方式减轻负迁移现象，跷跷板问题仍然广泛存在。</li>
+</ul>
+</li>
+</ul>
+<p><code>CGC(Customized Gate Control) 定制门控</code>在结构上设计的分化，实现了专家功能的分化；<br>而PLE则是通过分层叠加，使得不同专家的信息进行融合。<br>整个结构的设计，是为了让多任务学习模型，不仅可以学习到各自任务独有的表征，还能学习不同任务共享的表征。<br><img src='/medias/image/2022-11-09-17-17-48.png' width="80%"></p>
+<p>不同多任务模型抽象：<br><img src='/medias/image/2022-11-09-17-18-36.png' width="100%"></p>
+<h2 id="多兴趣"><a href="#多兴趣" class="headerlink" title="多兴趣"></a>多兴趣</h2><h3 id="MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall"><a href="#MIND-Multi-Interest-Network-with-Dynamic-Routing-for-Recommendation-at-Tmall" class="headerlink" title="MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall"></a>MIND/Multi-Interest Network with Dynamic Routing for Recommendation at Tmall</h3><ul>
 <li>一般的召回是根据用户属性及历史交互项目为用户生成一个表示向量，同时用项目属性给项目生成一个表示向量，计算其相似度；多兴趣网络的不同是会为用户生成多个不同的交互向量，以表征用户在多方面的兴趣；</li>
 <li>Embedding &amp;&amp; Pooling：用户侧特征embedding做concat，项目侧特征embedding做average pooling；</li>
 <li>根据$K_u=max(1,min(K,log_2(|I_u|)))$自适应地计算一个用户的兴趣数量，其中$|I_u|$表示用户的历史交互数量；</li>
@@ -1179,14 +1272,14 @@
 <li>每个兴趣表示都与用户属性embedding级联通过MLP得到用户表示；</li>
 <li>训练阶段目标项目与用户表示通过计算注意力得到最终的相似度；而召回时采用每一个用户表示分别召回；<img src='/medias/image/推荐系统-MIND.jpg' width="100%"></li>
 </ul>
-<h5 id="ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation"><a href="#ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation" class="headerlink" title="ComiRec/Controllable Multi-Interest Framework for Recommendation"></a>ComiRec/Controllable Multi-Interest Framework for Recommendation</h5><ul>
+<h3 id="ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation"><a href="#ComiRec-Controllable-Multi-Interest-Framework-for-Recommendation" class="headerlink" title="ComiRec/Controllable Multi-Interest Framework for Recommendation"></a>ComiRec/Controllable Multi-Interest Framework for Recommendation</h3><ul>
 <li>相比MIND只使用用户交互序列来作为用户侧输入；</li>
 <li>因为兴趣固定，所以胶囊网络可以使用原始版本；</li>
 <li>还提出了使用Self-Attentive的方式来捕捉多兴趣；</li>
 <li>训练阶段直接选择最接近的兴趣表示，不进行组合，网络更浅；</li>
 <li>在线上召回时还考虑召回项目之间的多样性； <img src='/medias/image/推荐系统-ComiRec.jpg' width="100%"></li>
 </ul>
-<h3 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h3><h4 id="多目标-1"><a href="#多目标-1" class="headerlink" title="多目标"></a>多目标</h4><h5 id="目的-amp-困难"><a href="#目的-amp-困难" class="headerlink" title="目的&amp;困难"></a>目的&amp;困难</h5><ul>
+<h1 id="常见策略"><a href="#常见策略" class="headerlink" title="常见策略"></a>常见策略</h1><h2 id="多目标-1"><a href="#多目标-1" class="headerlink" title="多目标"></a>多目标</h2><h3 id="目的-amp-困难"><a href="#目的-amp-困难" class="headerlink" title="目的&amp;困难"></a>目的&amp;困难</h3><ul>
 <li>推荐系统中的数据大多是隐式反馈；<ul>
 <li>且以漏斗的形式出现，如电商场景下的点击、收藏、加购物车、购买、评价等，数量依次减少；</li>
 <li>同时有许多可以共同优化的目标，如留存、观看时长、分享等；</li>
@@ -1200,20 +1293,20 @@
 </ul>
 </li>
 </ul>
-<h5 id="改变样本权重"><a href="#改变样本权重" class="headerlink" title="改变样本权重"></a>改变样本权重</h5><ul>
+<h3 id="改变样本权重"><a href="#改变样本权重" class="headerlink" title="改变样本权重"></a>改变样本权重</h3><ul>
 <li>对重要的优化目标的样本给更大的权重，可以在不调整模型架构的情况下，实现多个目标的预测；</li>
 <li>没有对多目标进行建模，样本权重的确定比较主观；</li>
 </ul>
-<h5 id="多模型分数融合"><a href="#多模型分数融合" class="headerlink" title="多模型分数融合"></a>多模型分数融合</h5><ul>
+<h3 id="多模型分数融合"><a href="#多模型分数融合" class="headerlink" title="多模型分数融合"></a>多模型分数融合</h3><ul>
 <li>排序阶段为每一个目标单独训练出一个分数，然后在重排阶段将这些分数组合成一个新的分数，可以采用连乘、指数等方式；</li>
 <li>模型简单，但是分数融合的超参数难以学习；</li>
 </ul>
-<h5 id="排序学习（Learning-To-Rank，LTR）"><a href="#排序学习（Learning-To-Rank，LTR）" class="headerlink" title="排序学习（Learning To Rank，LTR）"></a>排序学习（Learning To Rank，LTR）</h5><ul>
+<h3 id="排序学习（Learning-To-Rank，LTR）"><a href="#排序学习（Learning-To-Rank，LTR）" class="headerlink" title="排序学习（Learning To Rank，LTR）"></a>排序学习（Learning To Rank，LTR）</h3><ul>
 <li>借助pair-wise的训练方式，让重要的目标排在前面，如购买比点击重要，则购买的商品应该排在点击的商品前面；</li>
 <li>只需要单个模型，不需要设计主观的超参数；</li>
 <li>样本不平衡的问题可能会被放大，如点击10次在这里也还是算一次；</li>
 </ul>
-<h5 id="多任务学习（Multi-Task-Learning，MTL）"><a href="#多任务学习（Multi-Task-Learning，MTL）" class="headerlink" title="多任务学习（Multi-Task Learning，MTL）"></a>多任务学习（Multi-Task Learning，MTL）</h5><ul>
+<h3 id="多任务学习（Multi-Task-Learning，MTL）"><a href="#多任务学习（Multi-Task-Learning，MTL）" class="headerlink" title="多任务学习（Multi-Task Learning，MTL）"></a>多任务学习（Multi-Task Learning，MTL）</h3><ul>
 <li>思想类似于迁移学习；</li>
 </ul>
 <p><strong>基于参数的共享/Parameter Based</strong></p>
@@ -1225,12 +1318,10 @@
 <ul>
 <li>每个任务有各自的模型和参数，可以选择对不同模型的一些参数加上约束，如通过L2正则化来拉近它们的距离；</li>
 </ul>
-<h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p><strong>内容源去重</strong></p>
-<ul>
+<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><h3 id="内容源去重"><a href="#内容源去重" class="headerlink" title="内容源去重"></a>内容源去重</h3><ul>
 <li>对不同来源的内容进行重复识别和过滤；</li>
 </ul>
-<p><strong>曝光过滤/去重</strong></p>
-<ul>
+<h3 id="曝光过滤-去重"><a href="#曝光过滤-去重" class="headerlink" title="曝光过滤/去重"></a>曝光过滤/去重</h3><ul>
 <li>过滤类型：<ul>
 <li>历史曝光</li>
 <li>历史曝光类似</li>
@@ -1247,8 +1338,7 @@
 </ul>
 </li>
 </ul>
-<p><strong>重复识别</strong></p>
-<ul>
+<h3 id="重复识别"><a href="#重复识别" class="headerlink" title="重复识别"></a>重复识别</h3><ul>
 <li>hash算法：如MD5，缺点是内容改一点点，指纹/哈希值就会非常不同，无法识别类似或者说几乎一致的内容；</li>
 <li>Simhash：所产生的hash签名在一定程度上可以表征原内容的相似度。<ul>
 <li>流程：分词并设计权重、词hash成整数/二进制序列、加权合并、得到Simhash签名、计算汉明距离</li>
@@ -1257,8 +1347,7 @@
 </li>
 <li>Bloomfilter/布隆过滤器：通过多个独立的hash函数共同判断是否重复；</li>
 </ul>
-<h4 id="加权采样"><a href="#加权采样" class="headerlink" title="加权采样"></a>加权采样</h4><p><strong>应用场景</strong></p>
-<ul>
+<h2 id="加权采样"><a href="#加权采样" class="headerlink" title="加权采样"></a>加权采样</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>标签召回时，标签数量多，如果全用计算量大，用一部分则会丢失信息，通过加权采样可以：<ul>
 <li>大大减少召回时的计算复杂度；</li>
 <li>可以保留更多的用户标签/信息；</li>
@@ -1268,31 +1357,29 @@
 </li>
 <li>排行榜的分数由许多元素组成，可以进行采样</li>
 </ul>
-<p><strong>有限数据集采样</strong></p>
-<ul>
+<h3 id="有限数据集采样"><a href="#有限数据集采样" class="headerlink" title="有限数据集采样"></a>有限数据集采样</h3><ul>
 <li>生成随机数，乘以权重，排序取top，得到的结果与权重成正比；</li>
 <li>在指数分布上采样，将权重融入到分布参数中；</li>
 </ul>
-<p><strong>无限数据集</strong></p>
-<ul>
+<h3 id="无限数据集"><a href="#无限数据集" class="headerlink" title="无限数据集"></a>无限数据集</h3><ul>
 <li>蓄水池采样：需要$k$个样本，当第$n$个样本到来时，以$\frac{k}{n}$的概率替换原有缓存，以保证流式数据可以等概率采样；</li>
 </ul>
-<h3 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h3><ul>
+<h1 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h1><ul>
 <li>一般是多路召回，每一路从一个角度出发，获取一个方面的待选项目。</li>
 <li>召回一般会线下完成计算，线上根据少量信息完成拉取工作。</li>
 <li>召回与排序都是推荐算法，但是召回面对的是海量的待选，因此从算法上降低复杂度并从工程上简化线上流程。</li>
 </ul>
-<h4 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h4><p><strong>无个性化</strong><br>只使用项目侧特征</p>
+<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><h3 id="无个性化"><a href="#无个性化" class="headerlink" title="无个性化"></a>无个性化</h3><p>只使用项目侧特征</p>
 <ul>
 <li>热门召回、高复购、高潜力、。。。</li>
 </ul>
-<p><strong>有个性化</strong><br>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p>
-<h4 id="向量化召回"><a href="#向量化召回" class="headerlink" title="向量化召回"></a>向量化召回</h4><ul>
+<h3 id="有个性化"><a href="#有个性化" class="headerlink" title="有个性化"></a>有个性化</h3><p>会使用到用户侧特征，往往是只使用一个用户特征，根据这个特征获取对应的候选项目列表。</p>
+<h2 id="向量化召回"><a href="#向量化召回" class="headerlink" title="向量化召回"></a>向量化召回</h2><ul>
 <li>通过用户的向量到库中寻找最近/相似的项目</li>
 <li>本质上是一个KNN问题</li>
 <li>工程上会通过一些方式来加速</li>
 </ul>
-<h5 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h5><p><strong>faiss</strong><br>由Facebook开发，为稠密向量提供高效相似度搜索和聚类的框架。</p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="faiss"><a href="#faiss" class="headerlink" title="faiss"></a>faiss</h4><p>由Facebook开发，为稠密向量提供高效相似度搜索和聚类的框架。</p>
 <ul>
 <li>提供多种检索方法</li>
 <li>速度快</li>
@@ -1306,37 +1393,107 @@
 </ul>
 </li>
 </ul>
-<p><strong>KDtree</strong><br>将数据递归的在各个维度上二分到超矩形中</p>
-<p><strong>Balltree</strong><br>将数据划分到超球中</p>
-<p><strong>Annoy</strong><br>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
-<p><strong>NSW</strong></p>
-<ul>
+<h4 id="KDtree"><a href="#KDtree" class="headerlink" title="KDtree"></a>KDtree</h4><p>将数据递归的在各个维度上二分到超矩形中</p>
+<h4 id="Balltree"><a href="#Balltree" class="headerlink" title="Balltree"></a>Balltree</h4><p>将数据划分到超球中</p>
+<h4 id="Annoy"><a href="#Annoy" class="headerlink" title="Annoy"></a>Annoy</h4><p>将数据划分到二叉树上，不使用维度切分，而通过聚类数为2的Kmeans。</p>
+<h4 id="NSW"><a href="#NSW" class="headerlink" title="NSW"></a>NSW</h4><ul>
 <li>Navigable Small World graphs：基于图，从任意节点开始，计算自己与近邻节点到目标点的距离，更新为最近的点，依次进行至找到最近的节点。</li>
 <li>经典思路复杂度较高，可以通过依次随机插入的方式构图，来得到节点连接的高速公路，降低计算量</li>
 <li>HNSW加入了跳表结构做了进一步优化，每一个点都有50%概率进入上一层的有序链表。这样可以保证表层是“高速通道”，底层是精细查找，计算时从上往下依次查找。</li>
 </ul>
-<h5 id="协同过滤召回"><a href="#协同过滤召回" class="headerlink" title="协同过滤召回"></a>协同过滤召回</h5><ul>
+<h3 id="协同过滤召回"><a href="#协同过滤召回" class="headerlink" title="协同过滤召回"></a>协同过滤召回</h3><ul>
 <li>通过历史交互行为计算相似，或先矩阵分解，通过隐向量计算相似；</li>
 </ul>
-<h5 id="graph-embedding"><a href="#graph-embedding" class="headerlink" title="graph embedding"></a>graph embedding</h5><ul>
-<li>将项目序列建图，在图上通过graph embedding的方式得到项目embedding，进而得到相似项目；</li>
-<li>mixed graph-vector model:利用协同过滤CF得到相似最近邻，进而根据最近邻建图，再用graph embedding；</li>
-</ul>
-<h4 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h4><ul>
+<h2 id="模型召回"><a href="#模型召回" class="headerlink" title="模型召回"></a>模型召回</h2><ul>
 <li>模型召回也可以看成是使用多种特征的个性化召回，因为使用到了用户侧特征，但另一方面模型召回又和基本的召回方式有明显地区别。</li>
 <li>召回要求快，所使用到的模型不能太复杂。</li>
 <li>经典的召回方式会单独为每一路设置召回数量，在模型召回中不需要也无法单独为每个特征设置数量，这有利也有弊，好处是省去的手动设置的工作，模型自动选择，局限是模型的选择不一定合理，有可能会过于集中在某些范围，使得召回结果不具有多样性，会限制精排的选择空间。</li>
 </ul>
-<h5 id="DSSM-双塔"><a href="#DSSM-双塔" class="headerlink" title="DSSM/双塔"></a>DSSM/双塔</h5><ul>
+<h3 id="DSSM-双塔"><a href="#DSSM-双塔" class="headerlink" title="DSSM/双塔"></a>DSSM/双塔</h3><ul>
 <li>Deep Structured Semantic Models：深度语义匹配模型，分别为用户/query，和项目/doc等构建一个子网络，子网络输出embedding向量，训练好网络后可以离线保存项目的向量，在线得到用户侧embedding向量，计算相似度，向量化召回；</li>
 <li>双塔设计的目的是为了快，线上只需要进行内积运算；如果用户侧没有实时特征，则可以直接做成倒排拉链存储，线上只需要查询；</li>
-<li>內积也可以换成其它合适的距离度量方式，如余弦相似度等；</li>
+<li>内积也可以换成其它合适的距离度量方式，如余弦相似度等；</li>
 </ul>
-<h5 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h5><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p>
-<h5 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h5><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
+<img src='/medias/image/2022-11-08-15-43-54.png' width="60%">
+
+<h3 id="多目标双塔"><a href="#多目标双塔" class="headerlink" title="多目标双塔"></a>多目标双塔</h3><img src='/medias/image/2022-11-08-15-55-15.png' width="60%">
+
+<h3 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h3><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>
+<h2 id="基于图的召回"><a href="#基于图的召回" class="headerlink" title="基于图的召回"></a>基于图的召回</h2><h3 id="graph-embedding"><a href="#graph-embedding" class="headerlink" title="graph embedding"></a>graph embedding</h3><ul>
+<li>将项目序列建图，在图上通过graph embedding的方式得到项目embedding，进而得到相似项目；</li>
+<li>mixed graph-vector model:利用协同过滤CF得到相似最近邻，进而根据最近邻建图，再用graph embedding；</li>
+</ul>
+<h3 id="EGES"><a href="#EGES" class="headerlink" title="EGES"></a>EGES</h3><h4 id="基础版本"><a href="#基础版本" class="headerlink" title="基础版本"></a>基础版本</h4><p><code>Base Graph Embedding（BGE）</code>：以图嵌入的随机游走方式在物品图上捕获物品之间高阶相似性；除了考虑物品的共现，还考虑到了行为的序列信息。</p>
+<p><code>Graph Embedding with Side Information（GES）</code>：考虑到稀疏性和冷启物品问题，在图嵌入的基础上，考虑了节点的属性信息。希望具有相似属性的物品可以在空间上相似，即希望通过头部物品，提高属性信息的泛化能力，进而帮助尾部和冷启物品获取更加准确的embedding</p>
+<p><code>Enhanced Graph Embedding with Side Information（EGES）</code>：考虑到不同属性信息对于学习embedding的贡献不同，因此在聚合不同的属性信息时，动态的学习不同属性对于学习节点的embedding所参与的重要性权重</p>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ul>
+<li>构建物品图：<ul>
+<li>从行为方面考虑，用户在点击后停留的时间少于1秒，可以认为是误点，需要移除。</li>
+<li>从用户方面考虑，淘宝场景中会有一些过度活跃用户。本文对活跃用户的定义是三月内购买商品数超过1000，或者点击数超过3500，就可以认为是一个无效用户，需要去除。</li>
+<li>从商品方面考虑，存在一些商品频繁的修改，即ID对应的商品频繁更新，这使得这个ID可能变成一个完全不同的商品，这就需要移除与这个ID相关的这个商品。</li>
+</ul>
+</li>
+</ul>
+<img src='/medias/image/2022-11-08-18-12-10.png' width="60%">
+
+<ul>
+<li>图嵌入(BGE)：<ul>
+<li>随机游走得到物品序列；</li>
+<li>通过skip-gram为图上节点生成embedding</li>
+</ul>
+</li>
+</ul>
+<img src='/medias/image/2022-11-08-18-14-32.png' width="60%">
+
+<ul>
+<li><p>基于side information的图嵌入（GES）：</p>
+<ul>
+<li>为了解决冷启问题，使用side information（ 类别，店铺, 价格等）加入模型的训练过程中，使得模型最终的泛化能力体现在商品的side information上。</li>
+<li>通过side information学习到的embedding来表示具体的商品，$H_v = \frac{1}{n+1}\sum_{s=0}^n W^s_v$，其中，$H_v$是商品 v 的聚合后的 embedding 向量。</li>
+</ul>
+</li>
+<li><p>增强型EGS（EGES）：</p>
+<ul>
+<li>对各个embedding加权，$H_v = \frac{\sum_{j=0}^n e^{a_v^j} W_v^j}{\sum_{j=0}^n e^{a_v^j}}$</li>
+</ul>
+</li>
+</ul>
+<img src='/medias/image/2022-11-08-18-24-59.png' width="60%">
+
+<ul>
+<li>损失函数：<ul>
+<li>$L(v,u,y)=-[ylog( \sigma (H_v^TZ_u)) + (1-y)log(1 - \sigma(H_v^TZ_u))]$</li>
+<li>y是标签符号，等于1时表示正样本，等于0时表示负样本。$H_v$表示商品 v 的最终的隐层表示，$Z_u$表示训练数据中的上下文节点的embedding。</li>
+</ul>
+</li>
+</ul>
+<h3 id="GraphSAGE"><a href="#GraphSAGE" class="headerlink" title="GraphSAGE"></a>GraphSAGE</h3><ul>
+<li>通过图卷积GCN的方法聚合邻居信息的方式为给定的节点学习embedding</li>
+</ul>
+<img src='/medias/image/2022-11-09-11-07-15.png' width="60%">
+
+<ul>
+<li>$h_v^0$表示图上节点的初始化表示，等同于节点自身的特征。</li>
+<li>$h_v^k$表示第k层卷积后的节点表示，其来源于两个部分：<ul>
+<li>第一部分来源于节点v的邻居节点集合$N(v)$，利用邻居节点的第k-1层卷积后的特征$h_u^{k-1}$进行 （$\sum_{u \in N(v)} \frac{h_u^{k-1}}{|N(v)|}$）后，在进行线性变换。这里借助图上的边将邻居节点的信息通过边关系聚合到节点表示中(简称卷积操作)。</li>
+<li>第二部分来源于节点v的第k-1成卷积后的特征$h_v^{k-1}$，进行线性变换。总的来说图卷积的思想是在对自身做多次非线性变换时，同时利用边关系聚合邻居节点信息。</li>
+</ul>
+</li>
+<li>最后一次卷积结果作为节点的最终表示$Z_v$，以用于下游任务(节点分类，链路预测或节点召回)。</li>
+<li>相比传统的方法(MLP，CNN，DeepWalk 或 EGES)，GCN或GraphSAGE的优势：<ul>
+<li>相比于传统的深度学习方法(MLP,CNN)，GCN在对自身节点进行非线性变换时，同时考虑了图中的邻接关系。从CNN的角度理解，GCN通过堆叠多层结构在图结构数据上拥有更大的感受野，利用更加广域内的信息。</li>
+<li>相比于图嵌入学习方法(DeepWalk，EGES)，GCN在学习节点表示的过程中，在利用节点自身的属性信息之外，更好的利用图结构上的边信息。相比于借助随机采样的方式来使用边信息，GCN的方式能从全局的角度利用的邻居信息。此外，GraphSAGE通过学习聚合节点邻居生成节点Embedding的函数的方式，更适用于图结构和节点会不断变化的工业场景。</li>
+</ul>
+</li>
+</ul>
+<h3 id="PinSAGE"><a href="#PinSAGE" class="headerlink" title="PinSAGE"></a>PinSAGE</h3><ul>
+<li>在GraphSAGE的基础上加权采样邻居节点，加权聚合</li>
+</ul>
+<h2 id="用户行为序列召回"><a href="#用户行为序列召回" class="headerlink" title="用户行为序列召回"></a>用户行为序列召回</h2><p>将用户的行为（点击、购买、收藏等）序列作为模型的输入，输出一个embedding。输出的embedding可以用于向量化召回，输入的位置可以直接使用项目ID加嵌入层，也可以融入项目的side info以缓解冷启动问题。在模型选择上，只要可以提取序列特征的都可以使用，如CNN、RNN、transformer等。</p>
+<h3 id="MIND"><a href="#MIND" class="headerlink" title="MIND"></a>MIND</h3><p>采用了动态路然由算法能非常自的将历史商品聚成多个集合，每个集合的历史行为进一步推断对应特定兴趣的用户表示向量。这样，对于一个特定的用户，MND输出了多个表示向量，它们代表了用户的不同兴趣。当用户再有新的交互时，通过胶囊网络，还能实时的改变用户的兴趣表示向量，做到在召回阶段的实时个性化。</p>
+<h3 id="用户兴趣拆分"><a href="#用户兴趣拆分" class="headerlink" title="用户兴趣拆分"></a>用户兴趣拆分</h3><p>上一种方式默认用户交互的项目风格类似，只有这样模型得到的embedding才有意义，如果用户的交互项目分布在多个簇中，那得到的embedding可能和用户的任何交互项目都不相似。</p>
 <p>多兴趣召回与用户行为序列召回的主要区别在于输出的位置不是只得到一个向量，而是会有多个向量，分别代表一个兴趣方向。</p>
-<h5 id="图神经网络召回"><a href="#图神经网络召回" class="headerlink" title="图神经网络召回"></a>图神经网络召回</h5><p>主要是建立用户项目二部图，可以较好地用上协同信息，用户和项目的属性信息用上</p>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p><strong>词汇</strong></p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><strong>词汇</strong></p>
 <ul>
 <li>会话session推荐：基于会话中已知项目，进行next-item预测；</li>
 </ul>
@@ -1373,12 +1530,12 @@
 </ul>
 </li>
 </ul>
-<h4 id="融入对比学习"><a href="#融入对比学习" class="headerlink" title="融入对比学习"></a>融入对比学习</h4><p><strong>DHCN：Self-Supervised Hypergraph Convolutional Networks for Session-based Recommendation</strong></p>
+<h2 id="融入对比学习"><a href="#融入对比学习" class="headerlink" title="融入对比学习"></a>融入对比学习</h2><p><strong>DHCN：Self-Supervised Hypergraph Convolutional Networks for Session-based Recommendation</strong></p>
 <ul>
 <li>DHCN：双通道超图卷积网络，引入自监督，最大化两个通道学习的会话表示之间的互信息，以改善推荐效果。</li>
 <li>超图：一个超边可以连接多个不同顶点，对应一个共同的权值，即一条超边对应一个会话。 </li>
 </ul>
-<h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><ul>
+<h1 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h1><ul>
 <li>新用户、项目的信息比较少，很难学好；<ul>
 <li>新用户没有行为，也很少信息；</li>
 <li>新项目无反馈历史，也很难得到曝光，召回策略往往也是冷启动不友好；</li>
@@ -1386,7 +1543,7 @@
 </li>
 <li>所有的做法都是从各种角度加入信息，有信息是做好的必要条件；常见的是使用side information，以及通过各种非模型的策略。</li>
 </ul>
-<h4 id="side-information"><a href="#side-information" class="headerlink" title="side information"></a>side information</h4><ul>
+<h2 id="side-information"><a href="#side-information" class="headerlink" title="side information"></a>side information</h2><ul>
 <li>利用<strong>属性特征</strong>，即ID特征以外，具有<strong>泛化能力</strong>的特征的embedding对冷启动项进行初始化。<ul>
 <li>DropoutNet：通过Dropout机制，促进模型充分学习各种特征，而不是专注在ID特征，以更好的实现冷启动。<ul>
 <li>DropoutNet: Addressing Cold Start in Recommender Systems. NeurIPS2017.</li>
@@ -1427,12 +1584,12 @@
 </ul>
 </li>
 </ul>
-<h4 id="交互数据"><a href="#交互数据" class="headerlink" title="交互数据"></a>交互数据</h4><p>在有了一定的交互数据后就可以利用交互数据进行冷启动。</p>
-<h3 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h3><ul>
+<h2 id="交互数据"><a href="#交互数据" class="headerlink" title="交互数据"></a>交互数据</h2><p>在有了一定的交互数据后就可以利用交互数据进行冷启动。</p>
+<h1 id="Explore-amp-Exploit"><a href="#Explore-amp-Exploit" class="headerlink" title="Explore &amp; Exploit"></a>Explore &amp; Exploit</h1><ul>
 <li>Exploit：通过已经探明的兴趣进行推荐</li>
 <li>Explore：通过与已有兴趣无关的逻辑推荐，探索用户兴趣</li>
 </ul>
-<h4 id="Bandit"><a href="#Bandit" class="headerlink" title="Bandit"></a>Bandit</h4><ul>
+<h2 id="Bandit"><a href="#Bandit" class="headerlink" title="Bandit"></a>Bandit</h2><ul>
 <li>臂：可能的选择；</li>
 <li>回报：做选择后得到的奖励；</li>
 <li>环境：影响每个选择的因素，在推荐中不同的用户和其它实时特征都是环境；</li>
@@ -1452,7 +1609,7 @@
 <li>相比UCB，参数量更少，收敛更快，泛化性更好；</li>
 <li>当选择的数量较少时，可以每个选择一套参数，当选择的数量过多时，可以引入选择的特征并共享参数；</li>
 </ul>
-<p><strong>Epsilon 贪婪算法</strong></p>
+<p>**Epsilon 贪婪算法### </p>
 <ul>
 <li>$p$是$(0,1)$之间的一个较小的数，每次以概率$p$随机选择一个臂，同时以概率$1-p$选择目前收益最高的选择；</li>
 <li>$p$越小就越保守，越大则越激进；</li>
@@ -2029,7 +2186,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">130.5k</span>&nbsp;字
+                class="white-color">134.7k</span>&nbsp;字
             
             
             
