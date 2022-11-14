@@ -173,9 +173,9 @@
     
     <category term="Python" scheme="http://notego.top/tags/Python/"/>
     
-    <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
-    
     <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
+    
+    <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
     
   </entry>
   
@@ -295,7 +295,7 @@
     <link href="http://notego.top/2021/11/25/yi-jing-bi-ji/"/>
     <id>http://notego.top/2021/11/25/yi-jing-bi-ji/</id>
     <published>2021-11-25T08:44:36.000Z</published>
-    <updated>2022-10-26T10:12:15.000Z</updated>
+    <updated>2022-11-14T15:07:43.374Z</updated>
     
     
       
@@ -311,11 +311,11 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
+    
     <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
     <category term="养生" scheme="http://notego.top/tags/%E5%85%BB%E7%94%9F/"/>
-    
-    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
     
     <category term="宇宙" scheme="http://notego.top/tags/%E5%AE%87%E5%AE%99/"/>
     
@@ -663,9 +663,9 @@
     
     <category term="Python" scheme="http://notego.top/tags/Python/"/>
     
-    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
-    
     <category term="JSON" scheme="http://notego.top/tags/JSON/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
     
     <category term="pandas" scheme="http://notego.top/tags/pandas/"/>
     
