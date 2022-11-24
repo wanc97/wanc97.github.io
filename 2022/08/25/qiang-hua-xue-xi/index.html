@@ -445,6 +445,10 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">模型</span>
+                            </a>
+                        
                             <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/">
                                 <span class="chip bg-color">智能体</span>
                             </a>
@@ -455,10 +459,6 @@
                         
                             <a href="/tags/%E7%AD%96%E7%95%A5/">
                                 <span class="chip bg-color">策略</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                <span class="chip bg-color">模型</span>
                             </a>
                         
                             <a href="/tags/%E7%8E%AF%E5%A2%83/">
@@ -493,14 +493,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-02
+                    2022-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.1k
+                    17.2k
                 </div>
                 
 
@@ -1696,18 +1696,32 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
 </li>
 </ul>
 <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
-<li>多线程&amp;矢量化：提升数据采集效率</li>
+<li>多线程&amp;矢量化：<ul>
+<li>提升数据采集效率</li>
+<li>注意多线程对训练批次等的影响</li>
+</ul>
+</li>
 <li>对环境做一些合理地包装，使得环境提供的状态信息量更充足，信息密度更大；奖励函数更加合适</li>
 </ul>
 <h3 id="状态空间"><a href="#状态空间" class="headerlink" title="状态空间"></a>状态空间</h3><ul>
 <li>做合适的Normalize</li>
 </ul>
 <h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><ul>
-<li>批次大小：小批次更大的随机性，大批次更稳定</li>
+<li>批次大小：<ul>
+<li>小批次更大的随机性；</li>
+<li>大批次更稳定</li>
+<li>要注意不同场景下批次的含义，有的是时间步，有的是轮数</li>
+</ul>
+</li>
 <li>每个iter用相同样本做多少次SGD：num_sgd_iter<ul>
 <li>数量更大可以更加充分使用样本；</li>
 <li>但是可能容易对这些样本过拟合；</li>
 <li>尤其是在self-play中可能胜率很高但没有学到东西。</li>
+</ul>
+</li>
+<li>目标网络更新频率：<ul>
+<li>太高了会难以收敛，因为两个网络差别大</li>
+<li>太低了两个网络一样会直接躺平</li>
 </ul>
 </li>
 </ul>
@@ -1799,6 +1813,10 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">模型</span>
+                                </a>
+                            
                                 <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/">
                                     <span class="chip bg-color">智能体</span>
                                 </a>
@@ -1809,10 +1827,6 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
                             
                                 <a href="/tags/%E7%AD%96%E7%95%A5/">
                                     <span class="chip bg-color">策略</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                    <span class="chip bg-color">模型</span>
                                 </a>
                             
                                 <a href="/tags/%E7%8E%AF%E5%A2%83/">
@@ -2093,12 +2107,12 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/numpy/">
-                        <span class="chip bg-color">numpy</span>
-                    </a>
-                    
                     <a href="/tags/PyTorch/">
                         <span class="chip bg-color">PyTorch</span>
+                    </a>
+                    
+                    <a href="/tags/numpy/">
+                        <span class="chip bg-color">numpy</span>
                     </a>
                     
                 </div>
@@ -2291,7 +2305,7 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">134.9k</span>&nbsp;字
+                class="white-color">135.4k</span>&nbsp;字
             
             
             
