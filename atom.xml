@@ -138,13 +138,13 @@
     <category term="机器学习" scheme="http://notego.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
-    
     <category term="智能体" scheme="http://notego.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     
     <category term="价值" scheme="http://notego.top/tags/%E4%BB%B7%E5%80%BC/"/>
     
     <category term="策略" scheme="http://notego.top/tags/%E7%AD%96%E7%95%A5/"/>
+    
+    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="环境" scheme="http://notego.top/tags/%E7%8E%AF%E5%A2%83/"/>
     
@@ -173,9 +173,9 @@
     
     <category term="Python" scheme="http://notego.top/tags/Python/"/>
     
-    <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
-    
     <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
+    
+    <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
     
   </entry>
   
@@ -311,11 +311,11 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
-    
     <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
     <category term="养生" scheme="http://notego.top/tags/%E5%85%BB%E7%94%9F/"/>
+    
+    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
     
     <category term="宇宙" scheme="http://notego.top/tags/%E5%AE%87%E5%AE%99/"/>
     
@@ -453,7 +453,7 @@
     <link href="http://notego.top/2021/04/08/dao-de-jing-bi-ji/"/>
     <id>http://notego.top/2021/04/08/dao-de-jing-bi-ji/</id>
     <published>2021-04-08T14:32:31.000Z</published>
-    <updated>2022-11-24T13:17:47.794Z</updated>
+    <updated>2022-11-27T03:13:07.972Z</updated>
     
     
       
@@ -586,6 +586,8 @@
     
     <category term="算法" scheme="http://notego.top/tags/%E7%AE%97%E6%B3%95/"/>
     
+    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
+    
     <category term="监督学习" scheme="http://notego.top/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="无监督学习" scheme="http://notego.top/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
@@ -593,8 +595,6 @@
     <category term="特征" scheme="http://notego.top/tags/%E7%89%B9%E5%BE%81/"/>
     
     <category term="过拟合" scheme="http://notego.top/tags/%E8%BF%87%E6%8B%9F%E5%90%88/"/>
-    
-    <category term="模型" scheme="http://notego.top/tags/%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="机器学习" scheme="http://notego.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
@@ -663,9 +663,9 @@
     
     <category term="Python" scheme="http://notego.top/tags/Python/"/>
     
-    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
-    
     <category term="JSON" scheme="http://notego.top/tags/JSON/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
     
     <category term="pandas" scheme="http://notego.top/tags/pandas/"/>
     
