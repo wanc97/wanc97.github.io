@@ -449,6 +449,10 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
+                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">模型</span>
+                            </a>
+                        
                             <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">监督学习</span>
                             </a>
@@ -463,10 +467,6 @@
                         
                             <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
                                 <span class="chip bg-color">过拟合</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                <span class="chip bg-color">模型</span>
                             </a>
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
@@ -521,14 +521,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-10
+                    2022-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    23.3k
+                    23.4k
                 </div>
                 
 
@@ -1116,6 +1116,11 @@
 <li>RMSProp：在AdaGrad的基础上，将累计求和的部分改成了指数滑动，避免自适应学习率快速衰减的问题，自适应学习率可以根据需要变大和变小；</li>
 <li>AdaDelta：在RMSProp的基础上，在分子上加入参数变化量的指数滑动斜边，进一步调和，让更新大的参数的学习率可以不太小，缓解自适应学习率的波动；</li>
 <li>Adam：在RMSProp的基础上，加入动量法，然后对动量、斜边进行一些调和，改善早期的偏差；</li>
+<li>各个优化算法都是从两个方面进行调整：<ul>
+<li>动量方面，平滑梯度、动量</li>
+<li>斜边方面，对梯度、动量进行正则化，最终使得各个参数的优化值比较均匀、一致。 </li>
+</ul>
+</li>
 </ul>
 <p><strong>早停</strong></p>
 <ul>
@@ -1253,9 +1258,10 @@
 <li>不变性：$f(T(x))=f(x)$，池化层带来一定不变性；</li>
 </ul>
 <h4 id="经典网络"><a href="#经典网络" class="headerlink" title="经典网络"></a>经典网络</h4><ul>
+<li>LeNet：最早最简单的卷积网络</li>
 <li>AlexNet：它是第一个在大规模视觉竞赛中击败传统计算机视觉模型的大型神经网络；</li>
 <li>使用重复块的网络（VGG）：它利用许多重复的神经网络块；</li>
-<li>网络中的网络（NiN）：它重复使用由卷积层和1*1卷积层（用来代替全连接层）来构建深层网络;增加非线性，降低参数量；</li>
+<li>网络中的网络（NiN）：它重复使用由卷积层和1*1卷积层（用来代替全连接层，相当于是按照像素做全连接）来构建深层网络;增加非线性，降低参数量；最后的通道数等于分类的类别数，全局平均池化得到类别概率。</li>
 <li>含并行连结的网络（GoogLeNet）：它使用并行连结的网络<ul>
 <li>通过多尺度卷积核利用不同窗口大小的卷积层和最大汇聚层来并行抽取信息，学习不同尺度特征；</li>
 <li>分支训练：网络分叉，可以将梯度信息更好的传递到底层，防止梯度消失。</li>
@@ -1969,6 +1975,10 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
+                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">模型</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">监督学习</span>
                                 </a>
@@ -1983,10 +1993,6 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
                             
                                 <a href="/tags/%E8%BF%87%E6%8B%9F%E5%90%88/">
                                     <span class="chip bg-color">过拟合</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                    <span class="chip bg-color">模型</span>
                                 </a>
                             
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
@@ -2289,7 +2295,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            结构化查询语言
                         
                     </div>
                     <div class="publish-info">
@@ -2513,7 +2519,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">135.5k</span>&nbsp;字
+                class="white-color">165.8k</span>&nbsp;字
             
             
             

@@ -445,10 +445,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                <span class="chip bg-color">模型</span>
-                            </a>
-                        
                             <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/">
                                 <span class="chip bg-color">智能体</span>
                             </a>
@@ -459,6 +455,10 @@
                         
                             <a href="/tags/%E7%AD%96%E7%95%A5/">
                                 <span class="chip bg-color">策略</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">模型</span>
                             </a>
                         
                             <a href="/tags/%E7%8E%AF%E5%A2%83/">
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-18
+                    2022-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.2k
+                    17.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    71 分
+                    73 分
                 </div>
                 
 
@@ -989,6 +989,15 @@ $$
 \mu(s)=\arg \max_{a} Q(s, a)
 $$
 
+<h2 id="Gorila"><a href="#Gorila" class="headerlink" title="Gorila"></a>Gorila</h2><p>在DQN的基础上，提升并行能力<br><img src='/medias/image/2022-12-07-11-47-44.png' width="100%"></p>
+<ul>
+<li>其中有actor, learner, parameter server和replay memory四个部分</li>
+<li>learner中对于Q网络的参数梯度会发给parameter server。</li>
+<li>Parameter server收到后以异步SGD的方式更新网络模型。</li>
+<li>这个模型同步到actor中，actor基于该模型产生动作在环境中执行，产生的经验轨迹发往replay memory。</li>
+<li>Replay memory中的数据被learner采样拿去学习。</li>
+<li>Parameter server有多个的情况下，模型可被切成不相交的多份，分别放于多台机器上</li>
+</ul>
 <h1 id="基于策略"><a href="#基于策略" class="headerlink" title="基于策略"></a>基于策略</h1><h2 id="策略梯度"><a href="#策略梯度" class="headerlink" title="策略梯度"></a>策略梯度</h2><h3 id="策略梯度计算"><a href="#策略梯度计算" class="headerlink" title="策略梯度计算"></a>策略梯度计算</h3><p>智能体与环境交互的轨迹为：<br>$$<br>\tau={s_{1}, a_{1}, s_{2}, a_{2}, \cdots, s_{t}, a_{t}}<br>$$<br>在参数为$\theta$的策略下轨迹的概率为：<br>$$<br>p_{\theta}(\tau) =p(s_{1}) p_{\theta}(a_{1} | s_{1}) p(s_{2} | s_{1}, a_{1}) p_{\theta}(a_{2} | s_{2}) p(s_{3} | s_{2}, a_{2}) \cdots \\<br>=p(s_{1}) \prod_{t=1}^{T} p_{\theta}(a_{t} | s_{t}) p(s_{t+1} | s_{t}, a_{t})<br>$$<br>其中$p(s_{t+1}|s_t,a_t)$是环境，无法控制；<br>而$p_\theta(a_t|s_t)$代表参数为$\theta$的智能体策略，是可以调整的。<br>在不同的轨迹下会有不同的奖励$R(\tau)$，而它的期望也就是在参数为$\theta$的智能体策略下的奖励期望：<br>$$<br>R_{\theta}=\sum_{\tau} R(\tau) p_{\theta}(\tau)<br>$$</p>
 <img src='/medias/image/screenshot_1661934842794.png' width="60%">
 
@@ -1133,7 +1142,22 @@ $$
         self<span class="token punctuation">.</span>actor_optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 更新策略网络的参数</span>
         self<span class="token punctuation">.</span>critic_optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 更新价值网络的参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="异步优势演员-评论员算法（A3C）"><a href="#异步优势演员-评论员算法（A3C）" class="headerlink" title="异步优势演员-评论员算法（A3C）"></a>异步优势演员-评论员算法（A3C）</h2><p>为了提升训练速度，可以采用多进程的方式，每个子进程探索一个环境，并把得到的梯度回传个主节点的参数：<br><img src='/medias/image/2022-09-05-10-40-15.png' width="60%"></p>
+<h2 id="异步优势演员-评论员算法（A3C）"><a href="#异步优势演员-评论员算法（A3C）" class="headerlink" title="异步优势演员-评论员算法（A3C）"></a>异步优势演员-评论员算法（A3C）</h2><p>为了提升训练速度，可以采用多进程的方式，每个子进程探索一个环境，并把得到的梯度回传个主节点的参数：<br><img src='/medias/image/2022-09-05-10-40-15.png' width="60%"><br>主节点将子进程的梯度进行平均并回传新的参数给各个节点<br>因为各个子进程异步进行，因此对GPU的利用效率不高</p>
+<h2 id="IMPALA"><a href="#IMPALA" class="headerlink" title="IMPALA"></a>IMPALA</h2><ul>
+<li>每个actor起一个模拟环境，定期从learner获取最新的神经网络参数，来使用自己能获得的最新策略去采样，并且把获取到的数据传回供learner去更新各个神经网络参数。</li>
+<li>learner通过获取actor得到的轨迹来做SGD来更新各个神经网络的参数</li>
+<li>learner使用的是一块GPU，actor使用CPU</li>
+<li>当训练规模扩大的时候，可以使用多个learner（多块GPU）并且每块GPU配套多个actor（CPU）。每个learner只从自己的actor们中获取样本进行更新，learner之间定期交换gradient并且更新网络参数，actor也定期从任意learner上获取并更新神经网络参数。</li>
+<li>还通过V-trace来减弱了因为off-policy带来的不稳定性</li>
+</ul>
+<img src='/medias/image/2022-12-06-16-17-57.png' width="100%">
+
+<ul>
+<li>actor和learner相互异步工作，极大提高了时间利用率；</li>
+<li>actor传输的是数据而非梯度，因此通信开销更小；</li>
+<li>相比于A3C和batched A2C，具有更好的高性能计算性能；</li>
+<li>单任务训练上相比于分布式A3C、单机A3C和batched A2C有更好的性能，并且对于超参数更稳定；</li>
+</ul>
 <h2 id="路径衍生策略梯度算法"><a href="#路径衍生策略梯度算法" class="headerlink" title="路径衍生策略梯度算法"></a>路径衍生策略梯度算法</h2><p>优势演员-评论员算法中的Q网络只能评价动作好不好，不能提供好的方向，路径衍生策略梯度算法的思想类似于生成对抗网络，让Q网络同时输入状态和演员生成的动作，得到动作价值，进而可以给演员的优化提供方向。<br><img src='/medias/image/2022-09-05-11-03-33.png' width="60%"><br>路径衍生策略梯度算法也可以看成是在深度Q网络的基础上用策略梯度来选择动作，以解决动作空间过大或者动作连续的问题：<br><img src='/medias/image/2022-09-05-11-06-57.png' width="60%"><br>与生成对抗网络在技巧上的研究<br><img src='/medias/image/2022-09-05-11-09-12.png' width="60%"></p>
 <h2 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h2><p>Policy gradient 是on-policy的做法，这样要收集很多数据，然后更新参数，再去收集数据，效率较低；<br>可以用一个policy去跟环境互动收集数据，另一个policy可以用收集到的数据执行梯度上升。<br>考虑到两个policy的参数不一样，动作分布不一样，因此梯度计算需要进行一些调整。<br>假设两个policy的差别不大的情况下，可以通过<strong>重要性采样</strong>，加入两个policy的概率值来调整：<br><img src='/medias/image/screenshot_1662004433769.png' width="60%"><br>其中跟环境互动收集数据的policy参数$\theta’$是常数，不用求梯度。</p>
 <p>当两个policy的差别过大时，会使得算法过程不稳定，因此要控制这种差异：</p>
@@ -1603,7 +1627,8 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
 </ol>
 <p>与生成对抗网络的区别：<br><img src='/medias/image/2022-09-05-12-19-35.png' width="60%"></p>
 <p>优势：往往不需要太多数据，因为只需要少数示范。</p>
-<h2 id="自博弈"><a href="#自博弈" class="headerlink" title="自博弈"></a>自博弈</h2><h3 id="self-paly"><a href="#self-paly" class="headerlink" title="self-paly"></a>self-paly</h3><p>让智能体左右互搏，提升策略：</p>
+<h2 id="自博弈"><a href="#自博弈" class="headerlink" title="自博弈"></a>自博弈</h2><h3 id="naive-self-paly"><a href="#naive-self-paly" class="headerlink" title="naive self-paly"></a>naive self-paly</h3><p>让智能体不断地和最新的模型对打，提升策略。<br>naive self-play可能出现剪刀石头布这样的循环学习，或者难以发现潜在的问题。</p>
+<h3 id="fictitious-self-paly"><a href="#fictitious-self-paly" class="headerlink" title="fictitious self-paly"></a>fictitious self-paly</h3><p>让智能体不断地和所以历史模型对打，提升策略。</p>
 <ol>
 <li>智能体与随机策略对战；</li>
 <li>当智能体胜率超过一定阈值时，将智能体当前参数固化为一个历史策略；</li>
@@ -1665,7 +1690,9 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
         <span class="token comment"># +2 = main + random</span>
         result<span class="token punctuation">[</span><span class="token string">"league_size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>current_opponent <span class="token operator">+</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="league-base-self-play"><a href="#league-base-self-play" class="headerlink" title="league base self-play"></a>league base self-play</h3><p>单纯的self-play可能出现剪刀石头布这样的循环学习，或者难以发现潜在的问题。<br>基于联盟的智能体分为3种：主智能体（main agent）、联盟利用者（league exploiter）和主利用者（main exploiter）：</p>
+<h3 id="heuristic-fictitious-self-paly"><a href="#heuristic-fictitious-self-paly" class="headerlink" title="heuristic fictitious self-paly"></a>heuristic fictitious self-paly</h3><p>以一定的概率选择最新的或者历史的</p>
+<h3 id="rank-based-fictitious-self-paly"><a href="#rank-based-fictitious-self-paly" class="headerlink" title="rank-based fictitious self-paly"></a>rank-based fictitious self-paly</h3><p>将对手策略分级，选择合适级别的策略来对打</p>
+<h3 id="policy-spaced-response-oracles"><a href="#policy-spaced-response-oracles" class="headerlink" title="policy-spaced response oracles"></a>policy-spaced response oracles</h3><h3 id="league-base-self-play"><a href="#league-base-self-play" class="headerlink" title="league base self-play"></a>league base self-play</h3><p>基于联盟的智能体分为3种：主智能体（main agent）、联盟利用者（league exploiter）和主利用者（main exploiter）：</p>
 <ul>
 <li>主智能体：即主力选手，正在训练的智能体及其祖先。其有50%使用PFSP方法从联盟模型池中进行采样，使用有优先级的虚拟自学习策略，即能打败智能体的采样概率高，不能打败智能体的采样概率低。有35%概率使用传统Self-Play自对弈方式按照一定概率分布选择Main Agent历史模型，有15%从已经淘汰的历史对手中进行随机挑选（即Main Agent对战这些智能体胜率已经达到100%）。</li>
 <li>主利用者：即主力选手的陪练，能打败训练中的所有智能体。在训练的过程中，随机从3个智能体中挑选1个主智能体，如果可以以高于0.1的概率打败该智能体就与其进行训练，如果不能就从之前的主智能体中再挑选对手。当以0.7的胜率打败全部3个正在学习的主智能体时，或者距上次存档4*10^9步之后就保存策略，并且进行重设初始化策略的操作。</li>
@@ -1813,10 +1840,6 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
-                                    <span class="chip bg-color">模型</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/">
                                     <span class="chip bg-color">智能体</span>
                                 </a>
@@ -1827,6 +1850,10 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
                             
                                 <a href="/tags/%E7%AD%96%E7%95%A5/">
                                     <span class="chip bg-color">策略</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">模型</span>
                                 </a>
                             
                                 <a href="/tags/%E7%8E%AF%E5%A2%83/">
@@ -2305,7 +2332,7 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">135.5k</span>&nbsp;字
+                class="white-color">165.8k</span>&nbsp;字
             
             
             

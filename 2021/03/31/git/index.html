@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/image/git1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/image/2022-12-09-16-14-49.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -485,21 +485,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-02
+                    2022-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    335
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -522,36 +522,92 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
-<li>git init   初始化仓库</li>
+                <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="Git诞生"><a href="#Git诞生" class="headerlink" title="Git诞生"></a>Git诞生</h3><p>Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！</p>
+<h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><p>集中式版本管理包括CVS及SVN等</p>
+<ul>
+<li>需要一台中心服务器保存核心版本，每一台工作电脑向核心服务器推送自己的更改</li>
+<li>必须要联网工作</li>
+<li>容错性差</li>
+</ul>
+<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><p>分布式版本管理Git</p>
+<ul>
+<li>每台电脑平等的保存一个仓库和若干分支，但一般也有一台中心服务器充当交换角色</li>
+<li>不需要联网工作</li>
+<li>容错性好</li>
+<li>分支管理方便</li>
+</ul>
+<h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>版本库又名仓库，英文名repository，是文件管理的单元</p>
+<h3 id="管理范围"><a href="#管理范围" class="headerlink" title="管理范围"></a>管理范围</h3><ul>
+<li>版本控制系统，只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等</li>
+<li>而图片、视频这些二进制文件等管理，但不能跟踪具体变化</li>
+</ul>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><ul>
+<li>工作区是电脑里面的目录，直接操作的就是工作区</li>
+<li>暂存区stage是在工作区和版本库之间的缓冲区域</li>
+<li>git add会将工作区的更改推送到暂存区，此时更改并未成为版本</li>
+<li>git commit会将暂存区打包组成一个新的版本</li>
+<li>暂存区的内容是临时的，切换版本的时候暂存区会丢失</li>
+</ul>
+<img src='/medias/image/2022-12-09-12-00-20.png' width="60%">
+
+<h3 id="忽略特殊文件"><a href="#忽略特殊文件" class="headerlink" title="忽略特殊文件"></a>忽略特殊文件</h3><ul>
+<li>.gitignore文件文件配置忽略特殊文件</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a> 列出了常见的可忽略文件</li>
+</ul>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><ul>
+<li>git init   将当前文件夹初始化为仓库<ul>
+<li>初始化后出现.git目录，用于记录跟踪仓库状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="信息配置"><a href="#信息配置" class="headerlink" title="信息配置"></a>信息配置</h3><ul>
+<li>git config --global user.name ‘name’</li>
+<li>git config --global user.email <a href="mailto:&#x6e;&#x61;&#109;&#x65;&#64;&#x78;&#x78;&#x78;&#46;&#x63;&#x6f;&#109;">&#x6e;&#x61;&#109;&#x65;&#64;&#x78;&#x78;&#x78;&#46;&#x63;&#x6f;&#109;</a></li>
+<li>git config --global color.ui true 显示颜色</li>
+<li>git config --global alias.st status  配置别名，示例用st代替status</li>
 </ul>
 <h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ul>
 <li>git status  查看状态</li>
-<li>git log   查看日志      –oneline   用一行显示一个版本    –graph  用线显示出分支</li>
-<li>git diff   查看工作区文件内容相对版本库修改       –cached  查看暂存区文件内容相对版本库修改</li>
+<li>git log   查看日志      --oneline   用一行显示一个版本    --graph  用线显示出分支</li>
+<li>git diff   查看工作区文件内容相对版本库修改       --cached  查看暂存区文件内容相对版本库修改</li>
 </ul>
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
-<li>git add {file}   添加文件到暂存区</li>
-<li>git reset {file}   从暂存区拉回到工作区</li>
-<li>git commit {file_name} -m “message”  提交更改</li>
+<li>git checkout -- file  丢弃工作区file文件的修改</li>
+<li>git add {file}   添加文件从工作区到暂存区</li>
+<li>git rm {file}   删除文件从工作区到暂存区</li>
+<li>git reset [HEAD] {file}   从暂存区拉回到工作区</li>
+<li>git commit -m “message”  提交暂存区到仓库</li>
+<li>git commit [file1] [file2] -m “message”  提交指定文件更改到仓库</li>
 <li>git commit -am “message”  添加所有修改并提交</li>
 </ul>
 <h3 id="时光穿越"><a href="#时光穿越" class="headerlink" title="时光穿越"></a>时光穿越</h3><ul>
 <li>git checkout  {commit号}  切换HEAD指针位置，可以切到之前的commit位置，用于临时切回去查看</li>
-<li>git reset –hard  {commit号}  直接切换分支指针位置，用于版本回退</li>
-<li>git reset –hard   HEAD^^   一个^代表HEAD指针往前退一个位置</li>
+<li>git reset --hard  {commit号}  直接切换分支指针位置，用于版本回退</li>
+<li>git reset --hard   HEAD^^   一个^代表HEAD指针往前退一个位置</li>
 <li>git tag  {标签号}    给commit（版本）打上标签，可以替代版本号</li>
 </ul>
 <h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><ul>
 <li>git branch  查看分支</li>
 <li>git branch {分支名}   创建分支</li>
-<li>git checkout  {分支名}    切换分支</li>
+<li>git branch -d {分支名}   删除分支</li>
+<li>git switch/checkout  {分支名}    切换分支</li>
 <li>git merge {分支名}     将别的分支合并过来，直接合并两个分支</li>
-<li>git merge  –no-ff   -m  “message”  {分支名}     把别的分支的更改加过来，别的分支还在</li>
+<li>git merge  --no-ff   -m  “message”  {分支名}     把别的分支的更改加过来，别的分支还在</li>
+</ul>
+<h3 id="保存现场"><a href="#保存现场" class="headerlink" title="保存现场"></a>保存现场</h3><ul>
+<li>git stash 把工作现场收拾保存起来，避免切换分支的时候丢失</li>
+<li>git stash list 列出保存的工作现场</li>
+<li>git stash apply [名字] 应用某个工作现场</li>
+<li>git stash drop [名字] 删除某个工作现场</li>
+<li>git stash pop 回到最近保存的工作现场并删除</li>
 </ul>
 <h3 id="远程"><a href="#远程" class="headerlink" title="远程"></a>远程</h3><ul>
+<li>git clone [repository] 将远程仓库克隆下来</li>
+<li>git remote add origin [repository] 将已有本地仓库与远程仓库关联起来，origin是习惯的远程名字</li>
 <li>git remote     各种远程查看</li>
-<li>git push   {远程库名}  {本地分支名}</li>
+<li>git pull 从远程仓库中拉取变化</li>
+<li>git rebase 变基，调整更改的基础，以将多个分支合并成一条</li>
+<li>git push   {远程库名}  {本地分支名} 推送本地分支到远程仓库中</li>
 <li>git push origin {本地branch}</li>
 <li>git push origin {本地branch:远程branch}</li>
 </ul>
@@ -1103,7 +1159,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">135.5k</span>&nbsp;字
+                class="white-color">165.8k</span>&nbsp;字
             
             
             
