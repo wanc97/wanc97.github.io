@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
 </head>
 
 
@@ -521,7 +521,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-08
+                    2022-12-13
                 </div>
                 
 
@@ -611,7 +611,7 @@
 <p><strong>统计分散度</strong><br>平均数可以表征一批数据的典型值，但是仅凭平均数还不能给我们提供足够的信息，平均数无法表征一组数据的分散程度。</p>
 <ul>
 <li>全距=max-min：也叫极差。它是一组数据中最大值与最小值之差。可以用于度量数据的分散程度。<ul>
-<li>局限：全距虽然求解方便快捷，但是它的局限性在于“若数据中存在异常值的情况，会产生偏差。为了摆脱异常值带来的干扰，比如我们看一下下面的两组数据。只是增加了一个异常值，两组数据的全距产生了巨大的差异。</li>
+<li>局限：全距虽然求解方便快捷，但是它的局限性在于数据中存在异常值的情况，会产生偏差。比如只是增加了一个异常值，数据的全距就会有很大变化。</li>
 </ul>
 </li>
 <li>四分位数：所有观测值从小到大排序后四等分，处于三个分割点位置的数值就是四分位数：Q1，Q2和Q3。</li>
@@ -753,7 +753,7 @@
 <li>对象：具有一定统计规律的数据。</li>
 <li>过程：找出数据中有泛化能力的模式/规律，以应用在新的场景下。</li>
 </ul>
-<p><strong>场景</strong></p>
+<p><strong>适用场景</strong></p>
 <ul>
 <li>数学/映射关系复杂；</li>
 <li>难以编程实现；</li>
@@ -858,13 +858,28 @@
 <li>参数模型假设总体服从某个分布，这个分布可以由一些参数确定，如正态分布由均值和标准差确定，在此基础上构建的模型称为参数模型；</li>
 <li>非参数模型对于总体的分布不做任何假设或者说是数据分布假设自由，只知道其分布是存在的，所以就无法得到其分布的相关参数，只能通过非参数统计的方法进行推断。</li>
 <li>参数模型和非参数模型中的“参数”并不是模型中的参数，而是数据分布的参数。</li>
+<li>常见的参数机器学习模型有：<ul>
+<li>逻辑回归（假设数据服从伯努利分布）</li>
+<li>线性成分分析</li>
+<li>感知机</li>
+<li>简单的神经网络</li>
+</ul>
+</li>
+<li>常见的非参数机器学习模型有：<ul>
+<li>决策树</li>
+<li>支持向量机</li>
+<li>朴素贝叶斯</li>
+<li>复杂的神经网络</li>
+</ul>
+</li>
 </ul>
 <h4 id="生成模型-amp-判别模型"><a href="#生成模型-amp-判别模型" class="headerlink" title="生成模型&amp;判别模型"></a>生成模型&amp;判别模型</h4><p>区别在于有没有显式计算分布。</p>
 <ul>
 <li>判别模型是得到决策边界，判断样本为不同类别的概率，不显式计算分布，隐式学习到数据分布信息；</li>
 <li>生成模型是显式计算样本数据与类别的分布信息，判别时计算样本为哪一类的概率更大。<img src='/medias/image/机器学习-生成判别.jpeg' width="80%"></li>
 </ul>
-<h4 id="误差可以分解为偏差、方差和噪声之和"><a href="#误差可以分解为偏差、方差和噪声之和" class="headerlink" title="误差可以分解为偏差、方差和噪声之和"></a>误差可以分解为偏差、方差和噪声之和</h4><ul>
+<h4 id="偏差-方差分解"><a href="#偏差-方差分解" class="headerlink" title="偏差-方差分解"></a>偏差-方差分解</h4><ul>
+<li>误差可以分解为偏差、方差和噪声之和</li>
 <li>偏差：描述模型对于特定数据（训练集）的拟合效果,度量了学习算法的期望预测与真实结果之间的偏离程度，刻画了学习算法本身的拟合能力。</li>
 <li>方差：描述模型在不同数据（训练集与测试集）上拟合效果的差别，度量了训练集的变动所导致的学习性能的变化，刻画了数据扰动造成的影响。</li>
 <li>噪声：度量了在当前任务上任何学习算法所能达到的期望泛化误差的下界，刻画了学习问题本身的难度。</li>
@@ -1119,6 +1134,7 @@
 <li>各个优化算法都是从两个方面进行调整：<ul>
 <li>动量方面，平滑梯度、动量</li>
 <li>斜边方面，对梯度、动量进行正则化，最终使得各个参数的优化值比较均匀、一致。 </li>
+<li>所以最后的优化方向并非是梯度下降最快的方向，或者说梯度下降最快的方向并不是和合适的方向</li>
 </ul>
 </li>
 </ul>
@@ -1198,16 +1214,17 @@
 <li>参数共享也是促使模型学习主要模式，同时也可以起到抑制过拟合的作用，因为有限的参数要尽量满足主要特征，就自然忽略了噪声。</li>
 </ul>
 <h3 id="标准化层"><a href="#标准化层" class="headerlink" title="标准化层"></a>标准化层</h3><ul>
-<li>一说可以防止数据分布的变化（内部协变量偏移）带来性能下降；另一说模型的优化曲面发生变化，变得更加平滑，非凸性减弱，使得训练变得容易，即利普希茨系数严格降低；</li>
+<li>一说可以防止数据分布的变化（内部协变量偏移）带来性能下降；</li>
+<li>另一说模型的优化曲面发生变化，变得更加平滑，非凸性减弱，使得训练变得容易，即利普希茨系数严格降低；</li>
 </ul>
 <p><strong>Batch Norm</strong></p>
 <ul>
 <li><p>Batch Norm：在对一个通道内，对一批次数据的每个特征，减均值除标准差，同时再加入一对可学习的均值方差参数。</p>
 <ul>
 <li>如果不是卷积网络，Batch Norm也可以是对于单个神经元的;</li>
-<li>训练过程使用的减均值除方差是通过一批的训练数据得到，测试的是通过训练过程的指数滑动平均得到;</li>
+<li>训练过程使用的减均值除方差是通过一批的训练数据计算得到均值、标准层，测试的时候是通过训练过程的指数滑动平均得到;</li>
 <li>通过Batch Norm，深度模型更好地收敛训练，即使对于比较大的学习率也有较好的效果;</li>
-<li>在batch size较大的时候，Batch分布与整体分布类似，Batch Norm的效果往往好于Other Norm；同时Batch Norm高度依赖于mini batch 的大小。它要求每个mini-batch 都比较大，因此不适合batch size 较小的场景，如：在线学习（batch size=1 ）；</li>
+<li>Batch Norm高度依赖于mini batch的大小，batch size较大的时候，Batch分布与整体分布类似，Batch Norm的效果往往好于Other Norm；反之不适合batch size 较小的场景，如：在线学习（batch size=1 ）；</li>
 <li>不适合RNN网络，因为不同样本的sequence的长度不同，因此RNN的深度是不固定的。同一个batch中的多个样本会产生不同深度的RNN，因此很难对同一层的样本进行归一化；</li>
 </ul>
 </li>
@@ -1237,7 +1254,7 @@
 <h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><h4 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h4><ul>
 <li>在MLP的基础上增加了两个先验：<ul>
 <li>局部性连接</li>
-<li>参数共享。</li>
+<li>参数共享</li>
 </ul>
 </li>
 <li>这两个先验假设使得卷积网络相对于MLP的参数量大减，泛化能力更加强，可以更好地学习到图像数据中的重要模式（主要指像素之间的变化关系、组合关系，所以非常适合计算视觉领域，当然也可以用在同样具有类似重要特征组合方式的领域）。</li>
@@ -1268,7 +1285,7 @@
 </ul>
 </li>
 <li>残差网络（ResNet）：它通过残差块构建跨层的数据通道，是计算机视觉中最流行的体系架构；</li>
-<li>稠密连接网络（DenseNet）：它的计算成本很高，但给我们带来了更好的效果。</li>
+<li>稠密连接网络（DenseNet）：计算成本很高，同时也带来了更好的效果。</li>
 </ul>
 <h4 id="其它策略"><a href="#其它策略" class="headerlink" title="其它策略"></a>其它策略</h4><ul>
 <li>1*n卷积：降低参数量；</li>
@@ -1419,7 +1436,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
 </ul>
 <p><strong>稀疏表示和字典学习</strong></p>
 <ul>
-<li>对样本 $\vec{\mathbf{x}}<em>{i}$, 通过交替寻优的方式学习字典 $\mathbf{B}$ 和稀疏表示$\vec{\alpha}</em>{i}$，优化目标为：$\min_{\vec{\alpha}<em>{i}}||\vec{\mathbf{x}}</em>{i}-\mathbf{B}\vec{\alpha}<em>{i}||</em>{2}^{2}+\lambda\sum_{i=1}^{N}||\vec{\alpha}<em>{i}||</em>{1}$</li>
+<li>对样本 $x_{i}$, 通过交替寻优的方式学习字典 $\mathbf{B}$ 和稀疏表示$\alpha_{i}$，优化目标为：$\min_{\alpha_{i}}||x_{i}-B\alpha_{i}||<em>{2}^{2}+\lambda\sum</em>{i=1}^{N}||\alpha_{i}||_{1}$</li>
 </ul>
 <h3 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>将二分类模型用于多分类问题：</p>
 <ul>
@@ -2203,7 +2220,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            唯有超越，才能获得真正的自由
+                            齐同万物，游于逍遥
                         
                     </div>
                     <div class="publish-info">
@@ -2519,7 +2536,7 @@ nx<span class="token punctuation">.</span>pagerank<span class="token punctuation
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">165.8k</span>&nbsp;字
+                class="white-color">168.4k</span>&nbsp;字
             
             
             

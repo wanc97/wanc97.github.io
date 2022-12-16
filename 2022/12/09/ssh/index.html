@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
 </head>
 
 
@@ -481,21 +481,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-09
+                    2022-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    6.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    25 分
                 </div>
                 
 
@@ -520,7 +520,7 @@
             <div id="articleContent">
                 <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>SSH（Secure Shell 的缩写）是一种网络协议，用于加密两台计算机之间的通信，并且支持各种身份验证机制。<br>它主要用于保证远程登录和远程通信的安全，任何网络服务都可以用这个协议来加密。</p>
 <p>在明文通信中，登录远程服务器的时候，需要将用户输入的密码传给服务器，线路经过的中间计算机都能看到密码，这是很危险的。</p>
-<p>SSH能够加密计算机之间的通信，保证不被窃听或篡改。它还能对操作者进行认证（authentication）和授权（authorization）。明文的网络协议可以套用在它里面，从而实现加密。</p>
+<p>SSH能够加密计算机之间的通信，保证不被窃听或篡改。它还能对操作者进行认证（authentication）和授权（authorization）。明文的网络协议可以套用在它里面，从而实现加密。<br>不仅在登陆过程中对密码进行加密传送，而且对登陆后执行的命令的数据也进行加密。</p>
 <h2 id="OpenSSH"><a href="#OpenSSH" class="headerlink" title="OpenSSH"></a>OpenSSH</h2><p>开源的、最流行的SSH实现<br>Linux 的所有发行版几乎都自带 OpenSSH</p>
 <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul>
 <li>服务器-客户端模式（Server - Client）</li>
@@ -750,7 +750,7 @@ sshd
 <ul>
 <li>AcceptEnv：指定允许接受客户端通过SendEnv命令发来的哪些环境变量，即允许客户端设置服务器的环境变量清单，变量名之间使用空格分隔（AcceptEnv PATH TERM）。</li>
 <li>AllowGroups：指定允许登录的用户组（AllowGroups groupName，多个组之间用空格分隔。如果不使用该项，则允许所有用户组登录。</li>
-<li>AllowUsers：指定允许登录的用户，用户名之间使用空格分隔（AllowUsers user1 user2），也可以使用多行AllowUsers命令指定，用户名支持使用通配符。如果不使用该项，则允许所有用户登录。该项也可以使用用户名@域名的格式（比如AllowUsers <a href="mailto:&#106;&#111;&#110;&#101;&#115;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#106;&#111;&#110;&#101;&#115;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;</a>）。</li>
+<li>AllowUsers：指定允许登录的用户，用户名之间使用空格分隔（AllowUsers user1 user2），也可以使用多行AllowUsers命令指定，用户名支持使用通配符。如果不使用该项，则允许所有用户登录。该项也可以使用用户名@域名的格式（比如AllowUsers <a href="mailto:&#x6a;&#x6f;&#110;&#101;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x6a;&#x6f;&#110;&#101;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#x6d;</a>）。</li>
 <li>AllowTcpForwarding：指定是否允许端口转发，默认值为yes（AllowTcpForwarding yes），local表示只允许本地端口转发，remote表示只允许远程端口转发。</li>
 <li>AuthorizedKeysFile：指定储存用户公钥的目录，默认是用户主目录的ssh/authorized_keys目录（AuthorizedKeysFile .ssh/authorized_keys）。</li>
 <li>Banner：指定用户登录后，sshd 向其展示的信息文件（Banner /usr/local/etc/warning.txt），默认不展示任何内容。</li>
@@ -809,21 +809,67 @@ sshd -p <span class="token number">2034</span>
 
 <span class="token comment"># -t参数检查配置文件的语法是否正确。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h1 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h1><p>SSH 除了登录服务器，还可以作为加密通信的中介，充当两台服务器之间的通信加密跳板，使得原本不加密的通信变成加密通信。这个功能称为端口转发（port forwarding），又称 SSH 隧道（tunnel）。<br>端口转发有两个主要作用：</p>
+<ul>
+<li>将不加密的数据放在 SSH 安全连接里面传输，使得原本不安全的网络服务增加了安全性，比如通过端口转发访问 Telnet、FTP 等明文服务，数据传输就都会加密。</li>
+<li>作为数据通信的加密跳板，绕过网络防火墙。<br>端口转发有三种使用方法：动态转发，本地转发，远程转发。</li>
+</ul>
+<h2 id="动态转发"><a href="#动态转发" class="headerlink" title="动态转发"></a>动态转发</h2><p>动态转发：本机与SSH服务器之间创建了一个加密连接，然后本机内部针对某个端口的通信，都通过这个加密连接转发。它的一个使用场景就是，访问所有外部网站，都通过SSH转发。</p>
+<h2 id="本地转发"><a href="#本地转发" class="headerlink" title="本地转发"></a>本地转发</h2><p>本地转发：SSH 服务器作为中介的跳板机，建立本地计算机与特定目标网站之间的加密连接。本地转发是在本地计算机的 SSH 客户端建立的转发规则。</p>
+<h2 id="远程转发"><a href="#远程转发" class="headerlink" title="远程转发"></a>远程转发</h2><p>远程端口指的是在远程SSH服务器建立的转发规则。<br>这种场景比较特殊，主要针对内网的情况。本地计算机在外网，SSH跳板机和目标服务器都在内网，而且本地计算机无法访问内网之中的SSH跳板机，但是SSH跳板机可以访问本机计算机。<br>由于本机无法访问内网 SSH 跳板机，就无法从外网发起 SSH 隧道，建立端口转发。必须反过来，从 SSH 跳板机发起隧道，建立端口转发，这时就形成了远程端口转发。</p>
+<h1 id="证书登录"><a href="#证书登录" class="headerlink" title="证书登录"></a>证书登录</h1><ul>
+<li>ssh证书登录是在密码登录和密钥登录外的第三种方式</li>
+<li>密码登录需要输入服务器密码，这非常麻烦，也不安全，存在被暴力破解的风险。</li>
+<li>密钥登录需要服务器保存用户的公钥，也需要用户保存服务器公钥的指纹。这对于多用户、多服务器的大型机构很不方便，如果有员工离职，需要将他的公钥从每台服务器删除。</li>
+</ul>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>证书登录就是为了解决上面的缺点而设计的。它引入了一个证书颁发机构（Certificate Authority，简称 CA），对信任的服务器颁发服务器证书，对信任的用户颁发用户证书。<br>登录时，用户和服务器不需要提前知道彼此的公钥，只需要交换各自的证书，验证是否可信即可。<br>证书登录的主要优点有两个：</p>
+<ol>
+<li>用户和服务器不用交换公钥，这更容易管理，也具有更好的可扩展性。</li>
+<li>证书可以设置到期时间，而公钥没有到期时间。针对不同的情况，可以设置有效期很短的证书，进一步提高安全性。</li>
+</ol>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>SSH证书登录之前，如果还没有证书，需要生成证书：</p>
+<ol>
+<li>用户和服务器都将自己的公钥，发给CA；</li>
+<li>CA使用服务器公钥，生成服务器证书，发给服务器；</li>
+<li>CA使用用户的公钥，生成用户证书，发给用户。</li>
+</ol>
+<p>有了证书以后，用户就可以登录服务器了。整个过程都是SSH自动处理，用户无感知：</p>
+<ol>
+<li>用户登录服务器时，SSH 自动将用户证书发给服务器。</li>
+<li>服务器检查用户证书是否有效，以及是否由可信的 CA 颁发。证实以后，就可以信任用户。</li>
+<li>SSH 自动将服务器证书发给用户。</li>
+<li>用户检查服务器证书是否有效，以及是否由信任的 CA 颁发。证实以后，就可以信任服务器。</li>
+<li>双方建立连接，服务器允许用户登录。</li>
+</ol>
+<p>证书登录的前提是，必须有一个 CA，而 CA 本质上就是一对密钥，跟其他密钥没有不同，CA 就用这对密钥去签发证书。<br>虽然 CA 可以用同一对密钥签发用户证书和服务器证书，但是出于安全性和灵活性，最好用不同的密钥分别签发。所以，CA 至少需要两对密钥，一对是签发用户证书的密钥，假设叫做user_ca，另一对是签发服务器证书的密钥，假设叫做host_ca<br>有了 CA 以后，就可以用CA和用户、服务器对应的公钥来签发证书</p>
+<h1 id="其它工具"><a href="#其它工具" class="headerlink" title="其它工具"></a>其它工具</h1><h2 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h2><p>scp是 SSH 提供的一个客户端程序，用来在两台主机之间加密传送文件（即复制文件）。<br>scp是 secure copy 的缩写，相当于cp命令 + SSH。它的底层是 SSH 协议，默认端口是22，相当于先使用ssh命令登录远程主机，然后再执行拷贝操作。<br>scp可以用于：本地复制到远程、远程复制到本地、两个远程系统之间的复制。<br>使用scp传输数据时，文件和密码都是加密的，不会泄漏敏感信息。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># scp的语法类似cp的语法</span>
+<span class="token function">scp</span> <span class="token builtin class-name">source</span> destination
+<span class="token comment"># 它们都可以包含用户名和主机名</span>
+<span class="token function">scp</span> user@host:foo.txt bar.txt
+<span class="token comment"># 支持一次复制多个文件</span>
+<span class="token function">scp</span> source1 source2 destination
+<span class="token comment"># 如果所要复制的文件，在目标位置已经存在同名文件，scp会在没有警告的情况下覆盖同名文件。</span>
 
+<span class="token comment"># 本地文件复制到远程</span>
+<span class="token comment"># 源是文件时，目标可以是文件或文件夹</span>
+<span class="token function">scp</span> SourceFile user@host:directory/TargetFile
+<span class="token function">scp</span> file.txt remote_username@10.10.0.2:/remote/directory
+<span class="token comment"># 源是文件夹或文件内容时，目标都是文件夹</span>
+<span class="token comment"># 会在远程主机创建 documents 目录</span>
+<span class="token function">scp</span> -r documents username@server_ip:/path_to_remote_directory
+<span class="token comment"># 将本机整个目录拷贝到远程目录下</span>
+<span class="token function">scp</span> -r localmachine/path_to_the_directory username@server_ip:/path_to_remote_directory/
+<span class="token comment"># 将本机目录下的所有内容拷贝到远程目录下</span>
+<span class="token function">scp</span> -r localmachine/path_to_the_directory/* username@server_ip:/path_to_remote_directory/
 
+<span class="token comment"># 远程文件复制到本地，两个远程系统之间的复制，与上述规则一样。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-
-
-
-
-
-
-
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h2 id="sftp"><a href="#sftp" class="headerlink" title="sftp"></a>sftp</h2><p>sftp是 SSH 提供的一个客户端应用程序，主要用来安全地访问 FTP。因为 FTP 是不加密协议，很不安全，sftp就相当于将 FTP 放入了 SSH。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 连接 FTP 主机</span>
+<span class="token function">sftp</span> username@hostname
+<span class="token comment"># 输入 FTP 的密码。密码验证成功以后，就会进入提示符sftp></span>
+<span class="token comment"># 可以使用各种FTP命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1066,17 +1112,16 @@ sshd -p <span class="token number">2034</span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/12/09/ssh/">
+                <a href="/2022/12/16/bian-cheng-fan-shi/">
                     <div class="card-image">
                         
-                        <img src="/medias/image/2022-12-09-16-16-39.png" class="responsive-img" alt="SSH">
+                        <img src="/medias/image/%E9%9B%85%E5%85%B8%E5%AD%A6%E9%99%A2.jpg" class="responsive-img" alt="编程范式">
                         
-                        <span class="card-title">SSH</span>
+                        <span class="card-title">编程范式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1086,33 +1131,20 @@ sshd -p <span class="token number">2034</span>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                    计算机
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    编程语言
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AF%86%E9%92%A5/">
-                        <span class="chip bg-color">密钥</span>
-                    </a>
-                    
-                    <a href="/tags/CS%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">CS架构</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1364,7 +1396,7 @@ sshd -p <span class="token number">2034</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">165.8k</span>&nbsp;字
+                class="white-color">168.4k</span>&nbsp;字
             
             
             
