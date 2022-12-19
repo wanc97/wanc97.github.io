@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/image/%E9%9B%85%E5%85%B8%E5%AD%A6%E9%99%A2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/image/2022-12-19-11-44-48.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -443,9 +443,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%BF%87%E7%A8%8B%E5%BC%8F/">
+                                <span class="chip bg-color">过程式</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                                <span class="chip bg-color">面向对象</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F/">
+                                <span class="chip bg-color">函数式</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%85%83/">
+                                <span class="chip bg-color">模板元</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B3%9B%E5%9E%8B/">
+                                <span class="chip bg-color">泛型</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -473,14 +493,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-16
+                    2022-12-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    127
                 </div>
                 
 
@@ -510,7 +530,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="过程式编程"><a href="#过程式编程" class="headerlink" title="过程式编程"></a>过程式编程</h1><p>Imperative Programming – 指令式编程</p>
+<h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><p>Declarative Programming – 声明式编程<br>函数之间互不依赖，函数没有状态，只是一个工具<br>函数之间通过参数和return传递信息<br>用map、reduce、filter等可以代替循环、分支等，优化风格</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">,</span> <span class="token string">"666"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x<span class="token operator">+</span>y<span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+<span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>可以将一系列要做的事连成Pipeline：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">pipeline_func</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> fns<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> a<span class="token punctuation">,</span> x<span class="token punctuation">:</span> x<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  fns<span class="token punctuation">,</span>
+                  data<span class="token punctuation">)</span>
+
+pipeline_func<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token punctuation">[</span>even_filter<span class="token punctuation">,</span>
+                     multiply_by_three<span class="token punctuation">,</span>
+                     convert_to_string<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
                 
             </div>
             <hr/>
@@ -573,7 +609,27 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E8%BF%87%E7%A8%8B%E5%BC%8F/">
+                                    <span class="chip bg-color">过程式</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                                    <span class="chip bg-color">面向对象</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F/">
+                                    <span class="chip bg-color">函数式</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%85%83/">
+                                    <span class="chip bg-color">模板元</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B3%9B%E5%9E%8B/">
+                                    <span class="chip bg-color">泛型</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -751,7 +807,7 @@
                 <a href="/2022/12/16/bian-cheng-fan-shi/">
                     <div class="card-image">
                         
-                        <img src="/medias/image/%E9%9B%85%E5%85%B8%E5%AD%A6%E9%99%A2.jpg" class="responsive-img" alt="编程范式">
+                        <img src="/medias/image/2022-12-19-11-44-48.png" class="responsive-img" alt="编程范式">
                         
                         <span class="card-title">编程范式</span>
                     </div>
@@ -779,6 +835,30 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BF%87%E7%A8%8B%E5%BC%8F/">
+                        <span class="chip bg-color">过程式</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F/">
+                        <span class="chip bg-color">函数式</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%85%83/">
+                        <span class="chip bg-color">模板元</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B3%9B%E5%9E%8B/">
+                        <span class="chip bg-color">泛型</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1013,7 +1093,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.4k</span>&nbsp;字
+                class="white-color">169.3k</span>&nbsp;字
             
             
             

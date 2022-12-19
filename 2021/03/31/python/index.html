@@ -449,12 +449,12 @@
                                 <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/JSON/">
-                                <span class="chip bg-color">JSON</span>
-                            </a>
-                        
                             <a href="/tags/numpy/">
                                 <span class="chip bg-color">numpy</span>
+                            </a>
+                        
+                            <a href="/tags/JSON/">
+                                <span class="chip bg-color">JSON</span>
                             </a>
                         
                             <a href="/tags/pandas/">
@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-19
+                    2022-12-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.8k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    26 分
                 </div>
                 
 
@@ -791,7 +791,8 @@ f <span class="token operator">=</span> counter<span class="token punctuation">(
 <li>考虑到变量有不同的层次，因此闭包也可以多层嵌套，得到更加抽象的闭包</li>
 </ul>
 <h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><ul>
-<li>装饰器通过闭包得到，简单说是把函数包一层；<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 得到一个计时装饰器</span>
+<li><p>装饰器通过闭包得到，简单说是把函数包一层；</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 得到一个计时装饰器</span>
 <span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>a<span class="token punctuation">,</span><span class="token operator">**</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
         start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -811,6 +812,127 @@ do_something<span class="token punctuation">(</span><span class="token number">2
     time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>show<span class="token punctuation">)</span>
 do_something <span class="token operator">=</span> timer<span class="token punctuation">(</span>do_something<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>装饰器还可以带参数，如<code>decorator(arg1, arg2)</code>意味着它会返回一个正常的装饰器</p>
+</li>
+<li><p>装饰器还可以是类的形式，如下代码同样实现了装饰器的功能，它将代码分为了初始化和执行两个部分。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">myDecorator</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"inside myDecorator.__init__()"</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>fn <span class="token operator">=</span> fn
+
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"inside myDecorator.__call__()"</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@myDecorator</span>
+<span class="token keyword">def</span> <span class="token function">aFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"inside aFunction()"</span><span class="token punctuation">)</span>
+
+aFunction<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>装饰器还可以根据需要改变参数设置</p>
+</li>
+<li><p>通过functools的wraps可以让装饰后的函数更加像原函数一些</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+<span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@wraps</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello, %s"</span> <span class="token operator">%</span> fn<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+        fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"goodby, %s"</span> <span class="token operator">%</span> fn<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@hello</span>
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''foo help doc'''</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"i am foo"</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> foo<span class="token punctuation">.</span>__name__ <span class="token comment">#输出 foo</span>
+<span class="token keyword">print</span> foo<span class="token punctuation">.</span>__doc__  <span class="token comment">#输出 foo help doc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>装饰器还可以给函数加上缓存</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+<span class="token keyword">def</span> <span class="token function">memo</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cache <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    miss <span class="token operator">=</span> <span class="token builtin">object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@wraps</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        result <span class="token operator">=</span> cache<span class="token punctuation">.</span>get<span class="token punctuation">(</span>args<span class="token punctuation">,</span> miss<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> result <span class="token keyword">is</span> miss<span class="token punctuation">:</span>
+            result <span class="token operator">=</span> fn<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span>
+            cache<span class="token punctuation">[</span>args<span class="token punctuation">]</span> <span class="token operator">=</span> result
+        <span class="token keyword">return</span> result
+
+    <span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@memo</span>
+<span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> n
+    <span class="token keyword">return</span> fib<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> fib<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>装饰器注册回调函数</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>func_map <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">def</span> <span class="token function">register</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">func_wrapper</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>func_map<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> func
+            <span class="token keyword">return</span> func
+        <span class="token keyword">return</span> func_wrapper
+
+    <span class="token keyword">def</span> <span class="token function">call_method</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        func <span class="token operator">=</span> self<span class="token punctuation">.</span>func_map<span class="token punctuation">.</span>get<span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> func <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"No function registered against - "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+app <span class="token operator">=</span> MyApp<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>register</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">main_page_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">"This is the main page."</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>register</span><span class="token punctuation">(</span><span class="token string">'/next_page'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">next_page_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">"This is the next page."</span>
+
+<span class="token keyword">print</span> app<span class="token punctuation">.</span>call_method<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> app<span class="token punctuation">.</span>call_method<span class="token punctuation">(</span><span class="token string">'/next_page'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>装饰器还可以把函数异步化</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">async</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">async_func</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        func_hl <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target <span class="token operator">=</span> func<span class="token punctuation">,</span> args <span class="token operator">=</span> args<span class="token punctuation">,</span> kwargs <span class="token operator">=</span> kwargs<span class="token punctuation">)</span>
+        func_hl<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func_hl
+
+    <span class="token keyword">return</span> async_func
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">from</span> time <span class="token keyword">import</span> sleep
+
+    <span class="token decorator annotation punctuation">@async</span>
+    <span class="token keyword">def</span> <span class="token function">print_somedata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'starting print_somedata'</span>
+        sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">'print_somedata: 2 sec passed'</span>
+        sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">'print_somedata: 2 sec passed'</span>
+        sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">'finished print_somedata'</span>
+
+    <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        print_somedata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">'back in main'</span>
+        print_somedata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">'back in main'</span>
+
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h4><ul>
 <li>在文件操作后需要对文件进行关闭，不能漏掉，可以通过with as语句，更加优雅、安全的达到目的；</li>
@@ -1294,12 +1416,12 @@ torch<span class="token punctuation">.</span>tensor<span class="token punctuatio
                                     <span class="chip bg-color">Python</span>
                                 </a>
                             
-                                <a href="/tags/JSON/">
-                                    <span class="chip bg-color">JSON</span>
-                                </a>
-                            
                                 <a href="/tags/numpy/">
                                     <span class="chip bg-color">numpy</span>
+                                </a>
+                            
+                                <a href="/tags/JSON/">
+                                    <span class="chip bg-color">JSON</span>
                                 </a>
                             
                                 <a href="/tags/pandas/">
@@ -1770,7 +1892,7 @@ torch<span class="token punctuation">.</span>tensor<span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.4k</span>&nbsp;字
+                class="white-color">169.3k</span>&nbsp;字
             
             
             

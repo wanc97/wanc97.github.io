@@ -473,21 +473,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-14
+                    2022-12-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -653,7 +653,8 @@
 </li>
 <li>把环境变量的设定以及登陆时要执行的命令保存在 ~/.bash_profile。而对于从图形界面启动的 shell 和 cron 启动的 shell，则需要单独配置文件。</li>
 <li>在 Bash 脚本中，子 shell（使用括号 (…)）是一种组织参数的便捷方式。一个常见的例子是临时地移动工作路径：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>cd / <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span> -alh<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li></li>
+<li>使用括号扩展（{…}）来减少输入相似文本，并自动化文本组合。这在某些情况下会很有用，例如 mv foo.{txt,pdf} some-dir（同时移动两个文件），cp somefile{,.bak}（会被扩展成 cp somefile somefile.bak）或者 mkdir -p test-{a,b,c}/subtest-{1,2,3}（会被扩展成所有可能的组合，并创建一个目录树）。</li>
+<li>通过使用 &lt;(some command) 可以将输出视为文件。例如，对比本地文件 /etc/hosts 和一个远程文件：<pre class="line-numbers language-python" data-language="python"><code class="language-python">diff <span class="token operator">/</span>etc<span class="token operator">/</span>hosts <span class="token operator">&lt;</span><span class="token punctuation">(</span>ssh somehost cat <span class="token operator">/</span>etc<span class="token operator">/</span>hosts<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 
                 
@@ -1147,7 +1148,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.4k</span>&nbsp;字
+                class="white-color">169.3k</span>&nbsp;字
             
             
             
