@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -449,12 +449,12 @@
                                 <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/PyTorch/">
-                                <span class="chip bg-color">PyTorch</span>
-                            </a>
-                        
                             <a href="/tags/numpy/">
                                 <span class="chip bg-color">numpy</span>
+                            </a>
+                        
+                            <a href="/tags/PyTorch/">
+                                <span class="chip bg-color">PyTorch</span>
                             </a>
                         
                     </div>
@@ -485,7 +485,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-27
+                    2022-12-26
                 </div>
                 
 
@@ -524,24 +524,15 @@
             <div id="articleContent">
                 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="导入重要库"><a href="#导入重要库" class="headerlink" title="导入重要库"></a>导入重要库</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 np<span class="token punctuation">.</span>__version__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre><code>&#39;1.20.1&#39;
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
 torch<span class="token punctuation">.</span>__version__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
 <pre><code>&#39;1.11.0&#39;
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="测试GPU"><a href="#测试GPU" class="headerlink" title="测试GPU"></a>测试GPU</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>False
 </code></pre>
 <p>如果返回False</p>
@@ -557,149 +548,73 @@ torch<span class="token punctuation">.</span>__version__<span aria-hidden="true"
 <h2 id="numpy基础"><a href="#numpy基础" class="headerlink" title="numpy基础"></a>numpy基础</h2><h3 id="创建ndarray"><a href="#创建ndarray" class="headerlink" title="创建ndarray"></a>创建ndarray</h3><h4 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h4><p>深拷贝</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[1, 2],
        [3, 4]])
 </code></pre>
 <p>浅拷贝</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>asarray<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[1, 2],
        [3, 4]])
 </code></pre>
 <h4 id="np-ones"><a href="#np-ones" class="headerlink" title="np.ones()"></a>np.ones()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token string">'int8'</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[6, 6],
        [6, 6]], dtype=int8)
 </code></pre>
 <h4 id="np-zeros"><a href="#np-zeros" class="headerlink" title="np.zeros()"></a>np.zeros()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token string">'int8'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[3, 3],
        [3, 3]], dtype=int8)
 </code></pre>
 <h4 id="np-arange"><a href="#np-arange" class="headerlink" title="np.arange()"></a>np.arange()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([0, 1, 2, 3, 4])
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([2, 3, 4])
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([2, 5, 8])
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([2. , 2.3, 2.6, 2.9, 3.2, 3.5, 3.8, 4.1, 4.4, 4.7, 5. , 5.3, 5.6,
        5.9, 6.2, 6.5, 6.8, 7.1, 7.4, 7.7, 8. , 8.3, 8.6, 8.9])
 </code></pre>
 <h4 id="np-linspace"><a href="#np-linspace" class="headerlink" title="np.linspace()"></a>np.linspace()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> stop<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([ 2.,  6., 10.])
 </code></pre>
 <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="ndim"><a href="#ndim" class="headerlink" title="ndim"></a>ndim</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>ndim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>2
 </code></pre>
 <h4 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>(2, 2)
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[1, 2, 3, 4]])
 </code></pre>
 <h4 id="size"><a href="#size" class="headerlink" title="size"></a>size</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>size<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>4
 </code></pre>
 <h4 id="dtype"><a href="#dtype" class="headerlink" title="dtype"></a>dtype</h4><p>例如 int8、int16、int32、float32、float64、bool等</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>dtype<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>dtype(&#39;int64&#39;)
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'float32'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[1., 2.],
        [3., 4.]], dtype=float32)
 </code></pre>
 <h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>axis指定被聚合的维度</p>
 <h4 id="view"><a href="#view" class="headerlink" title="view()"></a>view()</h4><p>浅拷贝</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[1, 2],
        [3, 4]])
 </code></pre>
 <h4 id="copy"><a href="#copy" class="headerlink" title="copy()"></a>copy()</h4><p>深拷贝</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([[1, 2],
        [3, 4]])
 </code></pre>
 <h4 id="np-max-amp-np-argmax"><a href="#np-max-amp-np-argmax" class="headerlink" title="np.max()&amp;np.argmax()"></a>np.max()&amp;np.argmax()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([2, 4])
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
 <pre><code>array([1, 1])
 </code></pre>
 <h4 id="np-min-amp-np-argmin"><a href="#np-min-amp-np-argmin" class="headerlink" title="np.min()&amp;np.argmin()"></a>np.min()&amp;np.argmin()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1648,12 +1563,12 @@ viz<span class="token punctuation">.</span>line<span class="token punctuation">(
                                     <span class="chip bg-color">Python</span>
                                 </a>
                             
-                                <a href="/tags/PyTorch/">
-                                    <span class="chip bg-color">PyTorch</span>
-                                </a>
-                            
                                 <a href="/tags/numpy/">
                                     <span class="chip bg-color">numpy</span>
+                                </a>
+                            
+                                <a href="/tags/PyTorch/">
+                                    <span class="chip bg-color">PyTorch</span>
                                 </a>
                             
                         </div>
@@ -2103,7 +2018,7 @@ viz<span class="token punctuation">.</span>line<span class="token punctuation">(
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">万川</a>
@@ -2112,7 +2027,7 @@ viz<span class="token punctuation">.</span>line<span class="token punctuation">(
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">169.3k</span>&nbsp;字
+                class="white-color">181.5k</span>&nbsp;字
             
             
             

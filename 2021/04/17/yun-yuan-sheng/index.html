@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -505,21 +505,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-02
+                    2023-03-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    7.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    27 分
                 </div>
                 
 
@@ -894,11 +894,19 @@ ENV <span class="token operator">&lt;</span>key<span class="token operator">></s
 </li>
 <li>yaml文件中，需要配置的字段：<ul>
 <li>apiVersion：创建该对象所使用的Kubernetes API的版本</li>
-<li>kind：想要创建的对象的类别</li>
-<li>metadata：帮助唯一性标识对象的一些数据，包括一个name字符串、UID 和可选的namespace</li>
-<li>spec：期望的该对象的状态</li>
+<li>kind：指定要创建的 Kubernetes 对象的类型，例如 Pod、Service、Deployment 等。</li>
+<li>metadata：指定 Kubernetes 对象的元数据，包括对象的名称、命名空间、标签等信息。</li>
+<li>spec：期望的该对象的状态，包括对象的配置信息、参数等。<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>container
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
+<li>上面的 YAML 文件定义了一个名为 “my-pod” 的 Pod 对象，它包含一个名为 “my-container” 的容器，该容器使用了 “nginx:latest” 镜像。</li>
 </ul>
 </li>
 <li>kubectl管理对象<ul>
@@ -929,12 +937,22 @@ kubectl get namespace<span aria-hidden="true" class="line-numbers-rows"><span></
 </li>
 <li>标签：附加到对象上的键值对</li>
 </ul>
+<p>以下是 Kubernetes 中最重要的几种对象：</p>
+<ul>
+<li>Pod：Kubernetes 中最小的可部署对象，通常包含一个或多个容器。Pod是部署和管理应用程序的最小单元。</li>
+<li>Service：用于暴露 Pod 中的应用程序。Service为应用程序提供了一个稳定的IP地址，从而使其他应用程序可以轻松地连接到它。</li>
+<li>ReplicaSet：一种控制器，用于确保在 Kubernetes中运行指定数量的Pod副本。如果Pod数量不足或超过指定数量，ReplicaSet将自动进行缩放。</li>
+<li>Deployment：用于在Kubernetes中部署应用程序。Deployment可以创建和更新 ReplicaSet，以确保在任何时候都可以运行指定数量的Pod副本。</li>
+<li>ConfigMap和Secret：ConfigMap和Secret是用于管理应用程序配置和敏感数据的对象。ConfigMap用于存储非敏感的配置数据，而Secret则用于存储敏感的数据，例如密码或API密钥。</li>
+</ul>
+<p>除此之外，还有其他的对象类型，例如StatefulSet、Job和CronJob等，它们都用于在 Kubernetes中实现不同的应用程序管理和部署场景。</p>
 <h3 id="作业管理"><a href="#作业管理" class="headerlink" title="作业管理"></a>作业管理</h3><ul>
 <li>每一个控制器，都以独有的方式负责某种编排功能，</li>
 <li>控制器都遵循一个通用编排模式：控制循环（control loop）；不断将实际状态调整为期望状态</li>
 <li>控制器的设计原理就是用一种对象管理另一种对象；控制器的yaml定义中上半部分是控制器定义（包括期望状态），上下半部分是被控制对象（pod）的模板；让下面对象的状态达到上面的设定</li>
 </ul>
-<h4 id="pod"><a href="#pod" class="headerlink" title="pod"></a>pod</h4><ul>
+<h4 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h4><p>尽管容器可以为应用程序提供独立的运行环境，但在某些情况下，它们可能不足以满足特定的需求。这时候，Pod可以为容器提供一个更完整的运行环境，从而使得多个容器可以协同工作。</p>
+<ul>
 <li>为什么要从容器变为pod？<ul>
 <li>僵尸进程的问题使得容器只适合单进程模式</li>
 <li>容器的作用是隔离环境，但是隔离得太死了，限制了单进程的发挥</li>
@@ -943,7 +961,7 @@ kubectl get namespace<span aria-hidden="true" class="line-numbers-rows"><span></
 </li>
 <li>常见方式：通过让pod中的多个容器共享volume、网络等进行交流</li>
 <li>常见字段：<ul>
-<li>NodeSelector：是一个供用户将Pod与Node进行绑定的字段</li>
+<li>NodeSelector：标签选择器，以便将Pod调度到具有相应标签的节点上</li>
 <li>NodeName：经过了调度后被赋值为节点名</li>
 <li>HostAliases：定义了Pod的hosts文件（比如/etc/hosts）里的内容</li>
 </ul>
@@ -954,26 +972,46 @@ kubectl get namespace<span aria-hidden="true" class="line-numbers-rows"><span></
 <li>Downward API：让Pod里的容器能够直接获取到这个Pod API对象（YAML文件）本身的信息；</li>
 </ul>
 </li>
-<li>PodPreset：自动给 Pod 填充某些字段</li>
+<li>PodPreset：Kubernetes中的一种资源类型，用于在Pod创建时自动注入一些预设值。它可以通过注入环境变量、挂载卷、设置资源限制等方式，为Pod提供一些自定义的配置，以满足不同的应用场景需求。</li>
 </ul>
-<h4 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h4><ul>
+<h4 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h4><p>Deployment是一种控制器对象，它管理着一组Pod的创建、更新和删除。Deployment使用Pod模板来定义所创建的Pod的规范，通过控制器的方式保证这些Pod的副本数一直保持在指定的数量范围内。如果有Pod失败或需要更新，Deployment将会自动重启或升级Pod。</p>
+<ul>
 <li>功能：<ul>
-<li>以滚动更新（rolling update）的方式实现升级容器</li>
+<li>以滚动更新（rolling update）的方式实现升级pod，可以控制Pod的更新速度，使得更新过程中不会影响应用程序的可用性。</li>
 <li>水平扩展/收缩</li>
 </ul>
 </li>
+</ul>
+<p>在创建Deployment时，需要指定一些重要的参数，包括要创建的Pod的镜像、Pod的副本数量、更新策略、Pod的标签等等。</p>
+<ul>
 <li>ReplicaSet：<ul>
-<li>Deployment控制ReplicaSet，ReplicaSet控制pod</li>
+<li>Deployment是高级控制器，定义应用程序的期望状态，控制ReplicaSet；ReplicaSet是低级控制器，确保Pod数量与期望状态一致，控制pod；Pod承载应用程序或服务</li>
+<li>也可以认为，Pod实现程序功能，ReplicaSet加入副本控制，Deployment再加入滚动更新，每一次封装带来更高级更抽象的功能</li>
 <li>水平扩展/收缩时只需要ReplicaSet改变replicas</li>
 <li>滚动更新则会新建新的ReplicaSet，逐步实现两个ReplicaSet的此消彼长</li>
 <li>旧ReplicaSet实现版本控制</li>
 </ul>
 </li>
 </ul>
-<h4 id="StatefulSet"><a href="#StatefulSet" class="headerlink" title="StatefulSet"></a>StatefulSet</h4><ul>
-<li>支持有状态应用：每个pod有了编号，不是完全一样，记录状态，然后在Pod被重新创建时，能够为新Pod恢复这些状态。<ul>
+<p>Deployment主要应用于需要管理和维护的应用程序，尤其是那些需要不断迭代更新的业务。具体来说，Deployment适用于以下场景：</p>
+<ul>
+<li>Web应用程序：Web应用程序通常需要频繁地升级和扩展，以应对不断变化的用户需求和流量峰值。使用Deployment可以方便地管理Web应用程序的部署、升级和水平扩展，确保应用程序始终处于可用状态。</li>
+<li>云原生应用程序：云原生应用程序通常由多个微服务组成，需要进行复杂的编排和管理。使用Deployment可以方便地管理微服务的部署和升级，确保微服务之间的兼容性和协调性。</li>
+<li>大数据应用程序：大数据应用程序通常需要管理大量的容器和集群资源，以处理海量数据和实时查询。使用Deployment可以方便地管理大数据应用程序的部署和扩展，确保应用程序的高可用性和性能。</li>
+<li>分布式系统：分布式系统通常需要管理多个节点和组件，以实现复杂的协同和通信。使用Deployment可以方便地管理分布式系统的部署和升级，确保各个节点和组件之间的一致性和稳定性。<br>总之，Deployment适用于各种需要管理和维护的应用程序，特别是那些需要频繁迭代更新和水平扩展的业务。通过使用Deployment，我们可以方便地管理应用程序的生命周期，并确保应用程序始终处于可用状态。</li>
+</ul>
+<h4 id="StatefulSet"><a href="#StatefulSet" class="headerlink" title="StatefulSet"></a>StatefulSet</h4><p>Kubernetes中的StatefulSet是一种控制器，用于管理有状态的应用程序，例如数据库或消息队列。<br>与Deployment不同，StatefulSet的Pods具有固定的顺序和唯一的标识符。每个Pod都有一个稳定的网络标识符（即DNS名称），可以通过该标识符进行查找和访问。这使得对于有状态应用程序，如数据库，每个实例的数据持久性更加容易实现，确保了应用程序的稳定性和可靠性。</p>
+<ul>
+<li><p>支持有状态应用：每个pod有了编号，不是完全一样，记录状态，然后在Pod被重新创建时，能够为新Pod恢复这些状态。</p>
+<ul>
 <li>拓扑状态：pod按照一定顺序创建，且删掉后新创建的pod要与原来的pod有相同的网络标识</li>
-<li>存储状态：不同实例使用不同的存储数据，PVC，PV</li>
+<li>存储状态：不同实例可以使用不同的存储数据，PVC，PV</li>
+</ul>
+</li>
+<li><p>常见例子：</p>
+<ul>
+<li>通过若干个有顺序的MySQL的pod来管理数据，实例的名称将分别为mysql-0、mysql-1、mysql-2、…</li>
+<li>在Zookeeper集群中，每个节点都有唯一的ID和状态，节点之间需要进行数据同步和协调，因此需要保证每个节点的启动顺序和稳定性。</li>
 </ul>
 </li>
 </ul>
@@ -1631,7 +1669,7 @@ EOF</span>
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">万川</a>
@@ -1640,7 +1678,7 @@ EOF</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">169.3k</span>&nbsp;字
+                class="white-color">181.5k</span>&nbsp;字
             
             
             

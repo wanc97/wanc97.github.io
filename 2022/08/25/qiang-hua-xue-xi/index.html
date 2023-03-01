@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="方寸田园" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-08
+                    2023-02-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.8k
+                    20k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    73 分
+                    81 分
                 </div>
                 
 
@@ -530,8 +530,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="强化学习基础"><a href="#强化学习基础" class="headerlink" title="强化学习基础"></a>强化学习基础</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>强化学习研究的是智能体在复杂、不确定的环境中最大化它能获得的奖励。<br>强化学习研究的是多序列决策问题。<br>状态满足可重复到达。<br><img src='/medias/image/2022-09-04-15-52-14.png' width="60%"></p>
-<p>智能体与环境之间交互，并在这个过程中学习。具体的，智能体观察环境的状态，对环境发出动作，并从环境获得奖励且再次观察环境的状态。<br><img src='/medias/image/screenshot_1661425319742.png' width="60%"><br>智能体一般包含一个或多个：</p>
+                <h1 id="强化学习基础"><a href="#强化学习基础" class="headerlink" title="强化学习基础"></a>强化学习基础</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>强化学习是一种通过智能体与环境之间的交互来学习如何做出最优决策的机器学习方法。在强化学习中，智能体会根据当前状态做出一个动作，并获得一个反馈信号或奖励，这个奖励可以是正的、负的或零。智能体的目标是在环境中通过试错学习，找到最大化奖励的策略。</p>
+<p>强化学习研究的是多序列决策问题，它有有很多应用场景，比如游戏、自动驾驶、机器人控制等。<br><img src='/medias/image/2022-09-04-15-52-14.png' width="60%"></p>
+<p>状态满足可重复到达。<br><img src='/medias/image/screenshot_1661425319742.png' width="60%"><br>智能体一般包含策略、价值函数和模型中的一个或多个：</p>
 <ul>
 <li>策略：根据当前状态选取下一步动作，也是最终所需要的</li>
 <li>价值函数：对当前状态或状态动作对进行评估，是智能体对环境好坏的理解</li>
@@ -543,36 +544,30 @@
 <li>确定性（deterministic）策略：函数直接输出一个动作，可以看成$a^*=argmax_a\pi(a|s)$</li>
 </ul>
 <p>随机性策略具有许多优点，例如：随机性可以更好地探索环境；随机性带来的动作多样性有利于多智能体博弈，防止策略被对手预测。<br><img src='/medias/image/screenshot_1661425437051.png' width="60%"><br>基于策略的走迷宫，每一个状态得到动作</p>
-<h3 id="价值函数"><a href="#价值函数" class="headerlink" title="价值函数"></a>价值函数</h3><p>价值函数用于评估状态的好坏，反映我们可以得到的奖励的量，其中未来的奖励会通过一个折扣因子$γ$进行加权。</p>
-<p>$$<br>V_π(s) = E_π[G_t|s_t=s]=E_π[\sum_{k=0}^∞γ^kr_{t+k+1}|s_t=s]<br>$$</p>
-<p>这种价值函数的输入只有状态，另一种价值函数叫Q函数，是将状态和动作共同作为输入：</p>
-<p>$$<br>Q_π(s,a) = E_π[G_t|s_t=s,a_t=a]=E_π[\sum_{k=0}^∞γ^kr_{t+k+1}|s_t=s,a_t=a]<br>$$</p>
+<h3 id="价值函数"><a href="#价值函数" class="headerlink" title="价值函数"></a>价值函数</h3><p>价值函数用于评估状态的好坏，反映我们可以得到的奖励的量，其中未来的奖励会通过一个折扣因子$γ$进行加权。<br>$$V_π(s) = E_π[G_t|s_t=s]=E_π[\sum_{k=0}^∞γ^kr_{t+k+1}|s_t=s]$$<br>这种价值函数的输入只有状态，另一种价值函数叫Q函数，是将状态和动作共同作为输入：<br>$$Q_π(s,a) = E_π[G_t|s_t=s,a_t=a]=E_π[\sum_{k=0}^∞γ^kr_{t+k+1}|s_t=s,a_t=a]$$</p>
 <p>即可以获得的奖励是由当前状态和采取的动作共同决定的。<br><img src='/medias/image/screenshot_1661425532804.png' width="60%"><br>基于价值的走迷宫，会得到各个状态（和动作）的价值</p>
-<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>模型决定了下一步的状态，由状态转移概率和奖励函数组成，其中状态转移概率为：</p>
-<p>$p_{s s^{\prime}}^{a}=p(s_{t+1}=s^{\prime} | s_{t}=s, a_{t}=a)$<br>奖励函数为：<br>$R(s,a)=E[r_{t+1} | s_{t}=s, a_{t}=a]$</p>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>模型是对环境进行建模的方式，通过学习环境的动态规律，智能体可以更加有效地规划和执行策略。模型可以是状态转移函数（State Transition Function），表示从一个状态转移到另一个状态的概率：<br>$$p_{s s^{\prime}}^{a}=p(s_{t+1}=s^{\prime} | s_{t}=s, a_{t}=a)$$<br>也可以是奖励函数（Reward Function），表示在特定状态下执行某个动作可以获得的奖励：<br>$$R(s,a)=E[r_{t+1} | s_{t}=s, a_{t}=a]$$</p>
+<p>相比之下，价值函数主要用于评估不同策略的优劣，而模型则用于模拟和预测环境的变化。</p>
 <h3 id="On-policy-VS-Off-policy"><a href="#On-policy-VS-Off-policy" class="headerlink" title="On-policy VS Off-policy"></a>On-policy VS Off-policy</h3><ul>
-<li>  <code>on-policy(同策略)</code>：要学习的agent跟和环境互动的agent是同一个；</li>
-<li>  <code>off-policy(异策略)</code>：要学习的agent跟和环境互动的agent不是同一个。</li>
+<li><code>on-policy(同策略)</code>：策略评估和控制方法使用同一个策略进行训练和测试。也就是说，该策略在采取行动和更新价值函数时都是基于当前策略的，因此不能同时学习多个策略。</li>
+<li><code>off-policy(异策略)</code>：策略评估和控制方法则可以使用不同的策略进行训练和测试。训练时可以基于一个策略生成样本数据，而评估时则可以基于另一个策略进行测试。这种方法可以更加高效地利用历史数据，同时也允许学习多个策略。</li>
 </ul>
+<p>虽然概念如此，但是在实际中，很多算法到底属于On-policy还是Off-policy，不同的人有不同的看法。下面我从贝尔曼方程的角度谈谈我的看法：</p>
 <ul>
-<li>on-policy稳定，容易陷入局部最优</li>
-<li>off-policy探索性更好，但不过程严格，收敛慢，容易崩溃</li>
-</ul>
-<p>off-policy的不严格体现在时序差分的优化上：</p>
-<ul>
-<li>根据贝尔曼方程：$V(s)=R(s)+\gamma \sum_{s^{\prime} \in S} p(s^{\prime} | s) V(s^{\prime})$；</li>
-<li>当采用确定的策略时转移关系固定：$V(s)=R(s)+\gamma V(s^{\prime})$；</li>
-<li>而off-policy采取的策略不一样，会使得下一个状态$s^{\prime}$不一致；</li>
-<li>进而贝尔曼方程的更新就不严格。</li>
-<li>在采用随机性策略时，也可以得到类似推导，即：off-policy的动作概率分布不一致。</li>
+<li>根据贝尔曼方程：<br>$$V(s)=R(s)+\gamma \sum_{s^{\prime} \in S} p(s^{\prime} | s) V(s^{\prime})$$</li>
+<li>当策略评估和控制方法使用同一个策略时，状态转移关系$\sum_{s^{\prime} \in S} p(s^{\prime} | s)$固定，没有问题；</li>
+<li>而off-policy中策略评估和控制方法则使用不同的策略，动作概率分布不一致，状态转移关系就会发生变化，会使得下一个状态$s^{\prime}$不一致；</li>
+<li>进而贝尔曼方程的更新就不严格，也就是说off-policy方法在贝尔曼方程的推导上有问题，也就会带来潜在的模型不收敛。</li>
+<li>在采用随机性策略时，也可以得到类似推导，即：off-policy在上述贝尔曼方程上的推到是不严谨的。</li>
 </ul>
 <p>但是对于使用q值来更新的算法，off-policy则可以规避这个问题：</p>
 <ul>
-<li>根据q值的贝尔曼方程：$Q(s,a)=R(s,a)+\gamma \sum_{s^{\prime} \in S} p(s^{\prime} | s,a) V(s^{\prime})$；</li>
-<li>当状态和动作可以得到确定下一状态时：$Q(s,a)=R(s,a)+\gamma V(s^{\prime})$；</li>
-<li>因为更新的$Q(s,a)$就是针对这一动作的更新，而不是针对$V(s)$更新；</li>
-<li>所以这一过程在off-policy下是严谨的。</li>
+<li>根据q值的贝尔曼方程：<br>$$Q(s,a)=R(s,a)+\gamma \sum_{s^{\prime} \in S} p(s^{\prime} | s,a) V(s^{\prime})$$</li>
+<li>此时即使策略评估和控制方法则使用不同的策略，动作概率分布不一致也没有关系，因为状态转移关系$\sum_{s^{\prime} \in S} p(s^{\prime} | s,a)$中本来就包含了动作，即使动作变了，也没有问题。</li>
+<li>也就是说更新的$Q(s,a)$就是针对这一动作的更新，而不是针对$V(s)$更新，在这一过程中off-policy方法是严谨的。</li>
 </ul>
+<p>有了上面的推论，我们是不是可以认为，严谨的强化学习算法（符合贝尔曼方程）可以通过价值函数（贝尔曼方程）的形式来区分呢。即使用状态价值函数$V(s)$的是on-policy，使用动作价值函数$Q(s,a)$的是off-policy。</p>
+<p>从贝尔曼方程的角度来看，Off-policy 更新的状态价值函数与行动策略 $\mu$ 有关，而 On-policy 更新的状态价值函数与当前策略 $\pi$ 相关。因此，Off-policy 更灵活，但可能会产生更大的方差，而 On-policy 更稳定。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">train_on_policy_agent</span><span class="token punctuation">(</span>env<span class="token punctuation">,</span> agent<span class="token punctuation">,</span> num_episodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
     return_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -666,6 +661,9 @@
 <td>PG、AC、A2C、TRPO、PPO、SAC</td>
 </tr>
 </tbody></table>
+<ul>
+<li>On-policy vs Off-policy</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -679,11 +677,16 @@
 </tr>
 <tr>
 <td>离线</td>
-<td>Q-learning、DQN、DDPG、TD3、SAC</td>
+<td>Q-learning、DQN、DDPG、TD3</td>
 </tr>
 </tbody></table>
 <ul>
-<li>注：此处的依据是是否更新Q值，是否可以严谨地使用历史数据；</li>
+<li>注：<ul>
+<li>此处的依据是是否更新Q值，是否可以严谨地使用历史数据；</li>
+<li>Sarsa貌似是在更新Q值，但是Sarsa的公式并不是严格的动作价值函数贝尔曼方程，也就不算off-policy，当然文献中怎么叫的都有。</li>
+<li>PPO虽然可以用历史数据，但是它使用的不是动作价值函数，并不能严格使用历史数据，为了避免不收敛使用clip等方式限制不严格的程度。</li>
+</ul>
+</li>
 </ul>
 <table>
 <thead>
@@ -702,14 +705,10 @@
 </tr>
 </tbody></table>
 <h2 id="探索-amp-利用"><a href="#探索-amp-利用" class="headerlink" title="探索&amp;利用"></a>探索&amp;利用</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><ul>
-<li><p>探索：尝试不同的动作来得到最佳策略，不一定能获得最优收益</p>
-</li>
-<li><p>利用：采用已知可以得到很大奖励的动作</p>
-</li>
-<li><p>学习：在未知的环境中，通过学习与环境交互来改进策略</p>
-</li>
-<li><p>规划：基于当前状态规划并寻找最优动作</p>
-</li>
+<li>探索：尝试不同的动作来得到最佳策略，不一定能获得最优收益</li>
+<li>利用：采用已知可以得到很大奖励的动作</li>
+<li>学习：在未知的环境中，通过学习与环境交互来改进策略</li>
+<li>规划：基于当前状态规划并寻找最优动作</li>
 </ul>
 <h3 id="探索方式"><a href="#探索方式" class="headerlink" title="探索方式"></a>探索方式</h3><ul>
 <li>添加噪声：$\epsilon-greedy$</li>
@@ -762,7 +761,7 @@ obs <span class="token operator">=</span> env<span class="token punctuation">.</
 <h4 id="tune"><a href="#tune" class="headerlink" title="tune"></a>tune</h4><p>基于RAY的调参工具，自动化，简洁</p>
 <h4 id="RLLib"><a href="#RLLib" class="headerlink" title="RLLib"></a>RLLib</h4><p>基于RAY和tune实现强化学习</p>
 <h2 id="马尔科夫决策过程"><a href="#马尔科夫决策过程" class="headerlink" title="马尔科夫决策过程"></a>马尔科夫决策过程</h2><p>智能体与环境交互，观察环境状态、采取动作改变环境，然后得到奖励并进一步观察环境状态的过程可以通过马尔科夫决策过程（MDP）来表示</p>
-<h3 id="马尔科夫过程（MP）"><a href="#马尔科夫过程（MP）" class="headerlink" title="马尔科夫过程（MP）"></a>马尔科夫过程（MP）</h3><h4 id="马尔科夫性质"><a href="#马尔科夫性质" class="headerlink" title="马尔科夫性质"></a>马尔科夫性质</h4><p>随机过程中，在给定过去和现在状态的情况下，随机变量未来状态的条件概率分布仅依赖当前状态。<br>核心是：<strong>只取决于现在，而与过去独立</strong>：<br>$$<br> p(X_{t+1}=x_{t+1} |X_{0:t}=x_{0: t})=p(X_{t+1}=x_{t+1} |X_{t}=x_{t})<br>$$</p>
+<h3 id="马尔科夫过程（MP）"><a href="#马尔科夫过程（MP）" class="headerlink" title="马尔科夫过程（MP）"></a>马尔科夫过程（MP）</h3><h4 id="马尔科夫性质"><a href="#马尔科夫性质" class="headerlink" title="马尔科夫性质"></a>马尔科夫性质</h4><p>随机过程中，在给定过去和现在状态的情况下，随机变量未来状态的条件概率分布仅依赖当前状态。<br>核心是：<strong>只取决于现在，而与过去独立</strong>：<br>$$p(X_{t+1}=x_{t+1} |X_{0:t}=x_{0: t})=p(X_{t+1}=x_{t+1} |X_{t}=x_{t}) $$</p>
 <blockquote>
 <p>如果过程不满足马尔科夫性质，可以使用循环神经网络、注意力机制等</p>
 </blockquote>
@@ -772,7 +771,7 @@ obs <span class="token operator">=</span> env<span class="token punctuation">.</
 <li>奖励函数表示当达到某一个状态的时候可以获得多大的奖励。</li>
 <li>当状态数有限的时候，R可以是一个向量。</li>
 </ul>
-<h4 id="回报与价值函数"><a href="#回报与价值函数" class="headerlink" title="回报与价值函数"></a>回报与价值函数</h4><p><strong>范围</strong>：一个回合的长度<br><strong>回报</strong>：奖励的逐步叠加<br>$$<br>G_{t}=r_{t+1}+\gamma r_{t+2}+\gamma^{2} r_{t+3}+\gamma^{3} r_{t+4}+\ldots+\gamma^{T-t-1} r_{T}<br>$$<br><strong>状态价值函数</strong>：回报的期望<br>$$<br>V^{t}(s) =E[G_{t} | s_{t}=s]<br>=E[r_{t+1}+\gamma r_{t+2}+\gamma^{2} r_{t+3}+\ldots+\gamma^{T-t-1} r_{T} | s_{t}=s]<br>$$</p>
+<h4 id="回报与价值函数"><a href="#回报与价值函数" class="headerlink" title="回报与价值函数"></a>回报与价值函数</h4><p><strong>范围</strong>：一个回合的长度<br><strong>回报</strong>：奖励的逐步叠加<br>$$G_{t}=r_{t+1}+\gamma r_{t+2}+\gamma^{2} r_{t+3}+\gamma^{3} r_{t+4}+\ldots+\gamma^{T-t-1} r_{T}$$<br><strong>状态价值函数</strong>：回报的期望<br>$$ V^{t}(s) =E[G_{t} | s_{t}=s]<br>=E[r_{t+1}+\gamma r_{t+2}+\gamma^{2} r_{t+3}+\ldots+\gamma^{T-t-1} r_{T} | s_{t}=s] $$</p>
 <h4 id="贝尔曼方程"><a href="#贝尔曼方程" class="headerlink" title="贝尔曼方程"></a>贝尔曼方程</h4><p>$$<br>V(s)=R(s)+\gamma \sum_{s^{\prime} \in S} p(s^{\prime} | s) V(s^{\prime})<br>$$<br>通过贝尔曼方程，可以将当下状态的价值表示成当下状态的奖励和转移状态的价值组成。<br>转移状态的价值需要加上一个折扣系数和转移概率。</p>
 <h4 id="迭代计算马尔科夫奖励过程的价值"><a href="#迭代计算马尔科夫奖励过程的价值" class="headerlink" title="迭代计算马尔科夫奖励过程的价值"></a>迭代计算马尔科夫奖励过程的价值</h4><h5 id="蒙特卡洛法"><a href="#蒙特卡洛法" class="headerlink" title="蒙特卡洛法"></a>蒙特卡洛法</h5><p>产生大量的轨迹，计算回报的均值<br><img src='/medias/image/screenshot_1661745146222.png' width="60%"></p>
 <h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><p>对于所有状态，不断通过贝尔曼方程进行更新迭代，直至状态的价值收敛<br><img src='/medias/image/screenshot_1661765542382.png' width="60%"></p>
@@ -805,7 +804,7 @@ $$
 <li>最大化Q函数来得到价值<br>$$<br>Q_{k+1}(s, a)=R(s, a)+\gamma \sum_{s^{\prime} \in S} p(s^{\prime} | s, a) V_{k}(s^{\prime})<br>$$<br>$$<br>V_{k+1}(s)=\max_{a} Q_{k+1}(s, a)<br>$$</li>
 </ol>
 <p>策略迭代是在价值函数收敛后更新策略，而价值迭代在每一次价值函数更新后都进行策略提升，效率更高。</p>
-<h1 id="基于价值"><a href="#基于价值" class="headerlink" title="基于价值"></a>基于价值</h1><h2 id="表格型方法"><a href="#表格型方法" class="headerlink" title="表格型方法"></a>表格型方法</h2><p>通过一个表格记录每一种状态和对应动作可以得到的奖励，奖励包括直接奖励和折扣的未来奖励。<br>常见的表格型方法包括：蒙特卡洛、Q学习、Sarsa<br>其中蒙特卡罗法是按回合更新，而Q学习、Sarsa是按单步更新</p>
+<h1 id="基于价值"><a href="#基于价值" class="headerlink" title="基于价值"></a>基于价值</h1><h2 id="表格型方法"><a href="#表格型方法" class="headerlink" title="表格型方法"></a>表格型方法</h2><p>通过一个表格记录每一种状态下采取一种动作可以得到的奖励，奖励包括直接奖励和折扣的未来奖励。<br>常见的表格型方法包括：蒙特卡洛、Q学习、Sarsa<br>其中蒙特卡罗法是按回合更新，而Q学习、Sarsa是按单步更新</p>
 <h3 id="差分时序"><a href="#差分时序" class="headerlink" title="差分时序"></a>差分时序</h3><p><strong>强化</strong>：可以通过下一个状态的价值来更新当前状态的价值。这种单步更新的方法又称时序差分法。<br>时序差分目标：<br>$$<br>r_{t+1}+\gamma V(s_{t+1})<br>$$<br>时序差分误差：<br>$$<br>\delta=r_{t+1}+\gamma V(s_{t+1})-V(s_{t})<br>$$<br>时序差分法：<br>$$<br>V(s_{t}) \leftarrow V(s_{t})+\alpha(r_{t+1}+\gamma V(s_{t+1})-V(s_{t}))<br>$$</p>
 <p>把时序差分方法进行进一步的推广，之前是只往前走一步，即<code>TD(1)</code>。<br>可以调整步数（step），变成<code>n步时序差分（n-step TD）</code>。比如<code>TD(2)</code>，即往前走两步，利用两步得到的回报，使用自举来更新状态的价值。<br><img src='/medias/image/screenshot_1661841461788.png' width="60%"></p>
 <p>$$<br>n=1   \qquad G_{t}^{(1)}=r_{t+1}+\gamma V(s_{t+1})\\<br>n=2  \qquad  G_{t}^{(2)}= r_{t+1}+\gamma r_{t+2}+\gamma^{2} V(s_{t+2}) \\<br>\vdots \\<br>n=\infty \qquad G_{t}^{\infty}=r_{t+1}+\gamma r_{t+2}+\ldots+\gamma^{T-t-1} r_{T}<br>$$<br>如果时序差分方法需要更广度的更新，就变成了 动态规划方法（因为动态规划方法是把所有状态都考虑进去来进行更新）。<br>如果时序差分方法需要更深度的更新，就变成了蒙特卡洛方法。<br>图右下角是穷举搜索的方法（exhaustive search），穷举搜索的方法不仅需要很深度的信息，还需要很广度的信息。<br><img src='/medias/image/screenshot_1661841906623.png' width="60%"></p>
@@ -818,7 +817,7 @@ $$
 <img src='/medias/image/screenshot_1661854674324.png' width="100%">
 
 <p>但是在Q表格更新后，$V(s_{t+1})$不一定等于$Q(s_{t+1}, a_{t+1})$；<br>所以Sarsa不能在off-policy场景下使用历史数据，只能在on-policy下用当下数据</p>
-<h3 id="Q学习"><a href="#Q学习" class="headerlink" title="Q学习"></a>Q学习</h3><p>将Sarsa的时序差分目标改为了$r_{t+1}+\gamma\max_a Q(s_{t+1}, a)$：<br>$$<br>Q(s_{t}, a_{t}) \leftarrow Q(s_{t}, a_{t})+\alpha[r_{t+1}+\gamma\max_a Q(s_{t+1}, a)-Q(s_{t}, a_{t})]<br>$$<br>这种调整使得Q学习可以使用历史数据。<br>Q学习是异策略的时序差分学习方法，Sarsa是同策略的时序差分学习方法。 Sarsa在更新 Q 表格的时候，它用到的是 $A’$ 。我们要获取下一个 Q 值的时候，$A’$是下一个步骤一定会执行的动作，这个动作有可能是$\varepsilon$-贪心方法采样出来的动作，也有可能是最大化 Q 值对应的动作，也有可能是随机动作，但这是它实际执行的动作。 但是 Q学习在更新 Q 表格的时候，它用到的是 Q 值 $Q(S’,a)$ 对应的动作 ，它不一定是下一个步骤会执行的实际的动作，因为我们下一个实际会执行的那个动作可能会探索。 Q学习默认的下一个动作不是通过行为策略来选取的，Q学习直接看Q表格，取它的最大化的值，它是默认 $A’$ 为最佳策略选取的动作，所以 Q学习在学习的时候，不需要传入 $A’$，即 $a_{t+1}$ 的值。<br><img src='/medias/image/screenshot_1661857748609.png' width="100%"></p>
+<h3 id="Q学习"><a href="#Q学习" class="headerlink" title="Q学习"></a>Q学习</h3><p>将Sarsa的时序差分目标改为了$r_{t+1}+\gamma\max_a Q(s_{t+1}, a)$：<br>$$<br>Q(s_{t}, a_{t}) \leftarrow Q(s_{t}, a_{t})+\alpha[r_{t+1}+\gamma\max_a Q(s_{t+1}, a)-Q(s_{t}, a_{t})]<br>$$<br>这种调整使得Q学习可以使用历史数据。<br>Q学习是off-policy的时序差分学习方法，Sarsa是on-policy的时序差分学习方法。 Sarsa在更新 Q 表格的时候，它用到的是 $A’$ 。我们要获取下一个 Q 值的时候，$A’$是下一个步骤一定会执行的动作，这个动作有可能是$\varepsilon$-贪心方法采样出来的动作，也有可能是最大化 Q 值对应的动作，也有可能是随机动作，但这是它实际执行的动作。 但是 Q学习在更新 Q 表格的时候，它用到的是 Q 值 $Q(S’,a)$ 对应的动作 ，它不一定是下一个步骤会执行的实际的动作，因为我们下一个实际会执行的那个动作可能会探索。 Q学习默认的下一个动作不是通过行为策略来选取的，Q学习直接看Q表格，取它的最大化的值，它是默认 $A’$ 为最佳策略选取的动作，所以 Q学习在学习的时候，不需要传入 $A’$，即 $a_{t+1}$ 的值。<br><img src='/medias/image/screenshot_1661857748609.png' width="100%"></p>
 <img src='/medias/image/screenshot_1661858063900.png' width="100%">
 
 <p>一般来说，Q学习使用选取最大值的最大化操作，估计的Q值偏大，因此更加激进一些；<br>而Sarsa估计的Q值可能偏小，则较为保守。</p>
@@ -1142,11 +1141,11 @@ $$
         self<span class="token punctuation">.</span>actor_optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 更新策略网络的参数</span>
         self<span class="token punctuation">.</span>critic_optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 更新价值网络的参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="异步优势演员-评论员算法（A3C）"><a href="#异步优势演员-评论员算法（A3C）" class="headerlink" title="异步优势演员-评论员算法（A3C）"></a>异步优势演员-评论员算法（A3C）</h2><p>为了提升训练速度，可以采用多进程的方式，每个子进程探索一个环境，并把得到的梯度回传个主节点的参数：<br><img src='/medias/image/2022-09-05-10-40-15.png' width="60%"><br>主节点将子进程的梯度进行平均并回传新的参数给各个节点<br>因为各个子进程异步进行，因此对GPU的利用效率不高</p>
+<h2 id="异步优势演员-评论员算法（A3C）"><a href="#异步优势演员-评论员算法（A3C）" class="headerlink" title="异步优势演员-评论员算法（A3C）"></a>异步优势演员-评论员算法（A3C）</h2><p>为了提升训练速度，可以采用多进程的方式，每个子进程探索一个环境，并把得到的梯度回传给主节点更新参数：<br><img src='/medias/image/2022-09-05-10-40-15.png' width="60%"><br>主节点将子进程的梯度进行平均并回传新的参数给各个节点<br>因为各个子进程异步进行，因此对GPU的利用效率不高</p>
 <h2 id="IMPALA"><a href="#IMPALA" class="headerlink" title="IMPALA"></a>IMPALA</h2><ul>
 <li>每个actor起一个模拟环境，定期从learner获取最新的神经网络参数，来使用自己能获得的最新策略去采样，并且把获取到的数据传回供learner去更新各个神经网络参数。</li>
 <li>learner通过获取actor得到的轨迹来做SGD来更新各个神经网络的参数</li>
-<li>learner使用的是一块GPU，actor使用CPU</li>
+<li>learner使用GPU，actor使用CPU</li>
 <li>当训练规模扩大的时候，可以使用多个learner（多块GPU）并且每块GPU配套多个actor（CPU）。每个learner只从自己的actor们中获取样本进行更新，learner之间定期交换gradient并且更新网络参数，actor也定期从任意learner上获取并更新神经网络参数。</li>
 <li>还通过V-trace来减弱了因为off-policy带来的不稳定性</li>
 </ul>
@@ -1159,7 +1158,7 @@ $$
 <li>单任务训练上相比于分布式A3C、单机A3C和batched A2C有更好的性能，并且对于超参数更稳定；</li>
 </ul>
 <h2 id="路径衍生策略梯度算法"><a href="#路径衍生策略梯度算法" class="headerlink" title="路径衍生策略梯度算法"></a>路径衍生策略梯度算法</h2><p>优势演员-评论员算法中的Q网络只能评价动作好不好，不能提供好的方向，路径衍生策略梯度算法的思想类似于生成对抗网络，让Q网络同时输入状态和演员生成的动作，得到动作价值，进而可以给演员的优化提供方向。<br><img src='/medias/image/2022-09-05-11-03-33.png' width="60%"><br>路径衍生策略梯度算法也可以看成是在深度Q网络的基础上用策略梯度来选择动作，以解决动作空间过大或者动作连续的问题：<br><img src='/medias/image/2022-09-05-11-06-57.png' width="60%"><br>与生成对抗网络在技巧上的研究<br><img src='/medias/image/2022-09-05-11-09-12.png' width="60%"></p>
-<h2 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h2><p>Policy gradient 是on-policy的做法，这样要收集很多数据，然后更新参数，再去收集数据，效率较低；<br>可以用一个policy去跟环境互动收集数据，另一个policy可以用收集到的数据执行梯度上升。<br>考虑到两个policy的参数不一样，动作分布不一样，因此梯度计算需要进行一些调整。<br>假设两个policy的差别不大的情况下，可以通过<strong>重要性采样</strong>，加入两个policy的概率值来调整：<br><img src='/medias/image/screenshot_1662004433769.png' width="60%"><br>其中跟环境互动收集数据的policy参数$\theta’$是常数，不用求梯度。</p>
+<h2 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h2><p>Policy gradient是on-policy的做法，这样要收集很多数据，然后更新参数，再去收集数据，效率较低；<br>可以用一个policy去跟环境互动收集数据，另一个policy可以用收集到的数据执行梯度上升。<br>考虑到两个policy的参数不一样，动作分布不一样，因此梯度计算需要进行一些调整。<br>假设两个policy的差别不大的情况下，可以通过<strong>重要性采样</strong>，加入两个policy的概率值来调整：<br><img src='/medias/image/screenshot_1662004433769.png' width="60%"><br>其中跟环境互动收集数据的policy参数$\theta’$是常数，不用求梯度。</p>
 <p>当两个policy的差别过大时，会使得算法过程不稳定，因此要控制这种差异：</p>
 <ul>
 <li>一种思路是控制参数空间，控制参数更新量；<ul>
@@ -1317,17 +1316,15 @@ $$
 
 <h2 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h2><p>而<code>近端策略优化(Proximal Policy Optimization，简称 PPO)</code>是A2C的一个变形，它是现在OpenAI默认的强化学习算法。</p>
 <img src='/medias/image/screenshot_1662005511162.png' width="60%">
-TRPO是通过约束使得KL散度不要太大，但是这个比较难算，PPO是在计算梯度的时候把约束融合进去，包含两个变种。
+TRPO是通过约束使得KL散度不要太大，但是这个比较难算，PPO是在计算梯度的时候把约束融合进去，包含两个变种，其中最常用的是clip。
 
 <h3 id="PPO-Penalty"><a href="#PPO-Penalty" class="headerlink" title="PPO-Penalty"></a>PPO-Penalty</h3><img src='/medias/image/screenshot_1662005837900.png' width="60%">
 通过自适应KL散度，让两个参数输出的动作差别减小
 
-<h3 id="PPO-Clip"><a href="#PPO-Clip" class="headerlink" title="PPO-Clip"></a>PPO-Clip</h3><img src='/medias/image/screenshot_1662005960602.png' width="60%">
-通过clip让参数的优化不要太过。
-<img src='/medias/image/2022-09-14-18-22-18.png' width="100%">
-截断的效果比较好，而且非常简单；
-通过观察梯度可以发现，截断就是限制重要性采样的比值，让新旧策略差别大的样本不起作用。
-
+<h3 id="PPO-Clip"><a href="#PPO-Clip" class="headerlink" title="PPO-Clip"></a>PPO-Clip</h3><p>首先，定义旧策略（old policy）和新策略（new policy）的概率密度函数分别为 $\pi_{\theta_{old}}$ 和 $\pi_{\theta}$。<br>接着，定义似然比（likelihood ratio）：<br>$$r(\theta)=\frac{\pi_{\theta}(a|s)}{\pi_{\theta_{old}}(a|s)}$$</p>
+<p>然后，定义 PPO 的目标函数：<br>$$\min_{\theta}\mathbb{E}\left[\min\left(r(\theta)\hat{A}_{t},clip(r(\theta),1-\epsilon,1+\epsilon)\hat{A}_t\right)\right]$$</p>
+<p>其中，$\hat{A}_{t}$ 是优势函数估计，表示在状态 $s_t$ 选择动作 $a_t$ 的优势值。</p>
+<p>在 PPO 中，还引入了一个超参数 $\epsilon$，称为 PPO 比例因子（PPO clipping factor），用于限制似然比的范围，避免更新过于剧烈。<br><img src='/medias/image/screenshot_1662005960602.png' width="60%"><br>通过clip让参数的优化不要太过。<br><img src='/medias/image/2022-09-14-18-22-18.png' width="100%"><br>截断的效果比较好，而且非常简单；<br>通过观察梯度可以发现，截断就是限制重要性采样的比值，让新旧策略差别大的样本不起作用。</p>
 <p>在实际中往往使用分布式强化学习，同时在多个环境采集数据，供模型训练，因此必然存在模型不同步的问题，而PPO可以较好的解决这个问题，因此PPO的应用非常广泛。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">PPO</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">''' PPO算法,采用截断方式 '''</span>
@@ -1388,7 +1385,12 @@ TRPO是通过约束使得KL散度不要太大，但是这个比较难算，PPO�
             self<span class="token punctuation">.</span>critic_optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h3><p>此处参考<a href="https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/" title="" target="">The 37 Implementation Details of Proximal Policy Optimization</a>，<a href="https://zhuanlan.zhihu.com/p/512327050" title="" target="">影响PPO算法性能的10个关键技巧</a></p>
-<h4 id="Advantage-Normalization"><a href="#Advantage-Normalization" class="headerlink" title="Advantage Normalization"></a>Advantage Normalization</h4><p>在使用GAE计算完一个batch的优势值后，对优势值进行减均值除标准差的Normalization；<br>可以在整个batch上做，也可以在minibatch上做，一般前者更好，因为后者波动更大。</p>
+<h4 id="Advantage-Normalization"><a href="#Advantage-Normalization" class="headerlink" title="Advantage Normalization"></a>Advantage Normalization</h4><p>优势函数的计算过程中，由于数据的不稳定性和样本方差的影响，导致训练过程不稳定，难以收敛到最优解。为了解决这个问题，Advantage Normalization技术被提出。</p>
+<p>Advantage Normalization的基本思想是对采样的优势函数进行归一化处理，使得优势函数的期望值为0，方差为1。具体来说，先计算所有采样数据的优势函数的均值和标准差，然后对每个优势函数进行如下归一化处理：</p>
+<p>$$\hat{A}(s_t,a_t)=\frac{A(s_t,a_t)-\mu}{\sigma}$$</p>
+<p>其中，$\mu$和$\sigma$分别是所有采样数据的优势函数的均值和标准差，$A(s_t,a_t)$是当前状态下采取动作$a_t$的优势函数。</p>
+<p>通过这种归一化处理，可以降低训练过程中采样数据的方差，提高训练的稳定性和收敛速度。在实际应用中，Advantage Normalization通常与其他技术如基准函数、策略梯度裁剪等一起使用，以进一步提高算法的性能和稳定性。</p>
+<p>在使用GAE计算完一个batch的优势值后，对优势值进行减均值除标准差的Normalization；<br>可以在整个batch上做，也可以在minibatch上做，一般前者更好，因为后者波动更大。</p>
 <h4 id="State-Normalization"><a href="#State-Normalization" class="headerlink" title="State Normalization"></a>State Normalization</h4><p>对输入的状态值做减均值除标准差的Normalization；<br>因为强化学习的数据并非一开始就获得全部，因此不能像监督学习一样在数据预处理阶段统一进行；<br>可以动态维护所有获得过的state的mean和std，然后再对当前的state做normalization。</p>
 <h4 id="Reward-Normalization-amp-Reward-Scaling"><a href="#Reward-Normalization-amp-Reward-Scaling" class="headerlink" title="Reward Normalization &amp; Reward Scaling"></a>Reward Normalization &amp; Reward Scaling</h4><p>Reward Normalization：</p>
 <ul>
@@ -1404,7 +1406,7 @@ TRPO是通过约束使得KL散度不要太大，但是这个比较难算，PPO�
 <h4 id="Gradient-clip"><a href="#Gradient-clip" class="headerlink" title="Gradient clip"></a>Gradient clip</h4><p>加入Gradient clip防止训练的时候出现梯度爆炸</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">self<span class="token punctuation">.</span>optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
 loss<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> self<span class="token punctuation">.</span>use_grad_clip<span class="token punctuation">:</span> <span class="token comment"># Trick 7: Gradient clip</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>use_grad_clip<span class="token punctuation">:</span> 
     torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>clip_grad_norm_<span class="token punctuation">(</span>self<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span> 
 self<span class="token punctuation">.</span>optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -1429,7 +1431,7 @@ deltas <span class="token operator">=</span> r <span class="token operator">+</s
 <li>在离散动作的场景下，有几个动作，神经网络就输出几个概率值，我们用$\pi_\theta(a_t|s_t)$来表示这个随机性的策略。</li>
 <li>在连续的动作场景下，比如机器人手臂弯曲的角度，可以输出一个具体的浮点数。我们用$\mu_{\theta}(s_t)$来代表这个确定性的策略。<img src='/medias/image/2022-09-05-13-07-43.png' width="80%"></li>
 </ul>
-<p>DDPG 的特点可以从它的名字当中拆解出来，拆解成：</p>
+<p>DDPG的特点可以从它的名字当中拆解出来，拆解成：</p>
 <ul>
 <li>Deep：深度网络</li>
 <li>Deterministic：输出确定的动作</li>
@@ -1514,8 +1516,17 @@ deltas <span class="token operator">=</span> r <span class="token operator">+</s
         self<span class="token punctuation">.</span>soft_update<span class="token punctuation">(</span>self<span class="token punctuation">.</span>critic<span class="token punctuation">,</span> self<span class="token punctuation">.</span>target_critic<span class="token punctuation">)</span>  <span class="token comment"># 软更新价值网络</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Twin-Delayed-DDPG"><a href="#Twin-Delayed-DDPG" class="headerlink" title="Twin Delayed DDPG"></a>Twin Delayed DDPG</h2><p>DDPG有时表现很好，但它在超参数和其他类型的调整方面经常很敏感，<code>双延迟深度确定性策略梯度(Twin Delayed DDPG，简称 TD3)</code>引入三个关键技巧来解决</p>
-<p><strong>截断的双 Q 学习</strong>：同时训练两个Q函数，并使用Q值较小的来作为Q目标<br>$$<br>y\left(r, s^{\prime}, d\right)=r+\gamma(1-d) \min_{i=1,2} Q_{\phi_{i, t a r g}}\left(s^{\prime}, a_{T D 3}\left(s^{\prime}\right)\right)<br>$$<br><strong>延迟的策略更新</strong>：降低策略网络的更新频率<br><strong>目标策略平滑</strong>：在目标动作中加入噪声，以平滑误差<br>$$<br>a_{T D 3}\left(s^{\prime}\right)=\operatorname{clip}\left(\mu_{\theta, t a r g}\left(s^{\prime}\right)+\operatorname{clip}(\epsilon,-c, c), a_{\text {low }}, a_{\text {high }}\right)<br>$$<br><img src='/medias/image/2022-09-14-18-20-27.png' width="100%"></p>
-<h2 id="soft-Actor-Critic"><a href="#soft-Actor-Critic" class="headerlink" title="soft Actor Critic"></a>soft Actor Critic</h2><img src='/medias/image/2022-09-15-12-11-52.png' width="100%">
+<p><strong>截断的双 Q 学习</strong>：同时训练两个Q函数，并使用Q值较小的来作为Q目标<br>$$ y\left(r, s^{\prime}, d\right)=r+\gamma(1-d) \min_{i=1,2} Q_{\phi_{i, t a r g}}\left(s^{\prime}, a_{T D 3}\left(s^{\prime}\right)\right) $$<br><strong>延迟的策略更新</strong>：降低策略网络的更新频率<br><strong>目标策略平滑</strong>：在目标动作中加入噪声，以平滑误差<br>$$ a_{T D 3}\left(s^{\prime}\right)=\operatorname{clip}\left(\mu_{\theta, t a r g}\left(s^{\prime}\right)+\operatorname{clip}(\epsilon,-c, c), a_{\text {low }}, a_{\text {high }}\right) $$<br><img src='/medias/image/2022-09-14-18-20-27.png' width="100%"></p>
+<h2 id="soft-Actor-Critic"><a href="#soft-Actor-Critic" class="headerlink" title="soft Actor Critic"></a>soft Actor Critic</h2><p>SAC（Soft Actor-Critic）算法是一种用于连续动作空间下强化学习的算法，它是基于策略梯度算法和Q-learning算法的混合算法。SAC算法的主要目标是最大化奖励函数，同时最小化策略的熵，从而鼓励策略探索更多的动作，以提高探索效率和策略的稳定性。<br>SAC算法的关键点如下：</p>
+<ul>
+<li>策略梯度算法：SAC算法使用了策略梯度算法来更新策略。具体来说，它使用一个近似策略梯度方法，即使用基于Q函数的渐进策略优化（ASO）来更新策略。</li>
+<li>Q-learning算法：SAC算法还使用了Q-learning算法来学习值函数。具体来说，它使用了一个双Q网络结构，用于估计状态-动作值函数，并使用贝尔曼方程来更新Q网络参数。</li>
+<li>策略熵：SAC算法还引入了策略熵的概念。策略熵是指策略函数对动作的分布的熵，衡量策略的不确定性和探索程度。SAC算法的目标是最大化奖励函数同时最小化策略熵，以鼓励策略探索更多的动作，提高探索效率和策略的稳定性。</li>
+<li>目标熵：为了平衡策略探索和利用，SAC算法使用一个目标熵来控制策略熵的大小。目标熵是一个固定的值，它可以调整探索程度。</li>
+<li>自适应温度：SAC算法还使用了一个自适应温度参数来平衡策略熵和目标熵，以实现更好的探索和利用平衡。自适应温度参数通过在线更新得到，以最大化策略的期望回报。</li>
+</ul>
+<p>总的来说，SAC算法是一种有效的强化学习算法，它通过综合使用策略梯度算法、Q-learning算法、策略熵和目标熵等方法，实现了对连续动作空间下的探索和利用平衡。它在许多连续动作空间下的强化学习任务中表现出了很好的效果。</p>
+<img src='/medias/image/2022-09-15-12-11-52.png' width="100%">
 
 <h1 id="基于模型-1"><a href="#基于模型-1" class="headerlink" title="基于模型"></a>基于模型</h1><p>基于模型的强化学习算法由于具有一个环境模型，智能体可以额外和环境模型进行交互，对真实环境中样本的需求量往往就会减少，因此通常会比无模型的强化学习算法具有更低的样本复杂度。<br>但是环境模型可能并不准确，不能完全代替真实环境，因此基于模型的强化学习算法收敛后其策略的期望回报可能不如无模型的强化学习算法。<br><img src='/medias/image/2022-09-16-15-18-49.png' width="60%"></p>
 <h2 id="Dyna-Q"><a href="#Dyna-Q" class="headerlink" title="Dyna-Q"></a>Dyna-Q</h2><p>在Q-learning的基础上，将历史样本数据保存下来，每进行一次Q-learning更新后会进行n次Q-planning。<br>Q-planning会通过历史数据来更新。</p>
@@ -1602,10 +1613,14 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
 <p>MAVEN在QMIX的基础上增加了一个隐变量；<br>通过隐变量增加算法的探索性；<br>相当于同时学了很多Q值，就更容易跳出局部解。</p>
 <h3 id="Weighted-QMIX"><a href="#Weighted-QMIX" class="headerlink" title="Weighted QMIX"></a>Weighted QMIX</h3><p>通过权重函数对每个联合动作的加权，映射到非单调值函数，并得到对应的最优策略，从而避免QMIX算法得到的策略陷入局部最优。</p>
 <h1 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h1><h2 id="稀疏奖励"><a href="#稀疏奖励" class="headerlink" title="稀疏奖励"></a>稀疏奖励</h2><p>很多场景下奖励和惩罚出现的频率很低，即稀疏，这样训练网络非常困难。</p>
-<h3 id="Reward-Shaping"><a href="#Reward-Shaping" class="headerlink" title="Reward Shaping"></a>Reward Shaping</h3><p>可以自己设计一个合适的环境reward，来引导智能体往合适的方向探索。</p>
+<h3 id="Reward-Shaping"><a href="#Reward-Shaping" class="headerlink" title="Reward Shaping"></a>Reward Shaping</h3><p>Reward shaping是强化学习中的一种技术，用于修改奖励信号，使其更符合问题的实际要求，从而加速学习过程并提高性能。通常来说，问题的奖励信号是非常稀疏的，即只有在任务完成时才会有非零奖励，这使得强化学习算法很难从奖励信号中学到有效的策略。因此，reward shaping的目标是通过添加附加的奖励信号来改进原始奖励信号。这样一来，智能体可以更好地理解任务的结构，更快地学习到合适的策略，并且可能能够在更短的时间内达到更好的性能。</p>
+<p>例如，在一个机器人控制的任务中，如果只给机器人一个简单的“成功”或“失败”的二元奖励信号，很难让机器人从这个信号中学到什么有用的东西。但是，如果通过reward shaping添加了额外的奖励信号，例如在机器人朝着目标移动时距离目标的距离，或者在机器人走过特定的路径时给予奖励，智能体就可以更好地理解任务的要求，并学会更好的策略。</p>
 <h4 id="Curiosity"><a href="#Curiosity" class="headerlink" title="Curiosity"></a>Curiosity</h4><p>还可以设计一个好奇分数，将好奇分数加到价值上，增加智能体的探索：<br><img src='/medias/image/2022-09-05-11-47-12.png' width="60%"></p>
-<h3 id="curriculum-learning"><a href="#curriculum-learning" class="headerlink" title="curriculum learning"></a>curriculum learning</h3><p>让智能体从简单的场景、任务、数据学起，逐渐提高难度，这样可以更好地学习。<br><strong>reverse curriculum learning</strong>可以控制智能体的初始状态，开始的时候离最终状态近，更加容易学习。</p>
-<h3 id="分层强化学习"><a href="#分层强化学习" class="headerlink" title="分层强化学习"></a>分层强化学习</h3><p>将一个复杂的强化学习问题分解成多个小的、简单的子问题，每个子问题都可以单独用马尔可夫决策过程来建模。这样，我们可以将智能体的策略分为高层次策略和低层次策略，高层次策略根据当前状态决定如何执行低层次策略。这样，智能体就可以解决一些非常复杂的任务。</p>
+<h3 id="curriculum-learning"><a href="#curriculum-learning" class="headerlink" title="curriculum learning"></a>curriculum learning</h3><p>让智能体从简单的场景、任务、数据学起，逐渐提高难度，这样可以更好地学习。</p>
+<p>Curriculum learning是一种强化学习中的训练方法，它利用一些预先设定的学习任务序列，逐步提升智能体的学习难度和复杂度，让其能够逐渐适应复杂的环境和任务。Curriculum learning的核心思想是将学习任务按照难易程度进行分级，先让智能体学习容易的任务，逐渐增加任务难度，最终让其学会完成复杂的任务。通过这种逐步提高难度的方式，可以加快智能体的学习速度，提高训练效果。</p>
+<p>Curriculum learning的应用领域非常广泛，可以用于解决各种问题，如图像识别、自然语言处理、机器翻译、游戏智能等。在强化学习中，Curriculum learning可以帮助智能体在学习过程中降低学习难度，从而避免因训练困难而导致的效果下降和训练时间过长等问题。</p>
+<p><strong>reverse curriculum learning</strong>可以控制智能体的初始状态，开始的时候离最终状态近，更加容易学习。</p>
+<h3 id="分层强化学习"><a href="#分层强化学习" class="headerlink" title="分层强化学习"></a>分层强化学习</h3><p>将一个复杂的强化学习问题分解成多个小的、简单的子问题，每个子问题都可以单独用马尔可夫决策过程来建模。这样，我们可以将智能体的策略分为高层次策略和低层次策略，高层次策略根据当前状态决定如何执行低层次策略。这样，智能体就可以解决一些非常复杂的任务。<br>分层强化学习通常被用于解决复杂的任务，例如机器人控制、策略游戏等。它可以大大减少需要学习的策略数量，从而提高学习效率。</p>
 <h2 id="模仿学习"><a href="#模仿学习" class="headerlink" title="模仿学习"></a>模仿学习</h2><p>模仿学习（imitation learning，IL）讨论连奖励都没有的场景，或者不能直接在环境中学习的场景，又叫：示范学习（learning from demonstration），学徒学习（apprenticeship learning），观察学习（learning by watching）<br>如：聊天机器人、自动驾驶、推荐系统。</p>
 <h3 id="行为克隆"><a href="#行为克隆" class="headerlink" title="行为克隆"></a>行为克隆</h3><p>类似于监督学习，让机器根据数据学习人的行为<br><img src='/medias/image/2022-09-05-12-05-05.png' width="60%"></p>
 <ul>
@@ -1707,7 +1722,7 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
 </ul>
 <p>目标导向的强化学习会在策略网络、值网络的输入加上一个目标，这样可以给经验库中的数据加上合适的目标使得奖励信号变得稠密；同时可以应对目标变动的情况。</p>
 <h3 id="HER"><a href="#HER" class="headerlink" title="HER"></a>HER</h3><p>事后经验回放（hindsight experience replay，HER）是在数据层面应用目标导向的思想。<br><img src='/medias/image/2022-09-19-14-58-43.png' width="100%"></p>
-<h1 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>强化学习包含许多基本模块和思路，这些模块和思路分别被提出用以解决不同问题，当所面对的场景符合时，可以尝试拿来主义，将合适的额思想进行有机的结合。</p>
+<h1 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>强化学习包含许多基本模块和思路，这些模块和思路分别被提出用以解决不同问题，当所面对的场景符合时，可以尝试拿来主义，将合适的思想进行有机的结合。</p>
 <h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ul>
 <li>值函数：相对容易优化，可以评估状态或者状态动作对的价值</li>
 <li>策略网络：可以直接根据状态输出动作，可用于连续动作空间</li>
@@ -1746,9 +1761,9 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
 <li>尤其是在self-play中可能胜率很高但没有学到东西。</li>
 </ul>
 </li>
-<li>目标网络更新频率：<ul>
-<li>太高了会难以收敛，因为两个网络差别大</li>
-<li>太低了两个网络一样会直接躺平</li>
+<li>目标网络更新周期：<ul>
+<li>太长了会难以收敛，因为两个网络差别大</li>
+<li>太短了两个网络一样会直接躺平</li>
 </ul>
 </li>
 </ul>
@@ -2134,12 +2149,12 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/PyTorch/">
-                        <span class="chip bg-color">PyTorch</span>
-                    </a>
-                    
                     <a href="/tags/numpy/">
                         <span class="chip bg-color">numpy</span>
+                    </a>
+                    
+                    <a href="/tags/PyTorch/">
+                        <span class="chip bg-color">PyTorch</span>
                     </a>
                     
                 </div>
@@ -2323,7 +2338,7 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">万川</a>
@@ -2332,7 +2347,7 @@ VDN在此基础上将各个智能体的Q值相加得到整体的Q值：
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">169.3k</span>&nbsp;字
+                class="white-color">181.5k</span>&nbsp;字
             
             
             
