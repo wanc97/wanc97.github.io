@@ -493,21 +493,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-01
+                    2023-03-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.4k
+                    9.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    34 分
                 </div>
                 
 
@@ -818,6 +818,198 @@
 </li>
 </ul>
 <h2 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h2><h3 id="ChatGPT的原理"><a href="#ChatGPT的原理" class="headerlink" title="ChatGPT的原理"></a>ChatGPT的原理</h3><p>ChatGPT没有联网，不是在网上搜索答案，也不是从一个数据库中查找<br>GPT-1、GPT-2、GPT-3是比较单纯地预训练模型，基于自监督方法，学习大量语料。这种方式让模型有了大量的信息量，但是在回答问题方面效果不佳，给出的回答往往非常随意。<br>ChatGPT是一个大规模的预训练语言模型，在GPT的基础上加入了强化学习。人类只需要给出回答的打分，就可以引导模型的方向；再进一步的，将人类的打分训练成一个评估模型，用评估模型可以更加大量地给ChatGPT打分。</p>
+<h3 id="强化学习环节"><a href="#强化学习环节" class="headerlink" title="强化学习环节"></a>强化学习环节</h3><p>使用强化学习训练ChatGPT的示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment"># 构建强化学习环境</span>
+<span class="token keyword">class</span> <span class="token class-name">Environment</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> agent<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>agent <span class="token operator">=</span> agent
+        self<span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">reset</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">step</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        reply <span class="token operator">=</span> self<span class="token punctuation">.</span>agent<span class="token punctuation">.</span>generate_reply<span class="token punctuation">(</span>self<span class="token punctuation">.</span>history<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+        reward <span class="token operator">=</span> self<span class="token punctuation">.</span>compute_reward<span class="token punctuation">(</span>reply<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>history<span class="token punctuation">.</span>append<span class="token punctuation">(</span>reply<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> reward
+
+    <span class="token keyword">def</span> <span class="token function">compute_reward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> reply<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 计算奖励，可以根据任务需求自定义奖励函数</span>
+        <span class="token keyword">return</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># 构建强化学习代理</span>
+<span class="token keyword">class</span> <span class="token class-name">Agent</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> model
+
+    <span class="token keyword">def</span> <span class="token function">generate_reply</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> history<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 输入当前状态和动作，输出回复文本</span>
+        state <span class="token operator">=</span> self<span class="token punctuation">.</span>encode_state<span class="token punctuation">(</span>history<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+        reply_logits <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+        reply <span class="token operator">=</span> self<span class="token punctuation">.</span>decode_reply<span class="token punctuation">(</span>reply_logits<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> reply
+
+    <span class="token keyword">def</span> <span class="token function">encode_state</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> history<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 编码当前状态</span>
+        state <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token keyword">return</span> state
+
+    <span class="token keyword">def</span> <span class="token function">decode_reply</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> reply_logits<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 解码模型输出的回复文本</span>
+        reply <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token keyword">return</span> reply
+
+<span class="token comment"># 训练模型</span>
+<span class="token keyword">def</span> <span class="token function">train</span><span class="token punctuation">(</span>model<span class="token punctuation">,</span> data<span class="token punctuation">,</span> env<span class="token punctuation">,</span> agent<span class="token punctuation">,</span> optimizer<span class="token punctuation">,</span> num_epochs<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        epoch_reward <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> inputs<span class="token punctuation">,</span> targets <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+            <span class="token comment"># 在强化学习环境中运行模型</span>
+            env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>inputs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                action <span class="token operator">=</span> targets<span class="token punctuation">[</span>i<span class="token punctuation">]</span>  <span class="token comment"># 动作为目标回复</span>
+                reward <span class="token operator">=</span> env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+                epoch_reward <span class="token operator">+=</span> reward
+            <span class="token comment"># 更新模型参数</span>
+            loss <span class="token operator">=</span> <span class="token operator">-</span>tf<span class="token punctuation">.</span>reduce_sum<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>math<span class="token punctuation">.</span>log<span class="token punctuation">(</span>agent<span class="token punctuation">.</span>model<span class="token punctuation">(</span>inputs<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> targets<span class="token punctuation">)</span>
+            gradients <span class="token operator">=</span> tape<span class="token punctuation">.</span>gradient<span class="token punctuation">(</span>loss<span class="token punctuation">,</span> model<span class="token punctuation">.</span>trainable_variables<span class="token punctuation">)</span>
+            optimizer<span class="token punctuation">.</span>apply_gradients<span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>gradients<span class="token punctuation">,</span> model<span class="token punctuation">.</span>trainable_variables<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Epoch %d reward: %.2f"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>epoch<span class="token punctuation">,</span> epoch_reward<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 使用强化学习训练模型</span>
+model <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+data <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+env <span class="token operator">=</span> Environment<span class="token punctuation">(</span>agent<span class="token punctuation">)</span>
+agent <span class="token operator">=</span> Agent<span class="token punctuation">(</span>model<span class="token punctuation">)</span>
+optimizer <span class="token operator">=</span> tf<span class="token punctuation">.</span>keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span><span class="token punctuation">)</span>
+train<span class="token punctuation">(</span>model<span class="token punctuation">,</span> data<span class="token punctuation">,</span> env<span class="token punctuation">,</span> agent<span class="token punctuation">,</span> optimizer<span class="token punctuation">,</span> num_epochs<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>具体来说，训练过程中会构建一个强化学习环境，其中状态由之前的对话历史和当前的输入组成，动作由模型输出的回复文本组成，奖励由用户的反馈和其他任务相关的指标组成。然后，通过不断迭代优化模型参数，使模型能够在给定的任务上获得更好的性能。</p>
+<h3 id="奖励设计"><a href="#奖励设计" class="headerlink" title="奖励设计"></a>奖励设计</h3><p>计算奖励值的方法可以根据具体的应用场景和任务需求来设计。以对话生成任务为例，可以通过以下几种方式计算奖励值：</p>
+<p>基于人类评估的奖励值：将对话生成模型的输出提交给人类评估员进行评估，评估员根据对话的质量和流畅度打分，然后将得分作为奖励值。这种方法需要投入大量的人力资源，但可以更好地反映出真实用户对话的质量。</p>
+<p>基于自动评估的奖励值：使用一些自动化的评估指标来计算奖励值，例如BLEU、Perplexity、F1值等。这种方法可以自动化地评估对话的质量，但是评估结果可能与真实用户对话的质量存在一定的偏差。</p>
+<p>基于任务目标的奖励值：根据对话生成任务的具体目标来设计奖励函数，例如生成有用的回答、回答问题的准确性、提供有趣的信息等。这种方法需要根据具体的任务需求进行设计，但可以更好地引导模型生成符合任务目标的对话。</p>
+<h4 id="基于自动评估指标"><a href="#基于自动评估指标" class="headerlink" title="基于自动评估指标"></a>基于自动评估指标</h4><p>下面是一个基于自动评估指标BLEU的奖励计算代码示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> nltk<span class="token punctuation">.</span>translate<span class="token punctuation">.</span>bleu_score <span class="token keyword">import</span> sentence_bleu
+
+<span class="token comment"># 定义目标回答</span>
+target_response <span class="token operator">=</span> <span class="token string">"I am doing well, thank you. How about you?"</span>
+
+<span class="token keyword">def</span> <span class="token function">calculate_reward</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 计算生成回答和目标回答的BLEU值</span>
+    bleu_score <span class="token operator">=</span> sentence_bleu<span class="token punctuation">(</span><span class="token punctuation">[</span>target_response<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> response<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 根据BLEU值计算奖励值</span>
+    <span class="token keyword">if</span> bleu_score <span class="token operator">></span> <span class="token number">0.5</span><span class="token punctuation">:</span>
+        reward <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        reward <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">return</span> reward<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这个示例中，我们使用NLTK库中的sentence_bleu函数计算生成回答和目标回答之间的BLEU值，然后根据阈值0.5来判断奖励值的正负。如果BLEU值大于0.5，则认为生成的回答比较接近目标回答，奖励值为1；否则奖励值为-1。实际应用中可以根据具体需求来调整阈值和奖励函数的设计。</p>
+<h4 id="基于任务目标"><a href="#基于任务目标" class="headerlink" title="基于任务目标"></a>基于任务目标</h4><p>下面以另一个对话生成任务为例，介绍一种基于任务目标的奖励计算方法，这个任务是生成关于天气的回答，任务目标是回答的准确性和完整性。</p>
+<p>奖励计算的基本原理是，对于用户提出的关于天气的问题，我们首先需要解析出问题的关键信息，例如地点、时间、天气类型等。然后，根据这些关键信息，我们可以查询天气数据，并将查询到的天气信息和用户提出的问题进行比对。如果生成的回答和实际的天气信息比较接近，并且回答的内容准确和完整，就给予正向的奖励值；否则给予负向的奖励值。</p>
+<p>下面是一个简单的奖励计算代码示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+
+<span class="token keyword">def</span> <span class="token function">calculate_reward</span><span class="token punctuation">(</span>response<span class="token punctuation">,</span> intent<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 解析用户提出的问题，获取关键信息</span>
+    location <span class="token operator">=</span> intent<span class="token punctuation">[</span><span class="token string">'location'</span><span class="token punctuation">]</span>
+    date <span class="token operator">=</span> intent<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span>
+    weather_type <span class="token operator">=</span> intent<span class="token punctuation">[</span><span class="token string">'weather_type'</span><span class="token punctuation">]</span>
+    
+    <span class="token comment"># 查询天气数据</span>
+    url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"https://api.weather.com/v1/geocode/</span><span class="token interpolation"><span class="token punctuation">&#123;</span>location<span class="token punctuation">&#125;</span></span><span class="token string">/forecast/daily/</span><span class="token interpolation"><span class="token punctuation">&#123;</span>date<span class="token punctuation">&#125;</span></span><span class="token string">.json"</span></span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    weather_data <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 比较生成回答和实际天气信息的差异</span>
+    <span class="token keyword">if</span> response<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> weather_data<span class="token punctuation">[</span><span class="token string">'daily'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'narrative'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">and</span> weather_type <span class="token keyword">in</span> weather_data<span class="token punctuation">[</span><span class="token string">'daily'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'narrative'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 回答准确和完整，给予正向奖励</span>
+        reward <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment"># 回答不准确或不完整，给予负向奖励</span>
+        reward <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">return</span> reward<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这个示例中，使用了一个公共的天气查询API，根据用户提出的问题获取对应的天气数据。然后，将生成的回答和实际天气信息进行比较，如果回答准确和完整，就给予正向奖励值；否则给予负向奖励值。实际应用中需要注意，由于外部API的不确定性，查询结果可能存在一定的误差，因此需要针对具体应用场景进行调整和优化。</p>
+<h4 id="基于人类评估的奖励值"><a href="#基于人类评估的奖励值" class="headerlink" title="基于人类评估的奖励值"></a>基于人类评估的奖励值</h4><p>下面以一个任务为例，介绍一种基于人类评估的奖励计算方法。这个任务是回答有关于美食的问题，任务目标是回答的相关度和语言流畅度。</p>
+<p>基于人类评估的奖励计算方法是通过人类评估模型，对模型生成的回答进行打分，根据打分给予相应的奖励值。在这个例子中，我们可以请专业人员或者普通用户对模型生成的回答进行打分。评分可以是一个连续值，也可以是一个离散值。例如，评分为5分代表非常相关、流畅，评分为1分代表不相关、不流畅。</p>
+<p>下面是一个简单的基于人类评估的奖励计算代码示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calculate_reward</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 模型生成回答</span>
+    generated_response <span class="token operator">=</span> model<span class="token punctuation">.</span>generate_response<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 将生成的回答输出给用户进行评分</span>
+    score <span class="token operator">=</span> human_evaluate<span class="token punctuation">(</span>generated_response<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 根据评分给予奖励值</span>
+    <span class="token keyword">if</span> score <span class="token operator">>=</span> <span class="token number">4</span><span class="token punctuation">:</span>
+        <span class="token comment"># 回答相关度和语言流畅度非常好，给予较高的奖励</span>
+        reward <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">elif</span> score <span class="token operator">>=</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token comment"># 回答相关度和语言流畅度一般，给予较低的奖励</span>
+        reward <span class="token operator">=</span> <span class="token number">5</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment"># 回答相关度和语言流畅度差，给予负向奖励</span>
+        reward <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">5</span>
+    <span class="token keyword">return</span> reward<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这个示例中，首先调用模型生成回答，然后将生成的回答输出给人类评估模型进行评分。根据评分的结果，如果回答相关度和语言流畅度非常好，就给予较高的奖励值；如果回答相关度和语言流畅度一般，就给予较低的奖励值；如果回答相关度和语言流畅度差，就给予负向奖励值。实际应用中需要注意，人类评估的结果会受到个体主观因素的影响，因此需要统计多个评分结果进行平均，降低评分误差对奖励计算的影响。同时，还需要定期更新评分标准，以保持奖励计算的准确性。</p>
+<h4 id="基于人类评估的奖励模型"><a href="#基于人类评估的奖励模型" class="headerlink" title="基于人类评估的奖励模型"></a>基于人类评估的奖励模型</h4><p>使用少量的人类评估数据训练一个奖励模型，该模型的输入是生成的文本，输出是与人类评估数据尽可能接近的奖励分数。然后使用该奖励模型来为生成的文本打分，以指导训练。通常情况下不会直接使用人类评估数据，而是对其进行一些预处理，例如对分数进行归一化或对其进行平滑处理，以减少模型对噪声的敏感度。</p>
+<p>需要注意的是，这种方法也存在一些限制和缺点。例如，奖励模型的性能取决于人类评估数据的质量和数量，如果数据太少或质量不好，则模型可能会产生误导性的分数。此外，奖励模型的训练需要额外的计算资源和时间，因为需要在训练生成模型的同时训练奖励模型。</p>
+<p>以下是一个简单的代码示例，展示了如何使用人类评估数据训练奖励模型，以指导生成模型的训练。</p>
+<p>首先，我们需要准备一些人类评估数据。这些数据可以来自人类评估或人工标注，我们可以将其存储为一个包含文本和对应评分的数据集。假设我们的数据集中有100个样本，每个样本包含一个文本和一个0-10之间的评分。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">human_data <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">(</span><span class="token string">"This is a good example."</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">"I like this book very much."</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment"># ... 其它98个样本</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来，我们可以使用这些数据来训练一个奖励模型。为了简单起见，这里使用一个基于多层感知器（MLP）的模型。我们将文本编码为词向量，并将其输入到MLP中，以预测与人类评分最接近的奖励分数。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>keras<span class="token punctuation">.</span>layers <span class="token keyword">import</span> Input<span class="token punctuation">,</span> Dense<span class="token punctuation">,</span> Embedding<span class="token punctuation">,</span> Flatten
+<span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>keras<span class="token punctuation">.</span>models <span class="token keyword">import</span> Model
+
+<span class="token comment"># 定义模型输入和输出</span>
+inputs <span class="token operator">=</span> Input<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+x <span class="token operator">=</span> Embedding<span class="token punctuation">(</span>vocab_size<span class="token punctuation">,</span> embedding_dim<span class="token punctuation">)</span><span class="token punctuation">(</span>inputs<span class="token punctuation">)</span>
+x <span class="token operator">=</span> Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+x <span class="token operator">=</span> Dense<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+outputs <span class="token operator">=</span> Dense<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"linear"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+<span class="token comment"># 编译模型</span>
+model <span class="token operator">=</span> Model<span class="token punctuation">(</span>inputs<span class="token operator">=</span>inputs<span class="token punctuation">,</span> outputs<span class="token operator">=</span>outputs<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span>optimizer<span class="token operator">=</span><span class="token string">"adam"</span><span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">"mse"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 准备训练数据</span>
+texts <span class="token operator">=</span> <span class="token punctuation">[</span>text <span class="token keyword">for</span> text<span class="token punctuation">,</span> _ <span class="token keyword">in</span> human_data<span class="token punctuation">]</span>
+scores <span class="token operator">=</span> <span class="token punctuation">[</span>score <span class="token keyword">for</span> _<span class="token punctuation">,</span> score <span class="token keyword">in</span> human_data<span class="token punctuation">]</span>
+
+<span class="token comment"># 将文本编码为词向量</span>
+text_sequences <span class="token operator">=</span> tokenizer<span class="token punctuation">.</span>texts_to_sequences<span class="token punctuation">(</span>texts<span class="token punctuation">)</span>
+text_sequences <span class="token operator">=</span> tf<span class="token punctuation">.</span>keras<span class="token punctuation">.</span>preprocessing<span class="token punctuation">.</span>sequence<span class="token punctuation">.</span>pad_sequences<span class="token punctuation">(</span>
+    text_sequences<span class="token punctuation">,</span> maxlen<span class="token operator">=</span>max_sequence_length<span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"post"</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 训练模型</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>text_sequences<span class="token punctuation">,</span> scores<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一旦我们训练好了奖励模型，我们可以使用它来为生成的文本打分，以指导生成模型的训练。在这个例子中，我们使用了基于策略梯度的强化学习方法来训练生成模型。具体地，我们定义了一个损失函数，其中奖励分数由奖励模型给出，以指导生成模型的优化。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment"># 定义损失函数</span>
+<span class="token keyword">def</span> <span class="token function">policy_gradient_loss</span><span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 计算奖励分数</span>
+    reward <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>y_pred<span class="token punctuation">)</span>
+    <span class="token comment"># 对奖励分数进行归一化处理</span>
+    reward <span class="token operator">=</span> <span class="token punctuation">(</span>reward <span class="token operator">-</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>reward<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>reward<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">)</span>
+    <span class="token comment"># 计算损失函数</span>
+    loss <span class="token operator">=</span> <span class="token operator">-</span>tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>reward <span class="token operator">*</span> tf<span class="token punctuation">.</span>math<span class="token punctuation">.</span>log<span class="token punctuation">(</span>y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> loss
+
+<span class="token comment"># 训练生成模型</span>
+generator_model<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span>optimizer<span class="token operator">=</span><span class="token string">"adam"</span><span class="token punctuation">,</span> loss<span class="token operator">=</span>policy_gradient_loss<span class="token punctuation">)</span>
+generator_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>dataset<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <p>ChatGPT如何学会那么多种语言：语言模型可以在不同语言之间泛化，在多种语言上做预训练后，只要在某一个语言上训练一个任务，就会自动学会其它语言的同样任务</p>
 <h1 id="seq2seq"><a href="#seq2seq" class="headerlink" title="seq2seq"></a>seq2seq</h1><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>从一个序列到另一个序列的任务，一般包含编码器和解码器两个组件：<br><img src='/medias/image/2022-09-30-14-40-17.png' width="60%"></p>
 <p>最常见的seq2seq任务是机器翻译<br><img src='/medias/image/2022-09-30-14-38-52.png' width="80%"></p>
@@ -1492,7 +1684,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.5k</span>&nbsp;字
+                class="white-color">197.2k</span>&nbsp;字
             
             
             

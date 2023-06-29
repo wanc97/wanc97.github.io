@@ -6,7 +6,7 @@
   <link href="http://notego.top/atom.xml" rel="self"/>
   
   <link href="http://notego.top/"/>
-  <updated>2023-02-23T08:45:44.000Z</updated>
+  <updated>2023-06-29T10:09:02.864Z</updated>
   <id>http://notego.top/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>孙子兵法与三十六计</title>
+    <link href="http://notego.top/2023/06/29/sun-zi-bing-fa-yu-san-shi-liu-ji/"/>
+    <id>http://notego.top/2023/06/29/sun-zi-bing-fa-yu-san-shi-liu-ji/</id>
+    <published>2023-06-29T10:00:06.000Z</published>
+    <updated>2023-06-29T10:09:02.864Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;兵者，诡道也：知己知彼百战百胜，所以不能让对方准确地了解自己，要虚虚实实，破坏对方的决策&lt;/p&gt;
+&lt;p&gt;上屋抽梯：本质上是为了减少选项，既可以减少自己的选项，也可以减少他人的选项&lt;br&gt;    -</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>提示工程</title>
+    <link href="http://notego.top/2023/06/13/ti-shi-gong-cheng/"/>
+    <id>http://notego.top/2023/06/13/ti-shi-gong-cheng/</id>
+    <published>2023-06-13T08:00:21.000Z</published>
+    <updated>2023-06-14T06:49:59.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="http://notego.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="prompt" scheme="http://notego.top/tags/prompt/"/>
+    
+    <category term="大模型" scheme="http://notego.top/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《金刚经》</title>
+    <link href="http://notego.top/2023/03/08/jin-gang-jing/"/>
+    <id>http://notego.top/2023/03/08/jin-gang-jing/</id>
+    <published>2023-03-08T09:41:39.000Z</published>
+    <updated>2023-03-08T11:09:59.215Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;《金刚经》是佛教《般若经》的主要经典之一，也被认为是佛教中的经典。经文内容主要讲述了“五蕴皆空”的教诲，即一切事物皆是空的、无常的。&lt;br&gt;经文主要由一位名为“须菩提”的弟子与佛陀对话而组成，其中佛陀通过问答的方式引导弟子了解真实的佛法。经文主要包括以下内容：&lt;/p&gt;
+&lt;o</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>机器学习系统</title>
@@ -141,7 +212,7 @@
     <link href="http://notego.top/2022/09/27/zi-ran-yu-yan-chu-li/"/>
     <id>http://notego.top/2022/09/27/zi-ran-yu-yan-chu-li/</id>
     <published>2022-09-26T18:10:09.000Z</published>
-    <updated>2023-03-01T11:19:34.000Z</updated>
+    <updated>2023-03-03T03:42:02.000Z</updated>
     
     
       
@@ -207,7 +278,7 @@
     <link href="http://notego.top/2022/08/25/qiang-hua-xue-xi/"/>
     <id>http://notego.top/2022/08/25/qiang-hua-xue-xi/</id>
     <published>2022-08-25T12:24:54.000Z</published>
-    <updated>2023-02-28T02:24:28.000Z</updated>
+    <updated>2023-03-28T03:59:40.177Z</updated>
     
     
       
@@ -258,9 +329,9 @@
     
     <category term="Python" scheme="http://notego.top/tags/Python/"/>
     
-    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
-    
     <category term="PyTorch" scheme="http://notego.top/tags/PyTorch/"/>
+    
+    <category term="numpy" scheme="http://notego.top/tags/numpy/"/>
     
   </entry>
   
@@ -381,7 +452,7 @@
     <link href="http://notego.top/2021/11/25/yi-jing-bi-ji/"/>
     <id>http://notego.top/2021/11/25/yi-jing-bi-ji/</id>
     <published>2021-11-25T08:44:36.000Z</published>
-    <updated>2022-12-09T08:09:42.000Z</updated>
+    <updated>2023-03-02T03:45:59.000Z</updated>
     
     
       
@@ -397,11 +468,11 @@
     <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
+    
     <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
     
     <category term="养生" scheme="http://notego.top/tags/%E5%85%BB%E7%94%9F/"/>
-    
-    <category term="心理" scheme="http://notego.top/tags/%E5%BF%83%E7%90%86/"/>
     
     <category term="宇宙" scheme="http://notego.top/tags/%E5%AE%87%E5%AE%99/"/>
     
@@ -500,7 +571,7 @@
     <link href="http://notego.top/2021/04/17/yun-yuan-sheng/"/>
     <id>http://notego.top/2021/04/17/yun-yuan-sheng/</id>
     <published>2021-04-17T13:10:29.000Z</published>
-    <updated>2023-03-01T07:30:37.000Z</updated>
+    <updated>2023-04-21T10:55:21.249Z</updated>
     
     
       
@@ -531,121 +602,6 @@
     <category term="松耦合" scheme="http://notego.top/tags/%E6%9D%BE%E8%80%A6%E5%90%88/"/>
     
     <category term="康威法则" scheme="http://notego.top/tags/%E5%BA%B7%E5%A8%81%E6%B3%95%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《道德经》笔记</title>
-    <link href="http://notego.top/2021/04/08/dao-de-jing-bi-ji/"/>
-    <id>http://notego.top/2021/04/08/dao-de-jing-bi-ji/</id>
-    <published>2021-04-08T14:32:31.000Z</published>
-    <updated>2022-12-21T09:50:47.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;《道德经》全文&quot;&gt;&lt;a href=&quot;#《道德经》全文&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
-    <category term="老子" scheme="http://notego.top/tags/%E8%80%81%E5%AD%90/"/>
-    
-    <category term="无为" scheme="http://notego.top/tags/%E6%97%A0%E4%B8%BA/"/>
-    
-    <category term="德" scheme="http://notego.top/tags/%E5%BE%B7/"/>
-    
-    <category term="无" scheme="http://notego.top/tags/%E6%97%A0/"/>
-    
-    <category term="上善若水" scheme="http://notego.top/tags/%E4%B8%8A%E5%96%84%E8%8B%A5%E6%B0%B4/"/>
-    
-    <category term="善" scheme="http://notego.top/tags/%E5%96%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unicorn</title>
-    <link href="http://notego.top/2021/04/01/unicorn/"/>
-    <id>http://notego.top/2021/04/01/unicorn/</id>
-    <published>2021-04-01T12:20:40.000Z</published>
-    <updated>2022-09-30T09:50:26.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;这里记录我想对丫头说的话、我们的美好，是我们的独有空间。&lt;/p&gt;
-&lt;h3 id=&quot;应该怎么对丫头？&quot;&gt;&lt;a href=&quot;#应该怎么对丫头？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="悄悄话" scheme="http://notego.top/categories/%E6%82%84%E6%82%84%E8%AF%9D/"/>
-    
-    
-    <category term="爱情" scheme="http://notego.top/tags/%E7%88%B1%E6%83%85/"/>
-    
-    <category term="相思" scheme="http://notego.top/tags/%E7%9B%B8%E6%80%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《庄子》笔记</title>
-    <link href="http://notego.top/2021/03/31/zhuang-zi-bi-ji/"/>
-    <id>http://notego.top/2021/03/31/zhuang-zi-bi-ji/</id>
-    <published>2021-03-31T14:59:19.000Z</published>
-    <updated>2023-02-19T05:40:50.485Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;《庄子》分为内篇、外篇和杂篇，其中内篇是庄子哲学体系的核心，一般认为内篇文章为庄子本人所作，外篇和杂篇则有许多是后人所加。&lt;/p&gt;
-&lt;p&gt;《庄子》内篇包括七篇文章（《逍遥游》、《齐物论》、《养生主》、《人间世》、《德充符》、《大宗师》、《应帝王》），涵盖了庄子方方面面的观念</summary>
-        
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://notego.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="哲学" scheme="http://notego.top/tags/%E5%93%B2%E5%AD%A6/"/>
-    
-    <category term="道家" scheme="http://notego.top/tags/%E9%81%93%E5%AE%B6/"/>
-    
-    <category term="道" scheme="http://notego.top/tags/%E9%81%93/"/>
-    
-    <category term="自然" scheme="http://notego.top/tags/%E8%87%AA%E7%84%B6/"/>
-    
-    <category term="天人合一" scheme="http://notego.top/tags/%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80/"/>
-    
-    <category term="逍遥" scheme="http://notego.top/tags/%E9%80%8D%E9%81%A5/"/>
-    
-    <category term="养生" scheme="http://notego.top/tags/%E5%85%BB%E7%94%9F/"/>
-    
-    <category term="辩证" scheme="http://notego.top/tags/%E8%BE%A9%E8%AF%81/"/>
-    
-    <category term="无待" scheme="http://notego.top/tags/%E6%97%A0%E5%BE%85/"/>
-    
-    <category term="小大之辩" scheme="http://notego.top/tags/%E5%B0%8F%E5%A4%A7%E4%B9%8B%E8%BE%A9/"/>
-    
-    <category term="鹏" scheme="http://notego.top/tags/%E9%B9%8F/"/>
-    
-    <category term="超越" scheme="http://notego.top/tags/%E8%B6%85%E8%B6%8A/"/>
     
   </entry>
   
